@@ -25,10 +25,10 @@ import android.media.AudioManager;
 
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.fwk.RangeSetting;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
+import com.xstd.quick.R;
 
 public class MasterVolumeSettingHandler extends SettingHandler {
 

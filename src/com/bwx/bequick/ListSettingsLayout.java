@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bwx.bequick.fwk.Setting;
+import com.xstd.quick.R;
 
 public class ListSettingsLayout {
 

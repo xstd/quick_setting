@@ -29,9 +29,9 @@ import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
+import com.xstd.quick.R;
 
 public class ScreenTimeoutSettingHandler extends SettingHandler implements OnItemClickListener {
 

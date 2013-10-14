@@ -27,8 +27,8 @@ import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.fwk.Setting;
+import com.xstd.quick.R;
 
 /**
  * Pattern handler for android before 2.2

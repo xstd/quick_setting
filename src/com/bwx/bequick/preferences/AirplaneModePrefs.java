@@ -18,7 +18,7 @@ package com.bwx.bequick.preferences;
 
 import android.content.SharedPreferences;
 
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 
 public class AirplaneModePrefs extends BasePrefs {
 

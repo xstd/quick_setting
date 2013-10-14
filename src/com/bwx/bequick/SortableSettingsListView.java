@@ -30,6 +30,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.xstd.quick.R;
 
 import com.bwx.bequick.fwk.Setting;
 

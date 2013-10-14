@@ -20,7 +20,7 @@ import static com.bwx.bequick.Constants.PREF_DISABLE_MMS;
 import android.content.SharedPreferences;
 import android.preference.CheckBoxPreference;
 
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 
 public class MobileDataApnPrefs extends BasePrefs {
 

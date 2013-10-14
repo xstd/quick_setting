@@ -17,8 +17,8 @@
 package com.bwx.bequick.handlers;
 
 import android.content.Context;
+import com.xstd.quick.R;
 
-import com.bwx.bequick.R;
 
 public class ScreenTimeoutValues {
 

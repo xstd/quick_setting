@@ -36,7 +36,7 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.provider.Settings;
 import android.widget.Toast;
 
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 import com.bwx.bequick.SettingsApplication;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.handlers.BrightnessSettingHandler;

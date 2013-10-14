@@ -34,7 +34,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
 

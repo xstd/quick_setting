@@ -48,7 +48,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 import com.bwx.bequick.flashlight.LedFlashlightReceiver;
 
 public class CommonPrefs extends BasePrefs implements OnClickListener, OnPreferenceClickListener {

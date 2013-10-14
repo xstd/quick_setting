@@ -63,6 +63,7 @@ import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
+import com.xstd.quick.R;
 
 public class MainSettingsActivity extends Activity implements OnClickListener, OnSharedPreferenceChangeListener {
 

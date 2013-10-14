@@ -27,9 +27,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
+import com.xstd.quick.R;
 
 /**
  * APN-based mobile data switch implementation

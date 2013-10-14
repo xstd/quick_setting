@@ -25,7 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 import android.widget.ViewSwitcher;
 
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 import com.bwx.bequick.fwk.RangeSetting;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingRenderer;

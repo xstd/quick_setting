@@ -27,10 +27,10 @@ import android.util.Log;
 
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.preferences.GpsPrefs;
+import com.xstd.quick.R;
 
 public class GpsSettingHandler extends SettingHandler {
 

@@ -28,7 +28,7 @@ import android.os.Handler;
 import android.widget.RemoteViews;
 
 import com.bwx.bequick.Constants;
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 import com.bwx.bequick.ShowSettingsActivity;
 
 public class StatusBarIntegrationReceiver extends BroadcastReceiver {

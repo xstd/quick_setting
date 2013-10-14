@@ -26,7 +26,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.bwx.bequick.Constants;
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 
 public class MobileDataPrefs extends BasePrefs {
 

@@ -16,13 +16,12 @@
 
 package com.bwx.bequick.flashlight;
 
-import com.bwx.bequick.R;
-
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import com.xstd.quick.R;
 
 public class ShakeSwitchDeterctor extends SwitchDetector implements SensorEventListener {
 

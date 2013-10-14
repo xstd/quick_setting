@@ -39,6 +39,7 @@ import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.BrightnessPrefs;
 import com.bwx.bequick.preferences.CommonPrefs;
+import com.xstd.quick.R;
 
 /**
  * Remains state shared between all activities

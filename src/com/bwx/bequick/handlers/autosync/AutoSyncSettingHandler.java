@@ -26,9 +26,9 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
+import com.xstd.quick.R;
 
 public class AutoSyncSettingHandler extends SettingHandler {
 

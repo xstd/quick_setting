@@ -31,6 +31,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.xstd.quick.R;
 
 public class LayoutSettingsAdapter extends BaseAdapter implements OnClickListener {
 

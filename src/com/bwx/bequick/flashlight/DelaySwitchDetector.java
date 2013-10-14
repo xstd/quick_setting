@@ -16,11 +16,10 @@
 
 package com.bwx.bequick.flashlight;
 
-import com.bwx.bequick.R;
-
 import android.content.Context;
 import android.os.Handler;
 import android.os.SystemClock;
+import com.xstd.quick.R;
 
 public class DelaySwitchDetector extends SwitchDetector implements Runnable {
 

@@ -18,6 +18,7 @@ package com.bwx.bequick;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import com.xstd.quick.R;
 
 public class LayoutSettingsActivity extends ListActivity {
 

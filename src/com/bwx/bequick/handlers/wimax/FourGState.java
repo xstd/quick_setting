@@ -16,7 +16,8 @@
 
 package com.bwx.bequick.handlers.wimax;
 
-import com.bwx.bequick.R;
+
+import com.xstd.quick.R;
 
 /**
  * @author Brian Rodgers 
@@ -26,7 +27,7 @@ public enum FourGState {
 	TURNING_ON(R.string.txt_status_turning_on), 
 	TURNING_OFF(R.string.txt_status_turning_off), 
 	ON(R.string.txt_status_turned_on), 
-	OFF(R.string.txt_status_turned_off), 
+	OFF(R.string.txt_status_turned_off),
 	UNKNOWN(R.string.txt_status_unknown);
 
 	private final int statusResourceId;

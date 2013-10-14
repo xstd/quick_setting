@@ -20,11 +20,11 @@ import android.widget.Toast;
 
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.handlers.apn.ApnControl;
 import com.bwx.bequick.preferences.MobileDataPrefs;
+import com.xstd.quick.R;
 
 /**
  * Does not work in 2.3.3

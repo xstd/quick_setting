@@ -18,7 +18,7 @@ package com.bwx.bequick.handlers;
 
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
+import com.xstd.quick.R;
 
 import android.app.Activity;
 import android.app.Dialog;

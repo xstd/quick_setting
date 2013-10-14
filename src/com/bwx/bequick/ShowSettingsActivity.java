@@ -26,6 +26,7 @@ import android.content.SharedPreferences;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.util.Log;
+import com.xstd.quick.R;
 
 /**
  * This is a invisible proxy activity, which calls quick settings activity

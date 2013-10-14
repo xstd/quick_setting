@@ -8,7 +8,6 @@ import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 
-import com.bwx.bequick.R;
 import com.bwx.bequick.handlers.AirplaneModeSettingHandler;
 import com.bwx.bequick.handlers.BluetoothSettingHandler;
 import com.bwx.bequick.handlers.BrightnessSettingHandler;
@@ -32,6 +31,7 @@ import com.bwx.bequick.preferences.BrightnessPrefs;
 import com.bwx.bequick.preferences.GpsPrefs;
 import com.bwx.bequick.preferences.MobileDataApnPrefs;
 import com.bwx.bequick.preferences.MobileDataPrefs;
+import com.xstd.quick.R;
 
 public class SettingsFactory {
 

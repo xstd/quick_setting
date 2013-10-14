@@ -28,9 +28,9 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
 import com.bwx.bequick.Constants;
-import com.bwx.bequick.R;
 import com.bwx.bequick.SettingsApplication;
 import com.bwx.bequick.flashlight.SwitchDetector.Switchable;
+import com.xstd.quick.R;
 
 public class ScreenLightActivity extends Activity implements Switchable {
 

@@ -31,11 +31,11 @@ import android.view.WindowManager.LayoutParams;
 
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.R;
 import com.bwx.bequick.SettingsApplication;
 import com.bwx.bequick.fwk.RangeSetting;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
+import com.xstd.quick.R;
 
 public class BrightnessSettingHandler extends SettingHandler implements OnClickListener, Runnable {
 
