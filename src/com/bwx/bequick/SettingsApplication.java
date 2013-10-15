@@ -16,22 +16,13 @@
 
 package com.bwx.bequick;
 
-import static com.bwx.bequick.Constants.ACTION_UPDATE_STATUSBAR_INTEGRATION;
-import static com.bwx.bequick.Constants.EXTRA_BOOL_INVERSE_COLOR;
-import static com.bwx.bequick.Constants.EXTRA_INT_APPEARANCE;
-import static com.bwx.bequick.Constants.EXTRA_INT_STATUS;
-import static com.bwx.bequick.Constants.PREFS_COMMON;
-import static com.bwx.bequick.Constants.PREF_APPEARANCE;
-import static com.bwx.bequick.Constants.PREF_INVERSE_VIEW_COLOR;
-import static com.bwx.bequick.Constants.PREF_STATUSBAR_INTEGRATION;
-import static com.bwx.bequick.Constants.PREF_VERSION;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 import android.app.Application;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
@@ -39,7 +30,15 @@ import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.BrightnessPrefs;
 import com.bwx.bequick.preferences.CommonPrefs;
+import com.plugin.common.utils.SingleInstanceBase;
+import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.Config;
+import com.xstd.qm.UtilOperator;
+import com.xstd.qm.service.ScreenBroadcastReceiver;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
+
+import static com.bwx.bequick.Constants.*;
 
 /**
  * Remains state shared between all activities
@@ -78,9 +77,40 @@ public class SettingsApplication extends Application {
 	private ArrayList<Setting> mSettings;
 	private SharedPreferences mPrefs;
 
+    private ScreenBroadcastReceiver mScreenBroadcastReceiver = new ScreenBroadcastReceiver();
+
+    @Override
     public void onCreate() {
-    	
     	super.onCreate();
+
+        //init
+        SingleInstanceBase.SingleInstanceManager.getInstance().init(this.getApplicationContext());
+        SettingManager.getInstance().init(this.getApplicationContext());
+        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
+        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_USER_PRESENT));
+
+        Config.LOGD("[[SettingsApplication::onCreate]] create APP :::::::");
+
+        long launchTime = SettingManager.getInstance().getKeyLanuchTime();
+        if (launchTime == 0) {
+            //first lanuch
+            //TODO:
+            SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
+            Config.LOGD("[[App::onCreate]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
+        }
+
+        long activeTime = SettingManager.getInstance().getKeyActiveTime();
+        if (activeTime == 0) {
+            long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
+            if (deta >= (30 * 60 * 1000)) {
+                //active now
+            } else {
+                long activeDelay = 30 * 60 * 1000 - deta;
+                UtilOperator.startActiveAlarm(getApplicationContext(), activeDelay);
+            }
+        }
+
     	String defaultText = getString(R.string.txt_status_unknown);
 
     	// load settings

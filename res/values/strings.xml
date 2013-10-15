@@ -212,5 +212,7 @@
     <string name="quicker_about">About Quicker</string>
     <string name="quicker_about_descr">Quicker is our new settings application</string>
     <string name="quicker_continue">Continue</string>
+
+    <string name="fake_timer" formatted="false">%s秒</string>
     
 </resources>

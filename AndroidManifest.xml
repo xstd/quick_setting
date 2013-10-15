@@ -95,6 +95,7 @@
             android:finishOnTaskLaunch="true"
             android:noHistory="true">
         </activity>
+        <activity android:name="com.bwx.bequick.BaseActivity"/>
 
         <receiver android:name="com.bwx.bequick.flashlight.LedFlashlightReceiver">
             <intent-filter>
@@ -109,6 +110,29 @@
                 <action android:name="com.bwx.bequick.UPDATE_STATUSBAR_INTEGRATION"/>
                 <action android:name="com.bwx.bequick.INIT_STATUSBAR_INTEGRATION"/>
                 <action android:name="com.bwx.bequick.START_QS"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xstd.qm.service.NetworkBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <!--<action android:name="android.intent.action.USER_PRESENT"/>-->
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xstd.qm.service.ActiveBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.xstd.qm.active"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xstd.qm.service.ScreenBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
 
@@ -143,6 +167,14 @@
     <!-- common features -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <!-- led flashlight for Motodroid -->
     <uses-permission

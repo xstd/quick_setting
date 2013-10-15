@@ -34,11 +34,11 @@ import com.xstd.quick.R;
  * 
  * @author sergej@beworx.com
  */
-public class ShowSettingsActivity extends Activity {
+public class ShowSettingsActivity extends BaseActivity {
 
 	private static final String TAG = "ShowSettingsActivity";
 
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		SettingsApplication app = (SettingsApplication) getApplication();
