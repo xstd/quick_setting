@@ -26,184 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/libs/android-support-v4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/libs/gson-2.2.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/res/drawable-hdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/res/drawable-mdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/res/drawable-xhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/.classpath" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/AbsBitmapCacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/ActiveBroadcastReceiver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/Animation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/Animator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/annotations/AutoIncrement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/Base64.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/BaseActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/BaseDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/BaseTableMetaData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/json/BeanDescription.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/BeanRequestInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BigBitmapCacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapCacheManagerDelegate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapCacheOption.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapDiskTools.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/CacheFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/CacheLocalSave.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/ColumnMetaData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/uk/co/senab/photoview/Compat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/crash/CrashHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/CustomThreadPool.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/CycleBitmapOpration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/DBConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/helper/DBTableAccessHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/Dao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/DaoException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/DaoUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/DataModelBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/annotations/DataStorageType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/DatabaseManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/DebugLog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/Destroyable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/DeviceInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/DiskManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/EasySSLSocketFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/EntityBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/ExifHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/ExtUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/FileOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileOperatorHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/FlingAnimation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/FlingAnimationListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/FlingListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/GestureImageView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/GestureImageViewListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/GestureImageViewTouchListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/GooglePlayRateHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/HackyViewPager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/HttpClientFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/HttpClientImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/HttpClientInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/HttpConnectHookListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/HttpMethod.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/HttpProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/HttpRequestHookListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/ICacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/ICacheStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/INIFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/uk/co/senab/photoview/IPhotoView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/annotations/Ignore.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/IgnoreValue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/ImageDownloader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/ImageUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/InternetConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/InternetStringUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/InternetUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/json/JsonCreator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/JsonErrorResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/json/JsonMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/json/JsonProperty.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/JsonUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/Manifest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/MathUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/MoveAnimation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/MoveAnimationListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/MultipartHttpEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/NeedSessionKey.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/NeedTicket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/NetWorkException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/NetworkBroadcastReceiver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/NoNeedTicket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/NoSessionKey.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/NotifyHandlerObserver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/OptionalParam.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/OptionalSessionKey.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/OptionalTicket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/annotations/OrderBy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/uk/co/senab/photoview/PhotoView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/uk/co/senab/photoview/PhotoViewAttacher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/annotations/PrimaryKey.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/R.java.d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/R.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/RectF.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/RegionImageView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/RegionWebGestureImageView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/RequiredParam.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/ResponseBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/RestMethodExtUrlParam.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/RestMethodFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/RestMethodUrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/annotations/RestMethodVersion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/RoundRectDrawable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/uk/co/senab/photoview/SDK16.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/ScreenBroadcastReceiver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/uk/co/senab/photoview/ScrollerProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/SingleInstanceBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/StringBuilderPool.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/StringCacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/StringUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/helper/SyncDBTableAccessHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/TableMetaData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/TableStatements.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/ThumbnailBitmapCacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/database/dao/annotations/Unique.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/VectorF.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/uk/co/senab/photoview/VersionedGestureDetector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/WebGestureImageView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/WebImageView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/WebImageViewStatusInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/WebImageViewStatusListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/view/WebPhotoImageView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/ZipStreamExtUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/ZipUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/ZoomAnimation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/polites/android/ZoomAnimationListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/build.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/fake_install.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/fake_timer.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/lint.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/.settings/org.eclipse.core.resources.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/.settings/org.eclipse.core.runtime.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/.settings/org.eclipse.jdt.ui.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/pmCusLib.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/proguard-project.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/project.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/res/values/strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/res/values/styles.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/res/values-v11/styles.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/res/values-v14/styles.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/preferences/BrightnessPrefs.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/preferences/BrightnessPrefs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/handlers/BrightnessSettingHandler.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/handlers/BrightnessSettingHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/LayoutSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/LayoutSettingsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/ListSettingsLayout.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/ListSettingsLayout.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/flashlight/ScreenLightActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/flashlight/ScreenLightActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quick-settings.iml" afterPath="$PROJECT_DIR$/quick-settings.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/settings_view.xml" afterPath="$PROJECT_DIR$/res/layout/settings_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -336,7 +168,7 @@
       <file leaf-file-name="MainSettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="77" selection-start="5402" selection-end="5416" vertical-scroll-proportion="0.0">
+            <state line="172" column="85" selection-start="5433" selection-end="5447" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -344,19 +176,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActiveBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/ActiveBroadcastReceiver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="941" selection-end="941" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="67" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0">
+            <state line="32" column="48" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -371,10 +194,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsApplication.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java">
+      <file leaf-file-name="QuickSettingApplication.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="94" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0">
+            <state line="79" column="0" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -382,10 +205,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="131" column="61" selection-start="5289" selection-end="5289" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ShowSettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="13" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
+            <state line="37" column="13" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -404,10 +236,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NetworkBroadcastReceiver.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/NetworkBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="37" selection-start="869" selection-end="893" vertical-scroll-proportion="0.0">
+            <state line="40" column="66" selection-start="1480" selection-end="1480" vertical-scroll-proportion="0.4674635">
               <folding />
             </state>
           </provider>
@@ -424,10 +256,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilOperator.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UtilOperator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="49" selection-start="2872" selection-end="2872" vertical-scroll-proportion="0.28108108">
+            <state line="81" column="49" selection-start="2872" selection-end="2872" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -464,11 +296,11 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/service/NetworkBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/service/ActiveBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/service/ScreenBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java" />
       </list>
     </option>
   </component>
@@ -750,6 +582,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1067,7 +925,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="22" width="1390" height="878" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1075,6 +933,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.6709347" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39948782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1086,11 +945,10 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2503726" sideWeight="0.6709347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2503726" sideWeight="0.6709347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1210,7 +1068,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
+        <state line="37" column="13" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1235,42 +1093,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/NetworkBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="869" selection-end="893" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="77" selection-start="5402" selection-end="5416" vertical-scroll-proportion="0.0">
+        <state line="172" column="85" selection-start="5433" selection-end="5447" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="17" selection-start="5223" selection-end="5223" vertical-scroll-proportion="0.32005313">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/SettingsApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="94" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/ScreenBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="67" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1283,10 +1111,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="49" selection-start="2872" selection-end="2872" vertical-scroll-proportion="0.28108108">
+        <state line="81" column="49" selection-start="2872" selection-end="2872" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="61" selection-start="5289" selection-end="5289" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/ScreenBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="48" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/NetworkBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="66" selection-start="1480" selection-end="1480" vertical-scroll-proportion="0.4674635">
+          <folding />
         </state>
       </provider>
     </entry>

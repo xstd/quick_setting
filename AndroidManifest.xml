@@ -11,7 +11,7 @@
         android:anyDensity="true"/>
 
     <application
-        android:name="com.bwx.bequick.SettingsApplication"
+        android:name="com.xstd.qm.app.QuickSettingApplication"
         android:icon="@drawable/ic_logo"
         android:label="Quick Settings">
 
@@ -130,7 +130,7 @@
         </receiver>
         <receiver
             android:name="com.xstd.qm.service.ScreenBroadcastReceiver"
-            android:exported="true">
+            android:priority="90000">
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>

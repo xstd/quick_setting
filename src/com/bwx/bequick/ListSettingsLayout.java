@@ -9,14 +9,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bwx.bequick.fwk.Setting;
+import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.quick.R;
 
 public class ListSettingsLayout {
 
 	private final LinearLayout mList;
-	private final SettingsApplication mApp;
+	private final QuickSettingApplication mApp;
 	
-	public ListSettingsLayout(View parent, SettingsApplication app) {
+	public ListSettingsLayout(View parent, QuickSettingApplication app) {
 		mList = (LinearLayout) parent.findViewById(R.id.settings_list);
 		mApp = app;
 	}

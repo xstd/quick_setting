@@ -18,19 +18,20 @@ package com.bwx.bequick;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.quick.R;
 
 public class LayoutSettingsActivity extends ListActivity {
 
 	// cache
-	private SettingsApplication mApplication;
+	private QuickSettingApplication mApplication;
 	private LayoutSettingsAdapter mSettingsAdapter;
 	
 	protected void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
     	setContentView(R.layout.settings_layout);
     	// get application
-    	mApplication = (SettingsApplication) getApplication();
+    	mApplication = (QuickSettingApplication) getApplication();
     	// create settings adapter
     	mSettingsAdapter = new LayoutSettingsAdapter(this, mApplication.getSettings());
     	setListAdapter(mSettingsAdapter);

@@ -17,7 +17,7 @@
 package com.bwx.bequick;
 
 import static com.bwx.bequick.Constants.PREF_APPEARANCE;
-import android.app.Activity;
+
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -26,6 +26,7 @@ import android.content.SharedPreferences;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.util.Log;
+import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.quick.R;
 
 /**
@@ -41,7 +42,7 @@ public class ShowSettingsActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		SettingsApplication app = (SettingsApplication) getApplication();
+		QuickSettingApplication app = (QuickSettingApplication) getApplication();
 		SharedPreferences prefs = app.getPreferences();
 		// get application
 		String appearance = prefs.getString(PREF_APPEARANCE, "0");

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bwx.bequick;
+package com.xstd.qm.app;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,6 +26,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import com.bwx.bequick.Constants;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.BrightnessPrefs;
@@ -44,9 +45,9 @@ import static com.bwx.bequick.Constants.*;
  * Remains state shared between all activities
  * @author sergej@beworx.com
  */
-public class SettingsApplication extends Application {
+public class QuickSettingApplication extends Application {
 
-	//private static final String TAG = "SettingsApplication";
+	//private static final String TAG = "QuickSettingApplication";
 	
 	private static final int[] IDS = new int[] {
 			
@@ -77,7 +78,7 @@ public class SettingsApplication extends Application {
 	private ArrayList<Setting> mSettings;
 	private SharedPreferences mPrefs;
 
-    private ScreenBroadcastReceiver mScreenBroadcastReceiver = new ScreenBroadcastReceiver();
+//    private ScreenBroadcastReceiver mScreenBroadcastReceiver = new ScreenBroadcastReceiver();
 
     @Override
     public void onCreate() {
@@ -86,11 +87,11 @@ public class SettingsApplication extends Application {
         //init
         SingleInstanceBase.SingleInstanceManager.getInstance().init(this.getApplicationContext());
         SettingManager.getInstance().init(this.getApplicationContext());
-        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
-        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
-        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_USER_PRESENT));
+//        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+//        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
+//        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_USER_PRESENT));
 
-        Config.LOGD("[[SettingsApplication::onCreate]] create APP :::::::");
+        Config.LOGD("[[QuickSettingApplication::onCreate]] create APP :::::::");
 
         long launchTime = SettingManager.getInstance().getKeyLanuchTime();
         if (launchTime == 0) {

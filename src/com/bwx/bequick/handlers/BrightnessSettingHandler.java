@@ -31,7 +31,7 @@ import android.view.WindowManager.LayoutParams;
 
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.MainSettingsActivity;
-import com.bwx.bequick.SettingsApplication;
+import com.xstd.qm.app.QuickSettingApplication;
 import com.bwx.bequick.fwk.RangeSetting;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingHandler;
@@ -76,7 +76,7 @@ public class BrightnessSettingHandler extends SettingHandler implements OnClickL
 	public void activate(final MainSettingsActivity activity) {
 		mActivity = activity;
 
-		SettingsApplication app = (SettingsApplication) activity.getApplication();
+		QuickSettingApplication app = (QuickSettingApplication) activity.getApplication();
 		SharedPreferences prefs = app.getPreferences();
 		boolean useLightSensor = prefs.getBoolean(Constants.PREF_LIGHT_SENSOR, false);
 		

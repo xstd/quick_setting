@@ -28,7 +28,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
 import com.bwx.bequick.Constants;
-import com.bwx.bequick.SettingsApplication;
+import com.xstd.qm.app.QuickSettingApplication;
 import com.bwx.bequick.flashlight.SwitchDetector.Switchable;
 import com.xstd.quick.R;
 
@@ -46,7 +46,7 @@ public class ScreenLightActivity extends Activity implements Switchable {
 		setContentView(R.layout.flashlight);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-		SettingsApplication app = (SettingsApplication) getApplication();
+		QuickSettingApplication app = (QuickSettingApplication) getApplication();
 		String value = app.getPreferences().getString(Constants.PREF_FLASHLIGHT_SWITCH, "0");
 		switch (Integer.parseInt(value)) {
 			case 1:

@@ -26,7 +26,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -66,6 +65,7 @@ import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.UtilOperator;
+import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.quick.R;
 
 public class MainSettingsActivity extends BaseActivity implements OnClickListener, OnSharedPreferenceChangeListener {
@@ -150,7 +150,7 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 	private CommonIntentReceiver mCommonIntentReceiver;
 	private IntentFilter mCommonIntentFilter;
 
-	private SettingsApplication mApp;
+	private QuickSettingApplication mApp;
 	private TextView mCardStateView;
 	private TextView mInternalStateView;
 	private ImageButton mFlashlight;
@@ -170,7 +170,7 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 		super.onCreate(savedInstanceState);
 
 		// check eula
-		SettingsApplication app = mApp = (SettingsApplication) getApplication();
+		QuickSettingApplication app = mApp = (QuickSettingApplication) getApplication();
 		SharedPreferences prefs = app.getPreferences();
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -514,7 +514,7 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 		}
 	}
 
-	public SettingsApplication getApp() {
+	public QuickSettingApplication getApp() {
 		return mApp;
 	}
 

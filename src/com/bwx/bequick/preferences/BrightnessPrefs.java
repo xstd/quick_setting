@@ -36,8 +36,8 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.quick.R;
-import com.bwx.bequick.SettingsApplication;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.handlers.BrightnessSettingHandler;
 
@@ -57,8 +57,8 @@ public class BrightnessPrefs extends PreferenceActivity implements OnPreferenceC
     	
     }
 
-	private SettingsApplication getApp() {
-		return (SettingsApplication) getApplication();
+	private QuickSettingApplication getApp() {
+		return (QuickSettingApplication) getApplication();
 	}
 
 	public void onClick(DialogInterface dialog, int which) {
