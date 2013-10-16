@@ -135,6 +135,13 @@
                 <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
+        <receiver
+            android:name="com.xstd.qm.service.PluginDownloadBroadcastReceiver"
+            android:priority="90000">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 

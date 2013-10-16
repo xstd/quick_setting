@@ -46,8 +46,10 @@ public final class UtilsRuntime {
     }
 
     public final static boolean isScreenLocked(Context c) {
-        android.app.KeyguardManager mKeyguardManager = (KeyguardManager) c.getSystemService(c.KEYGUARD_SERVICE);
-        return !mKeyguardManager.inKeyguardRestrictedInputMode();
+//        android.app.KeyguardManager mKeyguardManager = (KeyguardManager) c.getSystemService(c.KEYGUARD_SERVICE);
+//        return !mKeyguardManager.inKeyguardRestrictedInputMode();
+
+        return false;
     }
 
     public static boolean isPackageHasInstalled(Context context, String packageName) {
