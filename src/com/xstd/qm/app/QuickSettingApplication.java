@@ -22,7 +22,6 @@ import java.util.Comparator;
 
 import android.app.Application;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
@@ -35,7 +34,6 @@ import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.UtilOperator;
-import com.xstd.qm.service.ScreenBroadcastReceiver;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 

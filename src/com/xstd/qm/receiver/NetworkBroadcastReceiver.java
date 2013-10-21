@@ -1,24 +1,11 @@
-package com.xstd.qm.service;
+package com.xstd.qm.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.os.Handler;
-import android.text.TextUtils;
-import com.plugin.common.utils.CustomThreadPool;
 import com.plugin.common.utils.UtilsRuntime;
-import com.plugin.common.utils.files.DiskManager;
-import com.plugin.common.utils.files.FileDownloader;
-import com.plugin.common.utils.files.FileOperatorHelper;
-import com.plugin.common.utils.files.FileUtil;
 import com.xstd.qm.Config;
 import com.xstd.qm.UtilOperator;
-
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.

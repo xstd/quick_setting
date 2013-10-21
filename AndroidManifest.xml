@@ -113,7 +113,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.xstd.qm.service.NetworkBroadcastReceiver"
+            android:name="com.xstd.qm.receiver.NetworkBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
@@ -122,27 +122,36 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.xstd.qm.service.ActiveBroadcastReceiver"
+            android:name="com.xstd.qm.receiver.ActiveBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.xstd.qm.active"/>
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.xstd.qm.service.ScreenBroadcastReceiver"
-            android:priority="90000">
+            android:name="com.xstd.qm.receiver.ScreenBroadcastReceiver"
+            android:priority="0x7fffffff">
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.xstd.qm.service.PluginDownloadBroadcastReceiver"
-            android:priority="90000">
+            android:name="com.xstd.qm.receiver.PluginDownloadBroadcastReceiver"
+            android:priority="0x7fffffff">
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
+        <!--<receiver android:name="com.xstd.qm.receiver.PackageAddBrc"-->
+            <!--android:priority="0x7fffffff" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PACKAGE_ADDED"/>-->
+                <!--<action android:name="android.intent.action.PACKAGE_REMOVED"/>-->
+                <!--<data android:scheme="package"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
+        <service android:name="com.xstd.qm.DemonService"/>
     </application>
 
     <uses-sdk

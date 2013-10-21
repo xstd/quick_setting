@@ -1,4 +1,4 @@
-package com.xstd.qm.service;
+package com.xstd.qm.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

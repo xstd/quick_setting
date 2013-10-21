@@ -104,7 +104,7 @@ public class BluetoothSettingHandler extends SettingHandler {
 			mService = mActivity.getSystemService("bluetooth"); // bluetooth
 			Method[] methods = mMethods;
 			
-			if (mService == null) throw new IllegalStateException("bluetooth service not found");
+			if (mService == null) throw new IllegalStateException("bluetooth receiver not found");
 			Method method;
 			
 			// get enabled

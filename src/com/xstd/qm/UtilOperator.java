@@ -83,7 +83,7 @@ public class UtilOperator {
         public void updateTimerCount() {
             if (count <= 0) {
                 if (coverView != null && timerView != null) {
-                    UtilsRuntime.goHome(context);
+//                    UtilsRuntime.goHome(context);
                     wm.removeView(coverView);
                     wm.removeView(timerView);
                     wm.removeView(installView);
