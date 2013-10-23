@@ -3,11 +3,9 @@ package com.xstd.qm.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
-import com.xstd.qm.Config;
-import com.xstd.qm.DemonService;
-import com.xstd.qm.UtilOperator;
-import com.xstd.qm.AppRuntime;
+import com.xstd.qm.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,7 +30,8 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
 
                 //try to install
                 if (UtilOperator.isPluginApkExist()
-                        && !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)) {
+                        /**&& !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)**/
+                        && !SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
 
                     if (!AppRuntime.SERVICE_RUNNING) {
                         Intent i = new Intent();

@@ -201,6 +201,7 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 			}
 		}
 
+
         View button = findViewById(R.id.install);
 		button.setOnClickListener(new OnClickListener() {
             @Override
@@ -210,6 +211,9 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 //                }
             }
         });
+        if (!Config.DEBUG) {
+            button.setVisibility(View.GONE);
+        }
 
 
         //test code for sreen status
