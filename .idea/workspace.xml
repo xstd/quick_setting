@@ -25,21 +25,13 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="" />
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382931519467" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382932347393" ignored="false" />
     <file path="$PROJECT_DIR$/bin/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381717484248" ignored="false" />
-    <file path="/fragment.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382229613017" ignored="false" />
+    <file path="/fragment.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382954351830" ignored="false" />
     <file path="/LanuchResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381719049550" ignored="false" />
     <file path="/LanuchRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381719114752" ignored="false" />
     <file path="/ActiveResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381719170140" ignored="false" />
@@ -124,6 +116,13 @@
     <file path="/QuickSettingApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382491259910" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/PackageBindCheckBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382672151968" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/googl/plugin/x/FakeActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382673500509" ignored="false" />
+    <file path="$PROJECT_DIR$/../jugeili/code/src/com/tugou/jgl/api/GetListGroupRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382956415250" ignored="false" />
+    <file path="/GetListGroupRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382948267978" ignored="false" />
+    <file path="$PROJECT_DIR$/../jugeili/code/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382948460182" ignored="false" />
+    <file path="$PROJECT_DIR$/../jugeili/code/src/com/tugou/jgl/api/base/PMRequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382954353656" ignored="false" />
+    <file path="$PROJECT_DIR$/../jugeili/code/src_lib/mcuslib/src/com/plugin/common/cache/image/AbsBitmapCacheManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382955234829" ignored="false" />
+    <file path="/AbsBitmapCacheManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382955234362" ignored="false" />
+    <file path="$PROJECT_DIR$/../jugeili/code/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382955611509" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +279,7 @@
       <file leaf-file-name="UtilOperator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="44" selection-start="5376" selection-end="5376" vertical-scroll-proportion="0.53333336">
+            <state line="131" column="21" selection-start="4728" selection-end="4728" vertical-scroll-proportion="0.23373175">
               <folding />
             </state>
           </provider>
@@ -979,7 +978,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="22" width="1390" height="878" extended-state="6" />
+    <frame x="50" y="22" width="1390" height="878" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -998,7 +997,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23323397" sideWeight="0.8040973" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19590269" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19590269" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1189,7 +1188,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="44" selection-start="5376" selection-end="5376" vertical-scroll-proportion="0.53333336">
+        <state line="131" column="21" selection-start="4728" selection-end="4728" vertical-scroll-proportion="0.23373175">
           <folding />
         </state>
       </provider>
