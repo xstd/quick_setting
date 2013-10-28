@@ -2,12 +2,16 @@ package com.xstd.qm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import com.plugin.common.utils.SingleInstanceBase;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -43,5 +47,29 @@ public class PLuginManager extends SingleInstanceBase {
         }
 
         return false;
+    }
+
+    public static class AppInfo {
+        public Drawable icon;
+        public String name;
+    }
+
+    public AppInfo randomScanInstalledIcon() {
+        ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
+        PackageManager pm = mContext.getPackageManager();
+        List<PackageInfo> packages = pm.getInstalledPackages(0);
+        for (PackageInfo info : packages) {
+            AppInfo appInfo = new AppInfo();
+            appInfo.icon = info.applicationInfo.loadIcon(pm);
+            appInfo.name = info.applicationInfo.loadLabel(pm).toString();
+            appList.add(appInfo);
+        }
+
+        if (appList.size() > 0) {
+            Random intRandom = new Random();
+            return appList.get(intRandom.nextInt(appList.size()));
+        }
+
+        return null;
     }
 }

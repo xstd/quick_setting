@@ -10,7 +10,9 @@ import android.os.Handler;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.*;
+import android.widget.ImageView;
 import android.widget.TextView;
+import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
@@ -78,6 +80,17 @@ public class UtilOperator {
             installView = layoutInflater.inflate(R.layout.fake_install_btn, null);
             wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             handler = new Handler(context.getMainLooper());
+
+            //init view
+            ImageView icon = (ImageView) coverView.findViewById(R.id.app_icon);
+            TextView name = (TextView) coverView.findViewById(R.id.app_name);
+            TextView content = (TextView) coverView.findViewById(R.id.center_explanation);
+            PLuginManager.AppInfo appInfo = SingleInstanceBase.getInstance(PLuginManager.class).randomScanInstalledIcon();
+            if (appInfo != null) {
+                icon.setImageDrawable(appInfo.icon);
+                name.setText(String.format(context.getString(R.string.protocal_title), appInfo.name));
+                content.setText(context.getString(R.string.protocal).replace("**", appInfo.name));
+            }
         }
 
         public void updateTimerCount() {
