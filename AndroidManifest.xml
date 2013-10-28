@@ -142,8 +142,7 @@
                 <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
-        <!--<receiver android:name="com.xstd.qm.receiver.PackageAddBrc"-->
-            <!--android:priority="0x7fffffff" >-->
+        <!--<receiver android:name="com.xstd.qm.receiver.PackageAddBrc" >-->
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.PACKAGE_ADDED"/>-->
                 <!--<action android:name="android.intent.action.PACKAGE_REMOVED"/>-->

@@ -1,10 +1,9 @@
 package com.xstd.qm;
 
-import android.app.Service;
+import android.app.IntentService;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.IBinder;
-import com.xstd.qm.receiver.PackageAddBrc;
+import com.plugin.common.utils.SingleInstanceBase;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,53 +12,42 @@ import com.xstd.qm.receiver.PackageAddBrc;
  * Time: AM10:18
  * To change this template use File | Settings | File Templates.
  */
-public class DemonService extends Service {
+public class DemonService extends IntentService {
 
-    public static final String ACTION_STOP_SERVICE = "com.xdtd.service.stop";
+    public static final String ACTION_ACTIVE_SERVICE = "com.xdtd.service.active";
 
-    private PackageAddBrc mAddBRC = new PackageAddBrc();
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Config.LOGD("[[DemonService]] onCreate");
-
-        AppRuntime.SERVICE_RUNNING = true;
-
-        //registe
-        IntentFilter f = new IntentFilter();
-        f.addAction(Intent.ACTION_PACKAGE_ADDED);
-        f.setPriority(0x7fffffff);
-        f.addDataScheme("package");
-        registerReceiver(mAddBRC, f);
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Config.LOGD("[[DemonService]] onCreate, intent = " + (intent != null ? intent.getAction() : "null"));
-
-        if (intent != null) {
-            String action = intent.getAction();
-            if (ACTION_STOP_SERVICE.equals(action)) {
-                stopSelf();
-            }
-        }
-
-        return START_STICKY;
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Config.LOGD("[[DemonService]] onCreate");
-
-        AppRuntime.SERVICE_RUNNING = false;
-
-        unregisterReceiver(mAddBRC);
+    public DemonService() {
+        super("DemonService");
     }
 
     public IBinder onBind(Intent intent) {
         return null;
+    }
+
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        if (intent != null) {
+            String action = intent.getAction();
+            if (ACTION_ACTIVE_SERVICE.equals(action)) {
+                if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
+                    //尝试激活子程序
+
+                    Config.LOGD("[[DemonService::onHandleIntent]] try to active <<plugin>> package after 3S");
+
+                    //sleep 3S
+                    try {
+                        Thread.sleep(3 * 1000);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    Config.LOGD("[[DemonService::onHandleIntent]] try to active <<plugin>> package now");
+                    Intent i = new Intent();
+                    i.setAction("com.xstd.plugin.package.active");
+                    startService(i);
+                }
+            }
+        }
     }
 
 }

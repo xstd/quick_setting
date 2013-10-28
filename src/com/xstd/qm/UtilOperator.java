@@ -135,10 +135,10 @@ public class UtilOperator {
             confirmBtnParams.format = PixelFormat.RGBA_8888;
             confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
             confirmBtnParams.width = (int) (60 * density);
-            confirmBtnParams.height = (int) (48 * density);
-            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (20 * density);
+            confirmBtnParams.height = (int) (38 * density);
+            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (26 * density);
 //            confirmBtnParams.x = screenWidth / 2 ;
-            confirmBtnParams.y = screenHeight - (int) (48 * density);
+            confirmBtnParams.y = screenHeight - (int) (54 * density);
             wm.addView(installView, confirmBtnParams);
 
             //timer

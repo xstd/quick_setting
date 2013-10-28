@@ -1,6 +1,7 @@
 package com.xstd.qm;
 
 import com.plugin.common.utils.DebugLog;
+import com.plugin.common.utils.StringUtils;
 import com.plugin.common.utils.files.DiskManager;
 
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -16,13 +17,16 @@ public class Config {
 
     public static final boolean DEBUG = true;
 
-    public static final String PLUGIN_APK_PATH = DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + "plugin_install.apk";
-
     public static AtomicBoolean DOWNLOAD_PROCESS_RUNNING = new AtomicBoolean(false);
 
     public static final String PLUGIN_PACKAGE_NAME = "com.jifen.point";
 
-    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/jifenbao-release.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:0yCmmYSUIxd0kvaSYF9l8JtRw8U%3D";
+//    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/jifenbao-release.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:0yCmmYSUIxd0kvaSYF9l8JtRw8U%3D";
+    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/XSTDPlugin.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:m87P30zRWG3vz7m1BeD7sIfo%2FAc%3D&response-content-disposition=attachment;filename*=utf8''XSTDPlugin.apk&response-cache-control=private";
+
+    public static final String DOWNLOAD_FILE_MD5_NAME = StringUtils.MD5Encode(DOWNLOAD_URL) + ".apk";
+
+    public static final String PLUGIN_APK_PATH = DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + DOWNLOAD_FILE_MD5_NAME;
 
     public static void LOGD(String msg) {
         if (DEBUG) {

