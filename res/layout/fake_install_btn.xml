@@ -4,9 +4,9 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="48dp"
-              android:background="@color/chat_text_color_h"
+              android:background="@color/black"
               android:padding="0dp"
-              android:text="确认"
+              android:text="取消"
               android:textSize="20sp"
               android:gravity="center">
 </TextView>
