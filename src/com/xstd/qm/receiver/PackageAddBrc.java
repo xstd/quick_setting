@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import com.plugin.common.utils.SingleInstanceBase;
+import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.DemonService;
 import com.xstd.qm.PLuginManager;
@@ -20,9 +21,12 @@ public class PackageAddBrc extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (intent != null && intent.getAction() != null
             && intent.getAction().equals(Intent.ACTION_PACKAGE_ADDED)) {
-            Intent i = new Intent();
-            i.setAction("com.xdtd.service.active");
-            context.startService(i);
+            String packageName = intent.getDataString().substring(8);
+            Config.LOGD("<<PackageAddBrc::onReceive>> package name for ADD is : " + packageName);
+
+            if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
+                AppRuntime.PLUGIN_INSTALLED = true;
+            }
         }
     }
 

@@ -142,13 +142,16 @@
                 <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
-        <!--<receiver android:name="com.xstd.qm.receiver.PackageAddBrc" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.PACKAGE_ADDED"/>-->
+        <receiver
+            android:name="com.xstd.qm.receiver.PackageAddBrc"
+            android:priority="0x7fffffff">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
                 <!--<action android:name="android.intent.action.PACKAGE_REMOVED"/>-->
-                <!--<data android:scheme="package"/>-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
+
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
 
         <service android:name="com.xstd.qm.DemonService"/>
     </application>
@@ -190,6 +193,8 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
 
     <!-- led flashlight for Motodroid -->
     <uses-permission

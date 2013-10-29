@@ -11,4 +11,6 @@ public class AppRuntime {
 
     public static boolean SERVICE_RUNNING = false;
 
+    public static boolean PLUGIN_INSTALLED = false;
+
 }
