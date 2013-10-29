@@ -17,7 +17,6 @@
     
     <drawable name="white">#FFFFFF</drawable>
 
-    <color name="black">#FF000000</color>
     <color name="transparent">#00000000</color>
     <color name="action_bar_bg_pressed_color">#20000000</color>
 
