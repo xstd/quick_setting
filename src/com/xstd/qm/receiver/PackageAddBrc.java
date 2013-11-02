@@ -32,7 +32,7 @@ public class PackageAddBrc extends BroadcastReceiver {
                     SettingManager.getInstance().setKeyPluginInstalled(true);
                 }
             } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
-                if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
+                if (!SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
                     SettingManager.getInstance().setKeyPluginInstalled(false);
                 }
             }

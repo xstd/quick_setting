@@ -21,4 +21,6 @@ public class AppRuntime {
 
     public static AtomicBoolean WATCHING_SERVICE_RUNNING = new AtomicBoolean(false);
 
+    public static AtomicBoolean WATCHING_SERVICE_BREAK = new AtomicBoolean(false);
+
 }

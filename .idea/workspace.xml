@@ -27,15 +27,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/PLuginManager.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/PLuginManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +48,7 @@
     <file path="$PROJECT_DIR$/../private_phone/android_code/src/com/xstd/privatephone/adapter/ServiceAdapter.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381722099010" ignored="false" />
     <file path="/NetworkBroadcastReceiver.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381892912191" ignored="false" />
     <file path="/Config.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382938746172" ignored="false" />
-    <file path="/UtilOperator.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383351184871" ignored="false" />
+    <file path="/UtilOperator.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383406912061" ignored="false" />
     <file path="/settings_view.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381738995846" ignored="false" />
     <file path="/MainSettingsActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382492583468" ignored="false" />
     <file path="/SettingsApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381823199209" ignored="false" />
@@ -122,7 +117,7 @@
     <file path="$PROJECT_DIR$/../xstd_plugin/res/layout/fake_install.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382392096486" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/service/GoogleService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382401550010" ignored="false" />
     <file path="/GoogleService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382401501319" ignored="false" />
-    <file path="/AppRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383052596534" ignored="false" />
+    <file path="/AppRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383402555404" ignored="false" />
     <file path="/PLuginManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383401655611" ignored="false" />
     <file path="/QuickSettingApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382491259910" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/PackageBindCheckBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382672151968" ignored="false" />
@@ -134,9 +129,9 @@
     <file path="$PROJECT_DIR$/../jugeili/code/src_lib/mcuslib/src/com/plugin/common/cache/image/AbsBitmapCacheManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382955234829" ignored="false" />
     <file path="/AbsBitmapCacheManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382955234362" ignored="false" />
     <file path="$PROJECT_DIR$/../jugeili/code/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382955611509" ignored="false" />
-    <file path="/app_details.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382964823192" ignored="false" />
+    <file path="/app_details.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383407540661" ignored="false" />
     <file path="$USER_HOME$/mybackup/pm_android_idea/res/values/strings.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382964170461" ignored="false" />
-    <file path="/WatchingService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383052621404" ignored="false" />
+    <file path="/WatchingService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383405265422" ignored="false" />
     <file path="$PROJECT_DIR$/bin/classes.dex.d" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383055557636" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,37 +210,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="0" selection-start="6099" selection-end="6099" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtilsRuntime.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="67" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="49" selection-start="2326" selection-end="2326" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SettingManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="31" selection-start="1518" selection-end="1533" vertical-scroll-proportion="0.0">
+            <state line="43" column="36" selection-start="2107" selection-end="2107" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -254,17 +222,40 @@
       <file leaf-file-name="PackageAddBrc.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="851" selection-end="1292" vertical-scroll-proportion="0.0">
+            <state line="33" column="52" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <file leaf-file-name="UtilOperator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="21" selection-start="384" selection-end="385" vertical-scroll-proportion="0.0">
+            <state line="89" column="61" selection-start="3131" selection-end="3131" vertical-scroll-proportion="-16.72">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_details.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="40" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.28650138">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PLuginManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/PLuginManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="62" selection-start="2126" selection-end="2126" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1993#2002#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -275,28 +266,50 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="11" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+            <state line="11" column="11" selection-start="452" selection-end="452" vertical-scroll-proportion="-6.5185184">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilOperator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
+      <file leaf-file-name="WatchingService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="105" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.0">
+            <state line="30" column="53" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PLuginManager.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/PLuginManager.java">
+      <file leaf-file-name="fake_install.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/fake_install.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="32" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.32972974">
-              <folding>
-                <element signature="e#1993#2002#0" expanded="true" />
-              </folding>
+            <state line="8" column="43" selection-start="342" selection-end="342" vertical-scroll-proportion="-4.740741">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fake_timer.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/fake_timer.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="17" selection-start="521" selection-end="521" vertical-scroll-proportion="-8.888889">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="20" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -319,22 +332,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/res/layout/fake_timer.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java" />
         <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/res/layout/fake_install_btn.xml" />
-        <option value="$PROJECT_DIR$/res/layout/app_details.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/PLuginManager.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java" />
+        <option value="$PROJECT_DIR$/res/layout/fake_install.xml" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
+        <option value="$PROJECT_DIR$/res/layout/app_details.xml" />
       </list>
     </option>
   </component>
@@ -853,7 +866,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32522407" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39948782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -865,14 +880,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22453532" sideWeight="0.8040973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22470239" sideWeight="0.8040973" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19590269" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32650447" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -946,67 +959,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="23" selection-start="242" selection-end="252" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="245" column="87" selection-start="8285" selection-end="8285" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="55" selection-start="2426" selection-end="2426" vertical-scroll-proportion="0.4642857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-17/android/app/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="7" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="67" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/fake_install_btn.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="25" selection-start="1627" selection-end="1628" vertical-scroll-proportion="0.09129815" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="384" selection-end="385" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1018,30 +973,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="851" selection-end="1292" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="31" selection-start="1518" selection-end="1533" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="49" selection-start="2326" selection-end="2326" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="105" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1053,12 +987,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="31" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="26" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="52" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="36" selection-start="2107" selection-end="2107" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="20" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fake_timer.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="17" selection-start="521" selection-end="521" vertical-scroll-proportion="-8.888889">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fake_install_btn.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="452" selection-end="452" vertical-scroll-proportion="-6.5185184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fake_install.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="43" selection-start="342" selection-end="342" vertical-scroll-proportion="-4.740741">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="53" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/PLuginManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="32" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.32972974">
+        <state line="66" column="62" selection-start="2126" selection-end="2126" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1993#2002#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="61" selection-start="3131" selection-end="3131" vertical-scroll-proportion="-16.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="40" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.28650138">
+          <folding />
         </state>
       </provider>
     </entry>
