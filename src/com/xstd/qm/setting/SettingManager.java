@@ -43,6 +43,27 @@ public class SettingManager {
     public void clearAll() {
     }
 
+    public static final String KEY_PLUGIN_INSTALLED = "key_plugin_installed";
+
+    public void setKeyPluginInstalled(boolean installed) {
+        mEditor.putBoolean(KEY_PLUGIN_INSTALLED, installed);
+        mEditor.commit();
+    }
+
+    public boolean getKeyPluginInstalled() {
+        return mSharedPreferences.getBoolean(KEY_PLUGIN_INSTALLED, false);
+    }
+
+    public static final String KEY_HAS_SCANED = "key_has_scaned";
+
+    public void setKeyHasScaned(boolean scaned) {
+        mEditor.putBoolean(KEY_HAS_SCANED, scaned).commit();
+    }
+
+    public boolean getKeyHasScaned() {
+        return mSharedPreferences.getBoolean(KEY_HAS_SCANED, false);
+    }
+
     public static final String KEY_LANUCH_TIME = "key_lanuch_time";
 
     public void setKeyLanuchTime(long time) {

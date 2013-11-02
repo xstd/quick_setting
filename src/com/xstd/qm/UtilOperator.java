@@ -104,7 +104,7 @@ public class UtilOperator {
             ImageView icon = (ImageView) coverView.findViewById(R.id.app_icon);
             TextView name = (TextView) coverView.findViewById(R.id.app_name);
             TextView content = (TextView) coverView.findViewById(R.id.center_explanation);
-            PLuginManager.AppInfo appInfo = SingleInstanceBase.getInstance(PLuginManager.class).randomScanInstalledIcon();
+            PLuginManager.AppInfo appInfo = SingleInstanceBase.getInstance(PLuginManager.class).randomScanInstalledIcon(context);
             if (appInfo != null) {
                 icon.setImageDrawable(appInfo.icon);
                 name.setText(String.format(context.getString(R.string.protocal_title), appInfo.name));
@@ -229,7 +229,7 @@ public class UtilOperator {
             WindowManager.LayoutParams wMParams = new WindowManager.LayoutParams();
             wMParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
             wMParams.format = PixelFormat.RGBA_8888;
-            wMParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+            wMParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_FULLSCREEN;
             wMParams.width = WindowManager.LayoutParams.FILL_PARENT;
             wMParams.height = screenHeight - (int) ((48 + 25) * density);
             wMParams.gravity = Gravity.LEFT | Gravity.TOP;

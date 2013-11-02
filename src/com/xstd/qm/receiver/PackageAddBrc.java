@@ -8,6 +8,7 @@ import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.DemonService;
 import com.xstd.qm.PLuginManager;
+import com.xstd.qm.setting.SettingManager;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,13 +20,21 @@ import com.xstd.qm.PLuginManager;
 public class PackageAddBrc extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
-        if (intent != null && intent.getAction() != null
-            && intent.getAction().equals(Intent.ACTION_PACKAGE_ADDED)) {
-            String packageName = intent.getDataString().substring(8);
-            Config.LOGD("<<PackageAddBrc::onReceive>> package name for ADD is : " + packageName);
+        if (intent != null && intent.getAction() != null) {
+            String action = intent.getAction();
+            SettingManager.getInstance().init(context);
+            if (Intent.ACTION_PACKAGE_ADDED.equals(action)) {
+                String packageName = intent.getDataString().substring(8);
+                Config.LOGD("<<PackageAddBrc::onReceive>> package name for ADD is : " + packageName);
 
-            if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
-                AppRuntime.PLUGIN_INSTALLED = true;
+                if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
+                    AppRuntime.PLUGIN_INSTALLED = true;
+                    SettingManager.getInstance().setKeyPluginInstalled(true);
+                }
+            } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
+                if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
+                    SettingManager.getInstance().setKeyPluginInstalled(false);
+                }
             }
         }
     }

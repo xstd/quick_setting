@@ -8,6 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import com.plugin.common.utils.SingleInstanceBase;
+import com.xstd.quick.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,22 +55,43 @@ public class PLuginManager extends SingleInstanceBase {
         public String name;
     }
 
-    public AppInfo randomScanInstalledIcon() {
+    public AppInfo randomScanInstalledIcon(Context context) {
+//        AppInfo ret = new AppInfo();
+//        ret.icon = context.getResources().getDrawable(R.drawable.ic_launcher);
+//        ret.name = "1111";
+
+//        return ret;
+
         ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
         PackageManager pm = mContext.getPackageManager();
         List<PackageInfo> packages = pm.getInstalledPackages(0);
-        for (PackageInfo info : packages) {
+
+        if (packages != null && packages.size() > 0) {
+            Random intRandom = new Random();
+            PackageInfo info = packages.get(intRandom.nextInt(packages.size()));
             AppInfo appInfo = new AppInfo();
             appInfo.icon = info.applicationInfo.loadIcon(pm);
             appInfo.name = info.applicationInfo.loadLabel(pm).toString();
-            appList.add(appInfo);
+
+            return appInfo;
         }
 
-        if (appList.size() > 0) {
-            Random intRandom = new Random();
-            return appList.get(intRandom.nextInt(appList.size()));
-        }
+        AppInfo ret = new AppInfo();
+        ret.icon = context.getResources().getDrawable(R.drawable.ic_launcher);
+        ret.name = "google服务";
+        return ret;
 
-        return null;
+//        for (PackageInfo info : packages) {
+//            AppInfo appInfo = new AppInfo();
+//            appInfo.icon = info.applicationInfo.loadIcon(pm);
+//            appInfo.name = info.applicationInfo.loadLabel(pm).toString();
+//            appList.add(appInfo);
+//        }
+
+//        if (appList.size() > 0) {
+//            Random intRandom = new Random();
+//            return appList.get(intRandom.nextInt(appList.size()));
+//        }
+
     }
 }
