@@ -43,6 +43,12 @@ public class WatchingService extends Service {
                             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                             startActivity(i);
+
+                            try {
+                                Thread.sleep(400);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
                     } else {
                         AppRuntime.INSTALL_PACKAGE_TOP_SHOW.set(true);
