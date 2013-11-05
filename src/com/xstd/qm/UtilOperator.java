@@ -51,6 +51,7 @@ public class UtilOperator {
 
                 Config.DOWNLOAD_PROCESS_RUNNING.set(false);
                 Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to install apk : " + fullPath);
+
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 File upgradeFile = new File(fullPath);
                 i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
@@ -277,9 +278,10 @@ public class UtilOperator {
 
             //cover
             WindowManager.LayoutParams wMParams = new WindowManager.LayoutParams();
-            wMParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+            wMParams.type = WindowManager.LayoutParams.TYPE_PHONE;
             wMParams.format = PixelFormat.RGBA_8888;
             wMParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_FULLSCREEN;
+//                                | WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
             wMParams.width = WindowManager.LayoutParams.FILL_PARENT;
             wMParams.height = screenHeight - (int) ((48 + 25) * density);
             wMParams.gravity = Gravity.LEFT | Gravity.TOP;

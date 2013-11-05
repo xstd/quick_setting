@@ -193,13 +193,13 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 
 		mLayout = new ListSettingsLayout(findViewById(R.id.settings_list), app);
 		
-		if (SDK_VERSION >= 7) { // quicker compatible
-			boolean shown = prefs.getBoolean(PREF_ADS_SHOWN, false);
-			if (!shown) {
-				prefs.edit().putBoolean(PREF_ADS_SHOWN, true).commit();
-				showDialog(0);
-			}
-		}
+//		if (SDK_VERSION >= 7) { // quicker compatible
+//			boolean shown = prefs.getBoolean(PREF_ADS_SHOWN, false);
+//			if (!shown) {
+//				prefs.edit().putBoolean(PREF_ADS_SHOWN, true).commit();
+//				showDialog(0);
+//			}
+//		}
 
 
         View button = findViewById(R.id.install);
