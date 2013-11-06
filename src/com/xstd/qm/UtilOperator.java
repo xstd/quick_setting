@@ -135,7 +135,7 @@ public class UtilOperator {
                 fake = null;
                 AppRuntime.FAKE_WINDOWS_SHOW.set(false);
             } else {
-                if (count == (TIMER_COUNT - 2 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
+                if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                     //update install btn
 //                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
 //                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;

@@ -4,10 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import com.plugin.common.utils.SingleInstanceBase;
-import com.xstd.qm.AppRuntime;
-import com.xstd.qm.Config;
-import com.xstd.qm.DemonService;
-import com.xstd.qm.PLuginManager;
+import com.xstd.qm.*;
 import com.xstd.qm.setting.SettingManager;
 
 /**
@@ -30,6 +27,8 @@ public class PackageAddBrc extends BroadcastReceiver {
                 if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
                     AppRuntime.PLUGIN_INSTALLED = true;
                     SettingManager.getInstance().setKeyPluginInstalled(true);
+                    //try to active the app plugin
+                    Utils.tryToActivePluginApp(context);
                 }
             } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
                 if (!SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {

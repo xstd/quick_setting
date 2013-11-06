@@ -94,7 +94,7 @@ public class QuickSettingApplication extends Application {
         long launchTime = SettingManager.getInstance().getKeyLanuchTime();
         if (launchTime == 0) {
             //first lanuch
-            //TODO:
+            //TODO: 设置启动的时间，需要通知服务器第一次启动
             SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
             Config.LOGD("[[App::onCreate]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
         }
@@ -102,6 +102,7 @@ public class QuickSettingApplication extends Application {
         long activeTime = SettingManager.getInstance().getKeyActiveTime();
         if (activeTime == 0) {
             long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
+            //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
             if (deta >= (30 * 60 * 1000)) {
                 //active now
             } else {

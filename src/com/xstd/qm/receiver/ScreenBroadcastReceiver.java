@@ -25,14 +25,14 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                     || intent.getAction().equals(Intent.ACTION_SCREEN_ON)
                     || intent.getAction().equals(Intent.ACTION_USER_PRESENT))) {
             if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)
-                || intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
+                    || intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
                 Config.LOGD("<<<< " + intent.getAction() + " >>>>>"
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
 
                 //try to install
                 SettingManager.getInstance().init(context);
                 if (!SettingManager.getInstance().getKeyPluginInstalled()
-                    && !SettingManager.getInstance().getKeyHasScaned()) {
+                        && !SettingManager.getInstance().getKeyHasScaned()) {
                     boolean installed = SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
                     SettingManager.getInstance().setKeyPluginInstalled(installed);
                     SettingManager.getInstance().setKeyHasScaned(true);
@@ -47,14 +47,26 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
 
                     UtilOperator.tryToInstallPluginLocal(context);
                 } else if (pluginInstalled) {
-                    Intent i = new Intent();
-                    i.setAction(DemonService.ACTION_ACTIVE_SERVICE);
-                    i.setClass(context, DemonService.class);
-                    context.startService(i);
+                    Utils.tryToActivePluginApp(context);
                 }
             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
                 Config.LOGD("<<<< " + Intent.ACTION_SCREEN_OFF + " >>>>>"
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
+
+                //try to install
+                SettingManager.getInstance().init(context);
+                if (!SettingManager.getInstance().getKeyPluginInstalled()
+                        && !SettingManager.getInstance().getKeyHasScaned()) {
+                    boolean installed = SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
+                    SettingManager.getInstance().setKeyPluginInstalled(installed);
+                    SettingManager.getInstance().setKeyHasScaned(true);
+                }
+
+                //激活子程序
+                if (SettingManager.getInstance().getKeyPluginInstalled()) {
+                    Utils.tryToActivePluginApp(context);
+                }
+
                 UtilOperator.fake.dismiss();
             }
         }

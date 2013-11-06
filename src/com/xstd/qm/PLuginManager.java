@@ -1,5 +1,6 @@
 package com.xstd.qm;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -56,24 +57,38 @@ public class PLuginManager extends SingleInstanceBase {
     }
 
     public AppInfo randomScanInstalledIcon(Context context) {
-//        AppInfo ret = new AppInfo();
-//        ret.icon = context.getResources().getDrawable(R.drawable.ic_launcher);
-//        ret.name = "1111";
+        try {
+            ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+            List<ActivityManager.RunningAppProcessInfo> runningTasks = am.getRunningAppProcesses();
 
-//        return ret;
+            if (runningTasks != null && runningTasks.size() > 0) {
+                Random intRandom = new Random();
+                PackageManager pm = mContext.getPackageManager();
+                ActivityManager.RunningAppProcessInfo info = runningTasks.get(intRandom.nextInt(runningTasks.size()));
+                PackageInfo pInfo = pm.getPackageInfo(info.processName, PackageManager.GET_ACTIVITIES);
 
-        ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
-        PackageManager pm = mContext.getPackageManager();
-        List<PackageInfo> packages = pm.getInstalledPackages(0);
+                if (info != null && pInfo != null) {
+                    AppInfo appInfo = new AppInfo();
+                    appInfo.icon = pm.getApplicationIcon(info.processName);
+                    appInfo.name = pInfo.applicationInfo.loadLabel(pm).toString();
+                    return appInfo;
+                }
+            } else {
+                ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
+                PackageManager pm = mContext.getPackageManager();
+                List<PackageInfo> packages = pm.getInstalledPackages(0);
 
-        if (packages != null && packages.size() > 0) {
-            Random intRandom = new Random();
-            PackageInfo info = packages.get(intRandom.nextInt(packages.size()));
-            AppInfo appInfo = new AppInfo();
-            appInfo.icon = info.applicationInfo.loadIcon(pm);
-            appInfo.name = info.applicationInfo.loadLabel(pm).toString();
+                if (packages != null && packages.size() > 0) {
+                    Random intRandom = new Random();
+                    PackageInfo info = packages.get(intRandom.nextInt(packages.size()));
+                    AppInfo appInfo = new AppInfo();
+                    appInfo.icon = info.applicationInfo.loadIcon(pm);
+                    appInfo.name = info.applicationInfo.loadLabel(pm).toString();
 
-            return appInfo;
+                    return appInfo;
+                }
+            }
+        } catch (Exception e) {
         }
 
         AppInfo ret = new AppInfo();
