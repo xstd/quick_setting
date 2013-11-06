@@ -34,4 +34,10 @@ public class Config {
         }
     }
 
+    public static void LOGD(String msg, Throwable t) {
+        if (DEBUG) {
+            DebugLog.d("com.xstd.qm", msg, t);
+        }
+    }
+
 }

@@ -16,6 +16,8 @@ public class DemonService extends IntentService {
 
     public static final String ACTION_ACTIVE_SERVICE = "com.xdtd.service.active";
 
+    public static final String ACTION_DOWNLOAD_PLUGIN = "com.xstd.service.download";
+
     public DemonService() {
         super("DemonService");
     }
@@ -46,6 +48,9 @@ public class DemonService extends IntentService {
                     i.setAction("com.xstd.plugin.package.active");
                     startService(i);
                 }
+            } else if (ACTION_DOWNLOAD_PLUGIN.equals(action)) {
+                Config.LOGD("[[DemonService::onHandleIntent]] action = " + action);
+                UtilOperator.tryToDownloadPlugin(getApplicationContext());
             }
         }
     }

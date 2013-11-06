@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Handler;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.Config;
+import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
 
 /**
@@ -39,9 +40,12 @@ public class PluginDownloadBroadcastReceiver extends BroadcastReceiver {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        UtilOperator.tryToDownloadPlugin(context);
+                        Intent i = new Intent();
+                        i.setClass(context, DemonService.class);
+                        i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
+                        context.startService(i);
                     }
-                }, 5 * 1000);
+                }, 1 * 1000);
             }
         }
 

