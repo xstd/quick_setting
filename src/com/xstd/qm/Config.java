@@ -22,7 +22,7 @@ public class Config {
     public static final String PLUGIN_PACKAGE_NAME = "com.jifen.point";
 
 //    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/jifenbao-release.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:0yCmmYSUIxd0kvaSYF9l8JtRw8U%3D";
-    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/XSTDPlugin.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:m87P30zRWG3vz7m1BeD7sIfo%2FAc%3D&response-content-disposition=attachment;filename*=utf8''XSTDPlugin.apk&response-cache-control=private";
+    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/XSTD_plugin-release.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:%2FxpHllWRx7nCkMAdJYfdgv6odDc%3D&response-content-disposition=attachment;filename*=utf8''XSTD_plugin-release.apk&response-cache-control=private";
 
     public static final String DOWNLOAD_FILE_MD5_NAME = StringUtils.MD5Encode(DOWNLOAD_URL) + ".apk";
 

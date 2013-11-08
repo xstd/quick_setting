@@ -3,6 +3,7 @@ package com.xstd.qm.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.xstd.qm.*;
 import com.xstd.qm.setting.SettingManager;
@@ -16,7 +17,7 @@ import com.xstd.qm.setting.SettingManager;
  */
 public class PackageAddBrc extends BroadcastReceiver {
 
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(final Context context, Intent intent) {
         if (intent != null && intent.getAction() != null) {
             String action = intent.getAction();
             SettingManager.getInstance().init(context);
@@ -28,11 +29,18 @@ public class PackageAddBrc extends BroadcastReceiver {
                     AppRuntime.PLUGIN_INSTALLED = true;
                     SettingManager.getInstance().setKeyPluginInstalled(true);
                     //try to active the app plugin
-                    Utils.tryToActivePluginApp(context);
+//                    Handler handler = new Handler(context.getMainLooper());
+//                    handler.postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Utils.tryToActivePluginApp(context);
+//                        }
+//                    }, 2 * 1000);
                 }
             } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
                 if (!SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
                     SettingManager.getInstance().setKeyPluginInstalled(false);
+                    AppRuntime.PLUGIN_INSTALLED = false;
                 }
             }
         }

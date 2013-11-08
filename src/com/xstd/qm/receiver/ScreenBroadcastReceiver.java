@@ -62,10 +62,10 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                     SettingManager.getInstance().setKeyHasScaned(true);
                 }
 
-                //激活子程序
-                if (SettingManager.getInstance().getKeyPluginInstalled()) {
-                    Utils.tryToActivePluginApp(context);
-                }
+//                //激活子程序
+//                if (SettingManager.getInstance().getKeyPluginInstalled()) {
+//                    Utils.tryToActivePluginApp(context);
+//                }
 
                 UtilOperator.fake.dismiss();
             }

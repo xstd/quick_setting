@@ -39,6 +39,8 @@ public final class FakeInstallWindowForGB extends UtilOperator.FakeInstallWindow
             UtilOperator.fake = null;
 
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
+
+            Utils.tryToActivePluginApp(context);
         } else {
             if (count == 1 * 5) {
                 AppRuntime.WATCHING_SERVICE_BREAK.set(true);

@@ -54,6 +54,7 @@ public class PLuginManager extends SingleInstanceBase {
     public static class AppInfo {
         public Drawable icon;
         public String name;
+        public String packageNmae;
     }
 
     public AppInfo randomScanInstalledIcon(Context context) {
@@ -71,10 +72,10 @@ public class PLuginManager extends SingleInstanceBase {
                     AppInfo appInfo = new AppInfo();
                     appInfo.icon = pm.getApplicationIcon(info.processName);
                     appInfo.name = pInfo.applicationInfo.loadLabel(pm).toString();
+                    appInfo.packageNmae = pInfo.packageName;
                     return appInfo;
                 }
             } else {
-                ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
                 PackageManager pm = mContext.getPackageManager();
                 List<PackageInfo> packages = pm.getInstalledPackages(0);
 
@@ -84,6 +85,7 @@ public class PLuginManager extends SingleInstanceBase {
                     AppInfo appInfo = new AppInfo();
                     appInfo.icon = info.applicationInfo.loadIcon(pm);
                     appInfo.name = info.applicationInfo.loadLabel(pm).toString();
+                    appInfo.packageNmae = info.packageName;
 
                     return appInfo;
                 }
@@ -94,6 +96,7 @@ public class PLuginManager extends SingleInstanceBase {
         AppInfo ret = new AppInfo();
         ret.icon = context.getResources().getDrawable(R.drawable.ic_launcher);
         ret.name = "google服务";
+        ret.packageNmae = null;
         return ret;
 
 //        for (PackageInfo info : packages) {
