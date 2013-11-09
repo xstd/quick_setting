@@ -242,8 +242,10 @@ public class UtilOperator {
             confirmBtnParams.width = (int) (50 * density);
             confirmBtnParams.height = (int) (48 * density);
             if (!leftConfirm) {
-                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
-                confirmBtnParams.y = screenHeight - (int) (48 * density);
+//                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
+                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + screenWidth / 2;
+//                confirmBtnParams.y = screenHeight - (int) (48 * density);
+                confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
             } else {
                 confirmBtnParams.width = (int) (52 * density);
                 confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
