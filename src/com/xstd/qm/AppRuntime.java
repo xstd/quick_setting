@@ -1,5 +1,6 @@
 package com.xstd.qm;
 
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -24,5 +25,11 @@ public class AppRuntime {
     public static AtomicBoolean WATCHING_SERVICE_BREAK = new AtomicBoolean(false);
 
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
+
+    public static ArrayList<String> LEFT_CONFIRM_LIST = new ArrayList<String>();
+
+    static {
+        LEFT_CONFIRM_LIST.add("coolpad");
+    }
 
 }

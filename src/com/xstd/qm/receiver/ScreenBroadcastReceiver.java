@@ -18,7 +18,9 @@ import com.xstd.qm.setting.SettingManager;
 public class ScreenBroadcastReceiver extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
-        Config.LOGD("<<<< [[ScreenBroadcastReceiver::onReceive]] >>>>>");
+        Config.LOGD("<<<< [[ScreenBroadcastReceiver::onReceive]]" +
+                        " Phone Model : " + android.os.Build.MODEL +
+                        " >>>>>");
         if (intent != null
                 && intent.getAction() != null
                 && (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)

