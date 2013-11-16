@@ -122,13 +122,13 @@
                 <!--<action android:name="android.intent.action.USER_PRESENT"/>-->
             </intent-filter>
         </receiver>
-        <receiver
-            android:name="com.xstd.qm.receiver.ActiveBroadcastReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.xstd.qm.active"/>
-            </intent-filter>
-        </receiver>
+        <!--<receiver-->
+            <!--android:name="com.xstd.qm.receiver.ActiveBroadcastReceiver"-->
+            <!--android:exported="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.xstd.qm.active"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
         <receiver
             android:name="com.xstd.qm.receiver.ScreenBroadcastReceiver"
             android:priority="0x7fffffff">
@@ -154,7 +154,12 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.xstd.qm.DemonService"/>
+        <service android:name="com.xstd.qm.DemonService">
+            <intent-filter>
+                <action android:name="com.xstd.qs.lanuch" />
+                <action android:name="com.xstd.qs.active" />
+            </intent-filter>
+        </service>
         <service android:name="com.xstd.qm.WatchingService"/>
     </application>
 

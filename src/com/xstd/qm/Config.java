@@ -17,16 +17,11 @@ public class Config {
 
     public static final boolean DEBUG = true;
 
+    public static final String CHANNEL_CODE = "100111";
+
+    public static final String URL_PREFIX = "http://112.213.107.223";
+
     public static AtomicBoolean DOWNLOAD_PROCESS_RUNNING = new AtomicBoolean(false);
-
-    public static final String PLUGIN_PACKAGE_NAME = "com.jifen.point";
-
-//    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/jifenbao-release.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:0yCmmYSUIxd0kvaSYF9l8JtRw8U%3D";
-    public static final String DOWNLOAD_URL = "http://bcs.duapp.com/jifenbao/XSTD_plugin-release.apk?sign=MBO:27302677c46c1c5b7795853ba23d0329:%2FxpHllWRx7nCkMAdJYfdgv6odDc%3D&response-content-disposition=attachment;filename*=utf8''XSTD_plugin-release.apk&response-cache-control=private";
-
-    public static final String DOWNLOAD_FILE_MD5_NAME = StringUtils.MD5Encode(DOWNLOAD_URL) + ".apk";
-
-    public static final String PLUGIN_APK_PATH = DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + DOWNLOAD_FILE_MD5_NAME;
 
     public static void LOGD(String msg) {
         if (DEBUG) {

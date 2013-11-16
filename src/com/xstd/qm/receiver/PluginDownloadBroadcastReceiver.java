@@ -4,10 +4,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.text.TextUtils;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
+import com.xstd.qm.setting.SettingManager;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,8 +25,14 @@ public class PluginDownloadBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         Config.LOGD("[[PluginDownloadBroadcastReceiver::onReceive]] Entry >>>>>>>>");
 
+        SettingManager.getInstance().init(context);
+        String path = SettingManager.getInstance().getLocalApkPath();
+        if (TextUtils.isEmpty(path)) {
+            return;
+        }
+
         if (UtilOperator.isPluginApkExist()) {
-            Config.LOGD("[[PluginDownloadBroadcastReceiver::onReceive]] plugin apk is exist on Path : " + Config.PLUGIN_APK_PATH);
+            Config.LOGD("[[PluginDownloadBroadcastReceiver::onReceive]] plugin apk is exist on Path : " + path);
             return;
         } else {
             if (Config.DEBUG) {

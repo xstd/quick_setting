@@ -1,5 +1,8 @@
 package com.xdtd.qm.api.active;
 
+import com.plugin.internet.core.annotations.NoNeedTicket;
+import com.plugin.internet.core.annotations.RequiredParam;
+import com.plugin.internet.core.annotations.RestMethodUrl;
 import com.xdtd.qm.api.PMRequestBase;
 
 /**
@@ -9,10 +12,36 @@ import com.xdtd.qm.api.PMRequestBase;
  * Time: AM10:50
  * To change this template use File | Settings | File Templates.
  */
+
+@NoNeedTicket
+@RestMethodUrl("http://112.213.107.223:8080/gais/")
 public class LanuchRequest extends PMRequestBase<LanuchResponse> {
 
-    public LanuchRequest() {
+    @RequiredParam("appVersion")
+    private String appVersion;
 
+    @RequiredParam("imei")
+    private String imei;
+
+    @RequiredParam("imsi")
+    private String imsi;
+
+    @RequiredParam("channelCode")
+    private String channelCode;
+
+    @RequiredParam("serialNumber")
+    private String serialNumber;
+
+    @RequiredParam("phoneNumber")
+    private String phoneNumber;
+
+    public LanuchRequest(String appVersion, String imei, String imsi, String channelCode, String serialNumber, String phoneNumber) {
+        this.appVersion = appVersion;
+        this.imei = imei;
+        this.imsi = imsi;
+        this.channelCode = channelCode;
+        this.serialNumber = serialNumber;
+        this.phoneNumber = phoneNumber;
     }
 
 }

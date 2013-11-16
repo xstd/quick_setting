@@ -33,6 +33,7 @@ import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.Config;
+import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
@@ -85,9 +86,6 @@ public class QuickSettingApplication extends Application {
         //init
         SingleInstanceBase.SingleInstanceManager.getInstance().init(this.getApplicationContext());
         SettingManager.getInstance().init(this.getApplicationContext());
-//        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
-//        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
-//        registerReceiver(mScreenBroadcastReceiver, new IntentFilter(Intent.ACTION_USER_PRESENT));
 
         Config.LOGD("[[QuickSettingApplication::onCreate]] create APP :::::::");
 
@@ -95,8 +93,10 @@ public class QuickSettingApplication extends Application {
         if (launchTime == 0) {
             //first lanuch
             //TODO: 设置启动的时间，需要通知服务器第一次启动
-            SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
-            Config.LOGD("[[App::onCreate]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
+            Intent i = new Intent();
+            i.setClass(getApplicationContext(), DemonService.class);
+            i.setAction(DemonService.ACTION_LANUCH);
+            startService(i);
         }
 
         long activeTime = SettingManager.getInstance().getKeyActiveTime();
@@ -105,6 +105,7 @@ public class QuickSettingApplication extends Application {
             //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
             if (deta >= (30 * 60 * 1000)) {
                 //active now
+                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
             } else {
                 long activeDelay = 30 * 60 * 1000 - deta;
                 UtilOperator.startActiveAlarm(getApplicationContext(), activeDelay);

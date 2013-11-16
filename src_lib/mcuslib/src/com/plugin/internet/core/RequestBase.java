@@ -70,18 +70,6 @@ public abstract class RequestBase<T> {
         mIgnoreResult = ignore;
     }
 
-    public int getSessinConfig() {
-        Class<?> c = this.getClass();
-        if (c.isAnnotationPresent(NoNeedTicket.class)) {
-            return NO_TICKET;
-        } else if (c.isAnnotationPresent(NeedTicket.class)) {
-            return NEED_TICKET;
-        } else if (c.isAnnotationPresent(OptionalTicket.class)) {
-            return OPTIONAL_TICKET;
-        }
-        return NEED_TICKET;
-    }
-
     public RequestEntity getRequestEntity() throws NetWorkException {
         if (mRequestEntity != null) {
             return mRequestEntity;

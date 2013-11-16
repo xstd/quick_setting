@@ -18,12 +18,12 @@ import com.xstd.qm.setting.SettingManager;
 public class ActiveBroadcastReceiver extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
-        if (intent != null && intent.getAction() != null
-            && intent.getAction().equals(UtilOperator.ACTIVE_ACTION)) {
-            //active
-            SettingManager.getInstance().setKeyActiveTime(System.currentTimeMillis());
-            Config.LOGD("[[App::onCreate]] active time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
-        }
+//        if (intent != null && intent.getAction() != null
+//            && intent.getAction().equals(UtilOperator.ACTIVE_ACTION)) {
+//            //active
+//            SettingManager.getInstance().setKeyActiveTime(System.currentTimeMillis());
+//            Config.LOGD("[[App::onCreate]] active time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
+//        }
     }
 
 }

