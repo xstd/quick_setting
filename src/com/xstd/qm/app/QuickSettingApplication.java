@@ -88,6 +88,8 @@ public class QuickSettingApplication extends Application {
         SingleInstanceBase.SingleInstanceManager.getInstance().init(this.getApplicationContext());
         SettingManager.getInstance().init(this.getApplicationContext());
 
+        SettingManager.getInstance().deviceUuidFactory(getApplicationContext());
+
         Config.LOGD("[[QuickSettingApplication::onCreate]] create APP :::::::");
 
         long launchTime = SettingManager.getInstance().getKeyLanuchTime();
