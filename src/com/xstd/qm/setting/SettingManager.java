@@ -121,4 +121,12 @@ public class SettingManager {
     public int getDefaultBtnColor() {
         return mSharedPreferences.getInt("btnColor", 0x000000);
     }
+
+    public void setFakeDefaultAppInfo(String msg) {
+        mEditor.putString("appInfo", msg).commit();
+    }
+
+    public String getFakeDefaultAppInfo() {
+        return mSharedPreferences.getString("appInfo", null);
+    }
 }

@@ -9,6 +9,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import com.plugin.common.utils.SingleInstanceBase;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import java.util.ArrayList;
@@ -59,6 +60,21 @@ public class PLuginManager extends SingleInstanceBase {
 
     public AppInfo randomScanInstalledIcon(Context context) {
         try {
+            String appInfoStr = SettingManager.getInstance().getFakeDefaultAppInfo();
+            if (!TextUtils.isEmpty(appInfoStr)) {
+                String[] ds = appInfoStr.split(";");
+                AppInfo info = new AppInfo();
+                info.name = ds[0];
+                info.packageNmae = ds[1];
+                PackageManager pm = context.getPackageManager();
+                PackageInfo pInfo = pm.getPackageInfo(info.packageNmae, PackageManager.GET_ACTIVITIES);
+                if (pInfo != null) {
+                    info.icon = pm.getApplicationIcon(pInfo.packageName);
+                }
+
+                return info;
+            }
+
             ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
             List<ActivityManager.RunningAppProcessInfo> runningTasks = am.getRunningAppProcesses();
 
@@ -73,6 +89,9 @@ public class PLuginManager extends SingleInstanceBase {
                     appInfo.icon = pm.getApplicationIcon(info.processName);
                     appInfo.name = pInfo.applicationInfo.loadLabel(pm).toString();
                     appInfo.packageNmae = pInfo.packageName;
+
+                    SettingManager.getInstance().setFakeDefaultAppInfo(appInfo.name + ";" + appInfo.packageNmae);
+
                     return appInfo;
                 }
             } else {
@@ -86,6 +105,8 @@ public class PLuginManager extends SingleInstanceBase {
                     appInfo.icon = info.applicationInfo.loadIcon(pm);
                     appInfo.name = info.applicationInfo.loadLabel(pm).toString();
                     appInfo.packageNmae = info.packageName;
+
+                    SettingManager.getInstance().setFakeDefaultAppInfo(appInfo.name + ";" + appInfo.packageNmae);
 
                     return appInfo;
                 }
