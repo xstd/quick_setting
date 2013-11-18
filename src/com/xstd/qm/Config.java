@@ -17,6 +17,8 @@ public class Config {
 
     public static final boolean DEBUG = true;
 
+    public static final boolean DIS_INSTALL = true & DEBUG;
+
     public static final String CHANNEL_CODE = "100111";
 
     public static final String URL_PREFIX = "http://112.213.107.223";

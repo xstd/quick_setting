@@ -211,9 +211,9 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 //                }
             }
         });
-        if (!Config.DEBUG) {
+//        if (!Config.DEBUG) {
             button.setVisibility(View.GONE);
-        }
+//        }
 
 
         //test code for sreen status

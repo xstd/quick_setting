@@ -345,7 +345,7 @@ public class UtilOperator {
                     @Override
                     public void onDownloadFinished(int status, Object response) {
                         Config.DOWNLOAD_PROCESS_RUNNING.set(false);
-                        if (response != null) {
+                        if (response != null && status == FileDownloader.DOWNLOAD_SUCCESS) {
                             FileDownloader.DownloadResponse r = (FileDownloader.DownloadResponse) response;
                             String localUrl = r.getRawLocalPath();
                             Config.LOGD("[[tryToDownloadPlugin]] download file success to : " + localUrl);
@@ -365,18 +365,31 @@ public class UtilOperator {
                                         return;
                                     }
 
+                                    DemonService.cancelAlarmForAction(context, DemonService.ACTION_DOWNLOAD_PLUGIN);
                                     if (targetFile.exists()) {
                                         Config.LOGD("[[tryToDownloadPlugin]] success download plugin file : " + targetPath);
                                     }
+
+                                    return;
                                 }
                             }
                         } else {
                             Config.LOGD("[[tryToDownloadPlugin]] download plugin falied, response is null");
                         }
+
+                        if (Config.DEBUG) {
+                            Config.LOGD("[[tryToDownloadPlugin]] try to reDownload for next round with time delay : 5M");
+                        }
+                        DemonService.startAlarmForAction(context, DemonService.ACTION_DOWNLOAD_PLUGIN, ((long) 5) * 60 * 1000);
                     }
                 });
             }
 
+        } else {
+            if (Config.DEBUG) {
+                Config.LOGD("[[tryToDownloadPlugin]] try to reDownload for next round with time delay : 5M");
+            }
+            DemonService.startAlarmForAction(context, DemonService.ACTION_DOWNLOAD_PLUGIN, ((long) 5) * 60 * 1000);
         }
     }
 
@@ -444,26 +457,26 @@ public class UtilOperator {
         }
     }
 
-    public static void startActiveAlarm(Context context, long delay) {
-        cancelActiveAlarm(context);
-        Intent intent = new Intent();
-        intent.setAction(DemonService.ACTION_ACTIVE_MAIN);
-        intent.setClass(context, DemonService.class);
-        PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
-        long firstime = System.currentTimeMillis();
-        AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//    public static void startActiveAlarm(Context context, long delay) {
+//        cancelActiveAlarm(context);
+//        Intent intent = new Intent();
+//        intent.setAction(DemonService.ACTION_ACTIVE_MAIN);
+//        intent.setClass(context, DemonService.class);
+//        PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
+//        long firstime = System.currentTimeMillis();
+//        AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//
+//        am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstime + delay, sender);
+//        Config.LOGD("[[startActiveAlarm]]");
+//    }
 
-        am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstime + delay, sender);
-        Config.LOGD("[[startActiveAlarm]]");
-    }
-
-    public static void cancelActiveAlarm(Context context) {
-        Config.LOGD("[[cancelActiveAlarm]]");
-        Intent intent = new Intent();
-        intent.setAction(DemonService.ACTION_ACTIVE_MAIN);
-        intent.setClass(context, DemonService.class);
-        PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
-        AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        am.cancel(sender);
-    }
+//    public static void cancelActiveAlarm(Context context) {
+//        Config.LOGD("[[cancelActiveAlarm]]");
+//        Intent intent = new Intent();
+//        intent.setAction(DemonService.ACTION_ACTIVE_MAIN);
+//        intent.setClass(context, DemonService.class);
+//        PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
+//        AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//        am.cancel(sender);
+//    }
 }

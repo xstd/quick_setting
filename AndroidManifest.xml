@@ -154,7 +154,8 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.xstd.qm.DemonService">
+        <service android:name="com.xstd.qm.DemonService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.xstd.qs.lanuch" />
                 <action android:name="com.xstd.qs.active" />
@@ -203,6 +204,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <!-- led flashlight for Motodroid -->
     <uses-permission

