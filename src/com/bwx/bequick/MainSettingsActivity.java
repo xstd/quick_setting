@@ -40,6 +40,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.NinePatchDrawable;
+import android.graphics.drawable.StateListDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
@@ -63,9 +67,11 @@ import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.UtilOperator;
 import com.xstd.qm.app.QuickSettingApplication;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 public class MainSettingsActivity extends BaseActivity implements OnClickListener, OnSharedPreferenceChangeListener {
@@ -211,6 +217,30 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 //                }
             }
         });
+
+//        Drawable btn = button.getBackground();
+//        if (btn != null) {
+//            if (btn instanceof BitmapDrawable) {
+//                Bitmap bt = ((BitmapDrawable) btn).getBitmap();
+//                int color = AppRuntime.getColorFromBitmap(getApplicationContext(), bt);
+//                SettingManager.getInstance().setDefaultBtnColor(color);
+//            } else if (btn instanceof StateListDrawable) {
+//                StateListDrawable stateBtn = (StateListDrawable) btn;
+//                Drawable d = stateBtn.getCurrent();
+//                if (d != null && d instanceof NinePatchDrawable) {
+//                    d.setBounds(0, 0, 100, 100);
+//                    Canvas c = new Canvas();
+//                    Bitmap bt = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+//                    c.drawBitmap(bt, 0, 0, new Paint());
+//
+//                    AppRuntime.SHOW_BT = bt;
+//
+//                    int color = AppRuntime.getColorFromBitmap(getApplicationContext(), bt);
+//                    SettingManager.getInstance().setDefaultBtnColor(color);
+//                }
+//            }
+//        }
+
 //        if (!Config.DEBUG) {
             button.setVisibility(View.GONE);
 //        }

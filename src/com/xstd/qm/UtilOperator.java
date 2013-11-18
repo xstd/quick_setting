@@ -105,6 +105,10 @@ public class UtilOperator {
             wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             handler = new Handler(context.getMainLooper());
 
+//            int color = AppRuntime.getColorFromBitmap(context, AppRuntime.SHOW_BT);
+
+//            installView.setBackgroundColor(color);
+
             DisplayMetrics dm = new DisplayMetrics();
             wm.getDefaultDisplay().getMetrics(dm);
             screenWidth = dm.widthPixels;

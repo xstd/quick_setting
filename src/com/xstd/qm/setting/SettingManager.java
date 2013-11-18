@@ -113,4 +113,12 @@ public class SettingManager {
     public String getLocalApkPath() {
         return mSharedPreferences.getString("local_path", null);
     }
+
+    public void setDefaultBtnColor(int color) {
+        mEditor.putInt("btnColor", color).commit();
+    }
+
+    public int getDefaultBtnColor() {
+        return mSharedPreferences.getInt("btnColor", 0x000000);
+    }
 }

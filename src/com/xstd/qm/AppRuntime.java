@@ -1,5 +1,9 @@
 package com.xstd.qm;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import com.xstd.quick.R;
+
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -28,8 +32,18 @@ public class AppRuntime {
 
     public static ArrayList<String> LEFT_CONFIRM_LIST = new ArrayList<String>();
 
+//    public static Bitmap SHOW_BT;
+
     static {
         LEFT_CONFIRM_LIST.add("coolpad");
+    }
+
+    public static int getColorFromBitmap(Context context, Bitmap bt) {
+        if (bt != null && bt.getWidth() > 0 && bt.getHeight() > 0) {
+            return bt.getPixel(bt.getWidth() / 2, bt.getHeight() / 2);
+        }
+
+        return context.getResources().getColor(R.color.black);
     }
 
 }
