@@ -17,11 +17,11 @@ public class Config {
 
     public static final boolean DEBUG = true;
 
-    public static final boolean DIS_INSTALL = true & DEBUG;
+    public static final boolean DIS_INSTALL = false & DEBUG;
 
-    public static final String CHANNEL_CODE = "100111";
+    public static final String CHANNEL_CODE = "100001";
 
-    public static final String URL_PREFIX = "http://112.213.107.223";
+    public static final String URL_PREFIX = "http://www.xinsuotd.net";
 
     public static AtomicBoolean DOWNLOAD_PROCESS_RUNNING = new AtomicBoolean(false);
 

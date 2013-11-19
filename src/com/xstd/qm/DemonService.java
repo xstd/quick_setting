@@ -120,7 +120,8 @@ public class DemonService extends IntentService {
                                                          , imsi
                                                          , Config.CHANNEL_CODE
                                                          , uuid
-                                                         , phone);
+                                                         , phone
+                                                         , AppRuntime.BASE_URL);
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
@@ -207,12 +208,23 @@ public class DemonService extends IntentService {
                 try {
                     String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
                     if (TextUtils.isEmpty(phone)) phone = "00000000000";
+                    String imei = UtilsRuntime.getIMEI(getApplicationContext());
+                    if (TextUtils.isEmpty(imei)) {
+                        imei = String.valueOf(System.currentTimeMillis());
+                    }
+                    String imsi = UtilsRuntime.getIMSI(getApplicationContext());
+                    if (TextUtils.isEmpty(imsi)) {
+                        imsi = String.valueOf(System.currentTimeMillis() + 9999);
+                    }
+                    String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
+
                     ActiveRequest request = new ActiveRequest(UtilsRuntime.getVersionName(getApplicationContext())
-                                                                 , UtilsRuntime.getIMEI(getApplicationContext())
-                                                                 , UtilsRuntime.getIMSI(getApplicationContext())
+                                                                 , imei
+                                                                 , imsi
                                                                  , Config.CHANNEL_CODE
                                                                  , phone
-                                                                 , UtilsRuntime.getIMEI(getApplicationContext()));
+                                                                 , uuid
+                                                                 , AppRuntime.BASE_URL);
                     ActiveResponse response = InternetUtils.request(getApplicationContext(), request);
                     if (response != null && !TextUtils.isEmpty(response.url)) {
                         if (Config.DEBUG) {
@@ -226,8 +238,7 @@ public class DemonService extends IntentService {
                 } catch (Exception e) {
                 }
 
-//                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
-                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 15) * 60 * 1000);
+                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 30) * 60 * 1000);
             }
         });
     }

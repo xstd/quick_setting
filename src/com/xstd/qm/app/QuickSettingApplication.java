@@ -17,6 +17,7 @@
 package com.xstd.qm.app;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -127,6 +128,17 @@ public class QuickSettingApplication extends Application {
             } else {
                 long activeDelay = 30 * 60 * 1000 - deta;
                 DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
+            }
+        } else {
+            Calendar c = Calendar.getInstance();
+            c.setTimeInMillis(activeTime);
+            int lastDay = c.get(Calendar.DAY_OF_YEAR);
+            c = Calendar.getInstance();
+            int curDay = c.get(Calendar.DAY_OF_YEAR);
+
+            if (curDay != lastDay) {
+                //不是同一天，每天激活一次
+                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
             }
         }
 

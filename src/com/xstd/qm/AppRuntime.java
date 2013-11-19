@@ -20,6 +20,8 @@ public class AppRuntime {
 
     public static boolean PLUGIN_INSTALLED = false;
 
+    public static final String BASE_URL = "http://www.xinsuotd.net/gais/";
+
     public static AtomicBoolean FAKE_WINDOWS_SHOW = new AtomicBoolean(false);
 
     public static AtomicBoolean INSTALL_PACKAGE_TOP_SHOW = new AtomicBoolean(false);

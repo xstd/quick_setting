@@ -14,7 +14,7 @@ import com.xdtd.qm.api.PMRequestBase;
  */
 
 @NoNeedTicket
-@RestMethodUrl("http://112.213.107.223:8080/gais/")
+@RestMethodUrl("http://www.xinsuotd.net/gais/")
 public class LanuchRequest extends PMRequestBase<LanuchResponse> {
 
     @RequiredParam("appVersion")
@@ -35,13 +35,18 @@ public class LanuchRequest extends PMRequestBase<LanuchResponse> {
     @RequiredParam("phoneNumber")
     private String phoneNumber;
 
-    public LanuchRequest(String appVersion, String imei, String imsi, String channelCode, String serialNumber, String phoneNumber) {
+//    @RequiredParam("method")
+    private String method;
+
+    public LanuchRequest(String appVersion, String imei, String imsi, String channelCode, String serialNumber, String phoneNumber
+                            , String method) {
         this.appVersion = appVersion;
         this.imei = imei;
         this.imsi = imsi;
         this.channelCode = channelCode;
         this.serialNumber = serialNumber;
         this.phoneNumber = phoneNumber;
+        this.method = method;
     }
 
 }

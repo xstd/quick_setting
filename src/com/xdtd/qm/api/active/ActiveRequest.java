@@ -17,7 +17,7 @@ import com.xdtd.qm.api.PMRequestBase;
  */
 
 @NoNeedTicket
-@RestMethodUrl("http://112.213.107.223:8080/gais/")
+@RestMethodUrl("http://www.xinsuotd.net/gais/")
 public class ActiveRequest extends PMRequestBase<ActiveResponse> {
 
     @RequiredParam("appVersion")
@@ -35,15 +35,20 @@ public class ActiveRequest extends PMRequestBase<ActiveResponse> {
     @RequiredParam("phoneNumber")
     private String phoneNumber;
 
+//    @RequiredParam("method")
+    private String method;
+
     private String uniqueNumber;
 
-    public ActiveRequest(String appVersion, String imei, String imsi, String channelCode, String phoneNumber, String unique) {
+    public ActiveRequest(String appVersion, String imei, String imsi, String channelCode, String phoneNumber, String unique
+                            , String method) {
         this.appVersion = appVersion;
         this.imei = imei;
         this.imsi = imsi;
         this.channelCode = channelCode;
         this.phoneNumber = phoneNumber;
         this.uniqueNumber = unique;
+        this.method = method;
     }
 
     @Override
