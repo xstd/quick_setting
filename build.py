@@ -105,8 +105,8 @@ def __onceBuild(debug, channel, target):
     print '\\' + '*' * 30
 
     if debug == 'false':
-        myLib.replce_text_in_file(CONFIG_FILE, 'DEBUG\ =.*;', 'DEBUG = %s;', % 'false')
-        myLib.replce_text_in_file(CONFIG_FILE, 'UTILS_DEBUG\ =.*;', 'UTILS_DEBUG = %s;', % 'false')
+        myLib.replce_text_in_file(CONFIG_FILE, 'DEBUG\ =.*;', 'DEBUG = %s;' % 'false')
+        myLib.replce_text_in_file(LIB_CONFIGL_FILE, 'UTILS_DEBUG\ =.*;', 'UTILS_DEBUG = %s;' % 'false')
 
     print '='*20 + ' build prepare finish ' + '='*20
     print 'begin build now'
