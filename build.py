@@ -123,7 +123,7 @@ def __onceBuild(debug, channel, target):
         print 'backup the build target %s/%s success >>>>>>>>' % (target, target_apk_file)
 
     print 'after build for channel : %s, just reset code ' % channel
-    #os.system('git reset --hard HEAD')
+    os.system('git reset --hard HEAD')
 
     print '-' * 40
     print '-' * 40
