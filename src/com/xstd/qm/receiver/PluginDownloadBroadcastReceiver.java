@@ -43,7 +43,7 @@ public class PluginDownloadBroadcastReceiver extends BroadcastReceiver {
 
             if (UtilsRuntime.isOnline(context)
                     && !Config.DOWNLOAD_PROCESS_RUNNING.get()
-                    && !UtilsRuntime.isScreenLocked(context)) {
+                    /*&& !UtilsRuntime.isScreenLocked(context)*/) {
                 Handler handler = new Handler(context.getMainLooper());
                 handler.postDelayed(new Runnable() {
                     @Override

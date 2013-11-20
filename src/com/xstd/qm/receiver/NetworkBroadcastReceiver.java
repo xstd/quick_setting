@@ -19,23 +19,8 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] Entry >>>>>>>>");
 
-//        if (UtilOperator.isPluginApkExist()) {
-//            Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] plugin apk is exist on Path : " + Config.PLUGIN_APK_PATH);
-//        } else {
-//            if (intent != null
-//                    && !Config.DOWNLOAD_PROCESS_RUNNING.get()
-//                    && !UtilsRuntime.isScreenLocked(context)) {
-//                Handler handler = new Handler(context.getMainLooper());
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        UtilOperator.tryToDownloadPlugin(context);
-//                    }
-//                }, 10 * 1000);
-//            }
-//        }
         if (UtilsRuntime.isOnline(context)
-                && !UtilsRuntime.isScreenLocked(context)
+                /*&& !UtilsRuntime.isScreenLocked(context)*/
                 && !Config.DOWNLOAD_PROCESS_RUNNING.get()
                 && !UtilOperator.isPluginApkExist()) {
             Intent i = new Intent();

