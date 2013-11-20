@@ -108,6 +108,9 @@ def __onceBuild(debug, channel, target):
         myLib.replce_text_in_file(CONFIG_FILE, 'DEBUG\ =.*;', 'DEBUG = %s;' % 'false')
         myLib.replce_text_in_file(LIB_CONFIGL_FILE, 'UTILS_DEBUG\ =.*;', 'UTILS_DEBUG = %s;' % 'false')
 
+    if channel != None:
+        myLib.replce_text_in_file(CONFIG_FILE, 'CHANNEL_CODE\ =.*;', 'CHANNEL_CODE = %s;' % 'channel')
+
     print '='*20 + ' build prepare finish ' + '='*20
     print 'begin build now'
     os.system('ant clean ; ant release')
@@ -123,7 +126,7 @@ def __onceBuild(debug, channel, target):
         print 'backup the build target %s/%s success >>>>>>>>' % (target, target_apk_file)
 
     print 'after build for channel : %s, just reset code ' % channel
-    os.system('git reset --hard HEAD')
+    #os.system('git reset --hard HEAD')
 
     print '-' * 40
     print '-' * 40
