@@ -31,12 +31,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveRequest.java" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java" afterPath="$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard.cfg" afterPath="$PROJECT_DIR$/proguard.cfg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -353,6 +351,9 @@
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/build.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384857871395" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384857871395" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/StringBuilderPool.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
+    <file path="$PROJECT_DIR$/bin/proguard/usage.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384907856927" ignored="false" />
+    <file path="$PROJECT_DIR$/bin/proguard/mapping.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384909617000" ignored="false" />
+    <file path="/RequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384910178780" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -430,30 +431,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <file leaf-file-name="InternetUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/InternetUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
+            <state line="28" column="102" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java">
+      <file leaf-file-name="BeanRequestDefaultImplInternal.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="28" selection-start="4317" selection-end="4317" vertical-scroll-proportion="0.0">
+            <state line="336" column="58" selection-start="13699" selection-end="13699" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
+      <file leaf-file-name="RequestBase.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="226" column="78" selection-start="10705" selection-end="10705" vertical-scroll-proportion="-6.12">
+            <state line="203" column="25" selection-start="7486" selection-end="7486" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#7430#7460#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proguard.cfg" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/proguard.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="265" selection-end="265" vertical-scroll-proportion="0.23373175">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParameterizedType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-17/java/lang/reflect/ParameterizedType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="17" selection-start="974" selection-end="974" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InternetConfig.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/InternetConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="32" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LanuchResponse.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="27" selection-start="300" selection-end="314" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppRuntime.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="72" selection-start="522" selection-end="551" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1053#1061#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -468,57 +516,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/NetworkBroadcastReceiver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="42" selection-start="1336" selection-end="1366" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtilOperator.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="98" selection-start="6782" selection-end="6782" vertical-scroll-proportion="2.3880596">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtilsRuntime.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="23" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppRuntime.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="49" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1053#1061#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ActiveRequest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="39" selection-start="562" selection-end="565" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LanuchRequest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="26" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
+            <state line="20" column="41" selection-start="615" selection-end="615" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -542,10 +543,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ActiveBroadcastReceiver.java" />
-        <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveResponse.java" />
-        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" />
-        <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
@@ -555,9 +552,13 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
         <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveRequest.java" />
-        <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" />
+        <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java" />
+        <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java" />
+        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" />
+        <option value="$PROJECT_DIR$/proguard.cfg" />
       </list>
     </option>
   </component>
@@ -610,6 +611,210 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1025,7 +1230,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="23" width="1393" height="878" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1038,7 +1243,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277849" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7759283" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7759283" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1122,104 +1327,67 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchResponse.java">
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+        <state line="17" column="3" selection-start="415" selection-end="415" vertical-scroll-proportion="0.14873838">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="83" selection-start="4815" selection-end="4828" vertical-scroll-proportion="0.7370518">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="35" selection-start="865" selection-end="865" vertical-scroll-proportion="0.38379815">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="43" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="96" selection-start="5032" selection-end="5050" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="57" selection-start="4625" selection-end="4625" vertical-scroll-proportion="-9.68">
+        <state line="13" column="13" selection-start="301" selection-end="301" vertical-scroll-proportion="0.2549801">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="39" selection-start="562" selection-end="565" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="26" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/NetworkBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="42" selection-start="1336" selection-end="1366" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="28" selection-start="4317" selection-end="4317" vertical-scroll-proportion="0.0">
+        <state line="20" column="41" selection-start="615" selection-end="615" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="49" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+        <state line="22" column="72" selection-start="522" selection-end="551" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1053#1061#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
+        <state line="12" column="51" selection-start="381" selection-end="382" vertical-scroll-proportion="0.08499336">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/JsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="78" selection-start="10705" selection-end="10705" vertical-scroll-proportion="-6.12">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="34" column="65" selection-start="873" selection-end="882" vertical-scroll-proportion="0.33333334">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.0">
+        <state line="12" column="27" selection-start="300" selection-end="314" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="63" selection-start="530" selection-end="530" vertical-scroll-proportion="0.29747677">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="21" selection-start="6478" selection-end="6478" vertical-scroll-proportion="0.3243243">
           <folding />
         </state>
       </provider>
@@ -1231,9 +1399,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="98" selection-start="6782" selection-end="6782" vertical-scroll-proportion="2.3880596">
+        <state line="336" column="58" selection-start="13699" selection-end="13699" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/InternetConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="32" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-17/java/lang/reflect/ParameterizedType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="17" selection-start="974" selection-end="974" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="203" column="25" selection-start="7486" selection-end="7486" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#7430#7460#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="56" selection-start="4996" selection-end="4996" vertical-scroll-proportion="-17.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proguard.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="265" selection-end="265" vertical-scroll-proportion="0.23373175">
           <folding />
         </state>
       </provider>

@@ -203,6 +203,11 @@ public abstract class RequestBase<T> {
     @SuppressWarnings("unchecked")
     public Class<T> getGenericType() {
         Type genType = getClass().getGenericSuperclass();
+
+        if (DEBUG) {
+            LOGD("[[RequestBase::getGenericType]] genType = " + genType);
+        }
+
         if (!(genType instanceof ParameterizedType)) {
             return null;
         }

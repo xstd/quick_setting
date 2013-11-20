@@ -337,7 +337,8 @@ class BeanRequestDefaultImplInternal implements BeanRequestInterface {
             ret = JsonUtils.parse(response, request.getGenericType());
             if (DEBUG) {
                 UtilsConfig.LOGD("Before return, after success get the data from server, parse cost time from entry = "
-                        + (System.currentTimeMillis() - entryTime) + "ms" + " response parse result = " + ret);
+                        + (System.currentTimeMillis() - entryTime) + "ms" + " response parse result = " + ret
+                        + " response Type = " + request.getGenericType());
             }
             
             if (ret == null) {

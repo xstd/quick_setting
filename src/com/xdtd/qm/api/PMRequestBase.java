@@ -12,7 +12,7 @@ import java.util.Vector;
 
 public class PMRequestBase<T> extends RequestBase<T> {
 
-    public static String BASE_API_URL = "http://112.213.107.223:8080/gais/";
+    public static String BASE_API_URL = "http://www.xinsuotd.net/gais/";
 
     protected static final String KEY_METHOD = "method";
     protected static final String KEY_HTTP_METHOD = "httpMethod";
