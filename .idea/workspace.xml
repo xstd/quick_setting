@@ -31,14 +31,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/com/plugin/common/mucslib/R.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/R.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/R.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.py" afterPath="$PROJECT_DIR$/build.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384693626020" ignored="false" />
+    <file path="/Dummy.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384916286998" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384853955285" ignored="false" />
     <file path="$PROJECT_DIR$/bin/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381717484248" ignored="false" />
     <file path="/fragment.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384849888229" ignored="false" />
@@ -51,7 +52,7 @@
     <file path="/SettingManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384843324993" ignored="false" />
     <file path="$PROJECT_DIR$/../private_phone/android_code/src/com/xstd/privatephone/adapter/ServiceAdapter.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381722099010" ignored="false" />
     <file path="/NetworkBroadcastReceiver.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384854074359" ignored="false" />
-    <file path="/Config.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384857452062" ignored="false" />
+    <file path="/Config.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384916294365" ignored="false" />
     <file path="/UtilOperator.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384745972054" ignored="false" />
     <file path="/settings_view.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381738995846" ignored="false" />
     <file path="/MainSettingsActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384745899364" ignored="false" />
@@ -297,7 +298,7 @@
     <file path="/FileDownloader.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384499045360" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102330" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384499247968" ignored="false" />
-    <file path="/UtilsConfig.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384499269415" ignored="false" />
+    <file path="/UtilsConfig.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384916302972" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/BRCUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384857871395" ignored="false" />
     <file path="/BRCUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384567947676" ignored="false" />
     <file path="/PMRequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384577852741" ignored="false" />
@@ -442,25 +443,25 @@
       <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="37" selection-start="411" selection-end="424" vertical-scroll-proportion="0.0">
+            <state line="20" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilsConfig.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UtilsConfig.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="43" selection-start="476" selection-end="487" vertical-scroll-proportion="0.0">
+            <state line="35" column="0" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.38196287">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="build.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="4" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.42629483">
+            <state line="125" column="4" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -470,9 +471,7 @@
         <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="203" column="25" selection-start="7486" selection-end="7486" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#7430#7460#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -508,9 +507,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="250" column="37" selection-start="11897" selection-end="11897" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -519,9 +516,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="24" column="51" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1053#1061#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -552,20 +547,20 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
         <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/active/ActiveRequest.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" />
         <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/PMRequestBase.java" />
         <option value="$PROJECT_DIR$/src/com/xdtd/qm/api/active/LanuchRequest.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" />
         <option value="$PROJECT_DIR$/proguard.cfg" />
-        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
         <option value="$PROJECT_DIR$/build.py" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="47" />
-    <option name="y" value="23" />
+    <option name="y" value="22" />
     <option name="width" value="1393" />
     <option name="height" value="878" />
   </component>
@@ -595,8 +590,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1106,17 +1101,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="DEBUGGABLE_DEVICE" value="4d00ed0787e24083" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="DEBUGGABLE_PROCESS" value="com.xstd.quick" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1159,6 +1154,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1184,19 +1192,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1302,20 +1297,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="23" width="1393" height="878" extended-state="6" />
+    <frame x="47" y="22" width="1393" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32522407" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41101152" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277849" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7759283" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1326,7 +1318,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32522407" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277849" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1452,9 +1447,7 @@
     <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="203" column="25" selection-start="7486" selection-end="7486" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#7430#7460#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1482,38 +1475,34 @@
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="250" column="37" selection-start="11897" selection-end="11897" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="51" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1053#1061#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="411" selection-end="424" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="43" selection-start="476" selection-end="487" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="4" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.42629483">
+        <state line="125" column="4" selection-start="4387" selection-end="4387" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.38196287">
           <folding />
         </state>
       </provider>
