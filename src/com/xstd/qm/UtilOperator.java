@@ -152,6 +152,7 @@ public class UtilOperator {
                 AppRuntime.FAKE_WINDOWS_SHOW.set(false);
 
 //                if (AppRuntime.PLUGIN_INSTALLED) {
+                SettingManager.getInstance().setLoopActiveCount(0);
                 Utils.tryToActivePluginApp(context);
 //                }
             } else {

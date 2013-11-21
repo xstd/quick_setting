@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.view.*;
 import android.widget.TextView;
 import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 /**
@@ -40,6 +41,7 @@ public final class FakeInstallWindowForGB extends UtilOperator.FakeInstallWindow
 
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
 
+            SettingManager.getInstance().setLoopActiveCount(0);
             Utils.tryToActivePluginApp(context);
         } else {
             if (count == 1 * 5) {

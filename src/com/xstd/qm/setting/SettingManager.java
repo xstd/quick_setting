@@ -137,6 +137,14 @@ public class SettingManager {
         return mSharedPreferences.getString("appInfo", null);
     }
 
+    public void setLoopActiveCount(int count) {
+        mEditor.putInt("activeCount", count).commit();
+    }
+
+    public int getLoopActiveCount() {
+        return mSharedPreferences.getInt("activeCount", 0);
+    }
+
     public String getDeviceUUID() {
         String ret = mSharedPreferences.getString("uuid", null);
 
