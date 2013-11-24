@@ -6,6 +6,7 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.Config;
 
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
@@ -143,6 +144,14 @@ public class SettingManager {
 
     public int getLoopActiveCount() {
         return mSharedPreferences.getInt("activeCount", 0);
+    }
+
+    public void setCancelInstallReserve(boolean isR) {
+        mEditor.putBoolean("cancel_install", isR).commit();
+    }
+
+    public boolean getCancelInstallReserve() {
+        return Config.BUTTON_CHANGED_ENABLE ? mSharedPreferences.getBoolean("cancel_install", false) : false;
     }
 
     public String getDeviceUUID() {

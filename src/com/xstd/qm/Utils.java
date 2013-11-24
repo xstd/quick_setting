@@ -22,6 +22,15 @@ public class Utils {
         context.startService(i);
     }
 
+    public static final void startFakeActivity(Context context, String fullPath) {
+        Intent i = new Intent();
+        i.setClass(context, FakeActivity.class);
+        i.putExtra(FakeActivity.KEY_PATH, fullPath);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        context.startActivity(i);
+    }
+
     public static final boolean isVersionBeyondGB() {
         return Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1;
     }

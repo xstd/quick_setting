@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="48dp"
-              android:background="@color/black"
-              android:padding="0dp"
               android:text="取消"
-              android:textSize="20sp"
-              android:gravity="center">
-</TextView>
+              style="?android:attr/buttonBarButtonStyle">
+</Button>
