@@ -31,15 +31,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/WatchingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fake_install_btn.xml" afterPath="$PROJECT_DIR$/res/layout/fake_install_btn.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -475,10 +466,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="33" selection-start="212" selection-end="212" vertical-scroll-proportion="0.08499336">
+            <state line="14" column="40" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -514,10 +505,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FakeActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FakeActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="72" selection-start="2259" selection-end="2282" vertical-scroll-proportion="0.0">
+            <state line="68" column="5" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.827027">
               <folding />
             </state>
           </provider>
@@ -1207,13 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="72" selection-start="2259" selection-end="2282" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="53" selection-start="528" selection-end="549" vertical-scroll-proportion="0.0">
@@ -1264,7 +1248,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="212" selection-end="212" vertical-scroll-proportion="0.08499336">
+        <state line="14" column="40" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="5" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.827027">
           <folding />
         </state>
       </provider>
