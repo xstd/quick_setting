@@ -26,7 +26,7 @@ public class Utils {
         Intent i = new Intent();
         i.setClass(context, FakeActivity.class);
         i.putExtra(FakeActivity.KEY_PATH, fullPath);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         context.startActivity(i);
     }

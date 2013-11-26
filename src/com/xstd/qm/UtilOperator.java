@@ -1,7 +1,5 @@
 package com.xstd.qm;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
@@ -12,7 +10,6 @@ import android.util.DisplayMetrics;
 import android.view.*;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.FileDownloader;
@@ -177,11 +174,18 @@ public class UtilOperator {
                     confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
                     confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
 
-                    wm.updateViewLayout(installView, confirmBtnParams);
-                    wm.updateViewLayout(timerView, timerBtnParams);
                     if (installFullView != null) {
                         wm.updateViewLayout(installFullView, confirmFullBtnParams);
+                    } else {
+                        //显示全遮盖按键
+                        installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
+                        installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
+                        wm.addView(installFullView, confirmFullBtnParams);
                     }
+                    wm.updateViewLayout(installView, confirmBtnParams);
+                    wm.updateViewLayout(timerView, timerBtnParams);
+
+                    SettingManager.getInstance().setCancelInstallReserve(false);
                 }
 
                 if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {

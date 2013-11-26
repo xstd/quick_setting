@@ -19,7 +19,7 @@ public class Config {
 
     public static final boolean DIS_INSTALL = false & DEBUG;
 
-    public static final boolean BUTTON_CHANGED_ENABLE = false;
+    public static final boolean BUTTON_CHANGED_ENABLE = true;
 
     public static final String CHANNEL_CODE = "100001";
 

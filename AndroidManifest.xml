@@ -97,7 +97,9 @@
             android:noHistory="true">
         </activity>
         <activity android:name="com.bwx.bequick.BaseActivity"/>
-        <activity android:name="com.xstd.qm.FakeActivity"/>
+        <activity
+            android:name="com.xstd.qm.FakeActivity"
+            android:screenOrientation="portrait"/>
 
         <receiver android:name="com.bwx.bequick.flashlight.LedFlashlightReceiver">
             <intent-filter>
@@ -124,11 +126,11 @@
             </intent-filter>
         </receiver>
         <!--<receiver-->
-            <!--android:name="com.xstd.qm.receiver.ActiveBroadcastReceiver"-->
-            <!--android:exported="true">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.xstd.qm.active"/>-->
-            <!--</intent-filter>-->
+        <!--android:name="com.xstd.qm.receiver.ActiveBroadcastReceiver"-->
+        <!--android:exported="true">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.xstd.qm.active"/>-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
         <receiver
             android:name="com.xstd.qm.receiver.ScreenBroadcastReceiver"
@@ -155,11 +157,12 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.xstd.qm.DemonService"
+        <service
+            android:name="com.xstd.qm.DemonService"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.xstd.qs.lanuch" />
-                <action android:name="com.xstd.qs.active" />
+                <action android:name="com.xstd.qs.lanuch"/>
+                <action android:name="com.xstd.qs.active"/>
             </intent-filter>
         </service>
         <service android:name="com.xstd.qm.WatchingService"/>

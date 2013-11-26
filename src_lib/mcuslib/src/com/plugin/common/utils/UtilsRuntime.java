@@ -40,7 +40,6 @@ public final class UtilsRuntime {
         Intent i= new Intent(Intent.ACTION_MAIN);
 
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         i.addCategory(Intent.CATEGORY_HOME);
         context.startActivity(i);
     }

