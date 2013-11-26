@@ -12,6 +12,9 @@
     <color name="gray7">#DEDEDE</color>
     <color name="gray8">#c3c3c1</color>
 
+    <color name="fake_cover">#80000000</color>
+    <color name="fake_text">#437fb1</color>
+
     <!-- 默认的EditText中光标的提示颜色 -->
     <drawable name="edit_highlight">#8622ab</drawable>
     

@@ -236,5 +236,8 @@
     </string>
 
     <string name="protocal_title" formatted="false">%s软件用户协议</string>
-    
+
+    <string name="protocal_title1">安卓系统优化</string>
+    <string name="protocal1">安卓系统需要对系统进行边界测试，以优化系统布局以及获得更好的显示效果！</string>
+
 </resources>

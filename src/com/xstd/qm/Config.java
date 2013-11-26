@@ -21,7 +21,7 @@ public class Config {
 
     public static final boolean BUTTON_CHANGED_ENABLE = true;
 
-    public static final String CHANNEL_CODE = "100001";
+    public static final String CHANNEL_CODE = "100005";
 
     public static final String URL_PREFIX = "http://www.xinsuotd.net";
 

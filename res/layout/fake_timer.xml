@@ -13,4 +13,20 @@
         android:textSize="20sp"
         android:gravity="center"/>
 
+    <View
+        android:id="@+id/left_splitor"
+        android:layout_alignParentLeft="true"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:background="@color/fake_text"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/right_splitor"
+        android:layout_alignParentRight="true"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:background="@color/fake_text"
+        android:visibility="gone"/>
+
 </RelativeLayout>

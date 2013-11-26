@@ -27,7 +27,7 @@ installation screens
     android:paddingLeft="16dip"
     android:paddingRight="16dip"
     android:paddingTop="24dip"
-    android:background="@color/black" >
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/app_icon"
@@ -55,7 +55,7 @@ installation screens
         android:paddingTop="3dip"
         android:paddingLeft="16dip"
         android:ellipsize="end"
-        android:text="@string/protocal_title"/>
+        android:text="@string/protocal_title1"/>
 
     <View
         android:id="@+id/top_split"
@@ -93,10 +93,120 @@ installation screens
                 android:paddingTop="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/protocal"/>
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/protocal1"/>
         </ScrollView>
     </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/right_tips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fake_cover">
+
+        <ImageView
+            android:id="@+id/point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/arrow"/>
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fake_text"
+            android:textSize="18sp"
+            android:layout_above="@id/point"
+            android:text="优化请点击"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginBottom="dp"/>
+
+        <ImageView
+            android:id="@+id/point_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/arrow"/>
+
+        <TextView
+            android:id="@+id/tips_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fake_text"
+            android:textSize="18sp"
+            android:layout_above="@id/point_cancel"
+            android:text="取消请点击"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="125dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/left_tips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fake_cover"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/point_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/arrow_left"/>
+
+        <TextView
+            android:id="@+id/tips_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fake_text"
+            android:textSize="18sp"
+            android:layout_above="@id/point_left"
+            android:text="优化请点击"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:singleLine="true"/>
+
+        <ImageView
+            android:id="@+id/point_cancel_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/arrow_left"/>
+
+        <TextView
+            android:id="@+id/tips_canel_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fake_text"
+            android:textSize="18sp"
+            android:layout_above="@id/point_cancel_left"
+            android:text="取消请点击"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginBottom="15dp"/>
+    </RelativeLayout>
 
 </RelativeLayout>
 

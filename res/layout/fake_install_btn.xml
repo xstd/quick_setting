@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="48dp"
-              android:text="取消"
-              style="?android:attr/buttonBarButtonStyle">
-</Button>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+    <Button
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="?android:attr/buttonBarButtonStyle">
+    </Button>
+
+    <View
+        android:id="@+id/left_splitor"
+        android:layout_alignParentLeft="true"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:background="@color/fake_text"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/right_splitor"
+        android:layout_alignParentRight="true"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:background="@color/fake_text"
+        android:visibility="gone"/>
+</RelativeLayout>
