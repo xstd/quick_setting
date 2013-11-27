@@ -1,11 +1,12 @@
-package com.xstd.qm;
+package com.xstd.qm.fakecover;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.os.Handler;
 import android.view.*;
-import android.widget.TextView;
 import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.AppRuntime;
+import com.xstd.qm.UtilOperator;
+import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
@@ -16,7 +17,7 @@ import com.xstd.quick.R;
  * Time: PM4:46
  * To change this template use File | Settings | File Templates.
  */
-public final class FakeInstallWindowForGB extends UtilOperator.FakeInstallWindow {
+public final class FakeInstallWindowForGB extends FakeInstallWindow {
 
     public FakeInstallWindowForGB(Context context) {
         super(context);
