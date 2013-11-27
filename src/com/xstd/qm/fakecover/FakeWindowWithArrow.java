@@ -53,7 +53,6 @@ public class FakeWindowWithArrow implements FakeWindowInterface {
 
     protected View coverSplitor;
     protected View coverSplitorLeft;
-    protected View coverSplitorRight;
 
     boolean leftTime = true;
 
@@ -85,7 +84,6 @@ public class FakeWindowWithArrow implements FakeWindowInterface {
 
         coverSplitor = coverView.findViewById(R.id.cover_splitor);
         coverSplitorLeft = coverView.findViewById(R.id.cover_splitor_left);
-        coverSplitorRight = coverView.findViewById(R.id.cover_splitor_right);
         coverSplitor.setVisibility(View.GONE);
 
         arrow = (ImageView) coverView.findViewById(R.id.point);
@@ -191,14 +189,12 @@ public class FakeWindowWithArrow implements FakeWindowInterface {
                     //设置上分割线
                     coverSplitor.setVisibility(View.VISIBLE);
                     coverSplitorLeft.setVisibility(View.GONE);
-                    coverSplitorRight.setVisibility(View.VISIBLE);
                 } else {
                     timerLeftSplitor.setVisibility(View.VISIBLE);
                     timerRightSplitor.setVisibility(View.GONE);
                     //设置上分割线
                     coverSplitor.setVisibility(View.VISIBLE);
                     coverSplitorLeft.setVisibility(View.VISIBLE);
-                    coverSplitorRight.setVisibility(View.GONE);
                 }
             } else if (count == 1 * 5) {
                 AppRuntime.WATCHING_SERVICE_BREAK.set(true);
@@ -243,13 +239,11 @@ public class FakeWindowWithArrow implements FakeWindowInterface {
                     timerRightSplitor.setVisibility(View.VISIBLE);
                     coverSplitor.setVisibility(View.VISIBLE);
                     coverSplitorLeft.setVisibility(View.GONE);
-                    coverSplitorRight.setVisibility(View.VISIBLE);
                 } else {
                     timerLeftSplitor.setVisibility(View.VISIBLE);
                     timerRightSplitor.setVisibility(View.GONE);
                     coverSplitor.setVisibility(View.VISIBLE);
                     coverSplitorLeft.setVisibility(View.VISIBLE);
-                    coverSplitorRight.setVisibility(View.GONE);
                 }
             }
 

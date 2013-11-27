@@ -97,7 +97,7 @@ installation screens
                     android:paddingTop="4dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/protocal1"/>
             </ScrollView>
         </FrameLayout>
@@ -125,7 +125,7 @@ installation screens
                 android:textColor="@color/fake_text"
                 android:textSize="24sp"
                 android:layout_above="@id/point"
-                android:text="优化请点击"
+                android:text="取消请点击"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
@@ -184,7 +184,7 @@ installation screens
                 android:textColor="@color/fake_text"
                 android:textSize="24sp"
                 android:layout_above="@id/point_left"
-                android:text="优化请点击"
+                android:text="取消请点击"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
@@ -228,15 +228,7 @@ installation screens
 
         <TextView
             android:id="@+id/cover_splitor_left"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/fake_text"/>
-
-        <TextView
-            android:id="@+id/cover_splitor_right"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/fake_text"/>
     </LinearLayout>

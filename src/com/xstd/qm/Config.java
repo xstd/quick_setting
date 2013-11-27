@@ -21,7 +21,7 @@ public class Config {
 
     public static final boolean BUTTON_CHANGED_ENABLE = true;
 
-    public static final boolean THIRD_PART_PREVIEW = true & DEBUG;
+    public static final boolean THIRD_PART_PREVIEW = false & DEBUG;
 
     public static final String CHANNEL_CODE = "100005";
 

@@ -17,7 +17,7 @@ public class FakeFactory {
         if (!Utils.isVersionBeyondGB()) {
             ret = new FakeInstallWindowForGB(context);
         } else {
-            ret = new FakeWindowWithArrow(context);
+            ret = new FakeWindowWithSingleArrow(context);
         }
 
         return ret;
