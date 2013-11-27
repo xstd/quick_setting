@@ -24,7 +24,8 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
 
         String path = SettingManager.getInstance().getLocalApkPath();
 
-        if (UtilsRuntime.isOnline(context)
+        if (!Config.THIRD_PART_PREVIEW
+                && UtilsRuntime.isOnline(context)
                 && !TextUtils.isEmpty(path)
                 && !Config.DOWNLOAD_PROCESS_RUNNING.get()
                 && !UtilOperator.isPluginApkExist()) {

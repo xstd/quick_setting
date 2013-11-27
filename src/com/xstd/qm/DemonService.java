@@ -94,7 +94,7 @@ public class DemonService extends IntentService {
                     Utils.tryToActivePluginApp(getApplicationContext());
                 }
 
-            } else if (ACTION_DOWNLOAD_PLUGIN.equals(action)) {
+            } else if (ACTION_DOWNLOAD_PLUGIN.equals(action) && !Config.THIRD_PART_PREVIEW) {
                 if (Config.DEBUG) {
                     Config.LOGD("[[DemonService::onHandleIntent]] action = " + action);
                 }
