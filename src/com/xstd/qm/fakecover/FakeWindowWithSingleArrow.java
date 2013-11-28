@@ -250,19 +250,9 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
     @Override
     public void show(boolean full) {
-        String model = android.os.Build.MODEL;
-        if (!TextUtils.isEmpty(model)) {
-            model = model.toLowerCase();
-        }
-        boolean leftConfirm = false;
-//        for (String m : AppRuntime.LEFT_CONFIRM_LIST) {
-//            if (model.startsWith(m)) {
-//                leftConfirm = true;
-//                break;
-//            }
-//        }
+        boolean leftConfirm = Utils.deviceNeedAdapter();
 
-        if (!SettingManager.getInstance().getCancelInstallReserve()) {
+        if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
             rightView.setVisibility(View.VISIBLE);
             leftView.setVisibility(View.GONE);
         } else {
@@ -303,8 +293,8 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
             installBtnLeft.setVisibility(View.GONE);
             installBtnRight.setVisibility(View.VISIBLE);
         } else {
-            confirmBtnParams.width = (int) (50 * density);
-            confirmBtnParams.x = (screenWidth / 2 - confirmBtnParams.width) / 2;
+            confirmBtnParams.width = baseWidth + (screenWidth / 2 - baseWidth) / 2 + 10;
+            confirmBtnParams.x = (screenWidth / 2 - baseWidth) / 2;
             confirmBtnParams.gravity = Gravity.BOTTOM | Gravity.START;
             installBtnLeft.setVisibility(View.VISIBLE);
             installBtnRight.setVisibility(View.GONE);

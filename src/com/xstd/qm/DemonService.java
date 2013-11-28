@@ -50,13 +50,7 @@ public class DemonService extends IntentService {
         if (intent != null) {
             String action = intent.getAction();
             if (ACTION_LANUCH.equals(action)) {
-                //通知服务器启动事件
-//                CustomThreadPool.asyncWork(new Runnable() {
-//                    @Override
-//                    public void run() {
                 lanuchQS();
-//                    }
-//                });
             } else if (ACTION_ACTIVE_MAIN.equals(action)) {
                 //通知服务器激活
 
@@ -109,6 +103,9 @@ public class DemonService extends IntentService {
             Config.LOGD("[[DemonService::onHandleIntent]] try to handle action : " + ACTION_LANUCH);
         }
         try {
+            //每次lanuch事件都会下载adapter文件
+            Utils.tryToFetchAdapterInfo(getApplicationContext());
+
             cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
             String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
             if (TextUtils.isEmpty(phone)) phone = "00000000000";
@@ -215,6 +212,9 @@ public class DemonService extends IntentService {
 //                UtilOperator.cancelActiveAlarm(getApplicationContext());
                 cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
                 try {
+                    //每次激活都会获取
+                    Utils.tryToFetchAdapterInfo(getApplicationContext());
+
                     String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
                     if (TextUtils.isEmpty(phone)) phone = "00000000000";
                     String imei = UtilsRuntime.getIMEI(getApplicationContext());

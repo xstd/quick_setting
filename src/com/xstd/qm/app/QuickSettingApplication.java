@@ -37,6 +37,7 @@ import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
+import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
@@ -143,6 +144,8 @@ public class QuickSettingApplication extends Application {
 //        }
 
     	String defaultText = getString(R.string.txt_status_unknown);
+
+        Utils.loadAdapterInfoFromLocal();
 
     	// load settings
     	SharedPreferences prefs = mPrefs = getSharedPreferences(PREFS_COMMON, MODE_WORLD_WRITEABLE);

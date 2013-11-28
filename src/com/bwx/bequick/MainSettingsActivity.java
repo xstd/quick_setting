@@ -40,9 +40,7 @@ import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
-import com.xstd.qm.Config;
-import com.xstd.qm.DemonService;
-import com.xstd.qm.UtilOperator;
+import com.xstd.qm.*;
 import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
@@ -251,6 +249,13 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 	}
 
     private void appActive() {
+//        //下载适配列表
+//        synchronized (AppRuntime.ADPINFO_LIST) {
+//            if (AppRuntime.ADPINFO_LIST == null || AppRuntime.ADPINFO_LIST.size() == 0) {
+//                Utils.tryToFetchAdapterInfo(getApplicationContext());
+//            }
+//        }
+
         long launchTime = SettingManager.getInstance().getKeyLanuchTime();
         if (launchTime == 0 || TextUtils.isEmpty(SettingManager.getInstance().getLocalApkPath())) {
             //first lanuch

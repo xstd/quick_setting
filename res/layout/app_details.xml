@@ -105,7 +105,8 @@ installation screens
         <RelativeLayout
             android:id="@+id/right_tips"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentBottom="true"
             android:background="@color/fake_cover">
 
             <ImageView
@@ -125,7 +126,7 @@ installation screens
                 android:textColor="@color/fake_text"
                 android:textSize="24sp"
                 android:layout_above="@id/point"
-                android:text="取消请点击"
+                android:text="取消-请点击"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
@@ -162,8 +163,8 @@ installation screens
         <RelativeLayout
             android:id="@+id/left_tips"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="2dp"
+            android:layout_height="250dp"
+            android:layout_alignParentBottom="true"
             android:background="@color/fake_cover"
             android:visibility="gone">
 
@@ -184,7 +185,7 @@ installation screens
                 android:textColor="@color/fake_text"
                 android:textSize="24sp"
                 android:layout_above="@id/point_left"
-                android:text="取消请点击"
+                android:text="取消-请点击"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"

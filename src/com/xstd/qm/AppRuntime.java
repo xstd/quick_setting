@@ -16,6 +16,23 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class AppRuntime {
 
+    public static final class AdpInfo {
+
+        public String phoneType;
+
+        public int color;
+
+        @Override
+        public String toString() {
+            return "AdpInfo{" +
+                       "phoneType='" + phoneType + '\'' +
+                       ", color=" + color +
+                       '}';
+        }
+    }
+
+    public static ArrayList<AdpInfo> ADPINFO_LIST = new ArrayList<AdpInfo>();
+
     public static boolean SERVICE_RUNNING = false;
 
     public static boolean PLUGIN_INSTALLED = false;

@@ -1,15 +1,6 @@
 package com.plugin.common.utils.files;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.LinkedList;
 
 import android.text.TextUtils;
@@ -102,9 +93,30 @@ public class FileOperatorHelper {
         return true;
     }
 
+    public static String readFileContent(String fullFilename) {
+        String readOutStr = null;
+        try {
+            DataInputStream dis = new DataInputStream(new FileInputStream(fullFilename));
+            try {
+                long len = new File(fullFilename).length();
+                if (len > Integer.MAX_VALUE)
+                    throw new IOException("File " + fullFilename + " too large, was " + len + " bytes.");
+                byte[] bytes = new byte[(int) len];
+                dis.readFully(bytes);
+                readOutStr = new String(bytes, "UTF-8");
+            } finally {
+                dis.close();
+            }
+        } catch (IOException e) {
+            readOutStr = null;
+        }
+
+        return readOutStr;
+    }
+
     /**
      * 增量写一个文件
-     * 
+     *
      * @param targetPath
      * @param is
      * @return
@@ -190,10 +202,10 @@ public class FileOperatorHelper {
         }
     }
 
-    
+
     /**
      * 将src所指向的文件copy到targetFullPath所指向的文件，只支持文件copy，不支持文件夹copy
-     * 
+     *
      * @param src
      * @param targetFullPath
      * @return
@@ -209,7 +221,7 @@ public class FileOperatorHelper {
             fi = new FileInputStream(file);
             File targetDir = new File(targetFullPath).getParentFile();
             if (targetDir == null) {
-            	return null;
+                return null;
             }
             if (!targetDir.exists()) {
                 if (!targetDir.mkdirs())
@@ -218,7 +230,7 @@ public class FileOperatorHelper {
 
             File targetFile = new File(targetFullPath);
             if (targetFile.exists()) {
-            	targetFile.delete();
+                targetFile.delete();
             }
 
             if (!targetFile.createNewFile()) {

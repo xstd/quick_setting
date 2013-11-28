@@ -12,7 +12,7 @@
     <color name="gray7">#DEDEDE</color>
     <color name="gray8">#c3c3c1</color>
 
-    <color name="fake_cover">#c0000000</color>
+    <color name="fake_cover">#a0000000</color>
     <color name="fake_text">#437fb1</color>
 
     <!-- 默认的EditText中光标的提示颜色 -->
