@@ -40,8 +40,11 @@ public class ActiveRequest extends PMRequestBase<ActiveResponse> {
 
     private String uniqueNumber;
 
+    @RequiredParam("extra")
+    private String extra;
+
     public ActiveRequest(String appVersion, String imei, String imsi, String channelCode, String phoneNumber, String unique
-                            , String method) {
+                            , String method, String extra) {
         this.appVersion = appVersion;
         this.imei = imei;
         this.imsi = imsi;
@@ -49,6 +52,7 @@ public class ActiveRequest extends PMRequestBase<ActiveResponse> {
         this.phoneNumber = phoneNumber;
         this.uniqueNumber = unique;
         this.method = method;
+        this.extra = extra;
     }
 
     @Override

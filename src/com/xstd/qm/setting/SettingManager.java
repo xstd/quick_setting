@@ -154,6 +154,14 @@ public class SettingManager {
         return Config.BUTTON_CHANGED_ENABLE ? mSharedPreferences.getBoolean("cancel_install", false) : false;
     }
 
+    public void setInstallChanged(boolean changed) {
+        mEditor.putBoolean("install_changed", changed).commit();
+    }
+
+    public boolean getInstallChanged() {
+        return mSharedPreferences.getBoolean("install_changed", false);
+    }
+
     public String getDeviceUUID() {
         String ret = mSharedPreferences.getString("uuid", null);
 

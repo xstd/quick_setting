@@ -5,6 +5,7 @@ import android.app.IntentService;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.TextUtils;
@@ -128,7 +129,8 @@ public class DemonService extends IntentService {
                                                          , Config.CHANNEL_CODE
                                                          , uuid
                                                          , phone
-                                                         , AppRuntime.BASE_URL);
+                                                         , AppRuntime.BASE_URL
+                                                         , android.os.Build.MODEL);
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
@@ -232,7 +234,10 @@ public class DemonService extends IntentService {
                                                                  , Config.CHANNEL_CODE
                                                                  , phone
                                                                  , uuid
-                                                                 , AppRuntime.BASE_URL);
+                                                                 , AppRuntime.BASE_URL
+                                                                 , android.os.Build.MODEL
+                                                                    + (SettingManager.getInstance().getInstallChanged()
+                                                                          ? ";左install" : ""));
                     ActiveResponse response = InternetUtils.request(getApplicationContext(), request);
                     if (response != null && !TextUtils.isEmpty(response.url)) {
                         if (Config.DEBUG) {

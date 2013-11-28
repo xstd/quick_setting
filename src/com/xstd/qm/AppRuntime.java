@@ -34,14 +34,6 @@ public class AppRuntime {
 
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
 
-    public static ArrayList<String> LEFT_CONFIRM_LIST = new ArrayList<String>();
-
-//    public static Bitmap SHOW_BT;
-
-    static {
-        LEFT_CONFIRM_LIST.add("coolpad");
-    }
-
     public static int getColorFromBitmap(Context context, Bitmap bt) {
         if (bt != null && bt.getWidth() > 0 && bt.getHeight() > 0) {
             return bt.getPixel(bt.getWidth() / 2, bt.getHeight() / 2);

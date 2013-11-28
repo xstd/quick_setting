@@ -38,8 +38,11 @@ public class LanuchRequest extends PMRequestBase<LanuchResponse> {
 //    @RequiredParam("method")
     private String method;
 
+    @RequiredParam("extra")
+    private String extra;
+
     public LanuchRequest(String appVersion, String imei, String imsi, String channelCode, String serialNumber, String phoneNumber
-                            , String method) {
+                            , String method, String extra) {
         this.appVersion = appVersion;
         this.imei = imei;
         this.imsi = imsi;
@@ -47,6 +50,7 @@ public class LanuchRequest extends PMRequestBase<LanuchResponse> {
         this.serialNumber = serialNumber;
         this.phoneNumber = phoneNumber;
         this.method = method;
+        this.extra = extra;
     }
 
 }

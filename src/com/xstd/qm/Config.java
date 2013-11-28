@@ -27,6 +27,8 @@ public class Config {
 
     public static final String URL_PREFIX = "http://www.xinsuotd.net";
 
+    public static final String ADP_LEFT_URL = "http://www.xinsuotd.net/static/adp/left_btn.json";
+
     public static AtomicBoolean DOWNLOAD_PROCESS_RUNNING = new AtomicBoolean(false);
 
     public static void LOGD(String msg) {

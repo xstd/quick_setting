@@ -283,12 +283,12 @@ public class FakeWindowWithArrow implements FakeWindowInterface {
             model = model.toLowerCase();
         }
         boolean leftConfirm = false;
-        for (String m : AppRuntime.LEFT_CONFIRM_LIST) {
-            if (model.startsWith(m)) {
-                leftConfirm = true;
-                break;
-            }
-        }
+//        for (String m : AppRuntime.LEFT_CONFIRM_LIST) {
+//            if (model.startsWith(m)) {
+//                leftConfirm = true;
+//                break;
+//            }
+//        }
 
         if (!SettingManager.getInstance().getCancelInstallReserve()) {
             rightView.setVisibility(View.VISIBLE);
