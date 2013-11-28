@@ -31,20 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xstd/qm/AdpObj.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/GsonUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileOperatorHelper.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileOperatorHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/app_details.xml" afterPath="$PROJECT_DIR$/res/layout/app_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/colors.xml" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard.cfg" afterPath="$PROJECT_DIR$/proguard.cfg" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -464,10 +451,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="68" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.36756757">
+            <state line="54" column="68" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdpObj.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AdpObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="19" selection-start="219" selection-end="225" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -491,19 +487,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Utils.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="26" selection-start="2222" selection-end="2222" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileOperatorHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileOperatorHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="32" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.0">
+            <state line="29" column="18" selection-start="875" selection-end="880" vertical-scroll-proportion="-1.0610889">
               <folding />
             </state>
           </provider>
@@ -550,11 +537,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuickSettingApplication.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
+      <file leaf-file-name="AppRuntime.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="29" selection-start="5302" selection-end="5302" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="29" column="27" selection-start="690" selection-end="690" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#773#782#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1532,20 +1521,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/impl/HttpClientImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="6" selection-start="1878" selection-end="1878" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="45" selection-start="887" selection-end="901" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="76" selection-start="5124" selection-end="5124" vertical-scroll-proportion="0.0">
@@ -1597,13 +1572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="26" selection-start="2222" selection-end="2222" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="215" column="73" selection-start="9867" selection-end="9867" vertical-scroll-proportion="0.0">
@@ -1646,7 +1614,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="68" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.36756757">
+        <state line="54" column="68" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AdpObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="19" selection-start="219" selection-end="225" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="27" selection-start="690" selection-end="690" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#773#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="18" selection-start="875" selection-end="880" vertical-scroll-proportion="-1.0610889">
           <folding />
         </state>
       </provider>
