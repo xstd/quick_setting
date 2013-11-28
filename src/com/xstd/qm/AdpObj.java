@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class AdpObj {
 
-    public ArrayList<AppRuntime.AdpInfo> data;
+    public ArrayList<AdpInfo> data;
 
     @Override
     public String toString() {

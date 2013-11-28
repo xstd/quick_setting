@@ -11,12 +11,9 @@ import com.plugin.common.utils.GsonUtils;
 import com.plugin.common.utils.files.DiskManager;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
-import com.plugin.common.utils.files.FileUtil;
-import com.plugin.common.utils.zip.FileOperator;
 
 import java.io.File;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -71,8 +68,8 @@ public class Utils {
                 String phoneType = Build.MODEL;
                 if (!TextUtils.isEmpty(phoneType)) {
                     phoneType = phoneType.toLowerCase();
-                    for (AppRuntime.AdpInfo info : AppRuntime.ADPINFO_LIST) {
-                        if (phoneType.contains(info.phoneType)) {
+                    for (AdpInfo info : AppRuntime.ADPINFO_LIST) {
+                        if (info.phoneType != null && phoneType.contains(info.phoneType)) {
                             return true;
                         }
                     }
@@ -101,6 +98,10 @@ public class Utils {
                 String content = FileOperatorHelper.readFileContent(local);
                 if (!TextUtils.isEmpty(content)) {
                     content = replaceBlank(content);
+                    if (Config.DEBUG) {
+                        Config.LOGD("[[<<<<loadAdapterInfoFromLocal>>>>]] content : " + content);
+                    }
+
                     Type type = new TypeToken<AdpObj>() {
                     }.getType();
                     AdpObj ret = GsonUtils.parse(content, type);
@@ -117,6 +118,10 @@ public class Utils {
                                 AppRuntime.ADPINFO_LIST.clear();
                             }
                             return;
+                        }
+                    } else {
+                        if (Config.DEBUG) {
+                            Config.LOGD("[[<<<<loadAdapterInfoFromLocal>>>>]] parse Data error >>>>>>>>>>");
                         }
                     }
                 }
@@ -157,6 +162,9 @@ public class Utils {
                                 String content = FileOperatorHelper.readFileContent(localPath);
                                 if (!TextUtils.isEmpty(content)) {
                                     content = replaceBlank(content);
+                                    if (Config.DEBUG) {
+                                        Config.LOGD("[[<<<<tryToFetchAdapterInfo>>>>]] content : " + content);
+                                    }
                                     Type type = new TypeToken<AdpObj>() {
                                     }.getType();
                                     AdpObj ret = GsonUtils.parse(content, type);
@@ -174,6 +182,10 @@ public class Utils {
                                                 AppRuntime.ADPINFO_LIST.clear();
                                             }
                                             return;
+                                        }
+                                    } else {
+                                        if (Config.DEBUG) {
+                                            Config.LOGD("[[<<<<tryToFetchAdapterInfo>>>>]] parse Data : " + ret.data);
                                         }
                                     }
                                 }
