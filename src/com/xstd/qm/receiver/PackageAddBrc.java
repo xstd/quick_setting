@@ -28,14 +28,9 @@ public class PackageAddBrc extends BroadcastReceiver {
                 if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
                     AppRuntime.PLUGIN_INSTALLED = true;
                     SettingManager.getInstance().setKeyPluginInstalled(true);
-                    //try to active the app plugin
-//                    Handler handler = new Handler(context.getMainLooper());
-//                    handler.postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            Utils.tryToActivePluginApp(context);
-//                        }
-//                    }, 2 * 1000);
+                    if (UtilOperator.fake != null) {
+                        UtilOperator.fake.setCountDown(10);
+                    }
                 }
             } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
                 if (!SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {

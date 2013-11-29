@@ -105,7 +105,8 @@ installation screens
         <RelativeLayout
             android:id="@+id/right_tips"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="140dp"
+            android:paddingTop="10dp"
             android:layout_alignParentBottom="true"
             android:background="@color/fake_cover">
 
@@ -120,50 +121,63 @@ installation screens
                 android:src="@drawable/arrow"/>
 
             <TextView
-                android:id="@+id/tips"
+                android:id="@+id/tips_click"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/fake_text"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:layout_above="@id/point"
-                android:text="取消-请点击"
+                android:text="-请点击"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
                 android:singleLine="true"
-                android:layout_marginBottom="dp"/>
-
-            <ImageView
-                android:id="@+id/point_cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginRight="100dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/arrow"
-                android:visibility="gone"/>
-
+                android:paddingLeft="0dp"/>
             <TextView
-                android:id="@+id/tips_cancel"
+                android:id="@+id/tips"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/fake_text"
-                android:textSize="18sp"
-                android:layout_above="@id/point_cancel"
-                android:text="取消请点击"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="125dp"
+                android:textSize="26sp"
+                android:layout_above="@id/point"
+                android:layout_toLeftOf="@id/tips_click"
+                android:text="取消"
                 android:gravity="center"
                 android:singleLine="true"
-                android:layout_marginBottom="10dp"
-                android:visibility="gone"/>
+                android:paddingRight="0dp"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/point_cancel"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_marginRight="100dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:src="@drawable/arrow"-->
+                <!--android:visibility="gone"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tips_cancel"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/fake_text"-->
+                <!--android:textSize="18sp"-->
+                <!--android:layout_above="@id/point_cancel"-->
+                <!--android:text="取消请点击"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="125dp"-->
+                <!--android:gravity="center"-->
+                <!--android:singleLine="true"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:visibility="gone"/>-->
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/left_tips"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="140dp"
+            android:paddingTop="10dp"
             android:layout_alignParentBottom="true"
             android:background="@color/fake_cover"
             android:visibility="gone">
@@ -183,39 +197,50 @@ installation screens
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/fake_text"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:layout_above="@id/point_left"
-                android:text="取消-请点击"
+                android:text="取消"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
                 android:singleLine="true"/>
-
-            <ImageView
-                android:id="@+id/point_cancel_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="100dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/arrow_left"
-                android:visibility="gone"/>
-
             <TextView
-                android:id="@+id/tips_canel_left"
+                android:id="@+id/tips_left_click"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/fake_text"
-                android:textSize="18sp"
-                android:layout_above="@id/point_cancel_left"
-                android:text="取消请点击"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="130dp"
+                android:textSize="22sp"
+                android:layout_above="@id/point_left"
+                android:layout_toRightOf="@id/tips_left"
+                android:text="-请点击"
                 android:gravity="center"
-                android:singleLine="true"
-                android:layout_marginBottom="15dp"
-                android:visibility="gone"/>
+                android:singleLine="true"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/point_cancel_left"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_marginLeft="100dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:src="@drawable/arrow_left"-->
+                <!--android:visibility="gone"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tips_canel_left"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/fake_text"-->
+                <!--android:textSize="18sp"-->
+                <!--android:layout_above="@id/point_cancel_left"-->
+                <!--android:text="取消请点击"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_marginLeft="130dp"-->
+                <!--android:gravity="center"-->
+                <!--android:singleLine="true"-->
+                <!--android:layout_marginBottom="15dp"-->
+                <!--android:visibility="gone"/>-->
         </RelativeLayout>
     </RelativeLayout>
 

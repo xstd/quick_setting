@@ -1,7 +1,5 @@
 package com.xstd.qm.fakecover;
 
-import android.content.Context;
-
 /**
  * Created with IntelliJ IDEA.
  * User: michael
@@ -16,5 +14,7 @@ public interface FakeWindowInterface {
     void dismiss();
 
     void show(boolean full);
+
+    void setCountDown(int countDown);
 
 }

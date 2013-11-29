@@ -9,8 +9,6 @@ import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
 import com.xstd.qm.fakecover.FakeFactory;
-import com.xstd.qm.fakecover.FakeInstallWindow;
-import com.xstd.qm.fakecover.FakeInstallWindowForGB;
 import com.xstd.qm.fakecover.FakeWindowInterface;
 import com.xstd.qm.setting.SettingManager;
 

