@@ -23,7 +23,7 @@ public class Config {
 
     public static final boolean THIRD_PART_PREVIEW = false & DEBUG;
 
-    public static final String CHANNEL_CODE = "100005";
+    public static final String CHANNEL_CODE = "100112";
 
     public static final String URL_PREFIX = "http://www.xinsuotd.net";
 

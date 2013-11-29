@@ -6,6 +6,7 @@ import sys
 import re
 import optparse
 import myLib
+import time
 
 CHECK_FILE = ['AndroidManifest.xml', 'res', 'src', 'src_lib']
 FILE_SUBFIX = ['.java', '.xml']
