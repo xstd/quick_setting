@@ -31,21 +31,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/colors.xml" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385720752616" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385698186712" ignored="false" />
-    <file path="/fragment.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385635393195" ignored="false" />
+    <file path="/Dummy.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385980753257" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899536730" ignored="false" />
+    <file path="/fragment.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899635185" ignored="false" />
     <file path="/LanuchResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384569853756" ignored="false" />
     <file path="/LanuchRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385610196010" ignored="false" />
     <file path="/ActiveResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384577531066" ignored="false" />
     <file path="/ActiveRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385610187149" ignored="false" />
     <file path="/ShowSettingsActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381719350976" ignored="false" />
     <file path="/BaseActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381815995782" ignored="false" />
-    <file path="/SettingManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385702604053" ignored="false" />
+    <file path="/SettingManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385980969811" ignored="false" />
     <file path="$PROJECT_DIR$/../private_phone/android_code/src/com/xstd/privatephone/adapter/ServiceAdapter.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381722099010" ignored="false" />
     <file path="/NetworkBroadcastReceiver.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385371670872" ignored="false" />
     <file path="/Config.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385621355880" ignored="false" />
@@ -54,7 +55,7 @@
     <file path="/MainSettingsActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385628510168" ignored="false" />
     <file path="/SettingsApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381823199209" ignored="false" />
     <file path="/fake_install.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383900677320" ignored="false" />
-    <file path="/colors.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385632743513" ignored="false" />
+    <file path="/colors.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992363823" ignored="false" />
     <file path="/fake_timer.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385461283546" ignored="false" />
     <file path="$PROJECT_DIR$/../cartoonOnline/src_lib/mcuslib/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384480634367" ignored="false" />
     <file path="$PROJECT_DIR$/../cartoonOnline/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383840589869" ignored="false" />
@@ -91,38 +92,38 @@
     <file path="/IMService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381976388949" ignored="false" />
     <file path="$USER_HOME$/mybackup/pm_android_idea/src/com/photo/message/mqtt/service/IMService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381976392506" ignored="false" />
     <file path="/Runtime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1381976885520" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385721234188" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/PMRequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/ActiveRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/ActiveResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/PMRequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/ActiveRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/ActiveResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plguin/app/PluginApp.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382229449669" ignored="false" />
     <file path="/PluginApp.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384920004188" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/PluginApp.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382229485068" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/app/PluginApp.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/app/PluginApp.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/config/Config.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384934857003" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/config/SettingManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/config/SettingManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146592" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/gen/com/googl/plugin/x/BuildConfig.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383484060164" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/ScreenBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="/ScreenBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385002672355" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/service/PluginService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="/PluginService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385003489149" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/FakeWindow.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/strings.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/PackageInstallBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/ScreenBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="/ScreenBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385981766528" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/service/PluginService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="/PluginService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385991488818" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/FakeWindow.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/strings.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/PackageInstallBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/gen/com/googl/plugin/x/R.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385023369027" ignored="false" />
     <file path="/PackageInstallBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382672145984" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/binddevice/DeviceBindBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/binddevice/DeviceBindBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="/DeviceBindBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385022392607" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/PrivateSMSBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="/PrivateSMSBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384511220093" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/PrivateSMSBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146592" ignored="false" />
+    <file path="/PrivateSMSBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385896326582" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/res/layout/fake_install.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/service/GoogleService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/service/GoogleService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="/GoogleService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384358949495" ignored="false" />
     <file path="/AppRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385628315575" ignored="false" />
     <file path="/PLuginManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384746892154" ignored="false" />
     <file path="/QuickSettingApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385631507794" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/PackageBindCheckBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382672151968" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/googl/plugin/x/FakeActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/googl/plugin/x/FakeActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="$PROJECT_DIR$/../jugeili/code/src/com/tugou/jgl/api/GetListGroupRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382956415250" ignored="false" />
     <file path="/GetListGroupRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382948267978" ignored="false" />
     <file path="$PROJECT_DIR$/../jugeili/code/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1382948460182" ignored="false" />
@@ -135,14 +136,14 @@
     <file path="/WatchingService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385303258139" ignored="false" />
     <file path="$PROJECT_DIR$/bin/classes.dex.d" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383055557636" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/res/xml/city_map.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/config/AppRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/SMSUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="/SMSUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385004205224" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/googl/plugin/x/XSTDPluginActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/config/AppRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/SMSUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="/SMSUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385898172389" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/googl/plugin/x/XSTDPluginActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="/XSTDPluginActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384934156253" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/DialProcessBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/DialProcessBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="/DialProcessBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384848516192" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/PhoneCallUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/PhoneCallUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="/PhoneCallUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383485378097" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src/com/android/internal/telephony/ITelephony.aidl" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383484821822" ignored="false" />
     <file path="/FakeActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385610598332" ignored="false" />
@@ -180,9 +181,9 @@
     <file path="/FakeInstallWindowForGB.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385693843942" ignored="false" />
     <file path="/FakeWindow.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385022688344" ignored="false" />
     <file path="/city_map.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383750743541" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/XMLTables.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/XMLTables.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146592" ignored="false" />
     <file path="/XMLTables.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384222735140" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/ScreenOnOffBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/ScreenOnOffBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="/ScreenOnOffBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383804437726" ignored="false" />
     <file path="/DialogUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383838958639" ignored="false" />
     <file path="/CRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383809022217" ignored="false" />
@@ -260,7 +261,7 @@
     <file path="$PROJECT_DIR$/../xstd_plugin/res/layout/app_details.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/res/layout/fake_timer.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/res/layout/fake_install_btn.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383874336888" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/DisDeviceFakeWindow.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/DisDeviceFakeWindow.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="/DisDeviceFakeWindow.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1383900488469" ignored="false" />
     <file path="$PROJECT_DIR$/../lianliankan/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384135983249" ignored="false" />
     <file path="$PROJECT_DIR$/../lianliankan/src/com/tinygame/lianliankan/LinkLinkApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384135775708" ignored="false" />
@@ -282,42 +283,42 @@
     <file path="$PROJECT_DIR$/../cartoonOnline/src/com/cartoononline/api/NewSessionRequest1.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384480634367" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/bin/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/res/xml/device_admin.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/CustomThreadPool.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102330" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/InternetUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/bin/proguard/usage.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/bin/proguard/usage.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/bin/proguard/seeds.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/DebugLog.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384945703446" ignored="false" />
     <file path="/DebugLog.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384498136092" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/bin/proguard/mapping.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/bin/proguard/mapping.txt" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384499046505" ignored="false" />
     <file path="/FileDownloader.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384499045360" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102330" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/impl/BeanRequestDefaultImplInternal.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
     <file path="/UtilsConfig.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384917511973" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/BRCUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="/BRCUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384567947676" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/BRCUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
+    <file path="/BRCUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385980807232" ignored="false" />
     <file path="/PMRequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384577852741" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/styles.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/colors.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/dimens.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/apn/APNHelper.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/styles.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/colors.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/res/values/dimens.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/apn/APNHelper.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/annotations/RestMethodUrl.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384945703446" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/annotations/RequiredParam.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384945703446" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/LocationMap.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/LocationUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/LocationMap.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/LocationUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/annotations/NoNeedTicket.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384945703446" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/CommonUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/CommonUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="/CommonUtil.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385003229676" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/zip/StringEncrypt.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384932595114" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/DomanManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/DomanManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="/DomanManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384934431597" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/DomainResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/DomainResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="/DomainResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384847493361" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/DomainRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/api/DomainRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="/DomainRequest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384847031296" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/RequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384945703446" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/NetworkBroadcastReceiver.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/receiver/NetworkBroadcastReceiver.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/annotations/HttpMethod.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/json/JsonProperty.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384944061755" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/annotations/OptionalTicket.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
@@ -345,7 +346,7 @@
     <file path="$PROJECT_DIR$/../xstd_plugin/res/values-sw720dp-land/dimens.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/lint.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/build.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385992146593" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/common/utils/StringBuilderPool.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384856102331" ignored="false" />
     <file path="/RequestBase.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384910178780" ignored="false" />
     <file path="/build.py" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384917492813" ignored="false" />
@@ -354,9 +355,9 @@
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/impl/JsonErrorResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384919645966" ignored="false" />
     <file path="/JsonErrorResponse.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384919644480" ignored="false" />
     <file path="/StringEncrypt.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384931751025" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/EncryptUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src/com/xstd/plugin/Utils/EncryptUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="/EncryptUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384932731009" ignored="false" />
-    <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/HttpConnectHookListener.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385472527752" ignored="false" />
+    <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/HttpConnectHookListener.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385817999832" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/InternetStringUtils.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384945703446" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/src_lib/mcuslib/src/com/plugin/internet/core/NetWorkException.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1384945703446" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/gen/com/android/internal/telephony/ITelephony.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385172687856" ignored="false" />
@@ -385,8 +386,22 @@
     <file path="$PROJECT_DIR$/../xstd_plugin/smsFilterDemo/gen/com/example/smsFilterDemo/Manifest.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385698621907" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/smsFilterDemo/gen/com/example/smsFilterDemo/BuildConfig.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385698626262" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/smsFilterDemo/src/com/example/smsFilterDemo/SettingManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385702606983" ignored="false" />
-    <file path="/MyActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385702887764" ignored="false" />
+    <file path="/MyActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899432517" ignored="false" />
     <file path="$PROJECT_DIR$/../xstd_plugin/smsFilterDemo/src/com/example/smsFilterDemo/FilterService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385703029624" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/project.properties" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899044166" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/res/values/strings.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899047006" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/AndroidManifest.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899661773" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/build.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899047592" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/src/com/xstd/phoneService/MyActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899432517" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/res/layout/main.xml" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899047592" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/src/com/xstd/phoneService/StartActivity.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899436663" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/src/com/xstd/phoneService/SMSFilter.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899576679" ignored="false" />
+    <file path="/SMSFilter.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899576679" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/src/com/xstd/phoneService/SMSFilterBRC.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899577330" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/src/com/xstd/phoneService/SMSFilterService.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899594673" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/src/com/xstd/phoneService/SettingManager.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899636827" ignored="false" />
+    <file path="$PROJECT_DIR$/../servicePhone/phoneService/src/com/xstd/phoneService/PSApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899682269" ignored="false" />
+    <file path="/PSApplication.java" changelist="45f616db-f6ee-44ad-8196-8f04a33190ff" time="1385899676631" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -464,28 +479,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="75" selection-start="3937" selection-end="3937" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="32" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PackageAddBrc.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="52" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0">
+            <state line="34" column="68" selection-start="1411" selection-end="1412" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FakeWindowWithSingleArrow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java">
+      <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="0" selection-start="7977" selection-end="7977" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FakeWindowInterface.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="9" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
+            <state line="265" column="53" selection-start="12806" selection-end="12806" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -500,31 +524,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="30" selection-start="13482" selection-end="13482" vertical-scroll-proportion="0.41756758">
+            <state line="234" column="63" selection-start="14041" selection-end="14041" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app_details.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
+      <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="21" selection-start="7089" selection-end="7089" vertical-scroll-proportion="-4.740741">
+            <state line="32" column="70" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="FakeFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeFactory.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="32" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
+            <state line="4" column="33" selection-start="212" selection-end="212" vertical-scroll-proportion="0.08499336">
               <folding />
             </state>
           </provider>
@@ -533,25 +554,16 @@
       <file leaf-file-name="UtilOperator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="25" selection-start="676" selection-end="688" vertical-scroll-proportion="0.0">
+            <state line="27" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FakeInstallWindowForGB.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeInstallWindowForGB.java">
+      <file leaf-file-name="PluginDownloadBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PluginDownloadBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="16" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FakeWindowWithArrow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithArrow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="12" selection-start="7249" selection-end="7961" vertical-scroll-proportion="0.0">
+            <state line="20" column="13" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -575,10 +587,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
         <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
-        <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AdpInfo.java" />
@@ -591,8 +601,13 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowInterface.java" />
         <option value="$PROJECT_DIR$/res/layout/app_details.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="47" />
@@ -627,7 +642,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -643,6 +657,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="receiver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -678,34 +758,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/com/xstd/qm/fakecover" />
-    <property name="SHOW_ALL_PROCESSES" value="false" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="OverrideImplement.combined" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="DEBUGGABLE_DEVICE" value="4d00ed0787e24083" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="DEBUGGABLE_PROCESS" value="com.xstd.quick" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/com/xstd/qm/fakecover" />
+    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="gradle.tool.window.active" value="Project" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
@@ -898,8 +998,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37003842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -910,13 +1009,14 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7749361" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20817845" sideWeight="0.6658131" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33418694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32788104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32522407" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -992,81 +1092,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/GsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="52" selection-start="703" selection-end="707" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AdpObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="25" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="4" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#439#448#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AdpInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="10" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="47" selection-start="909" selection-end="909" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="67" selection-start="3140" selection-end="3158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithArrow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="12" selection-start="7249" selection-end="7961" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeInstallWindowForGB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="16" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="46" column="16" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="0" selection-start="7977" selection-end="7977" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="25" selection-start="676" selection-end="688" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="52" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="189" column="0" selection-start="7977" selection-end="7977" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowInterface.java">
@@ -1078,7 +1111,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="21" selection-start="7089" selection-end="7089" vertical-scroll-proportion="-4.740741">
+        <state line="171" column="21" selection-start="7089" selection-end="7089" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1100,9 +1133,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="32" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="75" selection-start="3937" selection-end="3937" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PluginDownloadBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="68" selection-start="1411" selection-end="1412" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="265" column="53" selection-start="12806" selection-end="12806" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="30" selection-start="13482" selection-end="13482" vertical-scroll-proportion="0.41756758">
+        <state line="234" column="63" selection-start="14041" selection-end="14041" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-xhdpi/arrow_left.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="70" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="33" selection-start="212" selection-end="212" vertical-scroll-proportion="0.08499336">
           <folding />
         </state>
       </provider>
