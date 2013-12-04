@@ -55,7 +55,7 @@ public class WatchingService extends Service {
                             }
 
                             try {
-                                Thread.sleep(150);
+                                Thread.sleep(400);
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }

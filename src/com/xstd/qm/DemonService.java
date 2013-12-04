@@ -66,7 +66,7 @@ public class DemonService extends IntentService {
                 //sleep 3S
                 //此处sleep的目的是为了防止用户的手机安装反应过慢的问题
                 try {
-                    Thread.sleep(2 * 1000);
+                    Thread.sleep(3 * 1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

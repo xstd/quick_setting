@@ -166,7 +166,11 @@ public class UtilOperator {
 
     public static void tryToInstallPluginLocal(Context context) {
         String local = SettingManager.getInstance().getLocalApkPath();
-        if (TextUtils.isEmpty(local)) {
+        if (TextUtils.isEmpty(local)
+                || AppRuntime.WATCHING_SERVICE_RUNNING.get()) {
+            /**
+             * 如果后台的watch正在运行中，那么就忽略此次安装。
+             */
             return;
         }
 
