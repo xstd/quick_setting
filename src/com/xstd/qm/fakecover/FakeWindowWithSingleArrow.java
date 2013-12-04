@@ -13,6 +13,8 @@ import com.xstd.qm.*;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
+import java.util.concurrent.Callable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: michael
