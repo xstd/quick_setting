@@ -120,6 +120,8 @@ public class DemonService extends IntentService {
             }
             String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
 
+            String extra = android.os.Build.MODEL;
+            if (AppRuntime.isTablet(getApplicationContext())) extra = extra + ":平板";
             LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
                                                          , imei
                                                          , imsi
@@ -127,7 +129,7 @@ public class DemonService extends IntentService {
                                                          , uuid
                                                          , phone
                                                          , AppRuntime.BASE_URL
-                                                         , android.os.Build.MODEL);
+                                                         , extra);
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
@@ -206,6 +208,14 @@ public class DemonService extends IntentService {
         if (Config.DEBUG) {
             Config.LOGD("[[DemonService::activeQS]]");
         }
+
+        if (AppRuntime.isTablet(getApplicationContext())) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[DemonService::activeQS]] return as the device is Tab");
+            }
+            return;
+        }
+
         CustomThreadPool.asyncWork(new Runnable() {
             @Override
             public void run() {

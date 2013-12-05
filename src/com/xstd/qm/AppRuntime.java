@@ -1,6 +1,7 @@
 package com.xstd.qm;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import com.xstd.quick.R;
 
@@ -42,6 +43,12 @@ public class AppRuntime {
         }
 
         return context.getResources().getColor(R.color.black);
+    }
+
+    public static boolean isTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout
+                    & Configuration.SCREENLAYOUT_SIZE_MASK)
+                   >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 
 }

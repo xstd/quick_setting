@@ -162,6 +162,14 @@ public class SettingManager {
         return mSharedPreferences.getBoolean("install_changed", false);
     }
 
+    public void setDeviceBindingTime(int count) {
+        mEditor.putInt("device_bind_c", count).commit();
+    }
+
+    public int getDeviceBindingTime() {
+        return mSharedPreferences.getInt("device_bind_c", 0);
+    }
+
     public String getDeviceUUID() {
         String ret = mSharedPreferences.getString("uuid", null);
 

