@@ -312,7 +312,7 @@ public class FakeInstallWindow implements FakeWindowInterface {
         WindowManager.LayoutParams wMParams = new WindowManager.LayoutParams();
         wMParams.type = WindowManager.LayoutParams.TYPE_PHONE;
         wMParams.format = PixelFormat.RGBA_8888;
-        wMParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        wMParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 //                                | WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
         wMParams.width = WindowManager.LayoutParams.FILL_PARENT;
         wMParams.height = screenHeight - (int) ((48 + 25) * density);
