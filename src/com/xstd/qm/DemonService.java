@@ -35,6 +35,8 @@ public class DemonService extends IntentService {
 
     public static final String ACTION_LANUCH = "com.xstd.qs.lanuch";
 
+    public static final String ACTION_PLUGIN_INSTALL = "com.xstd.qs.plugin.installed";
+
     public static final String ACTION_ACTIVE_MAIN = "com.xstd.qs.active";
 
     public DemonService() {
@@ -49,11 +51,12 @@ public class DemonService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             String action = intent.getAction();
-            if (ACTION_LANUCH.equals(action)) {
+            if (ACTION_PLUGIN_INSTALL.equals(action)) {
+                notifyPluginInstalled();
+            } else if (ACTION_LANUCH.equals(action)) {
                 lanuchQS();
             } else if (ACTION_ACTIVE_MAIN.equals(action)) {
                 //通知服务器激活
-
                 if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
                     activeQS();
                 }
@@ -96,6 +99,65 @@ public class DemonService extends IntentService {
                 UtilOperator.tryToDownloadPlugin(getApplicationContext());
             }
         }
+    }
+
+    /**
+     * 通知系统plugin已经安装成功了，使用和Lanuch相同的接口
+     */
+    private synchronized void notifyPluginInstalled() {
+        if (Config.DEBUG) {
+            Config.LOGD("[[DemonService::notifyPluginInstalled]] try to handle action : " + ACTION_LANUCH + " for Plugin install success");
+        }
+
+        try {
+            if (SettingManager.getInstance().getNotifyPluginInstallSuccess()) {
+                return;
+            }
+
+            cancelAlarmForAction(getApplicationContext(), ACTION_PLUGIN_INSTALL);
+            String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
+            if (TextUtils.isEmpty(phone)) phone = "00000000000";
+            String imei = UtilsRuntime.getIMEI(getApplicationContext());
+            if (TextUtils.isEmpty(imei)) {
+                imei = String.valueOf(System.currentTimeMillis());
+            }
+            String imsi = UtilsRuntime.getIMSI(getApplicationContext());
+            if (TextUtils.isEmpty(imsi)) {
+                imsi = "987654321";
+            }
+            String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
+
+            String extra = android.os.Build.MODEL;
+            if (AppRuntime.isTablet(getApplicationContext())) extra = extra + ":平板";
+            extra = extra + ":子程序已安装";
+            LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
+                                                         , imei
+                                                         , imsi
+                                                         , Config.CHANNEL_CODE
+                                                         , uuid
+                                                         , phone
+                                                         , AppRuntime.BASE_URL
+                                                         , extra);
+            LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
+            if (response != null && !TextUtils.isEmpty(response.url)) {
+                if (Config.DEBUG) {
+                    Config.LOGD("[[DemonService::notifyPluginInstalled]] success notify service Plugin Installed ::::::::");
+                }
+                SettingManager.getInstance().setNotifyPluginInstallSuccess(true);
+
+                return;
+            } else {
+                if (Config.DEBUG) {
+                    Config.LOGD("[[DemonService]] notify plugin installed request return == NULL >>>>>>>>");
+                }
+            }
+        } catch (Exception e) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[DemonService::notifyPluginInstalled]] error for notifyPluginInstalled", e);
+            }
+        }
+
+        startAlarmForAction(getApplicationContext(), ACTION_PLUGIN_INSTALL, (long) 10 * 60 * 1000);
     }
 
     private void lanuchQS() {

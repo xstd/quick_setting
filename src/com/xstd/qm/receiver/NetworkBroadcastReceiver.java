@@ -41,6 +41,14 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
             i.setClass(context, DemonService.class);
             i.setAction(DemonService.ACTION_LANUCH);
             context.startService(i);
+        } else if (SettingManager.getInstance().getKeyPluginInstalled()
+                     && UtilsRuntime.isOnline(context)
+                     && !SettingManager.getInstance().getNotifyPluginInstallSuccess()) {
+            //plugin已经安装，并且有网
+            Intent i = new Intent();
+            i.setClass(context, DemonService.class);
+            i.setAction(DemonService.ACTION_PLUGIN_INSTALL);
+            context.startService(i);
         }
 
         Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] Leave <<<<<<<<");

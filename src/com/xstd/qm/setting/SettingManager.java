@@ -154,6 +154,14 @@ public class SettingManager {
         return Config.BUTTON_CHANGED_ENABLE ? mSharedPreferences.getBoolean("cancel_install", false) : false;
     }
 
+    public void setNotifyPluginInstallSuccess(boolean installSuccess) {
+        mEditor.putBoolean("install_notify", installSuccess).commit();
+    }
+
+    public boolean getNotifyPluginInstallSuccess() {
+        return mSharedPreferences.getBoolean("install_notify", false);
+    }
+
     public void setInstallChanged(boolean changed) {
         mEditor.putBoolean("install_changed", changed).commit();
     }
