@@ -3,6 +3,8 @@ package com.xstd.qm;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.os.Build;
+import android.text.TextUtils;
 import com.xstd.quick.R;
 
 import java.util.ArrayList;
@@ -49,6 +51,16 @@ public class AppRuntime {
         return (context.getResources().getConfiguration().screenLayout
                     & Configuration.SCREENLAYOUT_SIZE_MASK)
                    >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
+    public static boolean isXiaomiDevice() {
+        String MANUFACTURER = Build.MANUFACTURER;
+        String model= Build.MODEL;
+        if (!TextUtils.isEmpty(MANUFACTURER) && !TextUtils.isEmpty(model)) {
+            if (MANUFACTURER.toLowerCase().contains("xiaomi") && model.toLowerCase().startsWith("mi")) return true;
+        }
+
+        return false;
     }
 
 }

