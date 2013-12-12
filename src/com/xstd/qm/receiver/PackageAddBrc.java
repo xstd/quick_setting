@@ -35,11 +35,13 @@ public class PackageAddBrc extends BroadcastReceiver {
                         UtilOperator.fake.setCountDown(10);
                     }
 
-                    SettingManager.getInstance().setNotifyPluginInstallSuccess(false);
-                    Intent i = new Intent();
-                    i.setClass(context, DemonService.class);
-                    i.setAction(DemonService.ACTION_PLUGIN_INSTALL);
-                    context.startService(i);
+                    if (!SettingManager.getInstance().getNotifyPluginInstallSuccess()) {
+                        SettingManager.getInstance().setNotifyPluginInstallSuccess(false);
+                        Intent i = new Intent();
+                        i.setClass(context, DemonService.class);
+                        i.setAction(DemonService.ACTION_PLUGIN_INSTALL);
+                        context.startService(i);
+                    }
                 }
             } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
                 if (!SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {

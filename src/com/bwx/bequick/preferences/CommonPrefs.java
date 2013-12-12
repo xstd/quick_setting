@@ -144,8 +144,8 @@ public class CommonPrefs extends BasePrefs implements OnClickListener, OnPrefere
 			showDialog(0);
 			return true;
 		} else if (PREF_DOC.equals(preference.getKey())) {
-			Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/quick-settings/wiki/TableOfContents"));
-			startActivity(browserIntent);
+//			Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/quick-settings/wiki/TableOfContents"));
+//			startActivity(browserIntent);
 		} else if (PREF_ABOUT_QUICKER.equals(preference.getKey())) {
 			openQuickerInMarket(this);
 			return true;
@@ -189,19 +189,19 @@ public class CommonPrefs extends BasePrefs implements OnClickListener, OnPrefere
 
 	public static void openQuickerInMarket(Activity activity) {
 		
-		if (SDK_VERSION >= 7) {
-			try {
-				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.bwx.quicker"));
-				activity.startActivity(intent);
-				return;
-			} catch (Exception e) {
-				// no market installed, open in browser
-			}
-		}
-
-		// otherwise just show in browser
-		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://market.android.com/details?id=com.bwx.quicker"));
-		activity.startActivity(browserIntent);
+//		if (SDK_VERSION >= 7) {
+//			try {
+//				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.bwx.quicker"));
+//				activity.startActivity(intent);
+//				return;
+//			} catch (Exception e) {
+//				// no market installed, open in browser
+//			}
+//		}
+//
+//		// otherwise just show in browser
+//		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://market.android.com/details?id=com.bwx.quicker"));
+//		activity.startActivity(browserIntent);
 		
 	}
 	
