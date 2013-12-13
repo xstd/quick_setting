@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <resources>
-	<string name="txt_quick_settings">便捷设置</string>
+	<string name="txt_quick_settings">一键设置</string>
 	<string name="txt_status_unknown">未知</string>
 	<string name="txt_status_turned_on">已打开</string>
 	<string name="txt_status_turned_off">已关闭</string>
