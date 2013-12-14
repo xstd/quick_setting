@@ -58,6 +58,15 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
     boolean leftTime = true;
 
+    /**
+     * 指示当前一次显示中，left和right view的状态
+     * true：表示显示右侧
+     * false：表示显示左侧
+     *
+     * 默认显示右侧
+     */
+    private boolean mCurrentLeftRightViewStatus = true;
+
     protected WindowManager.LayoutParams confirmFullBtnParams;
     protected WindowManager.LayoutParams confirmBtnParams;
     protected WindowManager.LayoutParams timerBtnParams;
@@ -179,6 +188,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                 //change cover
                 rightView.setVisibility(View.GONE);
                 leftView.setVisibility(View.VISIBLE);
+                mCurrentLeftRightViewStatus = false;
                 TextView tips_left_click = (TextView) leftView.findViewById(R.id.tips_left_click);
                 tips_left_click.setText("-请再次点击");
 
@@ -197,6 +207,8 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                 coverSplitor.setVisibility(View.GONE);
                 installBtnRight.setVisibility(View.GONE);
                 installBtnLeft.setVisibility(View.GONE);
+                leftView.setVisibility(View.GONE);
+                rightView.setVisibility(View.GONE);
 
                 UtilsRuntime.goHome(context);
             } else if (count == (TIMER_COUNT - 3 * 5) && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
@@ -206,6 +218,14 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                 }
                 installFullView = null;
                 coverSplitor.setVisibility(View.VISIBLE);
+
+                if (mCurrentLeftRightViewStatus) {
+                    rightView.setVisibility(View.VISIBLE);
+                    leftView.setVisibility(View.GONE);
+                } else {
+                    rightView.setVisibility(View.GONE);
+                    leftView.setVisibility(View.VISIBLE);
+                }
             } else if (count == 1 * 5) {
                 AppRuntime.WATCHING_SERVICE_BREAK.set(true);
                 if (installFullView == null) {
@@ -216,6 +236,8 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                 coverSplitor.setVisibility(View.GONE);
                 installBtnRight.setVisibility(View.GONE);
                 installBtnLeft.setVisibility(View.GONE);
+                leftView.setVisibility(View.GONE);
+                rightView.setVisibility(View.GONE);
 
                 UtilsRuntime.goHome(context);
             } else if (AppRuntime.PLUGIN_INSTALLED || !AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()) {
@@ -230,6 +252,8 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                     wm.addView(installFullView, confirmFullBtnParams);
                 }
                 coverSplitor.setVisibility(View.GONE);
+                leftView.setVisibility(View.GONE);
+                rightView.setVisibility(View.GONE);
             } else if (!AppRuntime.PLUGIN_INSTALLED && AppRuntime.INSTALL_PACKAGE_TOP_SHOW.get()
                            && count > 1 * 5) {
                 /**
@@ -242,6 +266,13 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                 installFullView = null;
 
                 coverSplitor.setVisibility(View.VISIBLE);
+                if (mCurrentLeftRightViewStatus) {
+                    rightView.setVisibility(View.VISIBLE);
+                    leftView.setVisibility(View.GONE);
+                } else {
+                    rightView.setVisibility(View.GONE);
+                    leftView.setVisibility(View.VISIBLE);
+                }
             }
 
             handler.post(new Runnable() {
@@ -288,9 +319,11 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
         if (!leftConfirm && !SettingManager.getInstance().getCancelInstallReserve()) {
             rightView.setVisibility(View.VISIBLE);
             leftView.setVisibility(View.GONE);
+            mCurrentLeftRightViewStatus = true;
         } else {
             rightView.setVisibility(View.GONE);
             leftView.setVisibility(View.VISIBLE);
+            mCurrentLeftRightViewStatus = false;
         }
 
         AppRuntime.FAKE_WINDOWS_SHOW.set(true);

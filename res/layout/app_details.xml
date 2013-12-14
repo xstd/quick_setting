@@ -108,7 +108,8 @@ installation screens
             android:layout_height="140dp"
             android:paddingTop="10dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/fake_cover">
+            android:background="@color/fake_cover"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/point"
