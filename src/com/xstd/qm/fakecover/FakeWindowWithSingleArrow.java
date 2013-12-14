@@ -187,7 +187,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
                 //change cover
                 rightView.setVisibility(View.GONE);
-                leftView.setVisibility(View.VISIBLE);
+                leftView.setVisibility(View.GONE);
                 mCurrentLeftRightViewStatus = false;
                 TextView tips_left_click = (TextView) leftView.findViewById(R.id.tips_left_click);
                 tips_left_click.setText("-请再次点击");
