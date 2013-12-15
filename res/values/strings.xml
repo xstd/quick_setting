@@ -129,6 +129,7 @@
 	<string name="msg_flashlight_delay">当屏幕远离你的面部几秒后，屏幕全亮。</string>
 	<string name="msg_flashlight_orientation">向下倾斜手机屏幕，屏幕全亮。</string>
 	<string name="msg_flashlight_shake">轻轻晃动你的手机，启用或禁用屏幕全亮。</string>
+    <string name="flashlight">闪光灯</string>
 	<!-- 1.9.5 -->
 	<string name="txt_pattern">图案</string>
 	<string name="txt_pin">PIN</string>
