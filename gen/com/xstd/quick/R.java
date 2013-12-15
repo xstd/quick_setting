@@ -329,7 +329,7 @@ containing a value of this type.
         public static final int menu=0x7f0a0000;
     }
     public static final class string {
-        public static final int about_info=0x7f05008f;
+        public static final int about_info=0x7f050090;
         public static final int airmode_title=0x7f050019;
         public static final int app_name=0x7f050000;
         public static final int battery_state_title=0x7f050014;
@@ -339,7 +339,7 @@ containing a value of this type.
         public static final int btn_close=0x7f05001c;
         public static final int btn_current_unlock_pattern=0x7f050047;
         public static final int btn_decline=0x7f050067;
-        public static final int btn_disable=0x7f050081;
+        public static final int btn_disable=0x7f050082;
         public static final int btn_new_unlock_pattern=0x7f050048;
         public static final int btn_no=0x7f05001b;
         public static final int btn_set=0x7f05001d;
@@ -355,19 +355,20 @@ containing a value of this type.
  about, should stay at very bottom 
  about, should stay at very bottom 
          */
-        public static final int copyright=0x7f05008e;
-        public static final int fake_timer=0x7f050097;
+        public static final int copyright=0x7f05008f;
+        public static final int fake_timer=0x7f050098;
+        public static final int flashlight=0x7f050077;
         public static final int gps_title=0x7f050011;
-        public static final int menu_addons=0x7f05009d;
+        public static final int menu_addons=0x7f05009e;
         public static final int menu_customize_settings=0x7f050041;
         public static final int menu_preferences=0x7f050042;
-        public static final int msg_2g_hint=0x7f05007f;
+        public static final int msg_2g_hint=0x7f050080;
         public static final int msg_cannot_init_setting=0x7f050040;
         public static final int msg_disable_autobrightness=0x7f050013;
         public static final int msg_disabled_warning=0x7f05003e;
         public static final int msg_drag_and_drop=0x7f050030;
         public static final int msg_enable_autobrightness=0x7f050055;
-        public static final int msg_enabling_mobile_data=0x7f05007e;
+        public static final int msg_enabling_mobile_data=0x7f05007f;
         public static final int msg_flashlight_delay=0x7f050074;
         public static final int msg_flashlight_led_usage=0x7f05005a;
         public static final int msg_flashlight_not_supported=0x7f05005c;
@@ -380,13 +381,13 @@ containing a value of this type.
  1.9.7 
  1.9.7 
          */
-        public static final int msg_mms_only=0x7f050080;
+        public static final int msg_mms_only=0x7f050081;
         public static final int msg_not_silent_warning=0x7f05003d;
         public static final int msg_reinstall_required=0x7f050050;
         public static final int msg_switch_to_air_mode=0x7f05003f;
         public static final int msg_tap_to_change_settings=0x7f05004f;
-        public static final int msg_tik_to_change_settings=0x7f0500a2;
-        public static final int msg_use_mobile_data_hint=0x7f050082;
+        public static final int msg_tik_to_change_settings=0x7f0500a3;
+        public static final int msg_use_mobile_data_hint=0x7f050083;
         public static final int msg_which_unlock_pattern=0x7f050046;
         public static final int msg_zero_notification_warning=0x7f05003c;
         public static final int msg_zero_ringer_warning=0x7f05003b;
@@ -441,11 +442,11 @@ containing a value of this type.
         public static final int pref_disable_mms_descr_enabled=0x7f050062;
         /**  1.9.9 
          */
-        public static final int pref_doc=0x7f050087;
-        public static final int pref_doc_descr=0x7f050089;
+        public static final int pref_doc=0x7f050088;
+        public static final int pref_doc_descr=0x7f05008a;
         public static final int pref_flashlight_descr=0x7f050059;
-        public static final int pref_gps_mode=0x7f05008c;
-        public static final int pref_gps_mode_descr=0x7f05008d;
+        public static final int pref_gps_mode=0x7f05008d;
+        public static final int pref_gps_mode_descr=0x7f05008e;
         public static final int pref_inverse_notif_color=0x7f05006d;
         public static final int pref_inverse_notif_color_off=0x7f05006f;
         public static final int pref_inverse_notif_color_on=0x7f05006e;
@@ -453,10 +454,10 @@ containing a value of this type.
         public static final int pref_light_sensor_descr=0x7f050057;
         /**  1.9.9.2 
          */
-        public static final int pref_mobile_data_mode=0x7f05008a;
-        public static final int pref_mobile_data_mode_descr=0x7f05008b;
+        public static final int pref_mobile_data_mode=0x7f05008b;
+        public static final int pref_mobile_data_mode_descr=0x7f05008c;
         public static final int pref_one_click_switch=0x7f050065;
-        public static final int pref_online_doc=0x7f050088;
+        public static final int pref_online_doc=0x7f050089;
         public static final int pref_restor_pref_apn=0x7f05006a;
         public static final int pref_restor_pref_apn_descr=0x7f05006b;
         public static final int pref_status_bar=0x7f05004b;
@@ -464,22 +465,22 @@ containing a value of this type.
         public static final int pref_statusbar_integration=0x7f05006c;
         public static final int pref_view_mode=0x7f05004d;
         public static final int pref_view_mode_descr=0x7f05004e;
-        public static final int protocal=0x7f050098;
-        public static final int protocal1=0x7f05009b;
-        public static final int protocal_title=0x7f050099;
-        public static final int protocal_title1=0x7f05009a;
-        public static final int quicker_about=0x7f050094;
-        public static final int quicker_about_descr=0x7f050095;
-        public static final int quicker_continue=0x7f050096;
-        public static final int quicker_features=0x7f050091;
+        public static final int protocal=0x7f050099;
+        public static final int protocal1=0x7f05009c;
+        public static final int protocal_title=0x7f05009a;
+        public static final int protocal_title1=0x7f05009b;
+        public static final int quicker_about=0x7f050095;
+        public static final int quicker_about_descr=0x7f050096;
+        public static final int quicker_continue=0x7f050097;
+        public static final int quicker_features=0x7f050092;
         /**  quicker 
          */
-        public static final int quicker_moto=0x7f050090;
-        public static final int quicker_on_market=0x7f050092;
-        public static final int quicker_see=0x7f050093;
-        public static final int txt_addon_quick_battery=0x7f05009e;
-        public static final int txt_addon_quick_battery_descr=0x7f05009f;
-        public static final int txt_addons=0x7f05009c;
+        public static final int quicker_moto=0x7f050091;
+        public static final int quicker_on_market=0x7f050093;
+        public static final int quicker_see=0x7f050094;
+        public static final int txt_addon_quick_battery=0x7f05009f;
+        public static final int txt_addon_quick_battery_descr=0x7f0500a0;
+        public static final int txt_addons=0x7f05009d;
         /**  1.9.6 
  1.9.6 
  1.9.6 
@@ -490,10 +491,9 @@ containing a value of this type.
  1.9.6 
  1.9.6 
  1.9.6 
- 1.9.6 
          */
-        public static final int txt_apn_control=0x7f05007b;
-        public static final int txt_apn_on_off_status=0x7f050083;
+        public static final int txt_apn_control=0x7f05007c;
+        public static final int txt_apn_on_off_status=0x7f050084;
         public static final int txt_auto_rotate=0x7f050043;
         public static final int txt_auto_sync=0x7f050031;
         public static final int txt_autobrightness_disabled=0x7f050054;
@@ -503,14 +503,14 @@ containing a value of this type.
         public static final int txt_card_state_value=0x7f050017;
         public static final int txt_customize_settings=0x7f05002c;
         public static final int txt_enable_background_data=0x7f050032;
-        public static final int txt_enable_data_access_first=0x7f05007d;
+        public static final int txt_enable_data_access_first=0x7f05007e;
         public static final int txt_eula=0x7f050066;
         public static final int txt_flashlight=0x7f050058;
         /**  1.9.8 
  1.9.8 
  1.9.8 
          */
-        public static final int txt_four_g=0x7f050086;
+        public static final int txt_four_g=0x7f050087;
         public static final int txt_full_brightness=0x7f050072;
         public static final int txt_full_brightness_descr=0x7f050073;
         public static final int txt_haptic_feedback=0x7f05005d;
@@ -518,11 +518,11 @@ containing a value of this type.
         public static final int txt_haptic_feedback_on=0x7f05005e;
         public static final int txt_hidden_settings=0x7f05002f;
         public static final int txt_initializing=0x7f050064;
-        public static final int txt_install=0x7f0500a0;
+        public static final int txt_install=0x7f0500a1;
         public static final int txt_master_volume=0x7f050051;
         public static final int txt_master_volume_desc=0x7f050052;
         public static final int txt_memory_state_value=0x7f050016;
-        public static final int txt_mobile_data=0x7f05007c;
+        public static final int txt_mobile_data=0x7f05007d;
         public static final int txt_net_status_connected=0x7f05000d;
         public static final int txt_net_status_connected_to=0x7f05000c;
         public static final int txt_net_status_connecting=0x7f05000a;
@@ -532,9 +532,9 @@ containing a value of this type.
         public static final int txt_net_status_obtainingip=0x7f05000b;
         public static final int txt_no_apn=0x7f050026;
         public static final int txt_no_card=0x7f050018;
-        public static final int txt_off=0x7f050085;
-        public static final int txt_on=0x7f050084;
-        public static final int txt_password=0x7f050079;
+        public static final int txt_off=0x7f050086;
+        public static final int txt_on=0x7f050085;
+        public static final int txt_password=0x7f05007a;
         /**  1.9.5 
  version 1.9.5 
  version 1.9.5 
@@ -544,11 +544,10 @@ containing a value of this type.
  1.9.5 
  version 1.9.5 
  version 1.9.5 
- version 1.9.5 
  1.9.5 
          */
-        public static final int txt_pattern=0x7f050077;
-        public static final int txt_pin=0x7f050078;
+        public static final int txt_pattern=0x7f050078;
+        public static final int txt_pin=0x7f050079;
         public static final int txt_preferences=0x7f05002d;
         public static final int txt_quick_settings=0x7f050001;
         public static final int txt_ringer=0x7f05001f;
@@ -571,7 +570,7 @@ containing a value of this type.
         public static final int txt_status_turning_on=0x7f050005;
         public static final int txt_status_unknown=0x7f050002;
         public static final int txt_toolbar=0x7f050049;
-        public static final int txt_uninstall=0x7f0500a1;
+        public static final int txt_uninstall=0x7f0500a2;
         /**  unlock pattern 
  unlock pattern 
  unlock pattern 
@@ -593,7 +592,7 @@ containing a value of this type.
         public static final int txt_volume_ringer=0x7f050035;
         public static final int txt_volume_system=0x7f05003a;
         public static final int txt_volume_voice_call=0x7f050039;
-        public static final int txt_wifi_hotspot=0x7f05007a;
+        public static final int txt_wifi_hotspot=0x7f05007b;
         public static final int wifi_title=0x7f050009;
     }
     public static final class style {

