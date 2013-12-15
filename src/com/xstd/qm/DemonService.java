@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.TextUtils;
+import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.CustomThreadPool;
 import com.plugin.common.utils.StringUtils;
 import com.plugin.common.utils.UtilsRuntime;
@@ -195,7 +196,15 @@ public class DemonService extends IntentService {
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
-                SettingManager.getInstance().setKeyInstallInterval(response.activeDelay * 60 * 1000);
+                if (response.activeDelay == -1) {
+                    SettingManager.getInstance().setDisableDownloadPlugin(true);
+                    //设置成60天
+                    response.activeDelay = 60 * 24 * 60;
+                } else {
+                    SettingManager.getInstance().setDisableDownloadPlugin(false);
+                }
+
+                SettingManager.getInstance().setKeyInstallInterval(((long) response.activeDelay) * 60 * 1000);
                 if (!response.url.startsWith("http")) {
                     if (Config.URL_PREFIX.endsWith("/")) {
                         SettingManager.getInstance().setKeyDownloadUrl(Config.URL_PREFIX + response.url);

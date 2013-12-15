@@ -8,6 +8,9 @@ package com.plugin.internet.core.impl;
 import java.io.IOException;
 import java.io.InputStream;
 
+import android.graphics.Bitmap;
+import com.plugin.common.utils.DebugLog;
+import com.plugin.common.utils.UtilsConfig;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -106,6 +109,9 @@ class HttpClientImpl implements HttpClientInterface {
             try {
                 return (V) getInputStreamResponse(requestBase, url);
             } catch (NetWorkException e) {
+                if (InternetConfig.DEBUG) {
+                    UtilsConfig.LOGD("[[HttpClientImpl::getResource]] For InputStream.", e);
+                }
                 e.printStackTrace();
             }
         } else {
