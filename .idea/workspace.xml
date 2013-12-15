@@ -31,8 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/com/plugin/common/mucslib/R.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/preferences/CommonPrefs.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/preferences/CommonPrefs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/prefs_common.xml" afterPath="$PROJECT_DIR$/res/layout/prefs_common.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -123,10 +124,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="42" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="3200">
+            <state line="164" column="79" selection-start="8634" selection-end="8634" vertical-scroll-proportion="0.44676408" vertical-offset="2410" max-vertical-offset="3200">
               <folding />
             </state>
           </provider>
@@ -150,33 +151,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FakeFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="55" selection-start="312" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="512">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FakeWindowWithSingleArrow.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="48" selection-start="7531" selection-end="7531" vertical-scroll-proportion="0.5801324" vertical-offset="2362" max-vertical-offset="6208">
-              <folding>
-                <element signature="e#4420#4462#0" expanded="true" />
-                <element signature="e#4508#4544#0" expanded="true" />
-                <element signature="e#12209#12247#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -193,7 +172,7 @@
       <file leaf-file-name="app_details.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="36" selection-start="4384" selection-end="4384" vertical-scroll-proportion="0.0" vertical-offset="1576" max-vertical-offset="4320">
+            <state line="111" column="36" selection-start="4384" selection-end="4384" vertical-scroll-proportion="-7.4074073" vertical-offset="1576" max-vertical-offset="4320">
               <folding />
             </state>
           </provider>
@@ -205,7 +184,18 @@
       <file leaf-file-name="CommonPrefs.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/preferences/CommonPrefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="0" selection-start="5057" selection-end="5057" vertical-scroll-proportion="0.0" vertical-offset="2144" max-vertical-offset="3408">
+            <state line="67" column="5" selection-start="2662" selection-end="2662" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="2656">
+              <folding>
+                <element signature="e#6060#6114#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values-cs-rCZ/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="182" column="18" selection-start="11238" selection-end="11238" vertical-scroll-proportion="0.0" vertical-offset="2314" max-vertical-offset="3056">
               <folding />
             </state>
           </provider>
@@ -245,13 +235,14 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/NetworkBroadcastReceiver.java" />
-        <option value="$PROJECT_DIR$/src/com/bwx/bequick/preferences/CommonPrefs.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/app_details.xml" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java" />
+        <option value="$PROJECT_DIR$/res/layout/prefs_common.xml" />
+        <option value="$PROJECT_DIR$/src/com/bwx/bequick/preferences/CommonPrefs.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
       </list>
     </option>
   </component>
@@ -438,6 +429,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bequick" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -719,12 +714,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="22" width="1393" height="878" extended-state="7" />
-    <editor active="false" />
+    <frame x="47" y="22" width="1393" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822478" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32788104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822478" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -734,7 +730,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3358876" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3358876" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24907339" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -745,7 +741,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32439336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -776,18 +771,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="45" selection-start="6145" selection-end="6145" vertical-scroll-proportion="0.0" vertical-offset="3088" max-vertical-offset="9792" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="24" selection-start="6706" selection-end="6706" vertical-scroll-proportion="0.0" vertical-offset="3296" max-vertical-offset="3552">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="77" selection-start="3939" selection-end="3939" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
@@ -987,28 +970,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/preferences/BasePrefs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="22" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="335" column="44" selection-start="12141" selection-end="12160" vertical-scroll-proportion="0.0" vertical-offset="4430" max-vertical-offset="9104">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-14/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2858" column="22" selection-start="120520" selection-end="120520" vertical-scroll-proportion="0.33245033" vertical-offset="43973" max-vertical-offset="72864" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/preferences/CommonPrefs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="0" selection-start="5057" selection-end="5057" vertical-scroll-proportion="0.0" vertical-offset="1434" max-vertical-offset="2880">
           <folding />
         </state>
       </provider>
@@ -1053,13 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="42" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4320">
@@ -1072,16 +1029,6 @@
         <state line="33" column="48" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="3152">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="36" selection-start="4384" selection-end="4384" vertical-scroll-proportion="0.0" vertical-offset="1576" max-vertical-offset="4320">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
@@ -1114,12 +1061,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="48" selection-start="7531" selection-end="7531" vertical-scroll-proportion="0.5801324" vertical-offset="2362" max-vertical-offset="6208">
+        <state line="172" column="0" selection-start="6697" selection-end="6697" vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="6208">
           <folding>
             <element signature="e#4420#4462#0" expanded="true" />
             <element signature="e#4508#4544#0" expanded="true" />
             <element signature="e#12209#12247#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/prefs_common.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="8" selection-start="2486" selection-end="2671" vertical-scroll-proportion="0.7582418" vertical-offset="296" max-vertical-offset="1024">
+          <folding>
+            <element signature="e#2291#2311#0" expanded="true" />
+            <element signature="e#2424#2450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/preferences/BasePrefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="11" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.21192053" vertical-offset="0" max-vertical-offset="755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/app_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="36" selection-start="4384" selection-end="4384" vertical-scroll-proportion="-7.4074073" vertical-offset="1576" max-vertical-offset="4320">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-14/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2858" column="22" selection-start="120520" selection-end="120520" vertical-scroll-proportion="0.3328841" vertical-offset="43977" max-vertical-offset="72864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values-cs-rCZ/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="18" selection-start="11238" selection-end="11238" vertical-scroll-proportion="0.0" vertical-offset="2314" max-vertical-offset="3056">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/preferences/CommonPrefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="5" selection-start="2662" selection-end="2662" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="2656">
+          <folding>
+            <element signature="e#6060#6114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="164" column="79" selection-start="8634" selection-end="8634" vertical-scroll-proportion="0.44676408" vertical-offset="2410" max-vertical-offset="3200">
+          <folding />
         </state>
       </provider>
     </entry>

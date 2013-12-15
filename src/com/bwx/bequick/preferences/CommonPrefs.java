@@ -63,8 +63,8 @@ public class CommonPrefs extends BasePrefs implements OnClickListener, OnPrefere
 		super.onCreate(savedInstanceState);
 
 		findPreference(PREF_ABOUT).setOnPreferenceClickListener(this);
-		findPreference(PREF_DOC).setOnPreferenceClickListener(this);
-		findPreference(PREF_ABOUT_QUICKER).setOnPreferenceClickListener(this);
+//		findPreference(PREF_DOC).setOnPreferenceClickListener(this);
+//		findPreference(PREF_ABOUT_QUICKER).setOnPreferenceClickListener(this);
 	}
 
 	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {

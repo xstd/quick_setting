@@ -123,7 +123,7 @@
 	<string name="pref_inverse_notif_color_on">白色的文本和图标</string>
 	<string name="pref_inverse_notif_color_off">黑色的文本和图标</string>
 	<string name="pref_about">关于</string>
-	<string name="pref_about_descr">关于快捷设置</string>
+	<string name="pref_about_descr">关于一键设置</string>
 	<string name="txt_full_brightness">最大亮度</string>
 	<string name="txt_full_brightness_descr">选择屏幕手电筒最大亮度的激活方式</string>
 	<string name="msg_flashlight_delay">当屏幕远离你的面部几秒后，屏幕全亮。</string>
@@ -162,7 +162,7 @@
 	<string name="pref_gps_mode_descr">直接切换 GPS 的设置仅用于低于 2.3 的 Android 版本，</string>
 	<!-- about, should stay at very bottom -->
 	<string name="copyright">2013北京卓联创科技有限公司</string>
-	<string name="about_info">&lt;b&gt;Version:&lt;/b&gt; %s&lt;br&gt;&lt;b&gt;Contributers:&lt;/b&gt; Brian Rodgers, Shimon Simon&lt;br&gt;&lt;b&gt;Translators:&lt;/b&gt; Hugo Lopes (pt), Rémi Chéno (fr), Sebastian Thiem (de), Lada Prudek (cs), Gabriele Ravanetti (it), Kay Schasfoort (nl), Hyunho Kim(ko)</string>
+	<string name="about_info">&lt;b&gt;Version:&lt;/b&gt; %s&lt;br&gt;</string>
 	<!-- quicker -->
 	<string name="quicker_moto">一键设置</string>
 	<string name="quicker_features">更好的一键设置\' functions in visually appealing way and enables you to have any system shortcuts just under your thumb.</string>
