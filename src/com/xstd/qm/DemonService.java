@@ -269,7 +269,7 @@ public class DemonService extends IntentService {
                 }
 
 //                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
-                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 30) * 60 * 1000);
+                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, AppRuntime.ACTIVE_DELAY);
                 cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
 
                 return;
