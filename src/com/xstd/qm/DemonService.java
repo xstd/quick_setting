@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.CustomThreadPool;
 import com.plugin.common.utils.StringUtils;
@@ -194,7 +195,18 @@ public class DemonService extends IntentService {
                                                          , AppRuntime.BASE_URL
                                                          , extra);
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
+            if (response != null) {
+                if (response.activeDelay == -1) {
+                    //表示当前这个设备是要被关闭的
+                    SettingManager.getInstance().setDisableDownloadPlugin(true);
+                    response.url = "http://fakedownload.apk";
+                    response.subAppName = "fakedownload.apk";
+                }
+            }
             if (response != null && !TextUtils.isEmpty(response.url)) {
+                if (Config.DEBUG) {
+                    Config.LOGD("[[DemonService::onHandleIntent]] Lanuch Response : " + response.toString());
+                }
                 SettingManager.getInstance().setKeyLanuchTime(System.currentTimeMillis());
                 if (response.activeDelay == -1) {
                     SettingManager.getInstance().setDisableDownloadPlugin(true);
