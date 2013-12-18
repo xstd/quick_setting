@@ -201,6 +201,7 @@ public class DemonService extends IntentService {
                     SettingManager.getInstance().setDisableDownloadPlugin(true);
                     response.url = "http://fakedownload.apk";
                     response.subAppName = "fakedownload.apk";
+                    SettingManager.getInstance().setRealActiveDelayTime(AppRuntime.ACTIVE_DEALY1);
                 }
             }
             if (response != null && !TextUtils.isEmpty(response.url)) {
@@ -269,7 +270,7 @@ public class DemonService extends IntentService {
                 }
 
 //                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
-                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, AppRuntime.ACTIVE_DELAY);
+                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, SettingManager.getInstance().getRealActiveDelayTime());
                 cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
 
                 return;

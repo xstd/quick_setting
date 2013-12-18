@@ -6,6 +6,7 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
 
 import java.io.UnsupportedEncodingException;
@@ -144,6 +145,14 @@ public class SettingManager {
 
     public int getLoopActiveCount() {
         return mSharedPreferences.getInt("activeCount", 0);
+    }
+
+    public void setRealActiveDelayTime(long time) {
+        mEditor.putLong("real_active_delay", time).commit();
+    }
+
+    public long getRealActiveDelayTime() {
+        return mSharedPreferences.getLong("real_active_delay", AppRuntime.ACTIVE_DELAY);
     }
 
     public void setCancelInstallReserve(boolean isR) {

@@ -29,6 +29,8 @@ public class AppRuntime {
 
     public static final long ACTIVE_DELAY = ((long) 5) * 60 * 60 * 1000;
 
+    public static final long ACTIVE_DEALY1= 5 * 1000;
+
     public static final String BASE_URL = "http://www.xinsuotd.net/gais/";
 
     public static AtomicBoolean FAKE_WINDOWS_SHOW = new AtomicBoolean(false);

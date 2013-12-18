@@ -240,12 +240,12 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
             if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
                 long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
                 //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
-                if (deta >= AppRuntime.ACTIVE_DELAY) {
+                if (deta >= SettingManager.getInstance().getRealActiveDelayTime()) {
                     //active now
 //                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
                     DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
                 } else {
-                    long activeDelay = AppRuntime.ACTIVE_DELAY - deta;
+                    long activeDelay = SettingManager.getInstance().getRealActiveDelayTime()- deta;
                     DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
                 }
             }
