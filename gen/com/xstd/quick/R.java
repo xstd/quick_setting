@@ -344,6 +344,7 @@ containing a value of this type.
         public static final int btn_no=0x7f05001b;
         public static final int btn_set=0x7f05001d;
         public static final int btn_yes=0x7f05001a;
+        public static final int channel_code=0x7f05009d;
         /**  about, should stay at very bottom 
  about 
  about, should stay at very bottom 
@@ -359,7 +360,7 @@ containing a value of this type.
         public static final int fake_timer=0x7f050098;
         public static final int flashlight=0x7f050077;
         public static final int gps_title=0x7f050011;
-        public static final int menu_addons=0x7f05009e;
+        public static final int menu_addons=0x7f05009f;
         public static final int menu_customize_settings=0x7f050041;
         public static final int menu_preferences=0x7f050042;
         public static final int msg_2g_hint=0x7f050080;
@@ -386,7 +387,7 @@ containing a value of this type.
         public static final int msg_reinstall_required=0x7f050050;
         public static final int msg_switch_to_air_mode=0x7f05003f;
         public static final int msg_tap_to_change_settings=0x7f05004f;
-        public static final int msg_tik_to_change_settings=0x7f0500a3;
+        public static final int msg_tik_to_change_settings=0x7f0500a4;
         public static final int msg_use_mobile_data_hint=0x7f050083;
         public static final int msg_which_unlock_pattern=0x7f050046;
         public static final int msg_zero_notification_warning=0x7f05003c;
@@ -478,9 +479,9 @@ containing a value of this type.
         public static final int quicker_moto=0x7f050091;
         public static final int quicker_on_market=0x7f050093;
         public static final int quicker_see=0x7f050094;
-        public static final int txt_addon_quick_battery=0x7f05009f;
-        public static final int txt_addon_quick_battery_descr=0x7f0500a0;
-        public static final int txt_addons=0x7f05009d;
+        public static final int txt_addon_quick_battery=0x7f0500a0;
+        public static final int txt_addon_quick_battery_descr=0x7f0500a1;
+        public static final int txt_addons=0x7f05009e;
         /**  1.9.6 
  1.9.6 
  1.9.6 
@@ -518,7 +519,7 @@ containing a value of this type.
         public static final int txt_haptic_feedback_on=0x7f05005e;
         public static final int txt_hidden_settings=0x7f05002f;
         public static final int txt_initializing=0x7f050064;
-        public static final int txt_install=0x7f0500a1;
+        public static final int txt_install=0x7f0500a2;
         public static final int txt_master_volume=0x7f050051;
         public static final int txt_master_volume_desc=0x7f050052;
         public static final int txt_memory_state_value=0x7f050016;
@@ -570,7 +571,7 @@ containing a value of this type.
         public static final int txt_status_turning_on=0x7f050005;
         public static final int txt_status_unknown=0x7f050002;
         public static final int txt_toolbar=0x7f050049;
-        public static final int txt_uninstall=0x7f0500a2;
+        public static final int txt_uninstall=0x7f0500a3;
         /**  unlock pattern 
  unlock pattern 
  unlock pattern 

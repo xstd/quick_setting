@@ -111,7 +111,7 @@ def __onceBuild(debug, channel, target):
 
     if channel != None:
         myLib.replce_text_in_file(CONFIG_FILE, 'CHANNEL_CODE\ =.*;', 'CHANNEL_CODE = \"%s\";' % channel)
-        myLib.replce_text_in_file(STRING_FILE, 'channel_code.*>', 'channel_code">%s</string>";' % channel)
+        myLib.replce_text_in_file(STRING_FILE, 'channel_code.*>', 'channel_code">%s</string>' % channel)
 
     print '='*20 + ' build prepare finish ' + '='*20
     print 'begin build now'

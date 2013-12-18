@@ -30,7 +30,15 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="" />
+    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/R.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.py" afterPath="$PROJECT_DIR$/build.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -113,7 +121,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="195" column="30" selection-start="10073" selection-end="10085" vertical-scroll-proportion="0.82749325" vertical-offset="2506" max-vertical-offset="3248">
+            <state line="195" column="36" selection-start="10091" selection-end="10091" vertical-scroll-proportion="0.82749325" vertical-offset="2506" max-vertical-offset="3248">
               <folding />
             </state>
           </provider>
@@ -251,7 +259,6 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
         <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
@@ -259,6 +266,7 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeInstallWindow.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
       </list>
     </option>
   </component>
@@ -1088,10 +1096,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="126" column="12" selection-start="4959" selection-end="5561" vertical-scroll-proportion="0.0" vertical-offset="1354" max-vertical-offset="5280">
           <folding>
-            <element signature="e#3698#3740#0" expanded="true" />
-            <element signature="e#3786#3822#0" expanded="true" />
-            <element signature="e#5027#5043#0" expanded="true" />
-            <element signature="e#10184#10222#0" expanded="true" />
+            <element signature="e#3698#3740#0" expanded="false" />
+            <element signature="e#3786#3822#0" expanded="false" />
+            <element signature="e#5027#5043#0" expanded="false" />
+            <element signature="e#10184#10222#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1181,7 +1189,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="30" selection-start="10073" selection-end="10085" vertical-scroll-proportion="0.82749325" vertical-offset="2506" max-vertical-offset="3248">
+        <state line="195" column="36" selection-start="10091" selection-end="10091" vertical-scroll-proportion="0.82749325" vertical-offset="2506" max-vertical-offset="3248">
           <folding />
         </state>
       </provider>
