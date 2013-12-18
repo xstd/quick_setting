@@ -31,8 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -126,22 +127,16 @@
       <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="508" column="36" selection-start="24631" selection-end="24631" vertical-scroll-proportion="0.0" vertical-offset="7609" max-vertical-offset="8448">
-              <folding>
-                <element signature="e#6080#6096#0" expanded="true" />
-                <element signature="e#10320#10336#0" expanded="true" />
-                <element signature="e#18970#18986#0" expanded="true" />
-                <element signature="e#23233#23249#0" expanded="true" />
-                <element signature="e#25580#25596#0" expanded="true" />
-              </folding>
+            <state line="208" column="17" selection-start="8857" selection-end="8857" vertical-scroll-proportion="0.0" vertical-offset="3328" max-vertical-offset="8448">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilsConfig.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UtilsConfig.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1696">
+            <state line="20" column="50" selection-start="494" selection-end="494" vertical-scroll-proportion="0.21192053" vertical-offset="0" max-vertical-offset="1696">
               <folding />
             </state>
           </provider>
@@ -150,19 +145,26 @@
       <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="45" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
+            <state line="17" column="44" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="34" selection-start="213" selection-end="213" vertical-scroll-proportion="0.08476821" vertical-offset="0" max-vertical-offset="4480">
-              <folding>
-                <element signature="e#838#860#0" expanded="true" />
-              </folding>
+            <state line="21" column="20" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="4480">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuickSettingApplication.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="0" selection-start="2311" selection-end="2311" vertical-scroll-proportion="0.0" vertical-offset="1328" max-vertical-offset="3792">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,16 +172,7 @@
       <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="14" selection-start="4261" selection-end="4261" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1504">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NetworkBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/NetworkBroadcastReceiver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="45" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="992">
+            <state line="74" column="14" selection-start="4261" selection-end="4261" vertical-scroll-proportion="0.0" vertical-offset="1184" max-vertical-offset="1632">
               <folding />
             </state>
           </provider>
@@ -188,7 +181,7 @@
       <file leaf-file-name="PackageAddBrc.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="70" selection-start="1227" selection-end="1277" vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="864">
+            <state line="32" column="70" selection-start="1227" selection-end="1277" vertical-scroll-proportion="0.0" vertical-offset="512" max-vertical-offset="976">
               <folding />
             </state>
           </provider>
@@ -197,7 +190,7 @@
       <file leaf-file-name="PluginDownloadBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PluginDownloadBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="31" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="960">
+            <state line="22" column="31" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="1104">
               <folding />
             </state>
           </provider>
@@ -206,7 +199,7 @@
       <file leaf-file-name="SettingManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="27" selection-start="5678" selection-end="5689" vertical-scroll-proportion="0.0" vertical-offset="2485" max-vertical-offset="4192">
+            <state line="197" column="27" selection-start="5678" selection-end="5689" vertical-scroll-proportion="0.0" vertical-offset="3152" max-vertical-offset="4352">
               <folding />
             </state>
           </provider>
@@ -255,9 +248,9 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -296,8 +289,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -702,6 +693,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -946,7 +939,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="22" width="1393" height="878" extended-state="6" />
+    <frame x="47" y="22" width="1393" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -954,14 +947,12 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32788104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822478" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32439336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37003842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.79948914" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24907339" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -973,8 +964,10 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32439336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1176,15 +1169,6 @@
         <state line="12" column="13" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="20" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="3088">
-          <folding>
-            <element signature="e#5453#5491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="368">
@@ -1196,21 +1180,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="428" column="35" selection-start="15851" selection-end="15851" vertical-scroll-proportion="0.0" vertical-offset="5893" max-vertical-offset="8416">
           <folding>
-            <element signature="e#13069#13125#0" expanded="true" />
-            <element signature="e#13480#13511#0" expanded="true" />
-            <element signature="e#13563#13601#0" expanded="true" />
-            <element signature="e#13919#13948#0" expanded="true" />
-            <element signature="e#14008#14039#0" expanded="true" />
-            <element signature="e#14092#14123#0" expanded="true" />
+            <element signature="e#13069#13125#0" expanded="false" />
+            <element signature="e#13480#13511#0" expanded="false" />
+            <element signature="e#13563#13601#0" expanded="false" />
+            <element signature="e#13919#13948#0" expanded="false" />
+            <element signature="e#14008#14039#0" expanded="false" />
+            <element signature="e#14092#14123#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libs/umeng_sdk.jar!/com/umeng/analytics/MobclickAgent.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="98" selection-start="2865" selection-end="2869" vertical-scroll-proportion="-4.509804" vertical-offset="714" max-vertical-offset="1568">
-          <folding />
-        </state>
+        <state line="60" column="98" selection-start="2865" selection-end="2869" vertical-scroll-proportion="-4.509804" vertical-offset="714" max-vertical-offset="1568" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
@@ -1257,10 +1239,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="155" column="26" selection-start="5821" selection-end="5821" vertical-scroll-proportion="0.0" vertical-offset="1892" max-vertical-offset="6368">
           <folding>
-            <element signature="e#4488#4530#0" expanded="true" />
-            <element signature="e#4576#4612#0" expanded="true" />
-            <element signature="e#5875#5891#0" expanded="true" />
-            <element signature="e#12893#12931#0" expanded="true" />
+            <element signature="e#4488#4530#0" expanded="false" />
+            <element signature="e#4576#4612#0" expanded="false" />
+            <element signature="e#5875#5891#0" expanded="false" />
+            <element signature="e#12893#12931#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1316,39 +1298,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="20" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="2311" selection-end="2311" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="3088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="508" column="36" selection-start="24631" selection-end="24631" vertical-scroll-proportion="0.0" vertical-offset="7609" max-vertical-offset="8448">
-          <folding>
-            <element signature="e#6080#6096#0" expanded="true" />
-            <element signature="e#10320#10336#0" expanded="true" />
-            <element signature="e#18970#18986#0" expanded="true" />
-            <element signature="e#23233#23249#0" expanded="true" />
-            <element signature="e#25580#25596#0" expanded="true" />
-          </folding>
+        <state line="208" column="17" selection-start="8857" selection-end="8857" vertical-scroll-proportion="0.0" vertical-offset="3328" max-vertical-offset="8448">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="45" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
+        <state line="17" column="44" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1696">
+        <state line="20" column="50" selection-start="494" selection-end="494" vertical-scroll-proportion="0.21192053" vertical-offset="0" max-vertical-offset="1696">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="34" selection-start="213" selection-end="213" vertical-scroll-proportion="0.08476821" vertical-offset="0" max-vertical-offset="4480">
-          <folding>
-            <element signature="e#838#860#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
