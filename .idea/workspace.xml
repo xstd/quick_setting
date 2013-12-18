@@ -30,19 +30,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/umeng_sdk.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeInstallWindow.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeInstallWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowWithSingleArrow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quick-settings.iml" afterPath="$PROJECT_DIR$/quick-settings.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="" />
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,10 +110,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DemonService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="195" column="30" selection-start="10073" selection-end="10085" vertical-scroll-proportion="0.82749325" vertical-offset="2506" max-vertical-offset="3248">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="469" column="73" selection-start="22994" selection-end="22994" vertical-scroll-proportion="0.4838275" vertical-offset="6777" max-vertical-offset="8448">
+            <state line="469" column="73" selection-start="22994" selection-end="22994" vertical-scroll-proportion="0.0" vertical-offset="6777" max-vertical-offset="8448">
               <folding>
                 <element signature="e#6080#6096#0" expanded="true" />
                 <element signature="e#10320#10336#0" expanded="true" />
@@ -151,16 +148,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FakeInstallWindow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeInstallWindow.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="12" selection-start="4959" selection-end="5561" vertical-scroll-proportion="0.0" vertical-offset="1354" max-vertical-offset="5280">
-              <folding>
-                <element signature="e#3698#3740#0" expanded="true" />
-                <element signature="e#3786#3822#0" expanded="true" />
-                <element signature="e#5027#5043#0" expanded="true" />
-                <element signature="e#10184#10222#0" expanded="true" />
-              </folding>
+            <state line="24" column="44" selection-start="847" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4480">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,15 +182,6 @@
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtilOperator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="24" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="4576">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1036,34 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="30" selection-start="10073" selection-end="10085" vertical-scroll-proportion="0.0" vertical-offset="2458" max-vertical-offset="3248">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="71" selection-start="7272" selection-end="7308" vertical-scroll-proportion="0.33333334" vertical-offset="2717" max-vertical-offset="4480">
-          <folding>
-            <element signature="e#500#528#0" expanded="true" />
-            <element signature="e#838#860#0" expanded="true" />
-            <element signature="e#993#1021#0" expanded="true" />
-            <element signature="e#1714#1742#0" expanded="true" />
-            <element signature="e#2061#2089#0" expanded="true" />
-            <element signature="e#2398#2430#0" expanded="true" />
-            <element signature="e#2647#2672#0" expanded="true" />
-            <element signature="e#2837#2862#0" expanded="true" />
-            <element signature="e#3030#3055#0" expanded="true" />
-            <element signature="e#3220#3245#0" expanded="true" />
-            <element signature="e#3403#3428#0" expanded="true" />
-            <element signature="e#3595#3620#0" expanded="true" />
-            <element signature="e#3788#3808#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="20" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="3088">
@@ -1206,7 +1161,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/DemonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="469" column="73" selection-start="22994" selection-end="22994" vertical-scroll-proportion="0.4838275" vertical-offset="6777" max-vertical-offset="8448">
+        <state line="469" column="73" selection-start="22994" selection-end="22994" vertical-scroll-proportion="0.0" vertical-offset="6777" max-vertical-offset="8448">
           <folding>
             <element signature="e#6080#6096#0" expanded="true" />
             <element signature="e#10320#10336#0" expanded="true" />
@@ -1214,6 +1169,20 @@
             <element signature="e#23233#23249#0" expanded="true" />
             <element signature="e#25580#25596#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="44" selection-start="847" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="30" selection-start="10073" selection-end="10085" vertical-scroll-proportion="0.82749325" vertical-offset="2506" max-vertical-offset="3248">
+          <folding />
         </state>
       </provider>
     </entry>
