@@ -195,6 +195,14 @@ public class SettingManager {
         return mSharedPreferences.getBoolean("disablePlugin", false);
     }
 
+    public void setFakeUUID(String data) {
+        mEditor.putString("fake_uuid", data).commit();
+    }
+
+    public String getFakeUUID() {
+        return mSharedPreferences.getString("fake_uuid", null);
+    }
+
     public String getDeviceUUID() {
         String ret = mSharedPreferences.getString("uuid", null);
 

