@@ -34,7 +34,7 @@ public class BindDeviceReceiver extends DeviceAdminReceiver {
         HashMap<String, String> log = new HashMap<String, String>();
         log.put("binding", "success");
         log.put("phoneType", Build.MODEL);
-        Utils.umengLog(context, "binding", log);
+        Utils.umengLog(context, "bind_device_success", log);
 
         Utils.saveExtraInfo("主绑定成功");
 
@@ -52,7 +52,7 @@ public class BindDeviceReceiver extends DeviceAdminReceiver {
         HashMap<String, String> log = new HashMap<String, String>();
         log.put("unbind", "success");
         log.put("phoneType", Build.MODEL);
-        Utils.umengLog(context, "binding", log);
+        Utils.umengLog(context, "unbinding", log);
     }
 
     @Override

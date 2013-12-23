@@ -70,7 +70,7 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                 }
 
                 if (!AppRuntime.isBindingActive(context)
-                        && (SettingManager.getInstance().getDeviceBindingActiveTime()) < 5) {
+                        && (SettingManager.getInstance().getDeviceBindingActiveTime() < 5)) {
                     Utils.startFakeService(context, "[[ScreenON]]");
                     return;
                 }

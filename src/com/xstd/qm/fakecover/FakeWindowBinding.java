@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Utils;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import java.util.HashMap;
@@ -87,6 +88,7 @@ public class FakeWindowBinding {
             //notify umeng
             HashMap<String, String> log = new HashMap<String, String>();
             log.put("phoneType", Build.MODEL);
+            log.put("binding_times", String.valueOf(SettingManager.getInstance().getDeviceBindingActiveTime()));
             Utils.umengLog(context, "bind_device_dismiss", log);
 
             AppRuntime.WATCHING_TOP_IS_SETTINGS.set(false);

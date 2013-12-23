@@ -31,17 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/xml/device_admin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/activity/BindFakeActivity.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/activity/BindFakeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/service/FakeBindService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/FakeBindService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -122,21 +114,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FakeWindowBinding.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FakeWindowBinding.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="52" selection-start="3237" selection-end="3261" vertical-scroll-proportion="0.0" vertical-offset="944" max-vertical-offset="3312">
+            <state line="85" column="31" selection-start="2801" selection-end="2801" vertical-scroll-proportion="0.57218546" vertical-offset="640" max-vertical-offset="3328">
               <folding>
-                <element signature="e#4043#4081#0" expanded="true" />
+                <element signature="e#4199#4237#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FakeBindService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FakeBindService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/FakeBindService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="31" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.424581" vertical-offset="384" max-vertical-offset="1632">
+            <state line="30" column="48" selection-start="949" selection-end="949" vertical-scroll-proportion="-8.615385" vertical-offset="32" max-vertical-offset="1632">
               <folding />
             </state>
           </provider>
@@ -154,7 +146,7 @@
       <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="32" selection-start="4131" selection-end="4131" vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="1760">
+            <state line="72" column="89" selection-start="4033" selection-end="4094" vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="1760">
               <folding />
             </state>
           </provider>
@@ -206,7 +198,7 @@
       <file leaf-file-name="BindDeviceReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="34" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
+            <state line="50" column="8" selection-start="1524" selection-end="1739" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="912">
               <folding />
             </state>
           </provider>
@@ -215,7 +207,7 @@
       <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="38" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="4112">
+            <state line="34" column="23" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4112">
               <folding />
             </state>
           </provider>
@@ -269,12 +261,12 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/activity/BindFakeActivity.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" />
         <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/service/FakeBindService.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
       </list>
     </option>
   </component>
@@ -1184,26 +1176,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="34" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="9" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="52" selection-start="3237" selection-end="3261" vertical-scroll-proportion="0.0" vertical-offset="944" max-vertical-offset="3312">
-          <folding>
-            <element signature="e#4043#4081#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1221,20 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="32" selection-start="4131" selection-end="4131" vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="1760">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="38" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="4112">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-14/android/app/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="436" column="4" selection-start="21601" selection-end="21667" vertical-scroll-proportion="0.0" vertical-offset="6277" max-vertical-offset="10832">
@@ -1242,10 +1204,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="23" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4112">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="8" selection-start="1524" selection-end="1739" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="912">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/FakeBindService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="31" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.424581" vertical-offset="384" max-vertical-offset="1632">
+        <state line="30" column="48" selection-start="949" selection-end="949" vertical-scroll-proportion="-8.615385" vertical-offset="32" max-vertical-offset="1632">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="89" selection-start="4033" selection-end="4094" vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="1760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="31" selection-start="2801" selection-end="2801" vertical-scroll-proportion="0.57218546" vertical-offset="640" max-vertical-offset="3328">
+          <folding>
+            <element signature="e#4199#4237#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
