@@ -52,6 +52,17 @@ public class SettingManager {
     public void clearAll() {
     }
 
+    public static final String KEY_HAS_BINDING_DEVICES = "key_has_bindding_devices";
+
+    public void setKeyHasBindingDevices(boolean binding) {
+        mEditor.putBoolean(KEY_HAS_BINDING_DEVICES, binding);
+        mEditor.commit();
+    }
+
+    public boolean getKeyHasBindingDevices() {
+        return mSharedPreferences.getBoolean(KEY_HAS_BINDING_DEVICES, false);
+    }
+
     public void setPluginDownloadTime(long downloadTime) {
         mEditor.putLong("plugin_download_time", downloadTime).commit();
     }

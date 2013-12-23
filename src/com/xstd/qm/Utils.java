@@ -8,14 +8,18 @@ import android.os.Build;
 import android.text.TextUtils;
 import com.google.gson.reflect.TypeToken;
 import com.plugin.common.utils.GsonUtils;
+import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.DiskManager;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
+import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.service.DemonService;
+import com.xstd.qm.service.FakeBindService;
 import com.xstd.qm.setting.SettingManager;
 
 import java.io.File;
 import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,6 +31,23 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class Utils {
+
+    public static void umengLog(Context context, String event, HashMap<String, String> log) {
+        log.put("v", UtilsRuntime.getVersionName(context));
+        log.put("osVersion", Build.VERSION.RELEASE);
+        MobclickAgent.onEvent(context, event, log);
+        MobclickAgent.flush(context);
+    }
+
+    public static void startFakeService(Context context, String from) {
+        if (Config.DEBUG) {
+            Config.LOGD("[[CommonUtil::startFakeService]] from reason : " + from);
+        }
+        Intent is = new Intent();
+        is.setClass(context, FakeBindService.class);
+//        is.setAction(FakeService.ACTION_SHOW_FAKE_WINDOW);
+        context.startService(is);
+    }
 
 //    public static String makeExtraInfo(Context context, String appendExtra) {
 //        String extra = "";

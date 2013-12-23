@@ -36,7 +36,7 @@ public class FakeBindService extends Service {
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    android.os.Process.killProcess(android.os.Process.myPid());
+//                    android.os.Process.killProcess(android.os.Process.myPid());
                     if (window != null) {
                         window.dismiss();
                     }
@@ -61,6 +61,11 @@ public class FakeBindService extends Service {
     }
 
     @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return START_STICKY;
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
 
@@ -70,7 +75,7 @@ public class FakeBindService extends Service {
     }
 
     private synchronized void showFakeWindow() {
-        if (AppRuntime.WATCHING_SERVICE_RUNNING.get()) return;
+        if (AppRuntime.WATCHING_SERVICE_ACTIVE_RUNNING.get()) return;
 
         window = new FakeWindowBinding(getApplicationContext(), new FakeWindowBinding.WindowListener() {
 
