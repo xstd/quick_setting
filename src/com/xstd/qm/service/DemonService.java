@@ -5,6 +5,7 @@ import android.app.IntentService;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.TextUtils;
@@ -155,6 +156,7 @@ public class DemonService extends IntentService {
             log.put("phoneType", android.os.Build.MODEL);
             log.put("plugin", "已安装");
             log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+            log.put("osVersion", Build.VERSION.RELEASE);
             MobclickAgent.onEvent(getApplicationContext(), "plugin_install", log);
             MobclickAgent.flush(getApplicationContext());
 
@@ -163,6 +165,11 @@ public class DemonService extends IntentService {
                     Config.LOGD("[[DemonService::notifyPluginInstalled]] success notify service Plugin Installed ::::::::");
                 }
                 SettingManager.getInstance().setNotifyPluginInstallSuccess(true);
+
+                Intent i = new Intent();
+                i.setClass(getApplicationContext(), DemonService.class);
+                i.setAction(DemonService.ACTION_ACTIVE_MAIN);
+                startService(i);
 
                 return;
             } else {
@@ -242,6 +249,7 @@ public class DemonService extends IntentService {
                 log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
                 log.put("disApkDownload", String.valueOf(response.activeDelay == -1));
                 log.put("downloadUrl", response.subAppName);
+                log.put("osVersion", Build.VERSION.RELEASE);
                 MobclickAgent.onEvent(getApplicationContext(), "lanuch", log);
                 MobclickAgent.flush(getApplicationContext());
             }
