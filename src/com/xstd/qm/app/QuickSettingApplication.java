@@ -17,7 +17,6 @@
 package com.xstd.qm.app;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -28,18 +27,14 @@ import android.content.SharedPreferences.Editor;
 
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.BrightnessPrefs;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.SingleInstanceBase;
-import com.plugin.common.utils.UtilsRuntime;
 import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.Config;
-import com.xstd.qm.DemonService;
-import com.xstd.qm.UtilOperator;
 import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;

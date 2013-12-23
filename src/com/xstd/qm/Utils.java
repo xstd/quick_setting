@@ -11,6 +11,7 @@ import com.plugin.common.utils.GsonUtils;
 import com.plugin.common.utils.files.DiskManager;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
+import com.xstd.qm.service.DemonService;
 import com.xstd.qm.setting.SettingManager;
 
 import java.io.File;

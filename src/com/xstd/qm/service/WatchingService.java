@@ -1,4 +1,4 @@
-package com.xstd.qm;
+package com.xstd.qm.service;
 
 import android.app.ActivityManager;
 import android.app.Service;
@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.IBinder;
 import android.text.TextUtils;
+import com.xstd.qm.AppRuntime;
+import com.xstd.qm.Config;
+import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
 
 import java.io.File;

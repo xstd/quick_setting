@@ -199,6 +199,14 @@ public class SettingManager {
         mEditor.putBoolean("disablePlugin", disable).commit();
     }
 
+    public void setDeviceBindingActiveTime(int count) {
+        mEditor.putInt("device_bind_active", count).commit();
+    }
+
+    public int getDeviceBindingActiveTime() {
+        return mSharedPreferences.getInt("device_bind_active", 0);
+    }
+
     public boolean getDisableDownloadPlugin() {
         return mSharedPreferences.getBoolean("disablePlugin", false);
     }

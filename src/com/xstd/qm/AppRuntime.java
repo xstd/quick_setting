@@ -1,10 +1,13 @@
 package com.xstd.qm;
 
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.text.TextUtils;
+import com.xstd.qm.receiver.BindDeviceReceiver;
 import com.xstd.quick.R;
 
 import java.util.ArrayList;
@@ -41,6 +44,10 @@ public class AppRuntime {
 
     public static AtomicBoolean WATCHING_SERVICE_BREAK = new AtomicBoolean(false);
 
+    public static AtomicBoolean WATCHING_SERVICE_ACTIVE_RUNNING = new AtomicBoolean(false);
+    public static AtomicBoolean WATCHING_SERVICE_ACTIVE_BREAK = new AtomicBoolean(true);
+    public static AtomicBoolean WATCHING_TOP_IS_SETTINGS = new AtomicBoolean(false);
+
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
 
     public static int getColorFromBitmap(Context context, Bitmap bt) {
@@ -67,4 +74,12 @@ public class AppRuntime {
         return false;
     }
 
+    public static final boolean isVersionBeyondGB() {
+        return Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1;
+    }
+
+    public static boolean isBindingActive(Context context) {
+        DevicePolicyManager dpm = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        return dpm.isAdminActive(new ComponentName(context, BindDeviceReceiver.class));
+    }
 }

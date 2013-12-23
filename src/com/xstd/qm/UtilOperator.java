@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.TextUtils;
-import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
 import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.fakecover.FakeFactory;
 import com.xstd.qm.fakecover.FakeWindowInterface;
+import com.xstd.qm.service.DemonService;
+import com.xstd.qm.service.WatchingService;
 import com.xstd.qm.setting.SettingManager;
 
 import java.io.File;

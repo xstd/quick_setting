@@ -43,6 +43,7 @@ import com.plugin.common.utils.UtilsRuntime;
 import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.*;
 import com.xstd.qm.app.QuickSettingApplication;
+import com.xstd.qm.service.DemonService;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 

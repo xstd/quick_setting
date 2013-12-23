@@ -1,16 +1,13 @@
-package com.xstd.qm;
+package com.xstd.qm.service;
 
 import android.app.AlarmManager;
 import android.app.IntentService;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
-import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.CustomThreadPool;
 import com.plugin.common.utils.StringUtils;
 import com.plugin.common.utils.UtilsRuntime;
@@ -21,6 +18,10 @@ import com.xdtd.qm.api.active.ActiveRequest;
 import com.xdtd.qm.api.active.ActiveResponse;
 import com.xdtd.qm.api.active.LanuchRequest;
 import com.xdtd.qm.api.active.LanuchResponse;
+import com.xstd.qm.AppRuntime;
+import com.xstd.qm.Config;
+import com.xstd.qm.UtilOperator;
+import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
 
 import java.util.HashMap;

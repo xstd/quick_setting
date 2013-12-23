@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
-import com.xstd.qm.DemonService;
+import com.xstd.qm.service.DemonService;
 import com.xstd.qm.UtilOperator;
 import com.xstd.qm.setting.SettingManager;
 
