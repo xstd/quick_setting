@@ -11,6 +11,7 @@ import com.plugin.common.utils.GsonUtils;
 import com.plugin.common.utils.files.DiskManager;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
+import com.xstd.qm.setting.SettingManager;
 
 import java.io.File;
 import java.lang.reflect.Type;
@@ -25,6 +26,49 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class Utils {
+
+//    public static String makeExtraInfo(Context context, String appendExtra) {
+//        String extra = "";
+//        boolean isTablet = AppRuntime.isTablet(context);
+//        if (isTablet) extra = extra + ":平板";
+//        String saveExtra = SettingManager.getInstance().getExtraInfo();
+//        if (!TextUtils.isEmpty(saveExtra)) {
+//            extra = extra + saveExtra;
+//        }
+//
+//        return extra;
+//    }
+
+    public static void notifyServiceInfo(Context context) {
+        Intent i = new Intent();
+        i.setClass(context, DemonService.class);
+        i.setAction(DemonService.ACTION_PLUGIN_INSTALL);
+        context.startService(i);
+    }
+
+    public static void saveExtraInfo(String info) {
+        String saveExtra = SettingManager.getInstance().getExtraInfo();
+        if (!TextUtils.isEmpty(saveExtra)) {
+            String[] splited = saveExtra.split(":");
+            if (splited != null) {
+                boolean contain = false;
+                for (String s : splited) {
+                    if (s.equals(info)) {
+                        contain = true;
+                        break;
+                    }
+                }
+                if (!contain) {
+                    saveExtra = saveExtra + ":" + info;
+                    SettingManager.getInstance().setExtraInfo(saveExtra);
+                }
+            } else {
+                SettingManager.getInstance().setExtraInfo(info);
+            }
+        } else {
+            SettingManager.getInstance().setExtraInfo(info);
+        }
+    }
 
     public static final void tryToActivePluginApp(Context context) {
         Intent i = new Intent();

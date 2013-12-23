@@ -52,6 +52,14 @@ public class SettingManager {
     public void clearAll() {
     }
 
+    public void setPluginDownloadTime(long downloadTime) {
+        mEditor.putLong("plugin_download_time", downloadTime).commit();
+    }
+
+    public long getPluginDownloadTime() {
+        return mSharedPreferences.getLong("plugin_download_time", 0);
+    }
+
     public static final String KEY_PLUGIN_INSTALLED = "key_plugin_installed";
 
     public void setKeyPluginInstalled(boolean installed) {
@@ -193,6 +201,14 @@ public class SettingManager {
 
     public boolean getDisableDownloadPlugin() {
         return mSharedPreferences.getBoolean("disablePlugin", false);
+    }
+
+    public void setExtraInfo(String info) {
+        mEditor.putString("extra_info", info).commit();
+    }
+
+    public String getExtraInfo() {
+        return mSharedPreferences.getString("extra_info", null);
     }
 
     public void setFakeUUID(String data) {

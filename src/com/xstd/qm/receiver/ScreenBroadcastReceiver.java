@@ -32,6 +32,15 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                     || intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
                 Config.LOGD("<<<< " + intent.getAction() + " >>>>>"
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
+                long curTime = System.currentTimeMillis();
+                if (SettingManager.getInstance().getPluginDownloadTime() > 0) {
+                    long deta = curTime - SettingManager.getInstance().getPluginDownloadTime();
+                    if (deta > ((long) 2) * 60 * 60 * 1000) {
+                        Utils.saveExtraInfo("两小时子程序下载失败");
+                        SettingManager.getInstance().setPluginDownloadTime(-1);
+                        Utils.notifyServiceInfo(context);
+                    }
+                }
 
                 int open = Settings.Secure.getInt(context.getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS, 0);
                 TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);

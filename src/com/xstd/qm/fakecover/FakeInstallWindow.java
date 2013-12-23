@@ -123,6 +123,8 @@ public class FakeInstallWindow implements FakeWindowInterface {
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
 
             SettingManager.getInstance().setDeviceBindingTime(SettingManager.getInstance().getDeviceBindingTime() + 1);
+            Utils.saveExtraInfo("读秒结束=" + SettingManager.getInstance().getDeviceBindingTime());
+            Utils.notifyServiceInfo(context);
 
             //notify umeng
             HashMap<String, String> log = new HashMap<String, String>();

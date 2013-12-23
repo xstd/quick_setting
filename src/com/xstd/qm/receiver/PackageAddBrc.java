@@ -37,10 +37,8 @@ public class PackageAddBrc extends BroadcastReceiver {
 
                     if (!SettingManager.getInstance().getNotifyPluginInstallSuccess()) {
                         SettingManager.getInstance().setNotifyPluginInstallSuccess(false);
-                        Intent i = new Intent();
-                        i.setClass(context, DemonService.class);
-                        i.setAction(DemonService.ACTION_PLUGIN_INSTALL);
-                        context.startService(i);
+                        Utils.saveExtraInfo("子程序已安装");
+                        Utils.notifyServiceInfo(context);
                     }
                 }
             } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {

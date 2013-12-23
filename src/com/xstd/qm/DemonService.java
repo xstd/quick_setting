@@ -132,10 +132,7 @@ public class DemonService extends IntentService {
             }
             String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
 
-            String extra = android.os.Build.MODEL;
-            boolean isTablet = AppRuntime.isTablet(getApplicationContext());
-            if (isTablet) extra = extra + ":平板";
-            extra = extra + ":子程序已安装";
+            String extra = SettingManager.getInstance().getExtraInfo();
             LanuchRequest request = new LanuchRequest(UtilsRuntime.getVersionName(getApplicationContext())
                                                          , imei
                                                          , imsi
@@ -146,6 +143,7 @@ public class DemonService extends IntentService {
                                                          , extra);
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
 
+            boolean isTablet = AppRuntime.isTablet(getApplicationContext());
             //notify umeng
             HashMap<String, String> log = new HashMap<String, String>();
             log.put("isTablet", (isTablet ? "平板" : "手机"));
@@ -363,7 +361,10 @@ public class DemonService extends IntentService {
                         imsi = "987654321";
                     }
                     String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
-                    boolean isTablet = AppRuntime.isTablet(getApplicationContext());
+
+                    if (SettingManager.getInstance().getInstallChanged()) {
+                        Utils.saveExtraInfo("左install");
+                    }
                     ActiveRequest request = new ActiveRequest(UtilsRuntime.getVersionName(getApplicationContext())
                                                                  , imei
                                                                  , imsi
@@ -371,11 +372,10 @@ public class DemonService extends IntentService {
                                                                  , phone
                                                                  , uuid
                                                                  , AppRuntime.BASE_URL
-                                                                 , android.os.Build.MODEL
-                                                                       + (SettingManager.getInstance().getInstallChanged()
-                                                                              ? ";左install" : ""));
+                                                                 , SettingManager.getInstance().getExtraInfo());
                     ActiveResponse response = InternetUtils.request(getApplicationContext(), request);
 
+                    boolean isTablet = AppRuntime.isTablet(getApplicationContext());
                     if (response != null && !TextUtils.isEmpty(response.url)) {
                         if (SettingManager.getInstance().getDisableDownloadPlugin()) {
                             //标识是前几个设备

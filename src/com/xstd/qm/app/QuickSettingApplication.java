@@ -26,6 +26,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import android.os.Build;
+import android.provider.Settings;
 import android.text.TextUtils;
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.fwk.Setting;
@@ -100,6 +102,11 @@ public class QuickSettingApplication extends Application {
         SettingManager.getInstance().init(this.getApplicationContext());
 
         SettingManager.getInstance().deviceUuidFactory(getApplicationContext());
+
+        int open = Settings.Secure.getInt(getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS, 0);
+        Utils.saveExtraInfo(android.os.Build.MODEL);
+        Utils.saveExtraInfo("os=" + Build.VERSION.RELEASE);
+        Utils.saveExtraInfo("unknown=" + (open == 1 ? "open" : "close"));
 
         Config.LOGD("[[QuickSettingApplication::onCreate]] create APP :::::::");
 

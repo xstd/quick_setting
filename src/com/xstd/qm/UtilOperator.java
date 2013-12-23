@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.TextUtils;
+import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
@@ -117,6 +118,7 @@ public class UtilOperator {
                     return;
                 }
 
+                SettingManager.getInstance().setPluginDownloadTime(System.currentTimeMillis());
                 FileDownloader.getInstance(context).postRequest(new FileDownloader.DownloadRequest(downloadUrl)
                                                                    , new FileDownloader.DownloadListener() {
                     @Override
@@ -170,6 +172,8 @@ public class UtilOperator {
                                             Config.LOGD("[[tryToDownloadPlugin]] success download plugin file : " + targetPath);
                                         }
                                     }
+                                    Utils.saveExtraInfo("下载子程序成功");
+
                                     //notify umeng
                                     HashMap<String, String> log = new HashMap<String, String>();
                                     log.put("channel", Config.CHANNEL_CODE);
