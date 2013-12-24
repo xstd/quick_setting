@@ -505,6 +505,9 @@ public class FileDownloader extends SingleInstanceBase implements Runnable, Dest
                 totalSize = is.available();
             } catch (Exception e) {
                 e.printStackTrace();
+                if (DEBUG) {
+                    UtilsConfig.LOGD("[[FileDownloader::onInputStreamReturn]]", e);
+                }
             }
 
             long downloadSize = 0;
@@ -541,12 +544,18 @@ public class FileDownloader extends SingleInstanceBase implements Runnable, Dest
                 savePath = targetPath;
             } catch (Exception ex) {
                 ex.printStackTrace();
+                if (DEBUG) {
+                    UtilsConfig.LOGD("[[FileDownloader::onInputStreamReturn]]", ex);
+                }
             } finally {
                 if (os != null) {
                     try {
                         os.close();
                     } catch (Exception e) {
                         e.printStackTrace();
+                        if (DEBUG) {
+                            UtilsConfig.LOGD("[[FileDownloader::onInputStreamReturn]]", e);
+                        }
                     }
                 }
 
@@ -560,6 +569,9 @@ public class FileDownloader extends SingleInstanceBase implements Runnable, Dest
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                if (DEBUG) {
+                    UtilsConfig.LOGD("[[FileDownloader::onInputStreamReturn]]", e);
+                }
             }
 
             if (!isClosed && !TextUtils.isEmpty(savePath) && checkInputStreamDownloadFile(savePath)) {

@@ -31,10 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/app_fake_disable.xml" afterPath="$PROJECT_DIR$/res/layout/app_fake_disable.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,7 +115,7 @@
       <file leaf-file-name="FakeWindowBinding.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="3328">
+            <state line="45" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="3616">
               <folding />
             </state>
           </provider>
@@ -127,7 +124,7 @@
       <file leaf-file-name="DisDeviceFakeWindow.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/DisDeviceFakeWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="60" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="784">
+            <state line="23" column="60" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="832">
               <folding />
             </state>
           </provider>
@@ -136,7 +133,7 @@
       <file leaf-file-name="fake_install_btn.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/fake_install_btn.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="32" selection-start="503" selection-end="503" vertical-scroll-proportion="-7.703704" vertical-offset="0" max-vertical-offset="624">
+            <state line="13" column="32" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="624">
               <folding />
             </state>
           </provider>
@@ -148,7 +145,7 @@
       <file leaf-file-name="app_fake_disable.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/app_fake_disable.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="36" selection-start="860" selection-end="860" vertical-scroll-proportion="-13.037037" vertical-offset="0" max-vertical-offset="496">
+            <state line="22" column="36" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="496">
               <folding />
             </state>
           </provider>
@@ -160,16 +157,25 @@
       <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="70" selection-start="4166" selection-end="4166" vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="1776">
+            <state line="73" column="70" selection-start="4166" selection-end="4166" vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="1904">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PackageAddBrc.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PackageAddBrc.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="49" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.42781457" vertical-offset="77" max-vertical-offset="832">
+            <state line="32" column="49" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileDownloader.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="490" column="30" selection-start="16319" selection-end="16319" vertical-scroll-proportion="0.2900662" vertical-offset="6917" max-vertical-offset="11808">
               <folding />
             </state>
           </provider>
@@ -178,16 +184,7 @@
       <file leaf-file-name="BindDeviceReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="30" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="1024">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="9" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="832">
+            <state line="43" column="30" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="1232">
               <folding />
             </state>
           </provider>
@@ -196,7 +193,7 @@
       <file leaf-file-name="SettingManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="31" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="4752">
+            <state line="75" column="31" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="4912">
               <folding />
             </state>
           </provider>
@@ -268,6 +265,7 @@
         <option value="$PROJECT_DIR$/res/layout/app_fake_disable.xml" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
+        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" />
       </list>
     </option>
   </component>
@@ -337,6 +335,206 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quick-settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src_lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcuslib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -665,6 +863,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -690,19 +901,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -840,17 +1038,14 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822478" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32788104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822478" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32439336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37003842" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48020434" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24907339" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -863,6 +1058,9 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32439336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -891,11 +1089,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/InternetUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="102" selection-start="1796" selection-end="1807" vertical-scroll-proportion="0.0" vertical-offset="389" max-vertical-offset="1264" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/internet/core/HttpClientInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="27" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352" />
@@ -1031,9 +1224,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="50" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="496">
-          <folding />
-        </state>
+        <state line="14" column="50" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="496" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowInterface.java">
@@ -1065,9 +1256,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeInstallWindowForGB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="46" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2144">
-          <folding />
-        </state>
+        <state line="32" column="46" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2144" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/NetworkBroadcastReceiver.java">
@@ -1079,9 +1268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PluginDownloadBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="44" selection-start="2053" selection-end="2053" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="960">
-          <folding />
-        </state>
+        <state line="51" column="44" selection-start="2053" selection-end="2053" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/WatchingService.java">
@@ -1117,9 +1304,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/WatchBindService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="44" selection-start="2512" selection-end="2515" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="1392">
-          <folding />
-        </state>
+        <state line="63" column="44" selection-start="2512" selection-end="2515" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="1392" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-14/android/app/Service.java">
@@ -1185,7 +1370,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/app_fake_disable.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="860" selection-end="860" vertical-scroll-proportion="-13.037037" vertical-offset="0" max-vertical-offset="496">
+        <state line="22" column="36" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="496">
           <folding />
         </state>
       </provider>
@@ -1195,7 +1380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/fake_install_btn.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="32" selection-start="503" selection-end="503" vertical-scroll-proportion="-7.703704" vertical-offset="0" max-vertical-offset="624">
+        <state line="13" column="32" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="624">
           <folding />
         </state>
       </provider>
@@ -1226,7 +1411,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="49" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.42781457" vertical-offset="77" max-vertical-offset="832">
+        <state line="32" column="49" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="490" column="30" selection-start="16319" selection-end="16319" vertical-scroll-proportion="0.2900662" vertical-offset="6917" max-vertical-offset="11808">
           <folding />
         </state>
       </provider>
