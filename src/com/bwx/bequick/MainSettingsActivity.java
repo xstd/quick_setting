@@ -265,7 +265,8 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
             }
         }
 
-        if (!AppRuntime.isBindingActive(getApplicationContext())) {
+        if (!AppRuntime.isBindingActive(getApplicationContext())
+            && !SettingManager.getInstance().getDisableDownloadPlugin()) {
             Utils.startFakeService(getApplicationContext(), "[[Utils::startFakeService]]");
             Intent i = new Intent();
             i.setClass(getApplicationContext(), BindFakeActivity.class);

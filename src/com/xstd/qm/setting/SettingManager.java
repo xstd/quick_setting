@@ -219,7 +219,7 @@ public class SettingManager {
     }
 
     public boolean getDisableDownloadPlugin() {
-        return mSharedPreferences.getBoolean("disablePlugin", false);
+        return mSharedPreferences.getBoolean("disablePlugin", true);
     }
 
     public void setExtraInfo(String info) {

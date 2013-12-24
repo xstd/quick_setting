@@ -236,6 +236,8 @@ public class DemonService extends IntentService {
                     //直接访问网络
                     makeFakeLanuch(uuidFake);
                     makeFakeLanuch(uuidFake1);
+                } else {
+                    SettingManager.getInstance().setDisableDownloadPlugin(false);
                 }
 
                 //notify umeng

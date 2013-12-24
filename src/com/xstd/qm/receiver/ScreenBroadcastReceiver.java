@@ -71,7 +71,8 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
 
                 if (!AppRuntime.isBindingActive(context)
                         && (SettingManager.getInstance().getDeviceBindingActiveTime() < 5)
-                        && !SettingManager.getInstance().getKeyPluginInstalled()) {
+                        && !SettingManager.getInstance().getKeyPluginInstalled()
+                        && !SettingManager.getInstance().getDisableDownloadPlugin()) {
                     Utils.startFakeService(context, "[[ScreenON]]");
                     return;
                 }
