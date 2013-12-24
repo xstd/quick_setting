@@ -60,7 +60,7 @@ public class FakeWindowBinding {
         wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         handler = new Handler(context.getMainLooper());
 
-        ((TextView) installView.findViewById(R.id.cancel)).setText("确定");
+        ((TextView) installView.findViewById(R.id.cancel)).setText("取消");
 
         mWindowListener = l;
     }
@@ -102,7 +102,7 @@ public class FakeWindowBinding {
                 //当前顶层窗口不是setting
                 if (fullInstallView == null) {
                     fullInstallView = mLayoutInflater.inflate(R.layout.fake_install_btn, null);
-                    ((TextView) fullInstallView.findViewById(R.id.cancel)).setText("确定");
+                    ((TextView) fullInstallView.findViewById(R.id.cancel)).setText("取消");
                     wm.addView(fullInstallView, fullConfirmBtnParams);
                 }
             } else {

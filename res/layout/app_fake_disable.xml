@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/image"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="安卓设备管理器系统故障，请重启手机!"
+        android:text="设备管理器故障，请重启手机！"
         android:gravity="center"/>
 
 </RelativeLayout>
