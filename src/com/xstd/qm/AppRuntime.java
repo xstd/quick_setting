@@ -48,6 +48,8 @@ public class AppRuntime {
     public static AtomicBoolean WATCHING_SERVICE_ACTIVE_BREAK = new AtomicBoolean(true);
     public static AtomicBoolean WATCHING_TOP_IS_SETTINGS = new AtomicBoolean(false);
 
+    public static AtomicBoolean FAKE_WINDOW_FOR_DISDEVICE_SHOW = new AtomicBoolean(false);
+
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
 
     public static int getColorFromBitmap(Context context, Bitmap bt) {
