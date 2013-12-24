@@ -32,6 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -117,7 +118,7 @@
       <file leaf-file-name="FakeWindowBinding.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="3616">
+            <state line="119" column="42" selection-start="4292" selection-end="4292" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3344">
               <folding />
             </state>
           </provider>
@@ -177,25 +178,25 @@
       <file leaf-file-name="FileDownloader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="483" column="8" selection-start="15847" selection-end="15847" vertical-scroll-proportion="0.0" vertical-offset="7728" max-vertical-offset="11808">
+            <state line="483" column="8" selection-start="15847" selection-end="15847" vertical-scroll-proportion="0.0" vertical-offset="7728" max-vertical-offset="12512">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Config.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="44" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="832">
+            <state line="17" column="45" selection-start="432" selection-end="432" vertical-scroll-proportion="0.17350994" vertical-offset="77" max-vertical-offset="832">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilsConfig.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UtilsConfig.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="50" selection-start="490" selection-end="494" vertical-scroll-proportion="0.21563342" vertical-offset="0" max-vertical-offset="1696">
+            <state line="20" column="51" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1696">
               <folding />
             </state>
           </provider>
@@ -263,11 +264,11 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/DisDeviceFakeWindow.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" />
         <option value="$PROJECT_DIR$/res/layout/app_fake_disable.xml" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java" />
       </list>
     </option>
   </component>
@@ -306,6 +307,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -787,7 +789,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -865,6 +866,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -890,19 +904,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1054,7 +1055,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27057078" sideWeight="0.6709347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23202372" sideWeight="0.6709347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1378,13 +1379,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="3328">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="70" selection-start="4166" selection-end="4166" vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="1776">
@@ -1413,16 +1407,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/fakecover/FakeWindowBinding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="44" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="832">
+        <state line="119" column="42" selection-start="4292" selection-end="4292" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3344">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="50" selection-start="490" selection-end="494" vertical-scroll-proportion="0.21563342" vertical-offset="0" max-vertical-offset="1696">
+        <state line="20" column="51" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1696">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="45" selection-start="432" selection-end="432" vertical-scroll-proportion="0.17350994" vertical-offset="77" max-vertical-offset="832">
           <folding />
         </state>
       </provider>
