@@ -31,7 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/service/WatchBindService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/WatchBindService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -113,15 +114,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="71" selection-start="11530" selection-end="11530" vertical-scroll-proportion="0.0" vertical-offset="4112" max-vertical-offset="8992">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WatchingService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/WatchingService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,10 +141,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppRuntime.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AppRuntime.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="59" selection-start="2341" selection-end="2341" vertical-scroll-proportion="0.3642384" vertical-offset="573" max-vertical-offset="1328">
+            <state line="73" column="47" selection-start="2664" selection-end="2664" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1328">
               <folding />
             </state>
           </provider>
@@ -161,7 +153,7 @@
       <file leaf-file-name="WatchBindService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/WatchBindService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="45" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="1376">
+            <state line="35" column="69" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1376">
               <folding />
             </state>
           </provider>
@@ -176,6 +168,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="45" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BindDeviceReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -185,10 +186,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/NetworkBroadcastReceiver.java">
+      <file leaf-file-name="UtilsConfig.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="9" selection-start="999" selection-end="999" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1136">
+            <state line="20" column="51" selection-start="495" selection-end="495" vertical-scroll-proportion="0.19072847" vertical-offset="16" max-vertical-offset="1696">
               <folding />
             </state>
           </provider>
@@ -258,11 +259,11 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/setting/SettingManager.java" />
         <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/service/WatchBindService.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+        <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
       </list>
     </option>
   </component>
@@ -1317,20 +1318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="6" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1696">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="0" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="1008">
@@ -1403,13 +1390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/WatchBindService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="45" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="1376">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/FakeBindService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="33" selection-start="1576" selection-end="1576" vertical-scroll-proportion="0.0" vertical-offset="478" max-vertical-offset="1632">
@@ -1419,7 +1399,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="59" selection-start="2341" selection-end="2341" vertical-scroll-proportion="0.3642384" vertical-offset="573" max-vertical-offset="1328">
+        <state line="73" column="47" selection-start="2664" selection-end="2664" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1328">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/WatchBindService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="69" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1376">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="45" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="51" selection-start="495" selection-end="495" vertical-scroll-proportion="0.19072847" vertical-offset="16" max-vertical-offset="1696">
           <folding />
         </state>
       </provider>
