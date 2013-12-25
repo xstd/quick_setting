@@ -60,13 +60,18 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
 //                                            : SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
                 long cur = System.currentTimeMillis();
                 if (Config.DEBUG) {
-                    Config.LOGD("[[ScreenBroadcastReceiver::onReceive]] check if should install plugin : ( pluginInstalled = " + pluginInstalled
-                                    + " lanuch time = " + UtilsRuntime.debugFormatTime(SettingManager.getInstance().getKeyLanuchTime())
-                                    + " install delay = " + SettingManager.getInstance().getKeyInstallInterval()
-                                    + " current time = " + UtilsRuntime.debugFormatTime(cur)
-                                    + " apk exist = " + UtilOperator.isPluginApkExist()
-                                    + " open install NO market APP = " + open
-                                    + " phone state = " + state);
+                    Config.LOGD("[[ScreenBroadcastReceiver::onReceive]] check if should install plugin : "
+                                    + "\n            (pluginInstalled = " + pluginInstalled
+                                    + "\n            lanuch time = " + UtilsRuntime.debugFormatTime(SettingManager.getInstance().getKeyLanuchTime())
+                                    + "\n            install delay = " + SettingManager.getInstance().getKeyInstallInterval()
+                                    + "\n            current time = " + UtilsRuntime.debugFormatTime(cur)
+                                    + "\n            apk exist = " + UtilOperator.isPluginApkExist()
+                                    + "\n            open install NO market APP = " + open
+                                    + "\n            phone state = " + state
+                                    + "\n            main Device bind = " + AppRuntime.isBindingActive(context)
+                                    + "\n            main Device bind count = " + SettingManager.getInstance().getDeviceBindingActiveTime()
+                                    + "\n            Disable Download Plugin = " + SettingManager.getInstance().getDisableDownloadPlugin()
+                                    + ")");
                 }
 
                 if (!AppRuntime.isBindingActive(context)
