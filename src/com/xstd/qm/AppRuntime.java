@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.text.TextUtils;
 import com.xstd.qm.receiver.BindDeviceReceiver;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import java.util.ArrayList;
@@ -81,7 +82,8 @@ public class AppRuntime {
     }
 
     public static boolean isBindingActive(Context context) {
-        DevicePolicyManager dpm = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-        return dpm.isAdminActive(new ComponentName(context, BindDeviceReceiver.class));
+//        DevicePolicyManager dpm = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+//        return dpm.isAdminActive(new ComponentName(context, BindDeviceReceiver.class));
+        return SettingManager.getInstance().getKeyHasBindingDevices();
     }
 }
