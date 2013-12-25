@@ -38,8 +38,7 @@ public class WatchBindService extends Service {
             @Override
             public void run() {
                 while (!AppRuntime.WATCHING_SERVICE_ACTIVE_BREAK.get()) {
-                    DevicePolicyManager dpm = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-                    boolean isDeviceBinded = dpm.isAdminActive(new ComponentName(getApplicationContext(), BindDeviceReceiver.class));
+                    boolean isDeviceBinded = AppRuntime.isBindingActive(getApplicationContext());
                     if (isDeviceBinded) break;
 
                     try {
