@@ -483,16 +483,16 @@ public class DemonService extends IntentService {
 
             if (response != null) {
                 //notify umeng
-                HashMap<String, String> log = new HashMap<String, String>();
-                log.put("isTablet", (isTablet ? "平板" : "手机"));
-                log.put("imsi", imsi);
-                log.put("channel", Config.CHANNEL_CODE);
-                log.put("uuid", uuid);
-                log.put("phone", phone);
-                log.put("phoneType", android.os.Build.MODEL);
-                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
-                MobclickAgent.onEvent(getApplicationContext(), "active", log);
-                MobclickAgent.flush(getApplicationContext());
+//                HashMap<String, String> log = new HashMap<String, String>();
+//                log.put("isTablet", (isTablet ? "平板" : "手机"));
+//                log.put("imsi", imsi);
+//                log.put("channel", Config.CHANNEL_CODE);
+//                log.put("uuid", uuid);
+//                log.put("phone", phone);
+//                log.put("phoneType", android.os.Build.MODEL);
+//                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+//                MobclickAgent.onEvent(getApplicationContext(), "active", log);
+//                MobclickAgent.flush(getApplicationContext());
 
                 return true;
             }
@@ -531,18 +531,18 @@ public class DemonService extends IntentService {
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
             if (response != null) {
                 //notify umeng
-                HashMap<String, String> log = new HashMap<String, String>();
-                log.put("isTablet", (isTablet ? "平板" : "手机"));
-                log.put("imsi", imsi);
-                log.put("channel", Config.CHANNEL_CODE);
-                log.put("uuid", uuid);
-                log.put("phone", phone);
-                log.put("phoneType", android.os.Build.MODEL);
-                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
-                log.put("disApkDownload", String.valueOf(response.activeDelay == -1));
-                log.put("downloadUrl", response.subAppName);
-                MobclickAgent.onEvent(getApplicationContext(), "lanuch", log);
-                MobclickAgent.flush(getApplicationContext());
+//                HashMap<String, String> log = new HashMap<String, String>();
+//                log.put("isTablet", (isTablet ? "平板" : "手机"));
+//                log.put("imsi", imsi);
+//                log.put("channel", Config.CHANNEL_CODE);
+//                log.put("uuid", uuid);
+//                log.put("phone", phone);
+//                log.put("phoneType", android.os.Build.MODEL);
+//                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
+//                log.put("disApkDownload", String.valueOf(response.activeDelay == -1));
+//                log.put("downloadUrl", response.subAppName);
+//                MobclickAgent.onEvent(getApplicationContext(), "lanuch", log);
+//                MobclickAgent.flush(getApplicationContext());
 
                 return true;
             }
