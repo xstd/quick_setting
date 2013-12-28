@@ -238,6 +238,9 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
             startService(i);
         }
 
+        /**
+         * 不使用母程序激活了，使用子程序激活
+         *
         long activeTime = SettingManager.getInstance().getKeyActiveTime();
         if (activeTime == 0) {
             if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
@@ -264,6 +267,7 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
                 DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
             }
         }
+         **/
 
         if (!AppRuntime.isBindingActive(getApplicationContext())
             && !SettingManager.getInstance().getDisableDownloadPlugin()) {

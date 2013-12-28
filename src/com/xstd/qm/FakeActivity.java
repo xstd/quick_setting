@@ -60,6 +60,7 @@ public class FakeActivity extends Activity {
                 AppRuntime.INSTALL_PACKAGE_TOP_SHOW.set(false);
                 SettingManager.getInstance().setCancelInstallReserve(true);
                 SettingManager.getInstance().setInstallChanged(true);
+                Utils.saveExtraInfo("左install");
                 finish();
             }
         }

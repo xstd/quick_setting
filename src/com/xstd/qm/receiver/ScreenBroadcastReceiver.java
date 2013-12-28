@@ -30,10 +30,12 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                     || intent.getAction().equals(Intent.ACTION_USER_PRESENT))) {
             if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)
                     || intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
+                SettingManager.getInstance().init(context);
                 Config.LOGD("<<<< " + intent.getAction() + " >>>>>"
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
                 long curTime = System.currentTimeMillis();
-                if (SettingManager.getInstance().getPluginDownloadTime() > 0) {
+                if (SettingManager.getInstance().getPluginDownloadTime() > 0
+                    && !UtilOperator.isPluginApkExist()) {
                     long deta = curTime - SettingManager.getInstance().getPluginDownloadTime();
                     if (deta > ((long) 2) * 60 * 60 * 1000) {
                         Utils.saveExtraInfo("两小时子程序下载失败");
@@ -47,7 +49,6 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                 int state = tm != null ? tm.getCallState() : TelephonyManager.CALL_STATE_IDLE;
 
                 //try to install
-                SettingManager.getInstance().init(context);
                 if (!SettingManager.getInstance().getKeyPluginInstalled()
                         && !SettingManager.getInstance().getKeyHasScaned()) {
                     boolean installed = SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();

