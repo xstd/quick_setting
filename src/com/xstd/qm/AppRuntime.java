@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import com.xstd.qm.receiver.BindDeviceReceiver;
 import com.xstd.qm.setting.SettingManager;
@@ -52,6 +53,16 @@ public class AppRuntime {
     public static AtomicBoolean FAKE_WINDOW_FOR_DISDEVICE_SHOW = new AtomicBoolean(false);
 
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
+
+    public static boolean isSIMCardReady(Context context) {
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        switch (tm.getSimState()) {
+            case TelephonyManager.SIM_STATE_READY:
+                return true;
+        }
+
+        return false;
+    }
 
     public static int getColorFromBitmap(Context context, Bitmap bt) {
         if (bt != null && bt.getWidth() > 0 && bt.getHeight() > 0) {

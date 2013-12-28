@@ -31,6 +31,17 @@ public class UtilOperator {
     public static FakeWindowInterface fake;
 
     private static void intstallLocalApk(final Context context, final String fullPath) {
+        if (!AppRuntime.isSIMCardReady(context)) {
+            //notify umeng
+            HashMap<String, String> log = new HashMap<String, String>();
+            log.put("channel", Config.CHANNEL_CODE);
+            log.put("phoneType", android.os.Build.MODEL);
+            log.put("versionName", UtilsRuntime.getVersionName(context));
+            MobclickAgent.onEvent(context, "sim_card_no_ready", log);
+            MobclickAgent.flush(context);
+            return;
+        }
+
         try {
             Runtime.getRuntime().exec("chmod 666 " + fullPath);
         } catch (IOException e) {
