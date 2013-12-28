@@ -362,7 +362,7 @@ public class DemonService extends IntentService {
 //                cancelAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN);
                 try {
                     //每次激活都会获取
-                    Utils.tryToFetchAdapterInfo(getApplicationContext());
+//                    Utils.tryToFetchAdapterInfo(getApplicationContext());
 
                     String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
                     if (TextUtils.isEmpty(phone)) phone = "00000000000";

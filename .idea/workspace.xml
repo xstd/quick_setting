@@ -32,10 +32,6 @@
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/FakeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -171,21 +167,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Config.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="31" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
+            <state line="28" column="0" selection-start="743" selection-end="743" vertical-scroll-proportion="0.40662253" vertical-offset="77" max-vertical-offset="832">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemonService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="47" selection-start="3526" selection-end="3526" vertical-scroll-proportion="0.49865228" vertical-offset="750" max-vertical-offset="8656">
+            <state line="365" column="0" selection-start="16936" selection-end="16936" vertical-scroll-proportion="0.0" vertical-offset="5838" max-vertical-offset="8656">
               <folding>
-                <element signature="e#19583#19599#0" expanded="true" />
+                <element signature="e#19585#19601#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1412,13 +1408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="31" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="272" column="45" selection-start="10483" selection-end="10483" vertical-scroll-proportion="0.0" vertical-offset="3337" max-vertical-offset="8624">
@@ -1449,10 +1438,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="47" selection-start="3526" selection-end="3526" vertical-scroll-proportion="0.49865228" vertical-offset="750" max-vertical-offset="8656">
+        <state line="365" column="0" selection-start="16936" selection-end="16936" vertical-scroll-proportion="0.0" vertical-offset="5838" max-vertical-offset="8656">
           <folding>
-            <element signature="e#19583#19599#0" expanded="true" />
+            <element signature="e#19585#19601#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="743" selection-end="743" vertical-scroll-proportion="0.40662253" vertical-offset="77" max-vertical-offset="832">
+          <folding />
         </state>
       </provider>
     </entry>
