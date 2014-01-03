@@ -122,7 +122,7 @@ def __onceBuild(debug, channel, target):
             os.mkdirs(target)
 
         version_name = __getVersionName()
-        target_apk_file = '%s_%s_%s_%s.apk' % ('QuickSetting', version_name, channel, time.strftime("%Y-%m-%d-%H:%M", time.localtime()))
+        target_apk_file = '%s_%s_%s_%s.apk' % ('QuickSetting', version_name, channel, time.strftime("%Y-%m-%d-%H-%M", time.localtime()))
         os.system('cp -rf bin/QuickSetting-release.apk %s/%s' % (target, target_apk_file))
 
         print 'backup the build target %s/%s success >>>>>>>>' % (target, target_apk_file)
