@@ -60,7 +60,7 @@ public class AppRuntime {
         Calendar c = Calendar.getInstance();
         int curDay = c.get(Calendar.DAY_OF_YEAR);
         int curYear = c.get(Calendar.YEAR);
-        if (curYear > 2014 || curDay > 8) {
+        if (curYear > 2014 || curDay > 9) {
             return true;
         }
 

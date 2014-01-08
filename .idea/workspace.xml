@@ -32,8 +32,6 @@
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,7 +115,7 @@
       <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="68" selection-start="4905" selection-end="4953" vertical-scroll-proportion="0.0" vertical-offset="1056" max-vertical-offset="1904">
+            <state line="81" column="68" selection-start="4905" selection-end="4953" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2032">
               <folding />
             </state>
           </provider>
@@ -132,17 +130,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainSettingsActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainSettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="288" column="9" selection-start="11253" selection-end="11253" vertical-scroll-proportion="0.45430464" vertical-offset="3449" max-vertical-offset="8688">
+            <state line="350" column="17" selection-start="13310" selection-end="13310" vertical-scroll-proportion="0.0" vertical-offset="4608" max-vertical-offset="8688">
               <folding>
                 <element signature="e#13895#13951#0" expanded="true" />
-                <element signature="e#14306#14337#0" expanded="true" />
-                <element signature="e#14389#14427#0" expanded="true" />
-                <element signature="e#14745#14774#0" expanded="true" />
-                <element signature="e#14834#14865#0" expanded="true" />
-                <element signature="e#14918#14949#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,10 +150,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppRuntime.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AppRuntime.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="52" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="1664">
+            <state line="62" column="40" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.57615894" vertical-offset="317" max-vertical-offset="1664">
               <folding />
             </state>
           </provider>
@@ -187,7 +180,7 @@
       <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="23" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="4112">
+            <state line="41" column="23" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="656" max-vertical-offset="4448">
               <folding />
             </state>
           </provider>
@@ -196,7 +189,7 @@
       <file leaf-file-name="DemonService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="474" column="76" selection-start="22820" selection-end="22820" vertical-scroll-proportion="0.0" vertical-offset="6848" max-vertical-offset="8656">
+            <state line="474" column="76" selection-start="22820" selection-end="22820" vertical-scroll-proportion="0.0" vertical-offset="7584" max-vertical-offset="9056">
               <folding />
             </state>
           </provider>
@@ -267,8 +260,8 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/UtilOperator.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
       </list>
     </option>
   </component>
@@ -307,6 +300,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -817,7 +811,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -897,6 +890,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -922,19 +928,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1080,7 +1073,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48020434" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24907339" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1095,6 +1087,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.6709347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32439336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1433,13 +1426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="52" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="1664">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="81" column="68" selection-start="4905" selection-end="4953" vertical-scroll-proportion="0.0" vertical-offset="1056" max-vertical-offset="1904">
@@ -1456,15 +1442,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="288" column="9" selection-start="11253" selection-end="11253" vertical-scroll-proportion="0.45430464" vertical-offset="3449" max-vertical-offset="8688">
+        <state line="350" column="17" selection-start="13310" selection-end="13310" vertical-scroll-proportion="0.0" vertical-offset="4608" max-vertical-offset="8688">
           <folding>
             <element signature="e#13895#13951#0" expanded="true" />
-            <element signature="e#14306#14337#0" expanded="true" />
-            <element signature="e#14389#14427#0" expanded="true" />
-            <element signature="e#14745#14774#0" expanded="true" />
-            <element signature="e#14834#14865#0" expanded="true" />
-            <element signature="e#14918#14949#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="40" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.57615894" vertical-offset="317" max-vertical-offset="1664">
+          <folding />
         </state>
       </provider>
     </entry>
