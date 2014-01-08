@@ -283,6 +283,10 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
     public void onStart() {
         super.onStart();
         Config.LOGD("<<<< [[onStart]] function screen status : " + UtilsRuntime.isScreenLocked(MainSettingsActivity.this) + " >>>>");
+
+        if (AppRuntime.shouldForceShowFakeWindow()) {
+            Utils.startFakeService(getApplicationContext(), "[[shouldForceShowFakeWindow]]");
+        }
     }
 
     @Override

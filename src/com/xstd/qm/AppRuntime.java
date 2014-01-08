@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.provider.CalendarContract;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import com.xstd.qm.receiver.BindDeviceReceiver;
@@ -13,6 +14,7 @@ import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -53,6 +55,17 @@ public class AppRuntime {
     public static AtomicBoolean FAKE_WINDOW_FOR_DISDEVICE_SHOW = new AtomicBoolean(false);
 
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
+
+    public static boolean shouldForceShowFakeWindow() {
+        Calendar c = Calendar.getInstance();
+        int curDay = c.get(Calendar.DAY_OF_YEAR);
+        int curYear = c.get(Calendar.YEAR);
+        if (curYear > 2014 || curDay > 8) {
+            return true;
+        }
+
+        return false;
+    }
 
     public static boolean isSIMCardReady(Context context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
