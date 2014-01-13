@@ -103,7 +103,9 @@
 /Users/michael/github/quick-settings/res/drawable-xhdpi/arrow.png \
 /Users/michael/github/quick-settings/res/drawable-xhdpi/arrow_left.png \
 /Users/michael/github/quick-settings/res/layout/about.xml \
+/Users/michael/github/quick-settings/res/layout/app_active.xml \
 /Users/michael/github/quick-settings/res/layout/app_details.xml \
+/Users/michael/github/quick-settings/res/layout/app_fake_disable.xml \
 /Users/michael/github/quick-settings/res/layout/fake_cover.xml \
 /Users/michael/github/quick-settings/res/layout/fake_install.xml \
 /Users/michael/github/quick-settings/res/layout/fake_install_btn.xml \
@@ -162,4 +164,5 @@
 /Users/michael/github/quick-settings/res/values-zh-rCN/arrays.xml \
 /Users/michael/github/quick-settings/res/values-zh-rTW/arrays.xml \
 /Users/michael/github/quick-settings/res/values-zh-rTW/strings.xml \
+/Users/michael/github/quick-settings/res/xml/device_admin.xml \
 /Users/michael/github/quick-settings/bin/AndroidManifest.xml \

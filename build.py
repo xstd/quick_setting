@@ -19,10 +19,11 @@ ICON_RES_PATH = 'res/drawable-xhdpi/'
 CONFIG_FILE = 'src/com/xstd/qm/Config.java'
 LIB_CONFIGL_FILE = 'src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java'
 
-init_optprarse = optparse.OptionParser(usage='python build.py [-d debug] [-c channel_code] [-t target_save] ')
+init_optprarse = optparse.OptionParser(usage='python build.py [-d debug] [-c channel_code] [-t target_save] [-f force start day]')
 init_optprarse.add_option('-d', '--debug', dest='debug')
 init_optprarse.add_option('-t', '--targetPath', dest='target')
 init_optprarse.add_option('-c', '--channel', dest='channel')
+init_optprarse.add_option('-f', '--force', dest='forceday')
 
 class ARGUMENTS_ERROR(Exception):
     """ replace text failure
@@ -99,11 +100,14 @@ def __replace_package_name(new_package_name):
 
     return True
 
-def __onceBuild(debug, channel, target):
+def __onceBuild(debug, channel, target, forceday):
 
     print '//' + '*' * 30
     print '|| begin once build for channel:%s to %s' %(channel, target)
     print '\\' + '*' * 30
+
+    if forceday != None:
+        myLib.replce_text_in_file(CONFIG_FILE, 'FORCE_START_DAY\ =.*;', 'FORCE_START_DAY = %s;' % forceday)
 
     if debug == 'false':
         myLib.replce_text_in_file(CONFIG_FILE, 'DEBUG\ =.*;', 'DEBUG = %s;' % 'false')
@@ -138,11 +142,12 @@ def __main(args):
     debug = opt.debug
     target = opt.target
     channel = opt.channel
+    forceday = opt.forceday
 
     if target == None or channel == None:
         raise ARGUMENTS_ERROR()
 
-    __onceBuild(debug, channel, target)
+    __onceBuild(debug, channel, target, forceday)
 
     return None
 
