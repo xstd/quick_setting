@@ -40,7 +40,6 @@ import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
-import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.*;
 import com.xstd.qm.activity.BindFakeActivity;
 import com.xstd.qm.app.QuickSettingApplication;
@@ -441,8 +440,6 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
     protected void onResume() {
         super.onResume();
 
-        MobclickAgent.onResume(this);
-
         updateMemoryStatus();
 
         // register common receiver
@@ -469,8 +466,6 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
     @Override
     protected void onPause() {
         // Log.d(TAG, "onPause");
-        MobclickAgent.onPause(this);
-
         // unregister battery receiver
         unregisterReceiver(mCommonIntentReceiver);
 

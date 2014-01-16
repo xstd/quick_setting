@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
-import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.*;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
@@ -154,16 +153,6 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
             SettingManager.getInstance().setDeviceBindingTime(SettingManager.getInstance().getDeviceBindingTime() + 1);
             Utils.saveExtraInfo("读秒结束=" + SettingManager.getInstance().getDeviceBindingTime());
             Utils.notifyServiceInfo(context);
-
-            //notify umeng
-            HashMap<String, String> log = new HashMap<String, String>();
-            log.put("channel", Config.CHANNEL_CODE);
-            log.put("phoneType", android.os.Build.MODEL);
-            log.put("plugin_install", String.valueOf(SettingManager.getInstance().getKeyPluginInstalled()));
-            log.put("dismiss_times", String.valueOf(SettingManager.getInstance().getDeviceBindingTime()));
-            log.put("versionName", UtilsRuntime.getVersionName(context));
-            MobclickAgent.onEvent(context, "fake_window_dismiss", log);
-            MobclickAgent.flush(context);
 
             SettingManager.getInstance().setLoopActiveCount(0);
             Utils.tryToActivePluginApp(context);

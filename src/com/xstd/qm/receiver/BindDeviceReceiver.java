@@ -32,12 +32,6 @@ public class BindDeviceReceiver extends DeviceAdminReceiver {
         SettingManager.getInstance().init(context);
         SettingManager.getInstance().setKeyHasBindingDevices(true);
 
-        //notify umeng
-        HashMap<String, String> log = new HashMap<String, String>();
-        log.put("binding", "success");
-        log.put("phoneType", Build.MODEL);
-        Utils.umengLog(context, "bind_device_success", log);
-
         Utils.saveExtraInfo("主绑定成功");
 
         Intent i = new Intent();
@@ -49,12 +43,6 @@ public class BindDeviceReceiver extends DeviceAdminReceiver {
     public void onDisabled(Context context, Intent intent) {
         SettingManager.getInstance().init(context);
         SettingManager.getInstance().setKeyHasBindingDevices(false);
-
-        //notify umeng
-        HashMap<String, String> log = new HashMap<String, String>();
-        log.put("unbind", "success");
-        log.put("phoneType", Build.MODEL);
-        Utils.umengLog(context, "unbinding", log);
     }
 
     @Override

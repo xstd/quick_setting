@@ -12,7 +12,6 @@ import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.DiskManager;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
-import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.service.DemonService;
 import com.xstd.qm.service.FakeBindService;
 import com.xstd.qm.setting.SettingManager;
@@ -31,13 +30,6 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class Utils {
-
-    public static void umengLog(Context context, String event, HashMap<String, String> log) {
-        log.put("v", UtilsRuntime.getVersionName(context));
-        log.put("osVersion", Build.VERSION.RELEASE);
-        MobclickAgent.onEvent(context, event, log);
-        MobclickAgent.flush(context);
-    }
 
     public static void startFakeService(Context context, String from) {
         if (Config.DEBUG) {

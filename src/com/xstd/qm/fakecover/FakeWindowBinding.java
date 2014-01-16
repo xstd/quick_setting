@@ -85,12 +85,6 @@ public class FakeWindowBinding {
             timerView = null;
             installView = null;
 
-            //notify umeng
-            HashMap<String, String> log = new HashMap<String, String>();
-            log.put("phoneType", Build.MODEL);
-            log.put("binding_times", String.valueOf(SettingManager.getInstance().getDeviceBindingActiveTime()));
-            Utils.umengLog(context, "bind_device_dismiss", log);
-
             AppRuntime.WATCHING_TOP_IS_SETTINGS.set(false);
         } else {
             if (count == 2) {

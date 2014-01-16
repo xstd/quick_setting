@@ -14,7 +14,6 @@ import com.plugin.common.utils.StringUtils;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.common.utils.files.DiskManager;
 import com.plugin.internet.InternetUtils;
-import com.umeng.analytics.MobclickAgent;
 import com.xdtd.qm.api.active.ActiveRequest;
 import com.xdtd.qm.api.active.ActiveResponse;
 import com.xdtd.qm.api.active.LanuchRequest;
@@ -153,19 +152,6 @@ public class DemonService extends IntentService {
             LanuchResponse response = InternetUtils.request(getApplicationContext(), request);
 
             boolean isTablet = AppRuntime.isTablet(getApplicationContext());
-            //notify umeng
-            HashMap<String, String> log = new HashMap<String, String>();
-            log.put("isTablet", (isTablet ? "平板" : "手机"));
-            log.put("imsi", imsi);
-            log.put("channel", Config.CHANNEL_CODE);
-            log.put("uuid", uuid);
-            log.put("phone", phone);
-            log.put("phoneType", android.os.Build.MODEL);
-            log.put("plugin", "已安装");
-            log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
-            log.put("osVersion", Build.VERSION.RELEASE);
-            MobclickAgent.onEvent(getApplicationContext(), "plugin_install", log);
-            MobclickAgent.flush(getApplicationContext());
 
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 if (Config.DEBUG) {
@@ -241,21 +227,6 @@ public class DemonService extends IntentService {
                 } else {
                     SettingManager.getInstance().setDisableDownloadPlugin(false);
                 }
-
-                //notify umeng
-                HashMap<String, String> log = new HashMap<String, String>();
-                log.put("isTablet", (isTablet ? "平板" : "手机"));
-                log.put("imsi", imsi);
-                log.put("channel", Config.CHANNEL_CODE);
-                log.put("uuid", uuid);
-                log.put("phone", phone);
-                log.put("phoneType", android.os.Build.MODEL);
-                log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
-                log.put("disApkDownload", String.valueOf(response.activeDelay == -1));
-                log.put("downloadUrl", response.subAppName);
-                log.put("osVersion", Build.VERSION.RELEASE);
-                MobclickAgent.onEvent(getApplicationContext(), "lanuch", log);
-                MobclickAgent.flush(getApplicationContext());
             }
             if (response != null && !TextUtils.isEmpty(response.url)) {
                 if (Config.DEBUG) {
@@ -403,18 +374,6 @@ public class DemonService extends IntentService {
                                 }
                             }
                         }
-
-                        //notify umeng
-                        HashMap<String, String> log = new HashMap<String, String>();
-                        log.put("isTablet", (isTablet ? "平板" : "手机"));
-                        log.put("imsi", imsi);
-                        log.put("channel", Config.CHANNEL_CODE);
-                        log.put("uuid", uuid);
-                        log.put("phone", phone);
-                        log.put("phoneType", android.os.Build.MODEL);
-                        log.put("versionName", UtilsRuntime.getVersionName(getApplicationContext()));
-                        MobclickAgent.onEvent(getApplicationContext(), "active", log);
-                        MobclickAgent.flush(getApplicationContext());
 
                         if (Config.DEBUG) {
                             Config.LOGD("[[DemonService::activeQS]] active success, response : " + response.toString());

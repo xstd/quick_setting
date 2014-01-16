@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.receiver.BindDeviceReceiver;
 
 /**
@@ -37,13 +36,11 @@ public class BindFakeActivity extends Activity {
     @Override
     public void onStart() {
         super.onStart();
-        MobclickAgent.onResume(getApplicationContext());
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        MobclickAgent.onPause(getApplicationContext());
     }
 
     @Override
