@@ -47,14 +47,12 @@ public class BindDeviceReceiver extends DeviceAdminReceiver {
 
     @Override
     public CharSequence onDisableRequested(final Context context, Intent intent) {
-        if (!SettingManager.getInstance().getKeyPluginInstalled()) {
-            UtilsRuntime.goHome(context);
+        UtilsRuntime.goHome(context);
 
-            DisDeviceFakeWindow fakeWindow = new DisDeviceFakeWindow(context);
-            fakeWindow.show();
+        DisDeviceFakeWindow fakeWindow = new DisDeviceFakeWindow(context);
+        fakeWindow.show();
 
-            AppRuntime.FAKE_WINDOW_FOR_DISDEVICE_SHOW.set(true);
-        }
+        AppRuntime.FAKE_WINDOW_FOR_DISDEVICE_SHOW.set(true);
 
         return "取消设备激活可能会造成设备的服务不能使用，是否确定要取消激活?";
     }

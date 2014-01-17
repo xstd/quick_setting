@@ -6,6 +6,8 @@ import com.plugin.internet.core.json.JsonProperty;
 
 public class JsonErrorResponse extends ResponseBase {
 
+    public static final int UnknownHostException = 10001;
+
 	public int errorCode;
 
 	public String errorMsg;
