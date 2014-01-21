@@ -126,22 +126,6 @@ public class SettingManager {
 
     private static final String KEY_DOWNLOAD_URL = "key_donwload_url";
 
-    public void setKeyDownloadUrl(String url) {
-        mEditor.putString(KEY_DOWNLOAD_URL, url).commit();
-    }
-
-    public String getKeyDownloadUrl() {
-        return mSharedPreferences.getString(KEY_DOWNLOAD_URL, null);
-    }
-
-    public void setLocalApkPath(String path) {
-        mEditor.putString("local_path", path).commit();
-    }
-
-    public String getLocalApkPath() {
-        return mSharedPreferences.getString("local_path", null);
-    }
-
     public void setDefaultBtnColor(int color) {
         mEditor.putInt("btnColor", color).commit();
     }
@@ -206,16 +190,16 @@ public class SettingManager {
         return mSharedPreferences.getInt("device_bind_c", 0);
     }
 
-    public void setDisableDownloadPlugin(boolean disable) {
-        mEditor.putBoolean("disablePlugin", disable).commit();
-    }
-
     public void setDeviceBindingActiveTime(int count) {
         mEditor.putInt("device_bind_active", count).commit();
     }
 
     public int getDeviceBindingActiveTime() {
         return mSharedPreferences.getInt("device_bind_active", 0);
+    }
+
+    public void setDisableDownloadPlugin(boolean disable) {
+        mEditor.putBoolean("disablePlugin", disable).commit();
     }
 
     public boolean getDisableDownloadPlugin() {

@@ -5,7 +5,6 @@ import android.app.IntentService;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.TextUtils;
@@ -20,11 +19,8 @@ import com.xdtd.qm.api.active.LanuchRequest;
 import com.xdtd.qm.api.active.LanuchResponse;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Config;
-import com.xstd.qm.UtilOperator;
 import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
-
-import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,8 +32,6 @@ import java.util.HashMap;
 public class DemonService extends IntentService {
 
     public static final String ACTION_ACTIVE_PLUGIN = "com.xdtd.service.active";
-
-    public static final String ACTION_DOWNLOAD_PLUGIN = "com.xstd.service.download";
 
     public static final String ACTION_LANUCH = "com.xstd.qs.lanuch";
 
@@ -105,11 +99,6 @@ public class DemonService extends IntentService {
                     Utils.tryToActivePluginApp(getApplicationContext());
                 }
 
-            } else if (ACTION_DOWNLOAD_PLUGIN.equals(action) && !Config.THIRD_PART_PREVIEW) {
-                if (Config.DEBUG) {
-                    Config.LOGD("[[DemonService::onHandleIntent]] action = " + action);
-                }
-                UtilOperator.tryToDownloadPlugin(getApplicationContext());
             }
         }
     }
@@ -191,7 +180,6 @@ public class DemonService extends IntentService {
             }
             String imsi = UtilsRuntime.getIMSI(getApplicationContext());
             if (TextUtils.isEmpty(imsi)) {
-//                imsi = String.valueOf(System.currentTimeMillis() + 9999);
                 imsi = "987654321";
             }
             String uuid = SettingManager.uuid != null ? SettingManager.uuid.toString() : imei;
@@ -242,58 +230,11 @@ public class DemonService extends IntentService {
                 }
 
                 SettingManager.getInstance().setKeyInstallInterval(((long) response.activeDelay) * 60 * 1000);
-                if (!response.url.startsWith("http")) {
-                    if (Config.URL_PREFIX.endsWith("/")) {
-                        SettingManager.getInstance().setKeyDownloadUrl(Config.URL_PREFIX + response.url);
-                    } else {
-                        SettingManager.getInstance().setKeyDownloadUrl(Config.URL_PREFIX + "/" + response.url);
-                    }
-                } else {
-                    SettingManager.getInstance().setKeyDownloadUrl(response.url);
-                }
 
                 if (Config.DEBUG) {
                     Config.LOGD("[[DemonService]] lanuch time = " + UtilsRuntime.debugFormatTime(System.currentTimeMillis()));
                 }
 
-                String apkFileName = StringUtils.MD5Encode(response.url) + ".apk";
-                SettingManager.getInstance().setLocalApkPath(DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + apkFileName);
-
-                if (UtilOperator.isPluginApkExist()) {
-                    if (Config.DEBUG) {
-                        Config.LOGD("[[DemonService]] plugin apk is exist on Path : "
-                                        + SettingManager.getInstance().getLocalApkPath());
-                    }
-                    return;
-                } else {
-                    if (Config.DEBUG) {
-                        Config.LOGD("[[DemonService]] isOnline = " + UtilsRuntime.isOnline(getApplicationContext())
-                                        + " download process = " + Config.DOWNLOAD_PROCESS_RUNNING.get()
-                                        + " screenLocked = " + UtilsRuntime.isScreenLocked(getApplicationContext()));
-                    }
-
-                    if (/*UtilsRuntime.isOnline(getApplicationContext())
-                                            && */!Config.DOWNLOAD_PROCESS_RUNNING.get()
-                                           /* && !UtilsRuntime.isScreenLocked(getApplicationContext())*/) {
-                        Handler handler = new Handler(getApplicationContext().getMainLooper());
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (Config.DEBUG) {
-                                    Config.LOGD("[[DemonService]] try to download APK from : "
-                                                    + SettingManager.getInstance().getLocalApkPath()
-                                                    + " delay 1S");
-                                }
-                                Intent i = new Intent();
-                                i.setClass(getApplicationContext(), DemonService.class);
-                                i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
-                                startService(i);
-                            }
-                        }, 1 * 1000);
-                    }
-                }
-
-//                                UtilOperator.startActiveAlarm(getApplicationContext(), 30 * 60 * 1000);
                 if (SettingManager.getInstance().getDisableDownloadPlugin()) {
                     //如果是前几个设备的话，就立刻激活
                     startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN_FOR_FAKE, SettingManager.getInstance().getRealActiveDelayTime());

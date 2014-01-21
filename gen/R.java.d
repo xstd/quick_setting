@@ -100,13 +100,9 @@
 /Users/michael/github/quick-settings/res/drawable-mdpi/ic_wifi_hs.png \
 /Users/michael/github/quick-settings/res/drawable-mdpi/ic_wrench.png \
 /Users/michael/github/quick-settings/res/drawable-mdpi/pattern_carbon_fiber_dark.png \
-/Users/michael/github/quick-settings/res/drawable-xhdpi/arrow.png \
-/Users/michael/github/quick-settings/res/drawable-xhdpi/arrow_left.png \
 /Users/michael/github/quick-settings/res/layout/about.xml \
 /Users/michael/github/quick-settings/res/layout/app_active.xml \
-/Users/michael/github/quick-settings/res/layout/app_details.xml \
 /Users/michael/github/quick-settings/res/layout/app_fake_disable.xml \
-/Users/michael/github/quick-settings/res/layout/fake_cover.xml \
 /Users/michael/github/quick-settings/res/layout/fake_install.xml \
 /Users/michael/github/quick-settings/res/layout/fake_install_btn.xml \
 /Users/michael/github/quick-settings/res/layout/fake_splitor_v.xml \

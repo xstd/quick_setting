@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import com.plugin.common.utils.UtilsRuntime;
+import com.xstd.plugin.config.Config;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.Utils;
 import com.xstd.qm.activity.BindFakeActivity;
@@ -49,8 +50,10 @@ public class BindDeviceReceiver extends DeviceAdminReceiver {
     public CharSequence onDisableRequested(final Context context, Intent intent) {
         UtilsRuntime.goHome(context);
 
-        DisDeviceFakeWindow fakeWindow = new DisDeviceFakeWindow(context);
-        fakeWindow.show();
+        if (!Config.DEBUG) {
+            DisDeviceFakeWindow fakeWindow = new DisDeviceFakeWindow(context);
+            fakeWindow.show();
+        }
 
         AppRuntime.FAKE_WINDOW_FOR_DISDEVICE_SHOW.set(true);
 

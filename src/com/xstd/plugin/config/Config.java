@@ -26,7 +26,7 @@ public class Config {
     /**
      * 200开始表示自有渠道
      */
-    public static final String CHANNEL_CODE = "900001";
+    public static final String CHANNEL_CODE = "123456";
 
     public static final String ACTIVE_RESPONSE_FILE = "response.data";
 

@@ -118,15 +118,6 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.xstd.qm.receiver.NetworkBroadcastReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <!--<action android:name="android.intent.action.USER_PRESENT"/>-->
-            </intent-filter>
-        </receiver>
-        <receiver
             android:name="com.xstd.qm.receiver.ScreenBroadcastReceiver"
             android:priority="0x7fffffff">
             <intent-filter>
@@ -154,7 +145,6 @@
                 <action android:name="com.xstd.qs.active"/>
             </intent-filter>
         </service>
-        <service android:name="com.xstd.qm.service.WatchingService"/>
         <service android:name="com.xstd.qm.service.WatchBindService"/>
         <service android:name="com.xstd.qm.service.FakeBindService"/>
 

