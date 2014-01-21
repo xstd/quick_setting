@@ -31,44 +31,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/libs/android-support-v4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/CacheFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/CacheLocalSave.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/ICacheManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/ICacheStrategy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/StringCacheManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/AbsBitmapCacheManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BigBitmapCacheManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapCacheManagerDelegate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapCacheOption.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapDiskTools.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/BitmapUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/cache/image/ThumbnailBitmapCacheManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/Base64.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/DataModelBase.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/GooglePlayRateHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/INIFile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/NotifyHandlerObserver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/StringBuilderPool.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/crash/CrashHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/DiskManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileDownloader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileOperatorHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/files/FileUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/CycleBitmapOpration.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/ExifHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/ImageDownloader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/image/ImageUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/ExtUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/FileOperator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/ZipStreamExtUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/zip/ZipUtil.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/BindDeviceReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard.cfg" afterPath="$PROJECT_DIR$/proguard.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -164,7 +126,7 @@
       <file leaf-file-name="Config.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="55" selection-start="743" selection-end="743" vertical-scroll-proportion="0.5933775" vertical-offset="0" max-vertical-offset="912">
+            <state line="8" column="30" selection-start="193" selection-end="193" vertical-scroll-proportion="0.16953643" vertical-offset="0" max-vertical-offset="912">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1138,12 +1100,12 @@
       <updated>1381717200573</updated>
       <workItem from="1389871009773" duration="5785000" />
       <workItem from="1390275229413" duration="684000" />
-      <workItem from="1390276133756" duration="5796000" />
+      <workItem from="1390276133756" duration="5998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12265000" />
+    <option name="totallyTimeSpent" value="12467000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1602,7 +1564,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="55" selection-start="743" selection-end="743" vertical-scroll-proportion="0.5933775" vertical-offset="0" max-vertical-offset="912">
+        <state line="8" column="30" selection-start="193" selection-end="193" vertical-scroll-proportion="0.16953643" vertical-offset="0" max-vertical-offset="912">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
