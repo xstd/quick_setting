@@ -31,11 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
@@ -120,7 +116,7 @@
       <file leaf-file-name="MainSettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="195" column="11" selection-start="7003" selection-end="7215" vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="8208">
+            <state line="251" column="25" selection-start="9715" selection-end="9715" vertical-scroll-proportion="0.0" vertical-offset="2618" max-vertical-offset="8208">
               <folding />
             </state>
           </provider>
@@ -162,10 +158,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ScreenBroadcastReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="26" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.36927223" vertical-offset="126" max-vertical-offset="1328">
+            <state line="37" column="77" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1328">
               <folding />
             </state>
           </provider>
@@ -183,18 +179,19 @@
       <file leaf-file-name="AppRuntime.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="7" selection-start="3299" selection-end="3634" vertical-scroll-proportion="0.0" vertical-offset="938" max-vertical-offset="1712">
+            <state line="115" column="74" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1712">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShowSettingsActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ShowSettingsActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="89" selection-start="1699" selection-end="1719" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="928">
+            <state line="71" column="57" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.78410596" vertical-offset="160" max-vertical-offset="944">
               <folding>
-                <element signature="e#2241#2272#0" expanded="true" />
+                <element signature="e#2177#2208#0" expanded="true" />
+                <element signature="e#2227#2245#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -227,7 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/DemonService.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/PackageAddBrc.java" />
         <option value="$PROJECT_DIR$/res/layout/app_active.xml" />
         <option value="$PROJECT_DIR$/res/layout/fake_install_btn.xml" />
@@ -278,6 +274,7 @@
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java" />
+        <option value="$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java" />
       </list>
     </option>
   </component>
@@ -1103,12 +1100,12 @@
       <workItem from="1390275229413" duration="684000" />
       <workItem from="1390276133756" duration="6042000" />
       <workItem from="1390296970523" duration="649000" />
-      <workItem from="1390300006819" duration="755000" />
+      <workItem from="1390300006819" duration="876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13915000" />
+    <option name="totallyTimeSpent" value="14036000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1511,22 +1508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="89" selection-start="1699" selection-end="1719" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
-          <folding>
-            <element signature="e#2241#2272#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="7" selection-start="3299" selection-end="3634" vertical-scroll-proportion="0.0" vertical-offset="938" max-vertical-offset="1712">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="45" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="912">
@@ -1541,13 +1522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="11" selection-start="7003" selection-end="7215" vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="8208">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="45" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="1696">
@@ -1557,8 +1531,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/receiver/ScreenBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="26" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.36927223" vertical-offset="126" max-vertical-offset="1328">
+        <state line="37" column="77" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1328">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="251" column="25" selection-start="9715" selection-end="9715" vertical-scroll-proportion="0.0" vertical-offset="2618" max-vertical-offset="8208">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="74" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/ShowSettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="57" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.78410596" vertical-offset="160" max-vertical-offset="944">
+          <folding>
+            <element signature="e#2177#2208#0" expanded="true" />
+            <element signature="e#2227#2245#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -19,13 +19,12 @@ package com.bwx.bequick;
 import static com.bwx.bequick.Constants.PREF_APPEARANCE;
 
 import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.*;
 import android.content.DialogInterface.OnClickListener;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import com.xstd.qm.AppRuntime;
 import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.quick.R;
 
@@ -70,6 +69,7 @@ public class ShowSettingsActivity extends BaseActivity {
 						}
 					}).create().show();
 		}
+        AppRuntime.hideInLauncher(getApplicationContext());
 
 		finish(); // finish this activity in any case
 	}
