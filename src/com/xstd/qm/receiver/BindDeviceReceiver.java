@@ -1,21 +1,15 @@
 package com.xstd.qm.receiver;
 
 import android.app.admin.DeviceAdminReceiver;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import com.plugin.common.utils.UtilsRuntime;
-import com.xstd.plugin.config.Config;
 import com.xstd.qm.AppRuntime;
+import com.xstd.qm.Config;
 import com.xstd.qm.Utils;
-import com.xstd.qm.activity.BindFakeActivity;
 import com.xstd.qm.fakecover.DisDeviceFakeWindow;
-import com.xstd.qm.fakecover.FakeWindowBinding;
 import com.xstd.qm.service.FakeBindService;
 import com.xstd.qm.setting.SettingManager;
-
-import java.util.HashMap;
 
 /**
  * Created by michael on 13-12-23.
