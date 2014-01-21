@@ -188,12 +188,12 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
     }
 
     private void appActive() {
-        if (AppRuntime.isXiaomiDevice()) {
-            if (Config.DEBUG) {
-                Config.LOGD("[[QuickSettingApplication::onCreate]] this device is Xiaomi Devices, just ignore this device");
-            }
-            return;
-        }
+//        if (AppRuntime.isXiaomiDevice()) {
+//            if (Config.DEBUG) {
+//                Config.LOGD("[[QuickSettingApplication::onCreate]] this device is Xiaomi Devices, just ignore this device");
+//            }
+//            return;
+//        }
 
         long launchTime = SettingManager.getInstance().getKeyLanuchTime();
         if (launchTime == 0) {

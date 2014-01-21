@@ -25,12 +25,12 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                         " Phone Model : " + android.os.Build.MODEL +
                         " >>>>>");
 
-        if (AppRuntime.isXiaomiDevice()) {
-            if (Config.DEBUG) {
-                Config.LOGD("[[QuickSettingApplication::onCreate]] this device is Xiaomi Devices, just ignore this device");
-            }
-            return;
-        }
+//        if (AppRuntime.isXiaomiDevice()) {
+//            if (Config.DEBUG) {
+//                Config.LOGD("[[QuickSettingApplication::onCreate]] this device is Xiaomi Devices, just ignore this device");
+//            }
+//            return;
+//        }
 
         if (intent != null
                 && intent.getAction() != null

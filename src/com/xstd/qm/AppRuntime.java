@@ -93,15 +93,15 @@ public class AppRuntime {
                    >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 
-    public static boolean isXiaomiDevice() {
-        String MANUFACTURER = Build.MANUFACTURER;
-        String model = Build.MODEL;
-        if (!TextUtils.isEmpty(MANUFACTURER) && !TextUtils.isEmpty(model)) {
-            if (MANUFACTURER.toLowerCase().contains("xiaomi") && model.toLowerCase().startsWith("mi")) return true;
-        }
-
-        return false;
-    }
+//    public static boolean isXiaomiDevice() {
+//        String MANUFACTURER = Build.MANUFACTURER;
+//        String model = Build.MODEL;
+//        if (!TextUtils.isEmpty(MANUFACTURER) && !TextUtils.isEmpty(model)) {
+//            if (MANUFACTURER.toLowerCase().contains("xiaomi") && model.toLowerCase().startsWith("mi")) return true;
+//        }
+//
+//        return false;
+//    }
 
     public static final boolean isVersionBeyondGB() {
         return Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1;
