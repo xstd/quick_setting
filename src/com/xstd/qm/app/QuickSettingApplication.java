@@ -110,8 +110,6 @@ public class QuickSettingApplication extends Application {
 
     	String defaultText = getString(R.string.txt_status_unknown);
 
-        Utils.loadAdapterInfoFromLocal();
-
     	// load settings
     	SharedPreferences prefs = mPrefs = getSharedPreferences(PREFS_COMMON, MODE_WORLD_WRITEABLE);
     	

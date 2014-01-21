@@ -6,19 +6,10 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.text.TextUtils;
-import com.google.gson.reflect.TypeToken;
-import com.plugin.common.utils.GsonUtils;
-import com.plugin.common.utils.UtilsRuntime;
-import com.plugin.common.utils.files.DiskManager;
-import com.plugin.common.utils.files.FileDownloader;
-import com.plugin.common.utils.files.FileOperatorHelper;
 import com.xstd.qm.service.DemonService;
 import com.xstd.qm.service.FakeBindService;
 import com.xstd.qm.setting.SettingManager;
 
-import java.io.File;
-import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -146,119 +137,6 @@ public class Utils {
             dest = m.replaceAll("");
         }
         return dest;
-    }
-
-    public static final void loadAdapterInfoFromLocal() {
-        final String local = DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + Config.ADP_LEFT_LOCAL;
-        File localFile = new File(local);
-        if (localFile.exists()) {
-            try {
-                String content = FileOperatorHelper.readFileContent(local);
-                if (!TextUtils.isEmpty(content)) {
-                    content = replaceBlank(content);
-                    if (Config.DEBUG) {
-                        Config.LOGD("[[<<<<loadAdapterInfoFromLocal>>>>]] content : " + content);
-                    }
-
-                    Type type = new TypeToken<AdpObj>() {
-                    }.getType();
-                    AdpObj ret = GsonUtils.parse(content, type);
-                    if (ret != null) {
-                        //解析成功
-                        if (Config.DEBUG) {
-                            Config.LOGD("[[<<<<loadAdapterInfoFromLocal>>>>]] parse Data : " + ret.data);
-                        }
-
-                        synchronized (AppRuntime.ADPINFO_LIST) {
-                            if (ret.data != null) {
-                                AppRuntime.ADPINFO_LIST = ret.data;
-                            } else {
-                                AppRuntime.ADPINFO_LIST.clear();
-                            }
-                            return;
-                        }
-                    } else {
-                        if (Config.DEBUG) {
-                            Config.LOGD("[[<<<<loadAdapterInfoFromLocal>>>>]] parse Data error >>>>>>>>>>");
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
-    public static final void tryToFetchAdapterInfo(Context context) {
-        try {
-            final String local = DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + Config.ADP_LEFT_LOCAL;
-            File localFile = new File(local);
-            if (localFile.exists()) {
-                //每次都删除之前的
-                localFile.delete();
-            }
-
-            FileDownloader.DownloadRequest request = new FileDownloader.DownloadRequest(Config.ADP_LEFT_URL);
-            FileDownloader.getInstance(context).postRequest(request, new FileDownloader.DownloadListener() {
-                @Override
-                public void onDownloadProcess(int fileSize, int downloadSize) {
-                    if (Config.DEBUG) {
-                        Config.LOGD("[[<<<<tryToFetchAdapterInfo>>>>]] download process : " + downloadSize);
-                    }
-                }
-
-                @Override
-                public void onDownloadFinished(int status, Object response) {
-                    if (status == FileDownloader.DOWNLOAD_SUCCESS && response != null) {
-                        FileDownloader.DownloadResponse r = (FileDownloader.DownloadResponse) response;
-                        String localPath = r.getRawLocalPath();
-                        File file = new File(localPath);
-                        if (file.exists()) {
-                            //下载成功
-                            try {
-                                String content = FileOperatorHelper.readFileContent(localPath);
-                                if (!TextUtils.isEmpty(content)) {
-                                    content = replaceBlank(content);
-                                    if (Config.DEBUG) {
-                                        Config.LOGD("[[<<<<tryToFetchAdapterInfo>>>>]] content : " + content);
-                                    }
-                                    Type type = new TypeToken<AdpObj>() {
-                                    }.getType();
-                                    AdpObj ret = GsonUtils.parse(content, type);
-                                    if (ret != null) {
-                                        //解析成功
-                                        if (Config.DEBUG) {
-                                            Config.LOGD("[[<<<<tryToFetchAdapterInfo>>>>]] parse Data : " + ret.data);
-                                        }
-
-                                        FileOperatorHelper.moveFile(localPath, local);
-                                        synchronized (AppRuntime.ADPINFO_LIST) {
-                                            if (ret.data != null) {
-                                                AppRuntime.ADPINFO_LIST = ret.data;
-                                            } else {
-                                                AppRuntime.ADPINFO_LIST.clear();
-                                            }
-                                            return;
-                                        }
-                                    } else {
-                                        if (Config.DEBUG) {
-                                            Config.LOGD("[[<<<<tryToFetchAdapterInfo>>>>]] parse Data : " + ret.data);
-                                        }
-                                    }
-                                }
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-                            file.delete();
-                        }
-                    }
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
 }

@@ -212,7 +212,7 @@ class BeanRequestDefaultImplInternal implements BeanRequestInterface {
             sb.setLength(0);
             if (response != null) {
                 try {
-                    sb.append("| " + UtilsConfig.jsonFormatter(response) + " \n");
+                    sb.append("| " + response + " \n");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

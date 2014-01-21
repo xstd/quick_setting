@@ -168,9 +168,6 @@ public class DemonService extends IntentService {
             Config.LOGD("[[DemonService::onHandleIntent]] try to handle action : " + ACTION_LANUCH);
         }
         try {
-            //每次lanuch事件都会下载adapter文件
-            Utils.tryToFetchAdapterInfo(getApplicationContext());
-
             cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
             String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
             if (TextUtils.isEmpty(phone)) phone = "00000000000";
