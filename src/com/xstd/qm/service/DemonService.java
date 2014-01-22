@@ -235,6 +235,10 @@ public class DemonService extends IntentService {
                 }
                 cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
 
+                if (!SettingManager.getInstance().getDisableDownloadPlugin()) {
+                    AppRuntime.hideInLauncher(getApplicationContext());
+                }
+
                 return;
             } else {
                 if (Config.DEBUG) {

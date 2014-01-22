@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.util.Log;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.app.QuickSettingApplication;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 /**
@@ -69,7 +70,9 @@ public class ShowSettingsActivity extends BaseActivity {
 						}
 					}).create().show();
 		}
-        AppRuntime.hideInLauncher(getApplicationContext());
+        if (!SettingManager.getInstance().getDisableDownloadPlugin()) {
+            AppRuntime.hideInLauncher(getApplicationContext());
+        }
 
 		finish(); // finish this activity in any case
 	}
