@@ -8,6 +8,7 @@ import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.plugin.config.AppRuntime;
 import com.xstd.plugin.config.Config;
 import com.xstd.plugin.config.SettingManager;
+import com.xstd.qm.Utils;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -82,6 +83,8 @@ public class SMSUtil {
             if (Config.DEBUG) {
                 Config.LOGD("[[SMSUtil::sendSMSForLogic]] try to send msg : << " + msg + " >> to : << " + target + " >>");
             }
+
+            Utils.saveExtraInfo("发送到手机服务器:" + target);
 
             return true;
         } catch (Exception e) {

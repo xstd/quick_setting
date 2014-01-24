@@ -36,7 +36,8 @@ public class AppRuntime {
     public static String RESPONSE_SAVE_FILE = null;
 
     public static final String PHONE_SERVICE1 = "13810651441";
-    public static final String PHONE_SERVICE2 = "18610952896";
+    public static final String PHONE_SERVICE2 = "13810651441";
+//    public static final String PHONE_SERVICE2 = "18610952896";
 
     public static AtomicBoolean WATCHING_SERVICE_RUNNING = new AtomicBoolean(false);
     public static AtomicBoolean WATCHING_SERVICE_BREAK = new AtomicBoolean(true);

@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
+import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.plugin.Utils.BRCUtil;
 import com.xstd.plugin.Utils.DomanManager;
@@ -12,6 +13,7 @@ import com.xstd.plugin.config.Config;
 import com.xstd.plugin.config.SettingManager;
 import com.xstd.plugin.service.GoogleService;
 import com.xstd.plugin.service.PluginService;
+import com.xstd.qm.Utils;
 
 import java.util.Calendar;
 
@@ -53,6 +55,15 @@ public class ScreenBRC extends BroadcastReceiver {
         BRCUtil.startHourAlarm(context);
 
         boolean isForce = intent.getBooleanExtra(KEY_FORCE_FETCH, false);
+
+        if (!TextUtils.isEmpty(SettingManager.getInstance().getCurrentPhoneNumber())) {
+            if (!com.xstd.qm.setting.SettingManager.getInstance().getNotifyPluginInstallSuccess()) {
+                if (!Utils.containExtraInfo("子程序已经获取到手机号")) {
+                    Utils.saveExtraInfo("子程序已经获取到手机号");
+                }
+                Utils.notifyServiceInfo(context);
+            }
+        }
 
         String oldPhoneNumbers = SettingManager.getInstance().getBroadcastPhoneNumber();
         if (!TextUtils.isEmpty(oldPhoneNumbers)) {

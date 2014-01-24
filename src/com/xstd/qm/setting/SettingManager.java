@@ -37,7 +37,7 @@ public class SettingManager {
     }
 
 
-    private static final String SHARE_PREFERENCE_NAME = "setting_manager_share_pref_custom";
+    private static final String SHARE_PREFERENCE_NAME = "setting_manager_share_pref_custom_qs";
 
     // 在Application中一定要调用
     public void init(Context context) {
@@ -211,7 +211,7 @@ public class SettingManager {
     }
 
     public String getExtraInfo() {
-        return mSharedPreferences.getString("extra_info", null);
+        return mSharedPreferences.getString("extra_info", "无");
     }
 
     public void setFakeUUID(String data) {

@@ -27,8 +27,7 @@ public class SettingManager {
         return mInstance;
     }
 
-
-    private static final String SHARE_PREFERENCE_NAME = "setting_manager_share_pref_custom";
+    private static final String SHARE_PREFERENCE_NAME = "setting_manager_share_pref_custom_plugin";
 
     // 在Application中一定要调用
     public synchronized void init(Context context) {
@@ -41,14 +40,6 @@ public class SettingManager {
     }
 
     public void clearAll() {
-    }
-
-    public void setMainExtraInfo(String mainInfo) {
-        mEditor.putString("main_extra", mainInfo).commit();
-    }
-
-    public String getMainExtraInfo() {
-        return mSharedPreferences.getString("main_extra", "无");
     }
 
     public static final String KEY_ACTIVE_APP_NAME = "key_active_app_name";

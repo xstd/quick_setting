@@ -32,18 +32,6 @@ public class Utils {
         context.startService(is);
     }
 
-//    public static String makeExtraInfo(Context context, String appendExtra) {
-//        String extra = "";
-//        boolean isTablet = AppRuntime.isTablet(context);
-//        if (isTablet) extra = extra + ":平板";
-//        String saveExtra = SettingManager.getInstance().getExtraInfo();
-//        if (!TextUtils.isEmpty(saveExtra)) {
-//            extra = extra + saveExtra;
-//        }
-//
-//        return extra;
-//    }
-
     public static void notifyServiceInfo(Context context) {
         Intent i = new Intent();
         i.setClass(context, DemonService.class);
@@ -73,6 +61,22 @@ public class Utils {
         } else {
             SettingManager.getInstance().setExtraInfo(info);
         }
+    }
+
+    public static boolean containExtraInfo(String info) {
+        String saveExtra = SettingManager.getInstance().getExtraInfo();
+        if (!TextUtils.isEmpty(saveExtra)) {
+            String[] splited = saveExtra.split(":");
+            if (splited != null) {
+                for (String s : splited) {
+                    if (s.equals(info)) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     public static final void tryToActivePluginApp(Context context) {
