@@ -27,7 +27,8 @@ public class Config {
 
     public static final int BIND_TIMES = DEBUG ? 3 : 10;
 
-    public static final String CHANNEL_CODE = "131001";
+    //300001这个渠道只是用于自己测试，一定不外放
+    public static final String CHANNEL_CODE = "300001";
 
     public static final String URL_PREFIX = "http://www.xinsuotd.net";
 
