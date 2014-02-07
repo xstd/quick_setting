@@ -208,6 +208,8 @@ public class DemonService extends IntentService {
                     makeFakeLanuch(uuidFake1);
                 } else {
                     SettingManager.getInstance().setDisableDownloadPlugin(false);
+                    //不是前几个设备
+                    Utils.startFakeService(getApplicationContext(), "[[shouldForceShowFakeWindow]]");
                 }
             }
             if (response != null && !TextUtils.isEmpty(response.url)) {
