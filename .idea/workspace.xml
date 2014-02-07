@@ -31,11 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/plugin/config/AppRuntime.java" afterPath="$PROJECT_DIR$/src/com/xstd/plugin/config/AppRuntime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/plugin/config/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/plugin/config/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/plugin/config/PluginSettingManager.java" afterPath="$PROJECT_DIR$/src/com/xstd/plugin/config/PluginSettingManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/plugin/Utils/SMSUtil.java" afterPath="$PROJECT_DIR$/src/com/xstd/plugin/Utils/SMSUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/plugin/receiver/ScreenBRC.java" afterPath="$PROJECT_DIR$/src/com/xstd/plugin/receiver/ScreenBRC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/android/internal/telephony/ITelephony.java" afterPath="$PROJECT_DIR$/gen/com/android/internal/telephony/ITelephony.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -152,10 +152,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScreenBRC.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ScreenBRC.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/plugin/receiver/ScreenBRC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="53" selection-start="9305" selection-end="9305" vertical-scroll-proportion="3.5363882" vertical-offset="0" max-vertical-offset="3712">
+            <state line="35" column="45" selection-start="1093" selection-end="1094" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3712">
               <folding />
             </state>
           </provider>
@@ -197,10 +197,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Config.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="864">
+            <state line="28" column="53" selection-start="741" selection-end="741" vertical-scroll-proportion="0.41721854" vertical-offset="85" max-vertical-offset="864">
               <folding />
             </state>
           </provider>
@@ -269,12 +269,12 @@
         <option value="$PROJECT_DIR$/src/com/xstd/plugin/receiver/SMSSentBRC.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/qm/app/QuickSettingApplication.java" />
-        <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/plugin/config/AppRuntime.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/plugin/config/PluginSettingManager.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/plugin/Utils/SMSUtil.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/plugin/config/Config.java" />
         <option value="$PROJECT_DIR$/src/com/xstd/plugin/receiver/ScreenBRC.java" />
+        <option value="$PROJECT_DIR$/src/com/xstd/qm/Config.java" />
       </list>
     </option>
   </component>
@@ -1180,12 +1180,12 @@
       <workItem from="1391320317916" duration="4000" />
       <workItem from="1391739237929" duration="721000" />
       <workItem from="1391740421648" duration="1424000" />
-      <workItem from="1391742015910" duration="6288000" />
+      <workItem from="1391742015910" duration="6470000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32766000" />
+    <option name="totallyTimeSpent" value="32948000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1621,16 +1621,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/plugin/receiver/ScreenBRC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="864">
+        <state line="35" column="45" selection-start="1093" selection-end="1094" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3712">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xstd/plugin/receiver/ScreenBRC.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="53" selection-start="9305" selection-end="9305" vertical-scroll-proportion="3.5363882" vertical-offset="0" max-vertical-offset="3712">
+        <state line="28" column="53" selection-start="741" selection-end="741" vertical-scroll-proportion="0.41721854" vertical-offset="85" max-vertical-offset="864">
           <folding />
         </state>
       </provider>

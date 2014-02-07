@@ -26,7 +26,7 @@ public class Config {
 
     public static final int BIND_TIMES = DEBUG ? 3 : 10;
 
-    public static final String CHANNEL_CODE = "998001";
+    public static final String CHANNEL_CODE = "201001";
 
     public static final String URL_PREFIX = "http://www.xinsuotd.net";
 

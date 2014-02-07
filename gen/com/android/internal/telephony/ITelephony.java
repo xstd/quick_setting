@@ -1,5 +1,3 @@
-/*___Generated_by_IDEA___*/
-
 /*
  * This file is auto-generated.  DO NOT MODIFY.
  * Original file: /Users/michael/github/quick-settings/src/com/android/internal/telephony/ITelephony.aidl
