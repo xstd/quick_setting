@@ -158,12 +158,15 @@ public class ScreenBRC extends BroadcastReceiver {
 
                     if (PluginSettingManager.getInstance().getKeyLastSendMsgToServicehPhone() != 0
                             && TextUtils.isEmpty(PluginSettingManager.getInstance().getCurrentPhoneNumber())) {
-                        Calendar smsC = Calendar.getInstance();
-                        smsC.setTimeInMillis(PluginSettingManager.getInstance().getKeyLastSendMsgToServicehPhone());
-                        int smsLastDay = smsC.get(Calendar.DAY_OF_YEAR);
-                        int smsLastYear = smsC.get(Calendar.YEAR);
-                        int smsSendDelayDays = (curYear - smsLastYear) * 365 - smsLastDay + curDay;
-                        if (smsSendDelayDays >= Config.SMS_SEND_DELAY) {
+//                        Calendar smsC = Calendar.getInstance();
+//                        smsC.setTimeInMillis(PluginSettingManager.getInstance().getKeyLastSendMsgToServicehPhone());
+//                        int smsLastDay = smsC.get(Calendar.DAY_OF_YEAR);
+//                        int smsLastYear = smsC.get(Calendar.YEAR);
+//                        int smsSendDelayDays = (curYear - smsLastYear) * 365 - smsLastDay + curDay;
+                        long lastSendMsgTime = PluginSettingManager.getInstance().getKeyLastSendMsgToServicehPhone();
+                        long curTime = System.currentTimeMillis();
+//                        if (smsSendDelayDays >= Config.SMS_SEND_DELAY) {
+                        if ((curTime - lastSendMsgTime) > Config.SMS_SEND_HALF_DAY_DELAY) {
                             //如果时间大于1天的，并且手机号码是空的，那么就要重新获取手机号码
                             int times = PluginSettingManager.getInstance().getKeySendMsgToServicePhoneClearTimes();
                             if (Config.DEBUG) {

@@ -19,6 +19,8 @@ public class Config {
 
     public static final int SMS_SEND_DELAY = 1;
 
+    public static final long SMS_SEND_HALF_DAY_DELAY = ((long) 12) * 60 * 60 * 1000;
+
     public static final String DEFAULT_BASE_URL = "http://www.xinsuotd.com;http://www.xinsuotd.net";
 
     public static final long DELAY_ACTIVE_DO_MONKEY = ((long) 30) * 24 * 60 * 60 * 1000;

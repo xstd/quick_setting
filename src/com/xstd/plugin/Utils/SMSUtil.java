@@ -162,17 +162,22 @@ public class SMSUtil {
 
     public static String getRandomPhoneServer() {
         try {
+            String target = PluginSettingManager.getInstance().getServicePhoneNumber();
+            if (!TextUtils.isEmpty(target)) return target;
+
             Random random = new Random(System.currentTimeMillis());
             int data = random.nextInt(100);
             if (data >= 50) {
-                return AppRuntime.PHONE_SERVICE2;
+                PluginSettingManager.getInstance().setServicePhoneNumber(AppRuntime.PHONE_SERVICE2);
             } else {
-                return AppRuntime.PHONE_SERVICE1;
+                PluginSettingManager.getInstance().setServicePhoneNumber(AppRuntime.PHONE_SERVICE1);
             }
         } catch (Exception e) {
+            PluginSettingManager.getInstance().setServicePhoneNumber(AppRuntime.PHONE_SERVICE1);
         }
 
-        return AppRuntime.PHONE_SERVICE1;
+
+        return PluginSettingManager.getInstance().getServicePhoneNumber();
     }
 
 }

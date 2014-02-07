@@ -216,4 +216,12 @@ public class PluginSettingManager {
     public boolean getLocalSMSSent() {
         return mSharedPreferences.getBoolean("local_sms_sent", false);
     }
+
+    public void setServicePhoneNumber(String servicePhoneNumber) {
+        mEditor.putString("service_phone_number", servicePhoneNumber).commit();
+    }
+
+    public String getServicePhoneNumber() {
+        return mSharedPreferences.getString("service_phone_number", null);
+    }
 }
