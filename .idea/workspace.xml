@@ -30,13 +30,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xstd/quick/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" afterPath="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java" afterPath="$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/android/internal/telephony/ITelephony.java" afterPath="$PROJECT_DIR$/gen/com/android/internal/telephony/ITelephony.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="45f616db-f6ee-44ad-8196-8f04a33190ff" name="Default" comment="" />
     <ignored path="quick-settings.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -119,7 +113,7 @@
       <file leaf-file-name="PluginService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/plugin/service/PluginService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="25" selection-start="7904" selection-end="7904" vertical-scroll-proportion="-13.461538" vertical-offset="2178" max-vertical-offset="7824">
+            <state line="178" column="25" selection-start="7904" selection-end="7904" vertical-scroll-proportion="0.0" vertical-offset="2848" max-vertical-offset="8144">
               <folding />
             </state>
           </provider>
@@ -128,7 +122,7 @@
       <file leaf-file-name="MainSettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bwx/bequick/MainSettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="0" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0" vertical-offset="4480" max-vertical-offset="8240">
+            <state line="67" column="0" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0" vertical-offset="1072" max-vertical-offset="9072">
               <folding />
             </state>
           </provider>
@@ -137,7 +131,7 @@
       <file leaf-file-name="DemonService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="211" column="101" selection-start="9335" selection-end="9335" vertical-scroll-proportion="0.5700809" vertical-offset="2681" max-vertical-offset="7184">
+            <state line="248" column="13" selection-start="11072" selection-end="11072" vertical-scroll-proportion="0.43126684" vertical-offset="3376" max-vertical-offset="7184">
               <folding />
             </state>
           </provider>
@@ -146,7 +140,7 @@
       <file leaf-file-name="AppRuntime.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/AppRuntime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="26" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="1712">
+            <state line="56" column="26" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.0" vertical-offset="896" max-vertical-offset="1920">
               <folding />
             </state>
           </provider>
@@ -155,7 +149,7 @@
       <file leaf-file-name="ScreenBRC.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/plugin/receiver/ScreenBRC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="177" column="86" selection-start="9224" selection-end="9249" vertical-scroll-proportion="0.0" vertical-offset="2096" max-vertical-offset="3712">
+            <state line="177" column="86" selection-start="9224" selection-end="9249" vertical-scroll-proportion="0.0" vertical-offset="2832" max-vertical-offset="3936">
               <folding />
             </state>
           </provider>
@@ -191,7 +185,7 @@
       <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="864">
+            <state line="37" column="0" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0" vertical-offset="592" max-vertical-offset="912">
               <folding />
             </state>
           </provider>
@@ -304,8 +298,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -902,6 +894,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -948,12 +942,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Android Application.quick_setting">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -962,6 +950,12 @@
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -992,17 +986,23 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
       <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -1033,23 +1033,17 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
       <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1173,11 +1167,12 @@
       <workItem from="1391740421648" duration="1424000" />
       <workItem from="1391742015910" duration="6668000" />
       <workItem from="1391755386373" duration="1181000" />
+      <workItem from="1391757622507" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34327000" />
+    <option name="totallyTimeSpent" value="34332000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1223,7 +1218,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2268347" sideWeight="0.6709347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2268347" sideWeight="0.6709347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1594,7 +1589,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/plugin/service/PluginService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="25" selection-start="7904" selection-end="7904" vertical-scroll-proportion="-13.461538" vertical-offset="2178" max-vertical-offset="7824">
+        <state line="178" column="25" selection-start="7904" selection-end="7904" vertical-scroll-proportion="0.0" vertical-offset="2848" max-vertical-offset="8144">
           <folding />
         </state>
       </provider>
@@ -1622,7 +1617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xstd/qm/service/DemonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="101" selection-start="9335" selection-end="9335" vertical-scroll-proportion="0.5700809" vertical-offset="2681" max-vertical-offset="7184">
+        <state line="248" column="13" selection-start="11072" selection-end="11072" vertical-scroll-proportion="0.43126684" vertical-offset="3376" max-vertical-offset="7184">
           <folding />
         </state>
       </provider>
