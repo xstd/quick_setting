@@ -6,7 +6,7 @@ import com.plugin.internet.InternetUtils;
 import com.xstd.plugin.api.DomainRequest;
 import com.xstd.plugin.api.DomainResponse;
 import com.xstd.plugin.config.Config;
-import com.xstd.plugin.config.SettingManager;
+import com.xstd.plugin.config.PluginSettingManager;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -84,7 +84,7 @@ public class DomanManager {
                     if (Config.DEBUG) {
                         Config.LOGD("[[DomanManager::costOneDomain]] current domain info : " + data + " after encrypyt data : " + enData);
                     }
-                    SettingManager.getInstance().setKeyDomain(enData);
+                    PluginSettingManager.getInstance().setKeyDomain(enData);
 
 //                    if (mDomainLeak != null) {
 //                        mDomainLeak.onDomainLeak();
@@ -107,7 +107,7 @@ public class DomanManager {
             if (Config.DEBUG) {
                 Config.LOGD("[[DomanManager::costOneDomain]] current domain info : " + data + " after encrypyt data : " + enData);
             }
-            SettingManager.getInstance().setKeyDomain(enData);
+            PluginSettingManager.getInstance().setKeyDomain(enData);
         } catch (Exception e) {
         }
     }
@@ -146,7 +146,7 @@ public class DomanManager {
      */
     private final String getAviableDomain() {
         try {
-            String data = SettingManager.getInstance().geKeyDomain();
+            String data = PluginSettingManager.getInstance().geKeyDomain();
             if (!TextUtils.isEmpty(data)) {
                 String deData = EncryptUtils.Decrypt(data, EncryptUtils.SECRET_KEY);
                 if (!TextUtils.isEmpty(deData)) {

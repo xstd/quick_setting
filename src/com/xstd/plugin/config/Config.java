@@ -11,7 +11,7 @@ import com.plugin.common.utils.DebugLog;
  */
 public class Config {
 
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     public static final boolean DELETE_RECEIVED_MESSAGE = false && DEBUG;
 
@@ -26,7 +26,7 @@ public class Config {
     /**
      * 200开始表示自有渠道
      */
-    public static final String CHANNEL_CODE = "123456";
+    public static final String CHANNEL_CODE = "135790";
 
     public static final String ACTIVE_RESPONSE_FILE = "response.data";
 

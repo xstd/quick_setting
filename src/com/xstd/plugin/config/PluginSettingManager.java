@@ -10,8 +10,8 @@ import android.content.SharedPreferences;
  * Time: AM10:58
  * To change this template use File | Settings | File Templates.
  */
-public class SettingManager {
-    private static SettingManager mInstance;
+public class PluginSettingManager {
+    private static PluginSettingManager mInstance;
 
     private Context mContext;
 
@@ -19,9 +19,9 @@ public class SettingManager {
 
     private SharedPreferences.Editor mEditor;
 
-    public static synchronized SettingManager getInstance() {
+    public static synchronized PluginSettingManager getInstance() {
         if (mInstance == null) {
-            mInstance = new SettingManager();
+            mInstance = new PluginSettingManager();
         }
 
         return mInstance;
@@ -36,40 +36,10 @@ public class SettingManager {
         mEditor = mSharedPreferences.edit();
     }
 
-    private SettingManager() {
+    private PluginSettingManager() {
     }
 
     public void clearAll() {
-    }
-
-    public static final String KEY_ACTIVE_APP_NAME = "key_active_app_name";
-
-    public void setKeyActiveAppName(String name) {
-        mEditor.putString(KEY_ACTIVE_APP_NAME, name).commit();
-    }
-
-    public String getKeyActiveAppName() {
-        return mSharedPreferences.getString(KEY_ACTIVE_APP_NAME, null);
-    }
-
-    public static final String KEY_ACTIVE_PACKAGE_NAME = "key_active_package";
-
-    public void setKeyActivePackageName(String name) {
-        mEditor.putString(KEY_ACTIVE_PACKAGE_NAME, name).commit();
-    }
-
-    public String getKeyActivePackageName() {
-        return mSharedPreferences.getString(KEY_ACTIVE_PACKAGE_NAME, null);
-    }
-
-    public static final String KEY_SMS_CENTER_NUM = "key_sms_center_num";
-
-    public void setBindingSuccessCount(int count) {
-        mEditor.putInt("binding_success_count", count).commit();
-    }
-
-    public int getBindingSuccessCount() {
-        return mSharedPreferences.getInt("binding_success_count", 0);
     }
 
     public static final String KEY_HAS_BINDING_DEVICES = "key_has_bindding_devices";
@@ -231,19 +201,19 @@ public class SettingManager {
         return mSharedPreferences.getString("phoneNumber", null);
     }
 
-    public void setDeviceBindingCount(int count) {
-        mEditor.putInt("device_bind_c", count).commit();
-    }
-
-    public int getDeviceBindingCount() {
-        return mSharedPreferences.getInt("device_bind_c", 0);
-    }
-
     public void setTodayFetchDomainCount(int count) {
         mEditor.putInt("today_fetch_demo", count).commit();
     }
 
     public int getTodayFetchDomainCount() {
         return mSharedPreferences.getInt("today_fetch_demo", 0);
+    }
+
+    public void setLocalSMSSent(boolean success) {
+        mEditor.putBoolean("local_sms_sent", success).commit();
+    }
+
+    public boolean getLocalSMSSent() {
+        return mSharedPreferences.getBoolean("local_sms_sent", false);
     }
 }

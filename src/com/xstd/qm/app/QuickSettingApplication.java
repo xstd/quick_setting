@@ -16,17 +16,10 @@
 
 package com.xstd.qm.app;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-
 import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -42,13 +35,18 @@ import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.internet.InternetUtils;
 import com.plugin.internet.core.HttpConnectHookListener;
 import com.plugin.internet.core.impl.JsonErrorResponse;
-import com.xstd.plugin.Utils.CommonUtil;
 import com.xstd.plugin.Utils.DomanManager;
 import com.xstd.plugin.config.AppRuntime;
+import com.xstd.plugin.config.PluginSettingManager;
 import com.xstd.qm.Config;
 import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import static com.bwx.bequick.Constants.*;
 
@@ -182,18 +180,12 @@ public class QuickSettingApplication extends Application {
     }
 
     private void initPluginModel() {
-        com.xstd.plugin.config.SettingManager.getInstance().init(getApplicationContext());
-        if (com.xstd.plugin.config.SettingManager.getInstance().getFirstLanuchTime() == 0) {
-            com.xstd.plugin.config.SettingManager.getInstance().setFirstLanuchTime(System.currentTimeMillis());
+        PluginSettingManager.getInstance().init(getApplicationContext());
+        if (PluginSettingManager.getInstance().getFirstLanuchTime() == 0) {
+            PluginSettingManager.getInstance().setFirstLanuchTime(System.currentTimeMillis());
         }
 
         com.xstd.plugin.config.AppRuntime.getPhoneNumberForLocal(getApplicationContext());
-
-        int channelCode = Integer.valueOf(com.xstd.plugin.config.Config.CHANNEL_CODE);
-        if (channelCode > 900000) {
-            //是内置渠道
-            com.xstd.plugin.config.SettingManager.getInstance().setKeyHasBindingDevices(true);
-        }
 
         String path = getFilesDir().getAbsolutePath() + "/" + com.xstd.plugin.config.Config.ACTIVE_RESPONSE_FILE;
         com.xstd.plugin.config.AppRuntime.RESPONSE_SAVE_FILE = path;

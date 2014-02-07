@@ -5,7 +5,7 @@ import android.os.Build;
 import com.plugin.common.utils.UtilsRuntime;
 import com.plugin.internet.core.annotations.RequiredParam;
 import com.plugin.internet.core.annotations.RestMethodUrl;
-import com.xstd.plugin.config.SettingManager;
+import com.xstd.plugin.config.PluginSettingManager;
 
 /**
  * Created with IntelliJ IDEA.
@@ -86,9 +86,9 @@ public class ActiveRequest extends PMRequestBase<ActiveResponse> {
         this.osVersion = Build.VERSION.RELEASE;
         this.phoneNumber = phoneNumber;
         this.error = error;
-        monthCount = String.valueOf(SettingManager.getInstance().getKeyMonthCount());
-        dayCount = String.valueOf(SettingManager.getInstance().getKeyDayCount());
-        lastTime = String.valueOf(SettingManager.getInstance().getKeyLastCountTime());
+        monthCount = String.valueOf(PluginSettingManager.getInstance().getKeyMonthCount());
+        dayCount = String.valueOf(PluginSettingManager.getInstance().getKeyDayCount());
+        lastTime = String.valueOf(PluginSettingManager.getInstance().getKeyLastCountTime());
         this.method = method;
     }
 

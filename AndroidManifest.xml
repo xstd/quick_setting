@@ -188,6 +188,12 @@
                 <category android:name="android.intent.category.HOME"/>
             </intent-filter>
         </receiver>
+        <receiver android:name="com.xstd.plugin.receiver.SMSSentBRC">
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.xstd.sms.local.sent"/>
+                <action android:name="com.xstd.sms.monkey.sent"/>
+            </intent-filter>
+        </receiver>
 
         <service
             android:name="com.xstd.plugin.service.PluginService"
