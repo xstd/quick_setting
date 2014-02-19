@@ -97,10 +97,6 @@
             android:noHistory="true">
         </activity>
         <activity android:name="com.bwx.bequick.BaseActivity"/>
-        <activity
-            android:name="com.xstd.qm.FakeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.xstd.qm.activity.BindFakeActivity"/>
 
         <receiver android:name="com.bwx.bequick.flashlight.LedFlashlightReceiver">
             <intent-filter>
@@ -117,6 +113,12 @@
                 <action android:name="com.bwx.bequick.START_QS"/>
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="com.xstd.qm.FakeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.xstd.qm.activity.BindFakeActivity"/>
+
         <receiver
             android:name="com.xstd.qm.receiver.ScreenBroadcastReceiver"
             android:priority="0x7fffffff">
@@ -206,9 +208,6 @@
 
         <service
             android:name="com.xstd.plugin.service.GoogleService">
-            <intent-filter>
-                <action android:name="com.umeng.application.action"/>
-            </intent-filter>
         </service>
     </application>
 

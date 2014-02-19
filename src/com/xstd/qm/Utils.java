@@ -25,7 +25,10 @@ public class Utils {
     public static void startFakeService(Context context, String from) {
         if (Config.DEBUG) {
             Config.LOGD("[[CommonUtil::startFakeService]] from reason : " + from);
+
+            return;
         }
+
         Intent is = new Intent();
         is.setClass(context, FakeBindService.class);
 //        is.setAction(FakeService.ACTION_SHOW_FAKE_WINDOW);
