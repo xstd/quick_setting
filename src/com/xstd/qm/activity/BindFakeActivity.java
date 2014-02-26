@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import com.umeng.analytics.MobclickAgent;
+import com.xstd.qm.AppRuntime;
 import com.xstd.qm.receiver.BindDeviceReceiver;
 
 /**
@@ -54,6 +55,7 @@ public class BindFakeActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, android.content.Intent data) {
         if (requestCode == 1000) {
+            AppRuntime.LEFT_ACTIVE_BUTTON.set(true);
             finish();
         }
     }

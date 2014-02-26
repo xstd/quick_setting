@@ -2,7 +2,6 @@ package com.xstd.qm;
 
 import com.plugin.common.utils.DebugLog;
 import com.plugin.common.utils.StringUtils;
-import com.plugin.common.utils.files.DiskManager;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -28,7 +27,7 @@ public class Config {
     public static final int BIND_TIMES = DEBUG ? 3 : 10;
 
     //300001这个渠道只是用于自己测试，一定不外放
-    public static final String CHANNEL_CODE = "300001";
+    public static final String CHANNEL_CODE = "100001";
 
     public static final String URL_PREFIX = "http://www.xinsuotd.net";
 

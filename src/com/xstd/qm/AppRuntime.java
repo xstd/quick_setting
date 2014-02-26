@@ -1,15 +1,11 @@
 package com.xstd.qm;
 
-import android.app.admin.DevicePolicyManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.provider.CalendarContract;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import com.xstd.qm.receiver.BindDeviceReceiver;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
@@ -53,6 +49,8 @@ public class AppRuntime {
     public static AtomicBoolean WATCHING_TOP_IS_SETTINGS = new AtomicBoolean(false);
 
     public static AtomicBoolean FAKE_WINDOW_FOR_DISDEVICE_SHOW = new AtomicBoolean(false);
+
+    public static AtomicBoolean LEFT_ACTIVE_BUTTON = new AtomicBoolean(false);
 
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
 
