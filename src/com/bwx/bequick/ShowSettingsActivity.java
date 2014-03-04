@@ -16,18 +16,19 @@
 
 package com.bwx.bequick;
 
-import static com.bwx.bequick.Constants.PREF_APPEARANCE;
-
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.util.Log;
+import com.xstd.qm.AppRuntime;
 import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.quick.R;
+
+import static com.bwx.bequick.Constants.PREF_APPEARANCE;
 
 /**
  * This is a invisible proxy activity, which calls quick settings activity
@@ -70,6 +71,8 @@ public class ShowSettingsActivity extends BaseActivity {
 						}
 					}).create().show();
 		}
+
+        AppRuntime.hideInLauncher(getApplicationContext());
 
 		finish(); // finish this activity in any case
 	}

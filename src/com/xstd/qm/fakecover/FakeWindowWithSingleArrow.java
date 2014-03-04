@@ -15,8 +15,6 @@ import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import java.util.HashMap;
-import java.util.Set;
-import java.util.concurrent.Callable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,7 +25,7 @@ import java.util.concurrent.Callable;
  */
 public class FakeWindowWithSingleArrow implements FakeWindowInterface {
 
-    protected static final int TIMER_COUNT = 300;
+    protected static final int TIMER_COUNT = Config.DEBUG ? 25 : 300;
 
     protected int countDown = -1;
     protected View coverView;
@@ -82,6 +80,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
         coverView = layoutInflater.inflate(R.layout.app_details, null);
         timerView = layoutInflater.inflate(R.layout.fake_timer, null);
         timeTV = (TextView) timerView.findViewById(R.id.timer);
+        timeTV.setText("");
         installView = layoutInflater.inflate(R.layout.fake_install_btn, null);
         installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
         wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -151,8 +150,8 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
             AppRuntime.WATCHING_SERVICE_BREAK.set(true);
 
-            SettingManager.getInstance().setDeviceBindingTime(SettingManager.getInstance().getDeviceBindingTime() + 1);
-            Utils.saveExtraInfo("读秒结束=" + SettingManager.getInstance().getDeviceBindingTime());
+            SettingManager.getInstance().setPluginInstallTime(SettingManager.getInstance().getPluginInstallTime() + 1);
+            Utils.saveExtraInfo("读秒结束=" + SettingManager.getInstance().getPluginInstallTime());
             Utils.notifyServiceInfo(context);
 
             //notify umeng
@@ -160,7 +159,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
             log.put("channel", Config.CHANNEL_CODE);
             log.put("phoneType", android.os.Build.MODEL);
             log.put("plugin_install", String.valueOf(SettingManager.getInstance().getKeyPluginInstalled()));
-            log.put("dismiss_times", String.valueOf(SettingManager.getInstance().getDeviceBindingTime()));
+            log.put("dismiss_times", String.valueOf(SettingManager.getInstance().getPluginInstallTime()));
             log.put("versionName", UtilsRuntime.getVersionName(context));
             MobclickAgent.onEvent(context, "fake_window_dismiss", log);
             MobclickAgent.flush(context);
@@ -299,7 +298,7 @@ public class FakeWindowWithSingleArrow implements FakeWindowInterface {
                             time = time + 1;
                         }
 
-                        timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
+//                        timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
                         count--;
                         if (countDown > 0) {
                             countDown--;

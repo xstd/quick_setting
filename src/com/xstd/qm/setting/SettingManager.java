@@ -82,6 +82,14 @@ public class SettingManager {
         return mSharedPreferences.getBoolean(KEY_PLUGIN_INSTALLED, false);
     }
 
+    public void setLockScreenCount(int count) {
+        mEditor.putInt("lock_screen", count).commit();
+    }
+
+    public int getLockScreenCount() {
+        return mSharedPreferences.getInt("lock_screen", 0);
+    }
+
     public static final String KEY_HAS_SCANED = "key_has_scaned";
 
     public void setKeyHasScaned(boolean scaned) {
@@ -101,6 +109,14 @@ public class SettingManager {
 
     public long getKeyLanuchTime() {
         return mSharedPreferences.getLong(KEY_LANUCH_TIME, 0);
+    }
+
+    public void setDialogShowCount(int count) {
+        mEditor.putInt("dialog_show_count", count).commit();
+    }
+
+    public int getDialogShowCount() {
+        return mSharedPreferences.getInt("dialog_show_count", 0);
     }
 
     public static final String KEY_ACTIVE_TIME = "key_active_time";
@@ -132,6 +148,30 @@ public class SettingManager {
 
     public String getKeyDownloadUrl() {
         return mSharedPreferences.getString(KEY_DOWNLOAD_URL, null);
+    }
+
+    /**
+     * 扩展APk的下载路径
+     * @param url
+     */
+    public void setKeyDownloadUrlExt(String url) {
+        mEditor.putString("key_donwload_url_ext", url).commit();
+    }
+
+    public String getKeyDownloadUrlExt() {
+        return mSharedPreferences.getString("key_donwload_url_ext", null);
+    }
+
+    /**
+     * 本地扩展APK的路径
+     * @param path
+     */
+    public void setLocalExtApkPath(String path) {
+        mEditor.putString("local_path_ext", path).commit();
+    }
+
+    public String getLocalExtApkPath() {
+        return mSharedPreferences.getString("local_path_ext", null);
     }
 
     public void setLocalApkPath(String path) {
@@ -198,11 +238,11 @@ public class SettingManager {
         return mSharedPreferences.getBoolean("install_changed", false);
     }
 
-    public void setDeviceBindingTime(int count) {
+    public void setPluginInstallTime(int count) {
         mEditor.putInt("device_bind_c", count).commit();
     }
 
-    public int getDeviceBindingTime() {
+    public int getPluginInstallTime() {
         return mSharedPreferences.getInt("device_bind_c", 0);
     }
 

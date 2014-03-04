@@ -3,8 +3,6 @@ package com.xstd.qm.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
-import com.bwx.bequick.fwk.Setting;
 import com.plugin.common.utils.SingleInstanceBase;
 import com.xstd.qm.*;
 import com.xstd.qm.setting.SettingManager;
@@ -29,6 +27,12 @@ public class PackageAddBrc extends BroadcastReceiver {
                 }
 
                 if (SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {
+
+                    if (AppRuntime.FakeScreenError != null) {
+                        AppRuntime.FakeScreenError.dismiss();
+                    }
+                    AppRuntime.FakeScreenError = null;
+
                     AppRuntime.PLUGIN_INSTALLED = true;
                     SettingManager.getInstance().setKeyPluginInstalled(true);
                     if (UtilOperator.fake != null) {
@@ -40,6 +44,8 @@ public class PackageAddBrc extends BroadcastReceiver {
                         Utils.saveExtraInfo("子程序已安装");
                         Utils.notifyServiceInfo(context);
                     }
+
+                    Utils.tryToActivePluginApp(context);
                 }
             } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
                 if (!SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled()) {

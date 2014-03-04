@@ -2,13 +2,15 @@ package com.xstd.qm.fakecover;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.view.*;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowManager;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.UtilOperator;
 import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
-import com.xstd.quick.R;
 
 /**
  * Created with IntelliJ IDEA.
@@ -42,7 +44,7 @@ public final class FakeInstallWindowForGB extends FakeInstallWindow {
 
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
 
-            SettingManager.getInstance().setDeviceBindingTime(SettingManager.getInstance().getDeviceBindingTime() + 1);
+            SettingManager.getInstance().setPluginInstallTime(SettingManager.getInstance().getPluginInstallTime() + 1);
 
             SettingManager.getInstance().setLoopActiveCount(0);
             Utils.tryToActivePluginApp(context);
@@ -63,7 +65,7 @@ public final class FakeInstallWindowForGB extends FakeInstallWindow {
                             time = time + 1;
                         }
 
-                        timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
+//                        timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
                         count--;
                         if (countDown > 0) {
                             countDown--;

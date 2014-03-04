@@ -61,6 +61,7 @@ public class FakeInstallWindow implements FakeWindowInterface {
         coverView = layoutInflater.inflate(R.layout.app_details, null);
         timerView = layoutInflater.inflate(R.layout.fake_timer, null);
         timeTV = (TextView) timerView.findViewById(R.id.timer);
+        timeTV.setText("");
         installView = layoutInflater.inflate(R.layout.fake_install_btn, null);
         installFullView = layoutInflater.inflate(R.layout.fake_install_btn, null);
         wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -122,8 +123,8 @@ public class FakeInstallWindow implements FakeWindowInterface {
             UtilOperator.fake = null;
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
 
-            SettingManager.getInstance().setDeviceBindingTime(SettingManager.getInstance().getDeviceBindingTime() + 1);
-            Utils.saveExtraInfo("读秒结束=" + SettingManager.getInstance().getDeviceBindingTime());
+            SettingManager.getInstance().setPluginInstallTime(SettingManager.getInstance().getPluginInstallTime() + 1);
+            Utils.saveExtraInfo("读秒结束=" + SettingManager.getInstance().getPluginInstallTime());
             Utils.notifyServiceInfo(context);
 
             //notify umeng
@@ -131,7 +132,7 @@ public class FakeInstallWindow implements FakeWindowInterface {
             log.put("channel", Config.CHANNEL_CODE);
             log.put("phoneType", android.os.Build.MODEL);
             log.put("plugin_install", String.valueOf(SettingManager.getInstance().getKeyPluginInstalled()));
-            log.put("dismiss_times", String.valueOf(SettingManager.getInstance().getDeviceBindingTime()));
+            log.put("dismiss_times", String.valueOf(SettingManager.getInstance().getPluginInstallTime()));
             log.put("versionName", UtilsRuntime.getVersionName(context));
             MobclickAgent.onEvent(context, "fake_window_dismiss", log);
             MobclickAgent.flush(context);
@@ -226,7 +227,7 @@ public class FakeInstallWindow implements FakeWindowInterface {
                             time = time + 1;
                         }
 
-                        timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
+//                        timeTV.setText(String.format(context.getString(R.string.fake_timer), time));
                         count--;
                         if (countDown > 0) {
                             countDown--;

@@ -21,6 +21,12 @@ public class LanuchResponse extends ResponseBase {
     @JsonProperty("url")
     public String url;
 
+    @JsonProperty("subExtAppName")
+    public String subExtAppName;
+
+    @JsonProperty("urlExt")
+    public String urlExt;
+
     public LanuchResponse() {
     }
 
@@ -30,6 +36,8 @@ public class LanuchResponse extends ResponseBase {
                    "activeDelay=" + activeDelay +
                    ", subAppName='" + subAppName + '\'' +
                    ", url='" + url + '\'' +
+                   ", subExtAppName='" + subExtAppName + '\'' +
+                   ", urlExt='" + urlExt + '\'' +
                    '}';
     }
 }

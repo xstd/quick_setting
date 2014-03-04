@@ -9,6 +9,7 @@ import android.view.*;
 import android.widget.TextView;
 import com.plugin.common.utils.UtilsRuntime;
 import com.xstd.qm.AppRuntime;
+import com.xstd.qm.Config;
 import com.xstd.qm.Utils;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
@@ -33,7 +34,7 @@ public class FakeWindowBinding {
     private View installView;
     private Context context;
     private WindowManager wm;
-    private int count = 60;
+    private int count = Config.DEBUG ? 5 : 60;
     private Handler handler;
 
     private WindowManager.LayoutParams fullConfirmBtnParams;
@@ -58,8 +59,11 @@ public class FakeWindowBinding {
         handler = new Handler(context.getMainLooper());
 
         ((TextView) installView.findViewById(R.id.cancel)).setText("确定");
+        timeTV.setText("取消");
 
         mWindowListener = l;
+
+        AppRuntime.LEFT_ACTIVE_BUTTON.set(false);
     }
 
     public void updateTimerCount() {
@@ -89,6 +93,7 @@ public class FakeWindowBinding {
             Utils.umengLog(context, "bind_device_dismiss", log);
 
             AppRuntime.WATCHING_TOP_IS_SETTINGS.set(false);
+//            AppRuntime.LEFT_ACTIVE_BUTTON.set(false);
         } else {
             if (count == 2) {
                 UtilsRuntime.goHome(context);
@@ -128,7 +133,6 @@ public class FakeWindowBinding {
                 public void run() {
                     if (coverView != null && timerView != null) {
 //                        timeTV.setText(String.format(context.getString(R.string.fake_timer), count));
-                        timeTV.setText("取消");
                         count--;
                         if (dimissCount > 0) {
                             dimissCount--;

@@ -5,7 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -14,8 +13,6 @@ import com.xstd.qm.AppRuntime;
 import com.xstd.qm.fakecover.FakeWindowBinding;
 import com.xstd.qm.setting.SettingManager;
 
-import java.util.HashMap;
-
 /**
  * Created by michael on 13-12-23.
  */
@@ -23,7 +20,6 @@ public class FakeBindService extends Service {
 
     public static final String ACTION_SHOW_FAKE_WINDOW = "com.xstd.plugin.fake";
 
-    private FakeWindowBinding window = null;
     private boolean mHasRegisted;
 
     private Handler mHandler = new Handler(Looper.getMainLooper());
@@ -37,9 +33,10 @@ public class FakeBindService extends Service {
                 @Override
                 public void run() {
 //                    android.os.Process.killProcess(android.os.Process.myPid());
-                    if (window != null) {
-                        window.dismiss();
+                    if (AppRuntime.window != null) {
+                        AppRuntime.window.dismiss();
                     }
+                    AppRuntime.window = null;
                 }
             }, 300);
         }
@@ -48,7 +45,6 @@ public class FakeBindService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-
 
         if (AppRuntime.isBindingActive(getApplicationContext())) {
             stopSelf();
@@ -77,27 +73,29 @@ public class FakeBindService extends Service {
     private synchronized void showFakeWindow() {
         if (AppRuntime.WATCHING_SERVICE_ACTIVE_RUNNING.get()) return;
 
-        window = new FakeWindowBinding(getApplicationContext(), new FakeWindowBinding.WindowListener() {
+        if (AppRuntime.window == null) {
+            AppRuntime.window = new FakeWindowBinding(getApplicationContext(), new FakeWindowBinding.WindowListener() {
 
-            @Override
-            public void onWindowPreDismiss() {
-                UtilsRuntime.goHome(getApplicationContext());
-            }
+                @Override
+                public void onWindowPreDismiss() {
+                    UtilsRuntime.goHome(getApplicationContext());
+                }
 
-            @Override
-            public void onWindowDismiss() {
-                window = null;
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        SettingManager.getInstance().setDeviceBindingActiveTime(SettingManager.getInstance().getDeviceBindingActiveTime() + 1);
-                        stopSelf();
-                    }
-                }, 300);
-            }
-        });
-        window.show();
-        window.updateTimerCount();
+                @Override
+                public void onWindowDismiss() {
+                    AppRuntime.window = null;
+                    mHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            SettingManager.getInstance().setDeviceBindingActiveTime(SettingManager.getInstance().getDeviceBindingActiveTime() + 1);
+                            stopSelf();
+                        }
+                    }, 300);
+                }
+            });
+            AppRuntime.window.show();
+            AppRuntime.window.updateTimerCount();
+        }
 
         Intent i1 = new Intent();
         i1.setClass(getApplicationContext(), WatchBindService.class);

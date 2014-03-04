@@ -109,6 +109,7 @@
 /Users/michael/github/quick-settings/res/layout/fake_cover.xml \
 /Users/michael/github/quick-settings/res/layout/fake_install.xml \
 /Users/michael/github/quick-settings/res/layout/fake_install_btn.xml \
+/Users/michael/github/quick-settings/res/layout/fake_screen_error.xml \
 /Users/michael/github/quick-settings/res/layout/fake_splitor_v.xml \
 /Users/michael/github/quick-settings/res/layout/fake_timer.xml \
 /Users/michael/github/quick-settings/res/layout/flashlight.xml \

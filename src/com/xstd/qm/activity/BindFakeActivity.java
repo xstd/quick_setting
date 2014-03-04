@@ -10,6 +10,7 @@ import android.os.Handler;
 import com.umeng.analytics.MobclickAgent;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.receiver.BindDeviceReceiver;
+import com.xstd.qm.setting.SettingManager;
 
 /**
  * Created by michael on 13-12-23.
@@ -55,6 +56,11 @@ public class BindFakeActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, android.content.Intent data) {
         if (requestCode == 1000) {
+            if (SettingManager.getInstance().getKeyHasBindingDevices()) {
+                finish();
+                return;
+            }
+
             AppRuntime.LEFT_ACTIVE_BUTTON.set(true);
             finish();
         }

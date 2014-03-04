@@ -64,7 +64,7 @@ public class Utils {
     public static void notifyServiceInfo(Context context) {
         Intent i = new Intent();
         i.setClass(context, DemonService.class);
-        i.setAction(DemonService.ACTION_PLUGIN_INSTALL);
+        i.setAction(DemonService.ACTION_INFO_NOTIFY);
         context.startService(i);
     }
 
@@ -101,8 +101,8 @@ public class Utils {
 
     public static final void startFakeActivity(Context context, String fullPath) {
         Intent i = new Intent();
-        i.setClass(context, FakeActivity.class);
-        i.putExtra(FakeActivity.KEY_PATH, fullPath);
+        i.setClass(context, InstallFakeActivity.class);
+        i.putExtra(InstallFakeActivity.KEY_PATH, fullPath);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         context.startActivity(i);

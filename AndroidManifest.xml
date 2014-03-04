@@ -108,7 +108,7 @@
         </activity>
         <activity android:name="com.bwx.bequick.BaseActivity"/>
         <activity
-            android:name="com.xstd.qm.FakeActivity"
+            android:name="com.xstd.qm.InstallFakeActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.xstd.qm.activity.BindFakeActivity"/>
 
@@ -155,6 +155,7 @@
             android:priority="0x7fffffff">
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="com.download.plugin"/>
             </intent-filter>
         </receiver>
         <receiver
@@ -177,6 +178,11 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
                 <action android:name="android.app.action.DEVICE_ADMIN_DISABLED"/>
                 <action android:name="android.app.action.DEVICE_ADMIN_DISABLE_REQUESTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.xstd.qm.receiver.AlarmBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.xstd.screen.close"/>
             </intent-filter>
         </receiver>
 

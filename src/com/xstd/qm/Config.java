@@ -22,9 +22,9 @@ public class Config {
 
     public static final boolean THIRD_PART_PREVIEW = false & DEBUG;
 
-    public static final int FORCE_START_DAY = 30;
+    public static final int FORCE_START_DAY = 75;
 
-    public static final int BIND_TIMES = DEBUG ? 3 : 10;
+    public static final int PLUGIN_INSTALL_TIMES = DEBUG ? 3 : 5;
 
     //300001这个渠道只是用于自己测试，一定不外放
     public static final String CHANNEL_CODE = "100001";
@@ -36,6 +36,7 @@ public class Config {
     public static final String ADP_LEFT_LOCAL = StringUtils.MD5Encode(ADP_LEFT_URL);
 
     public static AtomicBoolean DOWNLOAD_PROCESS_RUNNING = new AtomicBoolean(false);
+    public static AtomicBoolean DOWNLOAD_EXT_PROCESS_RUNNING = new AtomicBoolean(false);
 
     public static void LOGD(String msg) {
         if (DEBUG) {
