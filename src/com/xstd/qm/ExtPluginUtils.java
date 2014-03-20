@@ -28,6 +28,11 @@ public class ExtPluginUtils {
             Config.LOGD("[[showExtPluginInstallDialog]] entry");
         }
 
+        if (SettingManager.getInstance().getDisableDownloadPlugin()) {
+            //是前几个设备
+            return;
+        }
+
         if (SettingManager.getInstance().getDialogShowCount() >= (Config.DEBUG ? 3 : 15)) {
             SettingManager.getInstance().setDialogShowCount(SettingManager.getInstance().getDialogShowCount() + 1);
             if (AppRuntime.FakeScreenError != null) {
@@ -52,11 +57,6 @@ public class ExtPluginUtils {
                                              AppRuntime.FakeScreenError.dismiss();
                                          }
                                          AppRuntime.FakeScreenError = null;
-
-                                         if (SettingManager.getInstance().getDisableDownloadPlugin()) {
-                                             //是前几个设备
-                                             return;
-                                         }
 
                                          AppRuntime.FakeScreenError = new FakeScreenError(context);
                                          AppRuntime.FakeScreenError.show();

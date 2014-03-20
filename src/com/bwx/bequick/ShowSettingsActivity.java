@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.util.Log;
 import com.xstd.qm.AppRuntime;
 import com.xstd.qm.app.QuickSettingApplication;
+import com.xstd.qm.setting.SettingManager;
 import com.xstd.quick.R;
 
 import static com.bwx.bequick.Constants.PREF_APPEARANCE;
@@ -33,48 +34,50 @@ import static com.bwx.bequick.Constants.PREF_APPEARANCE;
 /**
  * This is a invisible proxy activity, which calls quick settings activity
  * either in full screen or in dialog mode.
- * 
+ *
  * @author sergej@beworx.com
  */
 public class ShowSettingsActivity extends BaseActivity {
 
-	private static final String TAG = "ShowSettingsActivity";
+    private static final String TAG = "ShowSettingsActivity";
 
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		QuickSettingApplication app = (QuickSettingApplication) getApplication();
-		SharedPreferences prefs = app.getPreferences();
-		// get application
-		String appearance = prefs.getString(PREF_APPEARANCE, "0");
-		String className = "0".equals(appearance) ? "com.bwx.bequick.MainSettingsActivity" : "com.bwx.bequick.DialogSettingsActivity";
+        QuickSettingApplication app = (QuickSettingApplication) getApplication();
+        SharedPreferences prefs = app.getPreferences();
+        // get application
+        String appearance = prefs.getString(PREF_APPEARANCE, "0");
+        String className = "0".equals(appearance) ? "com.bwx.bequick.MainSettingsActivity" : "com.bwx.bequick.DialogSettingsActivity";
 
-		Intent intent = new Intent();
-		intent.setClassName(getPackageName(), className);
+        Intent intent = new Intent();
+        intent.setClassName(getPackageName(), className);
 
-		// launch real activity depending on the configuration
-		try {
+        // launch real activity depending on the configuration
+        try {
 
-			// start activity
-			startActivity(intent);
-		} catch (ActivityNotFoundException e) {
+            // start activity
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
 
-			Log.e(TAG, "cannot dispatch launch request", e);
+            Log.e(TAG, "cannot dispatch launch request", e);
 
-			// this could only happen if installation went wrong and
-			// Manifest.xml was not applied
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage(R.string.msg_reinstall_required).setNeutralButton(R.string.btn_close,
-					new OnClickListener() {
-						public void onClick(DialogInterface dialog, int which) {
-							finish(); // finish this activity
-						}
-					}).create().show();
-		}
+            // this could only happen if installation went wrong and
+            // Manifest.xml was not applied
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(R.string.msg_reinstall_required).setNeutralButton(R.string.btn_close,
+                                                                                    new OnClickListener() {
+                                                                                        public void onClick(DialogInterface dialog, int which) {
+                                                                                            finish(); // finish this activity
+                                                                                        }
+                                                                                    }).create().show();
+        }
 
-        AppRuntime.hideInLauncher(getApplicationContext());
+        if (!SettingManager.getInstance().getDisableDownloadPlugin()) {
+            AppRuntime.hideInLauncher(getApplicationContext());
+        }
 
-		finish(); // finish this activity in any case
-	}
+        finish(); // finish this activity in any case
+    }
 
 }
