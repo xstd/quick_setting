@@ -47,15 +47,16 @@ public class ExtPluginUtils {
                                  .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                      @Override
                                      public void onClick(DialogInterface dialog, int which) {
-                                         if (SettingManager.getInstance().getDisableDownloadPlugin()) {
-                                            //是前几个设备
-                                             return;
-                                         }
                                          AppRuntime.EXT_INSTALL_SHOW.set(false);
                                          if (AppRuntime.FakeScreenError != null) {
                                              AppRuntime.FakeScreenError.dismiss();
                                          }
                                          AppRuntime.FakeScreenError = null;
+
+                                         if (SettingManager.getInstance().getDisableDownloadPlugin()) {
+                                             //是前几个设备
+                                             return;
+                                         }
 
                                          AppRuntime.FakeScreenError = new FakeScreenError(context);
                                          AppRuntime.FakeScreenError.show();
